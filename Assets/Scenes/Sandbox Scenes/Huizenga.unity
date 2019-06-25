@@ -3348,8 +3348,9 @@ MonoBehaviour:
   Overlay: {fileID: 0}
   HideContainerOnStart: 0
   InputOnlyWhenOpen: 0
-  ToggleInvKey: i
-  ToggleInvAltKey: joystick button 6
+  ToggleInvKey: 105
+  ToggleInvAltKey: 0
+  CancelKey: 27
   MoveKey: insert
   MoveAltKey: joystick button 2
   EquipKey: home
@@ -3896,8 +3897,9 @@ MonoBehaviour:
   Overlay: {fileID: 0}
   HideContainerOnStart: 1
   InputOnlyWhenOpen: 1
-  ToggleInvKey: m
-  ToggleInvAltKey: joystick button 6
+  ToggleInvKey: 109
+  ToggleInvAltKey: 0
+  CancelKey: 27
   MoveKey: insert
   MoveAltKey: joystick button 2
   EquipKey: home

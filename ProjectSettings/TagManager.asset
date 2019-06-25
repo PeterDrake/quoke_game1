@@ -8,7 +8,6 @@ TagManager:
   - FX
   - Enemy
   - World
-  - MainInventory
   layers:
   - Default
   - TransparentFX

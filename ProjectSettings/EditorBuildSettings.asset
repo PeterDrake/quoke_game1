@@ -51,6 +51,12 @@ EditorBuildSettings:
     path: Assets/TopDownEngine/Demos/Minimal3D/MinimalSword3D.unity
     guid: a8bba52c06984564fbf26a7cfc873e39
   - enabled: 1
+    path: Assets/TopDownEngine/Demos/Minimal2D/Minimal2DCharacterSwap.unity
+    guid: 803747b12a3ce8b4ea9cc2d027636ac5
+  - enabled: 1
+    path: Assets/TopDownEngine/Demos/Minimal2D/Minimal2DCharacterSwitch.unity
+    guid: 894506db76a92f54ab232e584515d7c1
+  - enabled: 1
     path: Assets/TopDownEngine/ThirdParty/MoreMountains/InventoryEngine/Demos/PixelRogue/Minimal1.unity
     guid: b7b14cfcf997f4d40a54d4eee5f33401
   - enabled: 1
