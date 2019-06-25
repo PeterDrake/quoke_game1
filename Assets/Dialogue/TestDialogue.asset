@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
+  m_Name: TestDialogue
+  m_EditorClassIdentifier: 
+  NPCname: Bob
+  NPCimage: {fileID: 21300008, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
+  NPCtext: Hey pal
+  ResponseOne: Hi Bob
+  nextNodeOne: {fileID: 11400000, guid: fa7fd2b6ae1cb4bc6b676a27b04b3345, type: 2}
+  ResponseTwo: Who are you?
+  nextNodeTwo: {fileID: 11400000, guid: fa7fd2b6ae1cb4bc6b676a27b04b3345, type: 2}
+  PlayerReceives: {fileID: 0}
+  DoesPlayerHave: {fileID: 0}
