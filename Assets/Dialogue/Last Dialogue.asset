@@ -19,5 +19,5 @@ MonoBehaviour:
   nextNodeOne: {fileID: 0}
   ResponseTwo: Adios
   nextNodeTwo: {fileID: 0}
-  PlayerReceives: {fileID: 11400000, guid: 40876a02f1980694e94d7190565ee90c, type: 2}
+  PlayerReceives: {fileID: 11400000, guid: 2c6c3c9fc82f7484ab8b3ee19e0a0cad, type: 2}
   DoesPlayerHave: {fileID: 0}
