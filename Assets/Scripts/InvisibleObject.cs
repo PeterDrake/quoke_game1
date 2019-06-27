@@ -2,20 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TransparentTable : MonoBehaviour
+public class InvisibleObject : MonoBehaviour
 {
-    public GameObject table;
+    
+    public GameObject roof;
         
-   public Material opaqueMaterial;
+    public Material opaqueMaterial;
 
     public Material transparentMaterial;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
     
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered the trigger");
-            table.GetComponent<Renderer>().material = transparentMaterial;
+            roof.GetComponent<Renderer>().material = transparentMaterial;
         }
     }
 
@@ -24,18 +37,7 @@ public class TransparentTable : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player exited the trigger");
-            table.GetComponent<Renderer>().material = opaqueMaterial;
+            roof.GetComponent<Renderer>().material = opaqueMaterial;
         }
-    }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
