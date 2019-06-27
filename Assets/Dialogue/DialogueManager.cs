@@ -86,7 +86,7 @@ public class DialogueManager : MonoBehaviour
     public void Deactivate()
     {
         my_AddItem(); // just here temporarily for testing 
-        NewHead();
+      //  NewHead();
         dialogueEnabler.SetActive(false);
     }
 

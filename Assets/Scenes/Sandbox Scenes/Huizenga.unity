@@ -5858,7 +5858,7 @@ GameObject:
   - component: {fileID: 1908103258}
   - component: {fileID: 1908103261}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Bob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5949,6 +5949,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d14b4fe33e9f4dcca4aba17c8601586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainDialogue: {fileID: 11400000, guid: 7fc98bc37c11841b89ecd98fa8ebab5b, type: 2}
+  newHead: {fileID: 11400000, guid: fa7fd2b6ae1cb4bc6b676a27b04b3345, type: 2}
+  dialogueCanvas: {fileID: 2030455250}
   canvasEnabler: {fileID: 1383464898}
 --- !u!1 &1918232350
 GameObject:
@@ -6341,6 +6344,46 @@ PrefabInstance:
       propertyPath: field of view
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 20515230329627212, guid: 9edcf7e494cf3e640b18cb7495fb179a,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.028301895
+      objectReference: {fileID: 0}
+    - target: {fileID: 20515230329627212, guid: 9edcf7e494cf3e640b18cb7495fb179a,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.028301895
+      objectReference: {fileID: 0}
+    - target: {fileID: 20515230329627212, guid: 9edcf7e494cf3e640b18cb7495fb179a,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.028301895
+      objectReference: {fileID: 0}
+    - target: {fileID: 114816683221662468, guid: 9edcf7e494cf3e640b18cb7495fb179a,
+        type: 3}
+      propertyPath: weight
+      value: 0.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 114096636326014474, guid: 9edcf7e494cf3e640b18cb7495fb179a,
+        type: 3}
+      propertyPath: m_ShowToolkit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114096636326014474, guid: 9edcf7e494cf3e640b18cb7495fb179a,
+        type: 3}
+      propertyPath: m_ShowCustomSorter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114096636326014474, guid: 9edcf7e494cf3e640b18cb7495fb179a,
+        type: 3}
+      propertyPath: fog.excludeSkybox
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114129316014370704, guid: 9edcf7e494cf3e640b18cb7495fb179a,
+        type: 3}
+      propertyPath: m_Lens.FieldOfView
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 114257758189858168, guid: 9edcf7e494cf3e640b18cb7495fb179a,
         type: 3}
       propertyPath: DefaultShakeAmplitude
@@ -6366,11 +6409,6 @@ PrefabInstance:
       propertyPath: TestFrequency
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 114816683221662468, guid: 9edcf7e494cf3e640b18cb7495fb179a,
-        type: 3}
-      propertyPath: weight
-      value: 0.49
-      objectReference: {fileID: 0}
     - target: {fileID: 114329137893650930, guid: 9edcf7e494cf3e640b18cb7495fb179a,
         type: 3}
       propertyPath: m_SoftZoneWidth
@@ -6390,11 +6428,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_DeadZoneHeight
       value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114129316014370704, guid: 9edcf7e494cf3e640b18cb7495fb179a,
-        type: 3}
-      propertyPath: m_Lens.FieldOfView
-      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
