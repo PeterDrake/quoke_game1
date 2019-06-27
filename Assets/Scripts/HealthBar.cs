@@ -33,6 +33,7 @@ public class HealthBar : MonoBehaviour
         if (healthSlide.value <= healthSlide.minValue)
         {
             Debug.Log("Game over");
+            Application.Quit();
         }
         
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +15,7 @@ public class WaterBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        frame = -1000;
+        frame = -500;
         waterValue = 100;
     }
 
@@ -38,15 +39,12 @@ public class WaterBar : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            frame = -100;
+            
+            waterSlide.GetComponent<WaterBar>().frame = -500;
             waterValue = 100;
             waterSlide.GetComponent<WaterBar>().waterValue = waterValue;
-            StartCoroutine("Wait");
         }
     }
 
-    IEnumerator Water()
-    {
-        yield return new WaitUntil(() => frame >= 10);
-    }
+
 }
