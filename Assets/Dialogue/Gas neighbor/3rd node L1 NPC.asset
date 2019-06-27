@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
+  m_Name: 3rd node L1 NPC
+  m_EditorClassIdentifier: 
+  NPCname: Neighbor
+  NPCimage: {fileID: 0}
+  NPCtext: I think its your house, here take this wrench and go turn your gas valve
+    off
+  ResponseOne: Ok, I'll figure it out.
+  nextNodeOne: {fileID: 11400000, guid: f0f8d784b5fda45dcadd4ed58927d772, type: 2}
+  ResponseTwo: I already have on, thanks
+  nextNodeTwo: {fileID: 0}
+  PlayerReceives: {fileID: 0}
+  DoesPlayerHave: {fileID: 0}
