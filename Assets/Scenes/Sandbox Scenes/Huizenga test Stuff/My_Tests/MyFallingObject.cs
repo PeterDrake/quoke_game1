@@ -7,6 +7,8 @@ public class MyFallingObject : MonoBehaviour
 {
     public float thrust;
     public Rigidbody rb;
+
+    public GameObject DeathScreen;
     //public Vector3 push_point;
     void Start()
     {
@@ -23,6 +25,8 @@ public class MyFallingObject : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player Hit");
+            DeathScreen.GetComponent<Death>().PlayerDeath();
+            
         }
 
     }
