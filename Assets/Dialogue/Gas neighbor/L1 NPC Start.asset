@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: L1 NPC
+  m_Name: L1 NPC Start
   m_EditorClassIdentifier: 
-  NPCname: 
+  NPCname: Neighbor
   NPCimage: {fileID: 0}
-  NPCtext: 
-  ResponseOne: 
-  nextNodeOne: {fileID: 0}
-  ResponseTwo: 
-  nextNodeTwo: {fileID: 0}
+  NPCtext: Wow, that was crazy, are you ok?
+  ResponseOne: A little shaken up, but I'm ok
+  nextNodeOne: {fileID: 11400000, guid: 22b00db2165bc4338a7225c05398f4b4, type: 2}
+  ResponseTwo: Just barely dodged a falling bookshelf
+  nextNodeTwo: {fileID: 11400000, guid: 22b00db2165bc4338a7225c05398f4b4, type: 2}
   PlayerReceives: {fileID: 0}
   DoesPlayerHave: {fileID: 0}
