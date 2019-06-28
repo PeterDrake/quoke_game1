@@ -20,4 +20,4 @@ MonoBehaviour:
   ResponseTwo: Just barely dodged a falling bookshelf
   nextNodeTwo: {fileID: 11400000, guid: 22b00db2165bc4338a7225c05398f4b4, type: 2}
   PlayerReceives: {fileID: 0}
-  DoesPlayerHave: {fileID: 0}
+  DoesPlayerHave: {fileID: 11400000, guid: af2c14f3bde655947aca0d6a7b8dbeb8, type: 2}
