@@ -16,6 +16,11 @@ public class Dialogue : ScriptableObject
     public string ResponseTwo;
     public Dialogue nextNodeTwo;
 
-    public InventoryItem PlayerReceives;
-    public InventoryItem DoesPlayerHave;
+    //public InventoryItem PlayerReceives;
+    //public InventoryItem DoesPlayerHave;
+    
+    public InventoryItem PlayerReceivesNode1;
+    public InventoryItem PlayerReceivesNode2; 
+    public InventoryItem DoesPlayerHaveNode1;
+    public InventoryItem DoesPlayerHaveNode2;
 }
