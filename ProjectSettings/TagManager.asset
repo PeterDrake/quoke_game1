@@ -8,6 +8,8 @@ TagManager:
   - FX
   - Enemy
   - World
+  - MainInventory
+  - Wrench
   layers:
   - Default
   - TransparentFX

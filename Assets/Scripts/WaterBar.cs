@@ -29,7 +29,7 @@ public class WaterBar : MonoBehaviour
 
         else
         {
-            waterValue -= .05f;
+           // waterValue -= .05f;
             waterSlide.value = waterSlide.GetComponent<WaterBar>().waterValue;
         }
         
@@ -43,7 +43,9 @@ public class WaterBar : MonoBehaviour
             waterSlide.GetComponent<WaterBar>().frame = -500;
             waterValue = 100;
             waterSlide.GetComponent<WaterBar>().waterValue = waterValue;
+            water.SetActive(false);
         }
+        
     }
 
 
