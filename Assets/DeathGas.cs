@@ -14,6 +14,7 @@ public class DeathGas : MonoBehaviour
     public Inventory starter;
     public GameObject gas;
     public Material mat;
+    public GameObject EventTracker;
     
     private int mainNum;
     private int starterNum;
@@ -37,6 +38,15 @@ public class DeathGas : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (EventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Wrench"))
+            {
+                gas.GetComponent<BlinkingObject>().my_blink = mat;
+                Debug.Log("You have a wrench in your inventory");
+                gasOff = true;
+                //break;
+            }
+            
+           /* 
             for (int i = 0; i < mainNum; i++)
             {
                 if (main.GetComponent<Inventory>().Content.ElementAt(i))
@@ -52,6 +62,7 @@ public class DeathGas : MonoBehaviour
                 }
 
             }
+            
 
             if (gasOff == false)
             {
@@ -71,6 +82,7 @@ public class DeathGas : MonoBehaviour
 
                 }
             }
+            */
 
             if (gasOff == false)
             {

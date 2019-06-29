@@ -8,10 +8,10 @@ using UnityEngine.SceneManagement;
 public class MyEventTracker : MonoBehaviour
 {
     public Inventory mainInventory;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame

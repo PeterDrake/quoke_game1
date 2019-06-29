@@ -26,12 +26,19 @@ namespace MoreMountains.InventoryEngine
         // Start is called before the first frame update
         void Start()
         {
-
+            StartCoroutine(my_OpenInvent());
         }
 
         // Update is called once per frame
         void Update()
         {
+
+        }
+
+        IEnumerator my_OpenInvent()
+        {
+            yield return new WaitForEndOfFrame();
+            GetComponent<InventoryInputManager>().OpenInventory();
 
         }
         public void ChangeInventory()
