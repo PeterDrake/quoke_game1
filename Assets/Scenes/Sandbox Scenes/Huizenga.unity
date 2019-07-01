@@ -1297,6 +1297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathScreen: {fileID: 210924690}
+  end: {fileID: 0}
+  level: {fileID: 0}
 --- !u!1 &250560334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6339,7 +6341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d14b4fe33e9f4dcca4aba17c8601586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDialogue: {fileID: 11400000, guid: 9618bc752681647979cc3018febf8046, type: 2}
+  mainDialogue: {fileID: 11400000, guid: 7fc98bc37c11841b89ecd98fa8ebab5b, type: 2}
   newHead: {fileID: 11400000, guid: 6d844b6c02d91453b8345909e57475dd, type: 2}
   dialogueCanvas: {fileID: 2030455250}
   canvasEnabler: {fileID: 1383464898}
@@ -6853,8 +6855,12 @@ MonoBehaviour:
   responseNodeTwo: {fileID: 0}
   dialogueEnabler: {fileID: 1383464898}
   newHead: {fileID: 11400000, guid: fa7fd2b6ae1cb4bc6b676a27b04b3345, type: 2}
-  my_itemToAdd: {fileID: 0}
-  my_hasItem: {fileID: 0}
+  my_itemToAddNode1: {fileID: 0}
+  my_hasItemNode1: {fileID: 0}
+  my_itemToAddNode2: {fileID: 0}
+  my_hasItemNode2: {fileID: 0}
+  my_losesNode1: {fileID: 0}
+  my_losesNode2: {fileID: 0}
   my_targetInventory: {fileID: 890900705}
   eventTracker: {fileID: 917322778}
 --- !u!223 &2030455255 stripped
