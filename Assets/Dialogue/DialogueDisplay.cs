@@ -27,6 +27,8 @@ public class DialogueDisplay : MonoBehaviour
     public InventoryItem itemToReceiveNode2; 
     public InventoryItem hasItemNode1;
     public InventoryItem hasItemNode2;
+    public InventoryItem PlayerLosesNode1;
+    public InventoryItem PlayerLosesNode2;
     
 
     private void Start()
@@ -51,6 +53,9 @@ public class DialogueDisplay : MonoBehaviour
         hasItemNode1 = dialogue.DoesPlayerHaveNode1;
         itemToReceiveNode2 = dialogue.PlayerReceivesNode2;
         hasItemNode2 = dialogue.DoesPlayerHaveNode2;
+
+        PlayerLosesNode1 = dialogue.PlayerLosesNode1;
+        PlayerLosesNode2 = dialogue.PlayerLosesNode2;
 
 
 
