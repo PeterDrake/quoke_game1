@@ -102,9 +102,12 @@ public class DialogueManager : MonoBehaviour
     
     public void NewHead ()
     {
-        dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = newHead;
-        dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
-        Refresh();
+        if (newHead != null)
+        {
+            dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = newHead;
+            dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
+            Refresh();
+        }
     }
 
     public void Deactivate()
