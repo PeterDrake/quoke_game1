@@ -72,8 +72,7 @@ public class DialogueManager : MonoBehaviour
                 
             if (my_hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode1.name))
             {
-                my_LoseItem(my_losesNode1);
-                my_AddItem(my_itemToAddNode1);
+                if (my_losesNode1 !=null){my_LoseItem(my_losesNode1); }                my_AddItem(my_itemToAddNode1);
                 active = responseNodeOne; /// this isn't actually changing the active?
                 dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
                 dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
@@ -94,7 +93,7 @@ public class DialogueManager : MonoBehaviour
            if (my_hasItemNode2 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode2.name))
 
            {
-               my_LoseItem(my_losesNode2);
+               if (my_losesNode2 !=null){my_LoseItem(my_losesNode2); }
                my_AddItem(my_itemToAddNode2);
                active = responseNodeTwo;
                dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;

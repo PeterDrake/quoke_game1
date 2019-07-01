@@ -6341,7 +6341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d14b4fe33e9f4dcca4aba17c8601586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDialogue: {fileID: 11400000, guid: 7fc98bc37c11841b89ecd98fa8ebab5b, type: 2}
+  mainDialogue: {fileID: 11400000, guid: 9618bc752681647979cc3018febf8046, type: 2}
   newHead: {fileID: 11400000, guid: 6d844b6c02d91453b8345909e57475dd, type: 2}
   dialogueCanvas: {fileID: 2030455250}
   canvasEnabler: {fileID: 1383464898}
