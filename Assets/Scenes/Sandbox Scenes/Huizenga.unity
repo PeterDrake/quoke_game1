@@ -1297,6 +1297,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathScreen: {fileID: 210924690}
+  end: {fileID: 0}
+  level: {fileID: 0}
 --- !u!1 &250560334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6853,8 +6855,12 @@ MonoBehaviour:
   responseNodeTwo: {fileID: 0}
   dialogueEnabler: {fileID: 1383464898}
   newHead: {fileID: 11400000, guid: fa7fd2b6ae1cb4bc6b676a27b04b3345, type: 2}
-  my_itemToAdd: {fileID: 0}
-  my_hasItem: {fileID: 0}
+  my_itemToAddNode1: {fileID: 0}
+  my_hasItemNode1: {fileID: 0}
+  my_itemToAddNode2: {fileID: 0}
+  my_hasItemNode2: {fileID: 0}
+  my_losesNode1: {fileID: 0}
+  my_losesNode2: {fileID: 0}
   my_targetInventory: {fileID: 890900705}
   eventTracker: {fileID: 917322778}
 --- !u!223 &2030455255 stripped

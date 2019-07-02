@@ -23,4 +23,6 @@ public class Dialogue : ScriptableObject
     public InventoryItem PlayerReceivesNode2; 
     public InventoryItem DoesPlayerHaveNode1;
     public InventoryItem DoesPlayerHaveNode2;
+    public InventoryItem PlayerLosesNode1;
+    public InventoryItem PlayerLosesNode2;
 }
