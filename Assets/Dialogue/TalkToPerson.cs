@@ -12,6 +12,7 @@ public class TalkToPerson : MonoBehaviour
     public Dialogue newHead;
     public GameObject dialogueCanvas;
     public GameObject canvasEnabler;
+    public GameObject interactNotifier;
     private bool head_flag;
 
     private bool isColliding;
@@ -37,6 +38,23 @@ public class TalkToPerson : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         isColliding = false;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            interactNotifier.SetActive(true);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            interactNotifier.SetActive(false);
+ 
+        }
     }
 
     private void OnTriggerStay(Collider other) // this is triggering it too much.. So Iscolliding/Reset make sure we avoid duplicate calls
