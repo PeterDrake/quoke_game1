@@ -17,8 +17,6 @@ namespace MoreMountains.InventoryEngine
         public InventorySlot my_inventorySlot;
         private Inventory my_inventory;
 
-		
-
         private Inventory[] my_invent_list;
         private int my_index;
         private InventoryItem my_item;

@@ -34,6 +34,11 @@ public class DeathGas : MonoBehaviour
         
     }
 
+    /* After the EarthQuake, checks to see if the player has collided with the gas
+     If they have the wrench in their inventory, the gas is turned off 
+     Otherwise, the player dies
+     
+     */
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

@@ -23,6 +23,9 @@ public class InvisibleObject : MonoBehaviour
         
     }
     
+    /* If the player is under any of these roofs, make the ceiling transparent
+     * Make it opaque otherwise
+     */
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
