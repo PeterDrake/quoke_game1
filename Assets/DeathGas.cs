@@ -21,10 +21,11 @@ public class DeathGas : MonoBehaviour
     private bool gasOff = false;
 
     // Start is called before the first frame update
+    
+    /*initialize the length of the inventory*/
     void Start()
     {
         mainNum = main.GetComponent<Inventory>().Content.Length;
-        starterNum = starter.GetComponent<Inventory>().Content.Length;
        
     }
 
@@ -50,44 +51,43 @@ public class DeathGas : MonoBehaviour
                 gasOff = true;
                 //break;
             }
-            
-           /* 
-            for (int i = 0; i < mainNum; i++)
-            {
-                if (main.GetComponent<Inventory>().Content.ElementAt(i))
-                {
-                    // Debug.Log(main.GetComponent<Inventory>().Content.ElementAt(i));
-                    if (main.GetComponent<Inventory>().Content.ElementAt(i).Prefab.CompareTag("Wrench"))
-                    {
-                        gas.GetComponent<BlinkingObject>().my_blink = mat;
-                        Debug.Log("You have a wrench in your inventory");
-                        gasOff = true;
-                        break;
-                    }
-                }
-
-            }
-            
-
-            if (gasOff == false)
-            {
-                for (int i = 0; i < starterNum; i++)
-                {
-                    if (starter.GetComponent<Inventory>().Content.ElementAt(i))
-                    {
-                        if (starter.GetComponent<Inventory>().Content.ElementAt(i).Prefab.CompareTag("Wrench"))
-                        {
-                            gas.GetComponent<BlinkingObject>().my_blink = mat;
-                            Debug.Log("You have a wrench in your starter inventory");
-                            gasOff = true;
-                            break;
-
-                        }
-                    }
-
-                }
-            }
-            */
+            /* 
+             for (int i = 0; i < mainNum; i++)
+             {
+                 if (main.GetComponent<Inventory>().Content.ElementAt(i))
+                 {
+                     // Debug.Log(main.GetComponent<Inventory>().Content.ElementAt(i));
+                     if (main.GetComponent<Inventory>().Content.ElementAt(i).Prefab.CompareTag("Wrench"))
+                     {
+                         gas.GetComponent<BlinkingObject>().my_blink = mat;
+                         Debug.Log("You have a wrench in your inventory");
+                         gasOff = true;
+                         break;
+                     }
+                 }
+ 
+             }
+             
+ 
+             if (gasOff == false)
+             {
+                 for (int i = 0; i < starterNum; i++)
+                 {
+                     if (starter.GetComponent<Inventory>().Content.ElementAt(i))
+                     {
+                         if (starter.GetComponent<Inventory>().Content.ElementAt(i).Prefab.CompareTag("Wrench"))
+                         {
+                             gas.GetComponent<BlinkingObject>().my_blink = mat;
+                             Debug.Log("You have a wrench in your starter inventory");
+                             gasOff = true;
+                             break;
+ 
+                         }
+                     }
+ 
+                 }
+             }
+             */
 
             if (gasOff == false)
             {

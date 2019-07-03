@@ -1,20 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using MoreMountains.TopDownEngine;
 using UnityEngine.EventSystems;
 using UnityEngine;
+//using MoreMountains.Tools;
+//using MoreMountains.Feedbacks;
+//using MoreMountains.FeedbacksForThirdParty;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class CharacterAttach : MonoBehaviour
 {
-    Character _character;
-    
-//    public GameObject hotDog;
-//    public GameObject suspenders;
+
     public Character[] players;
     public GameObject levelManager;
+    private bool selected = false;
+    private Character _character;
     private string buttonName;
     private int numPlayers;
     
@@ -22,14 +26,16 @@ public class CharacterAttach : MonoBehaviour
     void Start()
     {
         numPlayers = players.Length;
+
     }
 
+    
     // Update is called once per frame
     void Update()
     {
         
     }
-//Assign a character to a name
+    /*Assign a character to a name */
     public void Assign()
     {
 //        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
@@ -41,7 +47,9 @@ public class CharacterAttach : MonoBehaviour
         {
             if (players[i].transform.name == buttonName)
             {
-                _character = players.ElementAt(i);
+                _character = players[i];
+                //Debug.Log("does this work");
+            //    levelManager.GetComponent<LevelManager>().PlayerPrefabs[0] = players[i];
 //                Debug.Log(players[i].transform.name);
 //                Debug.Log(players[i].GetType());
 //                Debug.Log(players[i]);
@@ -55,13 +63,24 @@ public class CharacterAttach : MonoBehaviour
         //selectB.SetActive(true);
     }
     
-//Selecting the character    
+    /*Selecting the character and passing it to the level manager   */
     public void Selection()
     {
+//        C1 c1inst=new C1()
+//        Method m = c1inst.getClass().getDeclaredMethod("printing", null);
+//        m.setAccessible(true);
+//        m.invoke(t, null);
+        
         levelManager.GetComponent<LevelManager>().PlayerPrefabs[0] = _character;
         Debug.Log(levelManager.GetComponent<LevelManager>().PlayerPrefabs[0]);
-
+        selected = true;
+//        Debug.Log("I work");
+////       DontDestroyOnLoad(_character);
+////        SceneManager.LoadScene("Liza");
 
     }
+    
+  
+
      
 }
