@@ -18,10 +18,13 @@ namespace MoreMountains.FeedbacksForThirdParty
         public float frequency;
         public float duration;
         public GameObject my_bookshelf;
+        public GameObject light1;
+        private Rigidbody lightRB;
         
         // Start is called before the first frame update
         void Start()
         {
+            //lightRB= light1.GetComponent<Rigidbody>();
 
         }
 
@@ -41,11 +44,25 @@ namespace MoreMountains.FeedbacksForThirdParty
                     //testing bookshelf
                     my_bookshelf.GetComponent<MyFallingObject>().Fall();
                     
+                 //   Debug.Log(lightRB.GetComponent<Rigidbody>().useGravity);
+                    light1.GetComponent<Rigidbody>().useGravity = true;
+                 
+                    //light1.GetComponent<Rigidbody>().AddRelativeForce(Vector3.down*2);
+                    Debug.Log("light fallen");
+
 
                 }
             }
+            
         }
 
-       
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                light1.GetComponent<Rigidbody>().useGravity = false;
+
+            }
+        }
     }
 }
