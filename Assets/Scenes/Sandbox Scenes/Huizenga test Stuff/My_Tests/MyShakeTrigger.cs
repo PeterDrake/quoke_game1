@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using Boo.Lang;
 using UnityEngine;
 using Cinemachine;
@@ -17,9 +18,14 @@ namespace MoreMountains.FeedbacksForThirdParty
         public float amplitude;
         public float frequency;
         public float duration;
+        public GameObject gas;
         public GameObject my_bookshelf;
         public GameObject light1;
+        public Material mat;
+        
         private Rigidbody lightRB;
+        
+
         
         // Start is called before the first frame update
         void Start()
@@ -47,8 +53,10 @@ namespace MoreMountains.FeedbacksForThirdParty
                  //   Debug.Log(lightRB.GetComponent<Rigidbody>().useGravity);
                     light1.GetComponent<Rigidbody>().useGravity = true;
                  
+                    gas.GetComponent<BlinkingObject>().my_blink = mat;
+
                     //light1.GetComponent<Rigidbody>().AddRelativeForce(Vector3.down*2);
-                    Debug.Log("light fallen");
+//                    Debug.Log("light fallen");
 
 
                 }
@@ -56,13 +64,6 @@ namespace MoreMountains.FeedbacksForThirdParty
             
         }
 
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                light1.GetComponent<Rigidbody>().useGravity = false;
-
-            }
-        }
+        
     }
 }

@@ -36,10 +36,20 @@ public class DroppingObjects : MonoBehaviour
         }
         else
         {
-//            rb.useGravity = false;
-//            GetComponent<Rigidbody>().useGravity = false;
+               GetComponent<Rigidbody>().useGravity = false;
         }
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Ground"))
+        {
+            GetComponent<Rigidbody>().useGravity = false;
+            Debug.Log("On the ground1");
+            Debug.Log(GetComponent<Rigidbody>().useGravity);
+
+
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -47,7 +57,7 @@ public class DroppingObjects : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             GetComponent<Rigidbody>().useGravity = false;
-            
+            Debug.Log("On the ground2");
         }
 
         else if (other.gameObject.CompareTag("Player"))
@@ -55,5 +65,15 @@ public class DroppingObjects : MonoBehaviour
             health.GetComponent<Slider>().value -= 5f;
         }
       
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            GetComponent<Rigidbody>().useGravity = false;
+            Debug.Log("On the ground3");
+
+        }
     }
 }

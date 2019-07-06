@@ -30,16 +30,24 @@ public class InvisibleObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player entered the trigger");
+          //  Debug.Log("Player entered the trigger");
             roof.GetComponent<Renderer>().material = transparentMaterial;
         }
     }
+      void OnTriggerStay(Collider other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                //Debug.Log("Player entered the trigger");
+                roof.GetComponent<Renderer>().material = transparentMaterial;
+            }
+        }
 
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player exited the trigger");
+            //Debug.Log("Player exited the trigger");
             roof.GetComponent<Renderer>().material = opaqueMaterial;
         }
     }

@@ -15,7 +15,8 @@ public class DeathGas : MonoBehaviour
     public GameObject gas;
     public Material mat;
     public GameObject EventTracker;
-    
+    public GameObject win;
+    public Text death;
     private int mainNum;
     private int starterNum;
     private bool gasOff = false;
@@ -47,51 +48,18 @@ public class DeathGas : MonoBehaviour
             if (EventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Wrench"))
             {
                 gas.GetComponent<BlinkingObject>().my_blink = mat;
-                Debug.Log("You have a wrench in your inventory");
+            //    Debug.Log("You have a wrench in your inventory");
+                win.SetActive(true);
                 gasOff = true;
                 //break;
             }
-            /* 
-             for (int i = 0; i < mainNum; i++)
-             {
-                 if (main.GetComponent<Inventory>().Content.ElementAt(i))
-                 {
-                     // Debug.Log(main.GetComponent<Inventory>().Content.ElementAt(i));
-                     if (main.GetComponent<Inventory>().Content.ElementAt(i).Prefab.CompareTag("Wrench"))
-                     {
-                         gas.GetComponent<BlinkingObject>().my_blink = mat;
-                         Debug.Log("You have a wrench in your inventory");
-                         gasOff = true;
-                         break;
-                     }
-                 }
- 
-             }
-             
- 
-             if (gasOff == false)
-             {
-                 for (int i = 0; i < starterNum; i++)
-                 {
-                     if (starter.GetComponent<Inventory>().Content.ElementAt(i))
-                     {
-                         if (starter.GetComponent<Inventory>().Content.ElementAt(i).Prefab.CompareTag("Wrench"))
-                         {
-                             gas.GetComponent<BlinkingObject>().my_blink = mat;
-                             Debug.Log("You have a wrench in your starter inventory");
-                             gasOff = true;
-                             break;
- 
-                         }
-                     }
- 
-                 }
-             }
-             */
+            
 
             if (gasOff == false)
             {
                 {
+                    death.text = "YOU DIED OF A GAS EXPLOSION :(";
+                    Debug.Log(death.text);
                     health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
                 }
                 
