@@ -16,7 +16,6 @@ public class TransparentTable : MonoBehaviour
     {
         if (!transparent && other.CompareTag("Player"))
         {
-            Debug.Log("Player entered the trigger");
             Logger.Instance.Log("Player got under table.");
             table.GetComponent<Renderer>().material = transparentMaterial;
             transparent = true;
@@ -27,7 +26,6 @@ public class TransparentTable : MonoBehaviour
     {
         if (transparent && other.CompareTag("Player"))
         {
-            Debug.Log("Player exited the trigger");
             Logger.Instance.Log("Player got out from under table.");
             table.GetComponent<Renderer>().material = opaqueMaterial;
             transparent = false;
