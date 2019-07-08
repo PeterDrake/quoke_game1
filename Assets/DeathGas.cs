@@ -11,14 +11,12 @@ public class DeathGas : MonoBehaviour
     public Slider health;
 
     public Inventory main;
-    public Inventory starter;
     public GameObject gas;
     public Material mat;
     public GameObject EventTracker;
     public GameObject win;
     public Text death;
     private int mainNum;
-    private int starterNum;
     private bool gasOff = false;
 
     // Start is called before the first frame update
@@ -48,7 +46,7 @@ public class DeathGas : MonoBehaviour
             if (EventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Wrench"))
             {
                 gas.GetComponent<BlinkingObject>().my_blink = mat;
-            //    Debug.Log("You have a wrench in your inventory");
+            //  Debug.Log("You have a wrench in your inventory");
                 win.SetActive(true);
                 gasOff = true;
                 //break;
