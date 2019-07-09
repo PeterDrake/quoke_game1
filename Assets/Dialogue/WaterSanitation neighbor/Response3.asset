@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
+  m_Name: Response3
+  m_EditorClassIdentifier: 
+  NPCname: Gee
+  NPCimage: {fileID: 21300004, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
+  NPCtext: I see, well I have this pamphlet, from that NET person
+  ResponseOne: Oh that could definitely help
+  nextNodeOne: {fileID: 0}
+  ResponseTwo: Look at you and your surprises, that will be useful.
+  nextNodeTwo: {fileID: 0}
+  PlayerReceivesNode1: {fileID: 11400000, guid: 4529c30e923a79f4d85e3fbb4ceb3699,
+    type: 2}
+  PlayerReceivesNode2: {fileID: 11400000, guid: 4529c30e923a79f4d85e3fbb4ceb3699,
+    type: 2}
+  DoesPlayerHaveNode1: {fileID: 0}
+  DoesPlayerHaveNode2: {fileID: 0}
+  PlayerLosesNode1: {fileID: 0}
+  PlayerLosesNode2: {fileID: 0}
