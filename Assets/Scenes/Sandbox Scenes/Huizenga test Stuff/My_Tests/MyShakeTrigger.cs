@@ -24,13 +24,20 @@ namespace MoreMountains.FeedbacksForThirdParty
         public Material mat;
         
         private Rigidbody lightRB;
+
+        public GameObject InfoEnabler;
+        public GameObject EventTracker;
+        public String textToDisplay1;
+
+        public string textToDisplay2;
         
 
-        
+
         // Start is called before the first frame update
         void Start()
         {
             //lightRB= light1.GetComponent<Rigidbody>();
+            StartCoroutine(QuakeDown());
 
         }
 
@@ -40,27 +47,40 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         }
 
-        private void OnTriggerEnter(Collider other)
+        public IEnumerator QuakeDown()
         {
-            if (other.gameObject.CompareTag("Player"))
-            {
-                {
-                    my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration,amplitude, frequency);
+           yield return new WaitForSecondsRealtime(10f);
+           quakeTrigger();
+           yield return new WaitForSeconds(10f);
+           //InfoEnabler.SetActive(false);
+           EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
+
+
+        }
+        
+        
+        
+
+        private void quakeTrigger()
+        {
+            InfoEnabler.SetActive(true);
+            EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay1);
+            my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration,amplitude, frequency);
                     
-                    //testing bookshelf
-                    my_bookshelf.GetComponent<MyFallingObject>().Fall();
+            my_bookshelf.GetComponent<MyFallingObject>().Fall();
+                    
+                    
                     
                  //   Debug.Log(lightRB.GetComponent<Rigidbody>().useGravity);
-                    light1.GetComponent<Rigidbody>().useGravity = true;
+                    //light1.GetComponent<Rigidbody>().useGravity = true;
                  
-                    gas.GetComponent<BlinkingObject>().my_blink = mat;
+                  //  gas.GetComponent<BlinkingObject>().my_blink = mat;
 
                     //light1.GetComponent<Rigidbody>().AddRelativeForce(Vector3.down*2);
 //                    Debug.Log("light fallen");
 
 
-                }
-            }
+                
             
         }
 
