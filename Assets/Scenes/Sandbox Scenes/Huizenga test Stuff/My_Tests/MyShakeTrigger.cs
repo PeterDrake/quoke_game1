@@ -18,18 +18,20 @@ namespace MoreMountains.FeedbacksForThirdParty
         public float amplitude;
         public float frequency;
         public float duration;
-        public GameObject gas;
+       // public GameObject gas;
         public GameObject my_bookshelf;
-        public GameObject light1;
-        public Material mat;
+       // public GameObject light1;
+        //public Material mat;
         
-        private Rigidbody lightRB;
+       // private Rigidbody lightRB;
 
         public GameObject InfoEnabler;
         public GameObject EventTracker;
         public String textToDisplay1;
 
         public string textToDisplay2;
+
+        public GameObject fallingLights;
         
 
 
@@ -49,7 +51,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public IEnumerator QuakeDown()
         {
-           yield return new WaitForSecondsRealtime(10f);
+           yield return new WaitForSeconds(15f);
            quakeTrigger();
            yield return new WaitForSeconds(10f);
            //InfoEnabler.SetActive(false);
@@ -68,20 +70,21 @@ namespace MoreMountains.FeedbacksForThirdParty
             my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration,amplitude, frequency);
                     
             my_bookshelf.GetComponent<MyFallingObject>().Fall();
-                    
-                    
-                    
-                 //   Debug.Log(lightRB.GetComponent<Rigidbody>().useGravity);
-                    //light1.GetComponent<Rigidbody>().useGravity = true;
-                 
-                  //  gas.GetComponent<BlinkingObject>().my_blink = mat;
+            fallingLights.GetComponent<QuakeFurniture>().Drop();
 
-                    //light1.GetComponent<Rigidbody>().AddRelativeForce(Vector3.down*2);
+
+
+            //   Debug.Log(lightRB.GetComponent<Rigidbody>().useGravity);
+            //light1.GetComponent<Rigidbody>().useGravity = true;
+
+            //  gas.GetComponent<BlinkingObject>().my_blink = mat;
+
+            //light1.GetComponent<Rigidbody>().AddRelativeForce(Vector3.down*2);
 //                    Debug.Log("light fallen");
 
 
-                
-            
+
+
         }
 
         

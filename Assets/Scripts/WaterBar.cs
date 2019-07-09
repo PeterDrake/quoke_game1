@@ -12,10 +12,11 @@ public class WaterBar : MonoBehaviour
     
     public float waterValue=100;
     public float frame=-100;
+
     // Start is called before the first frame update
     void Start()
     {
-        frame = -500;
+        frame = -50;
         waterValue = 100;
     }
 
@@ -29,7 +30,7 @@ public class WaterBar : MonoBehaviour
 
         else
         {
-           // waterValue -= .05f;
+            waterValue -= -.02f;
             waterSlide.value = waterSlide.GetComponent<WaterBar>().waterValue;
         }
         
