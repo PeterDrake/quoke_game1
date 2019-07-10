@@ -41220,6 +41220,7 @@ MonoBehaviour:
   health: {fileID: 396833523}
   DeathScreen: {fileID: 2058319912}
   death: {fileID: 791766140}
+  isEnabled: 0
 --- !u!54 &1650371934
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -51141,7 +51142,7 @@ MonoBehaviour:
   my_losesNode1: {fileID: 0}
   my_losesNode2: {fileID: 0}
   my_targetInventory: {fileID: 890900705}
-  eventTracker: {fileID: 0}
+  eventTracker: {fileID: 863599052}
 --- !u!223 &2030455255 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 6827117012630361256, guid: ed5905ff7ae1344cbb10cb1e4f8362c2,

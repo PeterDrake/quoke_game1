@@ -68,44 +68,51 @@ public class DialogueManager : MonoBehaviour
     public void NextNodeR1()
     {
         // button click should change the active node to the next node... 
-        if (responseNodeOne != null){
-                
-            if (my_hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode1.name))
-            {
+
+        if (my_hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode1.name))
+        {
                 if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
                 if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
-                active = responseNodeOne; 
-                dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
-                dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
-                Refresh();
-            }
+
+                if (responseNodeOne != null)
+                {
+
+                    active = responseNodeOne;
+                    dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
+                    dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
+                    Refresh();
+                }
+                else
+                {
+                    Deactivate();
+                }
         }
-        else
-        {
-            Deactivate();
-        }
+       
     }
     
     public void NextNodeR2()
     {
-        // button click should change the active node to the next node
-        if (responseNodeTwo != null)
-        {
-           if (my_hasItemNode2 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode2.name))
 
-           {
+
+        if (my_hasItemNode2 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode2.name)) 
+            {
                if (my_losesNode2 != null){my_LoseItem(my_losesNode2); }
                if (my_itemToAddNode2 != null){my_AddItem(my_itemToAddNode2); }
-               active = responseNodeTwo;
-               dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
-               dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
-               Refresh();
-           }
-        }
-        else
-        {
-           Deactivate();
-        }
+
+               if (responseNodeTwo != null)
+               {
+                   active = responseNodeTwo;
+                   dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
+                   dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
+                   Refresh();
+               }
+               else
+               {
+                   Deactivate();
+               }
+            }
+        
+        
     }
     
     public void NewHead ()

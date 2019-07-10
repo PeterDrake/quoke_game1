@@ -16,6 +16,7 @@ public class QuakeFurniture : MonoBehaviour
 
     public IEnumerator DropEm()
     {
+        yield return new WaitForSeconds(3f);
         while (i < falling_objects.Length)
         {
             falling_objects[i].SetActive(true);

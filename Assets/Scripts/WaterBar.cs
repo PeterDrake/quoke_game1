@@ -30,7 +30,7 @@ public class WaterBar : MonoBehaviour
 
         else
         {
-            waterValue -= -.02f;
+            waterValue -= .01f;
             waterSlide.value = waterSlide.GetComponent<WaterBar>().waterValue;
         }
         
