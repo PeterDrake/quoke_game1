@@ -3,6 +3,7 @@ using System.Collections;
 using MoreMountains.Tools;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine.UI;
 using MoreMountains.InventoryEngine;
 
@@ -15,11 +16,14 @@ namespace MoreMountains.InventoryEngine
 
         public GameObject my_selectorDisplay;
         public InventorySlot my_inventorySlot;
+        public GameObject eventTracker;
+        public GameObject bookcase;
         private Inventory my_inventory;
 
         private Inventory[] my_invent_list;
         private int my_index;
         private InventoryItem my_item;
+        
 
         // Start is called before the first frame update
         void Start()
@@ -66,7 +70,12 @@ namespace MoreMountains.InventoryEngine
                 
                 GetComponent<InventoryInputManager>().CloseInventory();
                 my_selectorDisplay.SetActive(false);
+                if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("SecureBookcase"))
+                {
+                    bookcase.GetComponent<SecureBookshelf>().SecureShelf();
+                }
             }
         }
+        
     }
 }
