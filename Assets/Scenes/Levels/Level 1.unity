@@ -47532,6 +47532,7 @@ GameObject:
   - component: {fileID: 1908103258}
   - component: {fileID: 1908103261}
   - component: {fileID: 1908103262}
+  - component: {fileID: 1908103263}
   m_Layer: 0
   m_Name: Bob
   m_TagString: Untagged
@@ -47644,6 +47645,20 @@ MonoBehaviour:
   InfoEnabler: {fileID: 7679609122018319076}
   EventTracker: {fileID: 863599052}
   textToDisplay: Turn off the gas
+--- !u!114 &1908103263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908103256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a06cb51499e94a73b6dbbe491f8bf7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  death: {fileID: 791766140}
+  health: {fileID: 396833523}
 --- !u!1001 &1913090512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54070,6 +54085,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UiScaleMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045381470870666486, guid: ed5905ff7ae1344cbb10cb1e4f8362c2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2030455252}
+    - target: {fileID: 8045381470870666486, guid: ed5905ff7ae1344cbb10cb1e4f8362c2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Deactivate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed5905ff7ae1344cbb10cb1e4f8362c2, type: 3}

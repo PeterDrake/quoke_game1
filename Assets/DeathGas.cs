@@ -54,7 +54,7 @@ public class DeathGas : MonoBehaviour
                     //break;
                 }
 
-
+/*
                 if (gasOff == false)
                 {
                     {
@@ -64,6 +64,7 @@ public class DeathGas : MonoBehaviour
                     }
 
                 }
+                */
             }
 
         }
