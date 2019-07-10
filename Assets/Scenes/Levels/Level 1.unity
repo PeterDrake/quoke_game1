@@ -11361,15 +11361,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawContentInInspector: 0
   Content:
-  - {fileID: 11400000, guid: af2c14f3bde655947aca0d6a7b8dbeb8, type: 2}
-  - {fileID: 11400000, guid: 2c96dc824a5c07d499919dd781334700, type: 2}
-  - {fileID: 11400000, guid: d8a5413d427069e4a8597776d082a123, type: 2}
+  - {fileID: 11400000, guid: 26d77a415019043fd8fed8943ab9c703, type: 2}
+  - {fileID: 11400000, guid: 72c3abb181b2e4170b48968de7c83d91, type: 2}
+  - {fileID: 11400000, guid: 5a4b535f323ee483b8312eefb4407f8c, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   InventoryType: 0
   TargetTransform: {fileID: 0}
-  Persistent: 1
+  Persistent: 0
   ResetThisInventorySaveOnStart: 0
 --- !u!1001 &433233052
 PrefabInstance:
@@ -23352,8 +23352,8 @@ MonoBehaviour:
   - {fileID: 0}
   InventoryType: 0
   TargetTransform: {fileID: 1618121292}
-  Persistent: 1
-  ResetThisInventorySaveOnStart: 0
+  Persistent: 0
+  ResetThisInventorySaveOnStart: 1
 --- !u!4 &890900706
 Transform:
   m_ObjectHideFlags: 0
