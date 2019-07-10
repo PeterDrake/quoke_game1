@@ -1394,6 +1394,7 @@ MonoBehaviour:
   table: {fileID: 1482066235}
   opaqueMaterial: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
   transparentMaterial: {fileID: 2100000, guid: 2ad08b4bfd3e04caf814a0a4bbde5fa5, type: 2}
+  transparent: 0
 --- !u!1 &1588492259
 GameObject:
   m_ObjectHideFlags: 0
