@@ -49,13 +49,17 @@ namespace MoreMountains.InventoryEngine
             my_inventorySlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
             my_index = my_inventorySlot.Index;
             my_item = my_inventorySlot.ParentInventoryDisplay.TargetInventory.Content[my_index];
-            //Debug.Log(my_item);
+            
+            Debug.Log(my_item.name);
+            
             my_invent_list = FindObjectsOfType<Inventory>();
             my_inventory = my_invent_list[1];
             //Debug.Log(my_inventory);
             my_inventory.AddItem(my_item,1);
             my_inventorySlot.DisableSlot();
             //make a counter for the number of items selected... select 2 out of 4, etc. 
+            
+            
 			
         }
 

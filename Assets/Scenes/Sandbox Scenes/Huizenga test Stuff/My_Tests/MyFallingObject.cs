@@ -32,7 +32,7 @@ public class MyFallingObject : MonoBehaviour
         {
             Debug.Log("Player Hit");
             death.text = "Your bookcase crashed you to death! :(";
-            health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
+           // health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
 //          DeathScreen.GetComponent<Death>().PlayerDeath();
 
         }
