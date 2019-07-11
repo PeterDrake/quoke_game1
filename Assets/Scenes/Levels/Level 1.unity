@@ -11362,8 +11362,8 @@ MonoBehaviour:
   DrawContentInInspector: 0
   Content:
   - {fileID: 11400000, guid: 26d77a415019043fd8fed8943ab9c703, type: 2}
-  - {fileID: 11400000, guid: 72c3abb181b2e4170b48968de7c83d91, type: 2}
   - {fileID: 11400000, guid: 5a4b535f323ee483b8312eefb4407f8c, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -26692,7 +26692,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 0.97417927, b: 0.928, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -47586,7 +47586,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0e0015bbc14f39f46b331e5daaa1ec98, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

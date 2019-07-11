@@ -19,7 +19,7 @@ MonoBehaviour:
   ResponseOne: Ok, thanks, take this chocolate bar
   nextNodeOne: {fileID: 11400000, guid: f0f8d784b5fda45dcadd4ed58927d772, type: 2}
   ResponseTwo: I already have one, thanks
-  nextNodeTwo: {fileID: 11400000, guid: f0f8d784b5fda45dcadd4ed58927d772, type: 2}
+  nextNodeTwo: {fileID: 0}
   PlayerReceivesNode1: {fileID: 11400000, guid: 26d77a415019043fd8fed8943ab9c703,
     type: 2}
   PlayerReceivesNode2: {fileID: 0}

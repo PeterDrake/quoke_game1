@@ -29,7 +29,7 @@ public class MyFallingObject : MonoBehaviour
 
     public IEnumerator BookshelfDeactivate()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         isEnabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
     }
