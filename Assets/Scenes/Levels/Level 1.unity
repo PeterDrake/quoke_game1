@@ -28801,6 +28801,8 @@ MonoBehaviour:
   selectionNumber: 1
   my_selectorDisplay: {fileID: 1057398008}
   my_inventorySlot: {fileID: 0}
+  eventTracker: {fileID: 863599052}
+  bookcase: {fileID: 0}
 --- !u!1 &1059560988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 2037af698594e6a4497fdcead2541d3c,

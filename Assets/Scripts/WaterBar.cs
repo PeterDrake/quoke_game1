@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Water;
 
 public class WaterBar : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class WaterBar : MonoBehaviour
     void Start()
     {
         frame = -50;
+        waterValue = 100;
 
     }
 
