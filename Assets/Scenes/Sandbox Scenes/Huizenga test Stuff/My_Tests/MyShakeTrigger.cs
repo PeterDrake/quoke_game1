@@ -35,6 +35,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         public GameObject enableDoors;
 
         public bool tableFlag = true;
+        public bool cheatQuake = false;
         
 
 
@@ -50,13 +51,24 @@ namespace MoreMountains.FeedbacksForThirdParty
         // Update is called once per frame
         void Update()
         {
-
+            if (Input.GetKeyDown("p"))
+            {
+               quakeTrigger();
+               cheatQuake = true;
+            }
         }
+        
+        
 
         public IEnumerator QuakeDown()
         {
            yield return new WaitForSeconds(15f);
-           quakeTrigger();
+           if (cheatQuake == false)
+           {
+               quakeTrigger();   
+           }
+
+
            //yield return new WaitForSeconds(10f);
            //InfoEnabler.SetActive(false);
            //EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
