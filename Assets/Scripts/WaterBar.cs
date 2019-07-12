@@ -6,6 +6,7 @@ using MoreMountains.InventoryEngine;
 //using NUnit.Framework.Internal.Commands;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Water;
 
 
 public class WaterBar : MonoBehaviour
@@ -13,10 +14,10 @@ public class WaterBar : MonoBehaviour
     public Slider waterSlide;
     
     public float waterValue=100;
+    public float rate = .01f;
 
     public int frame;
 
-    public float rate;
     
     public Text deathText;
 
@@ -53,6 +54,7 @@ public class WaterBar : MonoBehaviour
 //
 //            }
             waterValue -= rate;
+
             waterSlide.value = waterSlide.GetComponent<WaterBar>().waterValue;
         }
 
