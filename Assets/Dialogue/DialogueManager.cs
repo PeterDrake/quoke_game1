@@ -87,6 +87,10 @@ public class DialogueManager : MonoBehaviour
                     Deactivate();
                 }
         }
+        else
+        {
+            Debug.Log("you don't have" + my_hasItemNode1.name);
+        }
        
     }
     

@@ -39,11 +39,13 @@ public class QuakeFurniture : MonoBehaviour
             }
         }
         ////drop directly on players head
+        if (i == falling_objects.Length)
+        {
+            playerTransform = myPlayer.transform.position;
+            playerKiller.transform.position = playerTransform + new Vector3(0f, 3f, 0f);
+            playerKiller.SetActive(true);
+        }
 
-        playerTransform = myPlayer.transform.position;
-        playerKiller.transform.position = playerTransform +  new Vector3(0f,3f,0f);
-        playerKiller.SetActive(true);
-        
 
     }
 }
