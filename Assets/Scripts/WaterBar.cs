@@ -17,7 +17,6 @@ public class WaterBar : MonoBehaviour
     void Start()
     {
         frame = -50;
-        waterValue = 100;
     }
 
     // Update is called once per frame
