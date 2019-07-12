@@ -32,6 +32,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         public string textToDisplay2;
 
         public GameObject fallingLights;
+        public GameObject enableDoors;
         
 
 
@@ -56,6 +57,8 @@ namespace MoreMountains.FeedbacksForThirdParty
            yield return new WaitForSeconds(10f);
            //InfoEnabler.SetActive(false);
            EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
+           enableDoors.SetActive(false);
+           
 
 
         }
