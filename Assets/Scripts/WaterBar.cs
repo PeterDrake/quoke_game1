@@ -11,12 +11,21 @@ public class WaterBar : MonoBehaviour
     public GameObject water;
     
     public float waterValue=100;
-    public int frame=-100;
+
+    public int frame;
+    
+    // Start is called before the first frame update
+//    void Start()
+//    {
+//        frame = -1000;
+//=======
+//    public float frame=-100;
+
     // Start is called before the first frame update
     void Start()
     {
-        frame = -1000;
-        waterValue = 100;
+        frame = -50;
+
     }
 
     // Update is called once per frame
@@ -30,15 +39,16 @@ public class WaterBar : MonoBehaviour
         }
         else
         {
-            if (waterValue <50)
-            {
-                waterValue -= .005f;
-            }
-            else
-            {
-                waterValue -= .0005f;
-
-            }
+//            if (waterValue <50)
+//            {
+//                waterValue -= .005f;
+//            }
+//            else
+//            {
+//                waterValue -= .0005f;
+//
+//            }
+            waterValue -= .01f; //figure out the water draining speed
             waterSlide.value = waterSlide.GetComponent<WaterBar>().waterValue;
         }
         

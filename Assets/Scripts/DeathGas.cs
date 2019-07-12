@@ -39,28 +39,32 @@ public class DeathGas : MonoBehaviour
      Otherwise, the player dies
      
      */
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (EventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Wrench"))
+            if (Input.GetKeyDown("e"))
             {
-                gas.GetComponent<BlinkingObject>().my_blink = mat;
-            //  Debug.Log("You have a wrench in your inventory");
-                win.SetActive(true);
-                gasOff = true;
-                //break;
-            }
-            
-
-            if (gasOff == false)
-            {
+                if (EventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Wrench"))
                 {
-                    death.text = "YOU DIED OF A GAS EXPLOSION :(";
-                    Debug.Log(death.text);
-                    health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
+                    gas.GetComponent<BlinkingObject>().my_blink = mat;
+                    //  Debug.Log("You have a wrench in your inventory");
+                    win.SetActive(true);
+                    gasOff = true;
+                    //break;
                 }
-                
+
+/*
+                if (gasOff == false)
+                {
+                    {
+                        death.text = "YOU DIED OF A GAS EXPLOSION :(";
+                        Debug.Log(death.text);
+                        health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
+                    }
+
+                }
+                */
             }
 
         }

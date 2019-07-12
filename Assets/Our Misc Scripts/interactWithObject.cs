@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class interactWithObject : MonoBehaviour
 {
+
+    public GameObject interactNotifier;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +17,28 @@ public class interactWithObject : MonoBehaviour
     {
         
     }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            interactNotifier.SetActive(true);
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            interactNotifier.SetActive(false);
+ 
+        }
+    }
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            
             if (Input.GetKeyDown("e"))
             {
                 Debug.Log("This has been activated");

@@ -16,9 +16,9 @@ MonoBehaviour:
   NPCimage: {fileID: 0}
   NPCtext: I think its your house, here take this wrench and go turn your gas valve
     off
-  ResponseOne: Ok, I'll figure it out.
+  ResponseOne: Ok, thanks, take this chocolate bar
   nextNodeOne: {fileID: 11400000, guid: f0f8d784b5fda45dcadd4ed58927d772, type: 2}
-  ResponseTwo: I already have on, thanks
+  ResponseTwo: I already have one, thanks
   nextNodeTwo: {fileID: 0}
   PlayerReceivesNode1: {fileID: 11400000, guid: 26d77a415019043fd8fed8943ab9c703,
     type: 2}
@@ -26,3 +26,5 @@ MonoBehaviour:
   DoesPlayerHaveNode1: {fileID: 0}
   DoesPlayerHaveNode2: {fileID: 11400000, guid: 26d77a415019043fd8fed8943ab9c703,
     type: 2}
+  PlayerLosesNode1: {fileID: 11400000, guid: 5a4b535f323ee483b8312eefb4407f8c, type: 2}
+  PlayerLosesNode2: {fileID: 0}
