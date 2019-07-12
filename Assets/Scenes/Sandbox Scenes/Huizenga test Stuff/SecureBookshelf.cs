@@ -5,7 +5,10 @@ using UnityEngine.Assertions.Must;
 
 public class SecureBookshelf : MonoBehaviour
 {
+    public GameObject eventTracker;
     public GameObject protector;
+    public GameObject straps;
+    public GameObject mainInventory;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +23,11 @@ public class SecureBookshelf : MonoBehaviour
 
     public void SecureShelf()
     {
-        GetComponent<MyFallingObject>().thrust = 0;
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        protector.SetActive(true);
+           // Debug.Log("Secured");
+            straps.SetActive(true);
+            GetComponent<MyFallingObject>().thrust = 0;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            protector.SetActive(true);
+   
     }
 }

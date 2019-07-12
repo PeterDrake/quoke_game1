@@ -30,7 +30,7 @@ public class MyFallingObject : MonoBehaviour
     public IEnumerator BookshelfDeactivate()
     {
         yield return new WaitForSeconds(2f);
-        isEnabled = false;
+        isEnabled = false; 
         GetComponent<Rigidbody>().isKinematic = true;
     }
 
@@ -40,13 +40,14 @@ public class MyFallingObject : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (isEnabled)
-            {
-                Debug.Log("Player Hit");
-                death.text = "Your bookcase crushed you to death! :(";
-                health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
+             if (isEnabled)
+             {
+                 Debug.Log("Player Hit");
+                 death.text = "Your bookcase crushed you to death! :(";
+                 health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
+
 //          DeathScreen.GetComponent<Death>().PlayerDeath();
-            }
+             }
 
         }
 
