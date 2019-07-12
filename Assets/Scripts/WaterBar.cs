@@ -21,7 +21,7 @@ public class WaterBar : MonoBehaviour
     
     public Text deathText;
 
-//    public Inventory mainInventory;
+    public Inventory mainInventory;
 //
 //    private int wIndex;
 
@@ -64,10 +64,7 @@ public class WaterBar : MonoBehaviour
 
         }
 
-//        if (mainInventory.GetComponent<Inventory>().UseItem("Water"))
-//        {
-//            Debug.Log("there is water in the inventory");
-//        }
+
         
     }
 //    void OnTriggerEnter(Collider other)

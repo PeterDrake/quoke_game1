@@ -8325,8 +8325,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 927360740}
-        m_MethodName: Drop
+      - m_Target: {fileID: 927360741}
+        m_MethodName: Drink
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9761,6 +9761,7 @@ MonoBehaviour:
   waterSlide: {fileID: 1240251244}
   healthSlide: {fileID: 396833523}
   death: {fileID: 2058319912}
+  deathText: {fileID: 0}
 --- !u!1001 &397688251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23898,6 +23899,7 @@ GameObject:
   - component: {fileID: 927360737}
   - component: {fileID: 927360736}
   - component: {fileID: 927360740}
+  - component: {fileID: 927360741}
   m_Layer: 0
   m_Name: InventoryCanvas
   m_TagString: Untagged
@@ -24019,6 +24021,20 @@ MonoBehaviour:
   NextInvAltKey: joystick button 4
   PrevInvKey: page up
   PrevInvAltKey: joystick button 5
+--- !u!114 &927360741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927360735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c4292389b40c040bc6b6c96ff4c84a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainInventory: {fileID: 890900704}
+  water: {fileID: 1240251244}
 --- !u!1 &929211725 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: dd78ed3b02eee5e448492bbfc2ff538f,
@@ -31230,8 +31246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterSlide: {fileID: 1240251244}
   waterValue: 0
+  rate: 0.01
   frame: -100
-  rate: 0.001
   deathText: {fileID: 791766140}
   mainInventory: {fileID: 890900705}
 --- !u!1 &1240671495 stripped
@@ -34563,6 +34579,10 @@ MonoBehaviour:
   - {fileID: 1597306536}
   - {fileID: 183978073}
   - {fileID: 732120912}
+  fallRate: 0.5
+  underTable: 1
+  myPlayer: {fileID: 0}
+  playerKiller: {fileID: 0}
 --- !u!1001 &1376160753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48051,26 +48071,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 0.7660445
       objectReference: {fileID: 0}
-    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.6427876
-      objectReference: {fileID: 0}
-    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7660445
-      objectReference: {fileID: 0}
-    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 20515230329627212, guid: 9edcf7e494cf3e640b18cb7495fb179a,
         type: 3}
       propertyPath: near clip plane
@@ -48155,6 +48155,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_DeadZoneHeight
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.6427876
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7660445
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718494834424670, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9edcf7e494cf3e640b18cb7495fb179a, type: 3}
@@ -49641,7 +49661,11 @@ MonoBehaviour:
   my_losesNode1: {fileID: 0}
   my_losesNode2: {fileID: 0}
   my_targetInventory: {fileID: 890900705}
-  eventTracker: {fileID: 0}
+  eventTracker: {fileID: 863599052}
+  Node1InvalidEnabler: {fileID: 0}
+  node1InvalidText: {fileID: 0}
+  Node2InvalidEnabler: {fileID: 0}
+  node2InvalidText: {fileID: 0}
 --- !u!223 &2030455255 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 6827117012630361256, guid: ed5905ff7ae1344cbb10cb1e4f8362c2,
