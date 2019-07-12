@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,8 @@ public class HealthBar : MonoBehaviour
     public Slider waterSlide;
     public Slider healthSlide;
     private float value;
+    
+    public GameObject death;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +21,8 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
-        {
-            value -= 1f;
-            healthSlide.value = value;
-        }
 
+       //Dying of Dehydration
         if (waterSlide.value <= waterSlide.minValue)
         {
             value -= 1f;
@@ -32,7 +31,7 @@ public class HealthBar : MonoBehaviour
 
         if (healthSlide.value <= healthSlide.minValue)
         {
-            Debug.Log("Game over");
+            death.GetComponent<Death>().PlayerDeath();
         }
         
     }

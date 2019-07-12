@@ -8,6 +8,9 @@ TagManager:
   - FX
   - Enemy
   - World
+  - MainInventory
+  - Wrench
+  - Ground
   layers:
   - Default
   - TransparentFX
