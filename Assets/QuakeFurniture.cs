@@ -5,8 +5,9 @@ using UnityEngine;
 public class QuakeFurniture : MonoBehaviour
 {
     public GameObject[] falling_objects;
-
+    public float fallRate = .5f;
     private int i = 0;
+    public bool underTable = true;
 
 
     public void Drop()
@@ -17,11 +18,15 @@ public class QuakeFurniture : MonoBehaviour
     public IEnumerator DropEm()
     {
         yield return new WaitForSeconds(3f);
-        while (i < falling_objects.Length)
+        while (i < falling_objects.Length && underTable)
         {
             falling_objects[i].SetActive(true);
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(fallRate);
             i++;
+            if (fallRate>.2f)
+            {
+                fallRate -= .005f;
+            }
         }
     }
 }

@@ -31,7 +31,7 @@ public class FallingFurnitureDeath : MonoBehaviour
 
     public IEnumerator DontKill()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1.5f);
         isEnabled = false;
         GetComponent<Rigidbody>().isKinematic = true;
     }
