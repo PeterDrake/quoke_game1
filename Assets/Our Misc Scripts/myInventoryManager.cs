@@ -18,6 +18,7 @@ namespace MoreMountains.InventoryEngine
         public InventorySlot my_inventorySlot;
         public GameObject eventTracker;
         public GameObject bookcase;
+        public GameObject infoEnabler;
         private Inventory my_inventory;
 
         private Inventory[] my_invent_list;
@@ -78,6 +79,11 @@ namespace MoreMountains.InventoryEngine
                 {
                     bookcase.GetComponent<SecureBookshelf>().SecureShelf();
                 }
+               
+                ///opens first instruction
+                infoEnabler.SetActive(true);
+                
+                
             }
         }
         

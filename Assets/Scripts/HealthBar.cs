@@ -11,6 +11,8 @@ public class HealthBar : MonoBehaviour
     private float value;
     
     public GameObject death;
+
+    public Text deathText;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class HealthBar : MonoBehaviour
         {
             value -= 1f;
             healthSlide.value = value;
+            deathText.GetComponent<Text>().text = "You died of dehydration";
         }
 
         if (healthSlide.value <= healthSlide.minValue)
