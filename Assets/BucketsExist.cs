@@ -21,7 +21,6 @@ public class BucketsExist : MonoBehaviour
         {
             if ((eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket")))
             {
-                Debug.Log(" buckets in there");
                 buckets.SetActive(false);
             }
             
