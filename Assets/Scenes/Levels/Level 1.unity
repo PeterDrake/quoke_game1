@@ -34269,6 +34269,7 @@ MonoBehaviour:
   my_inventorySlot: {fileID: 0}
   eventTracker: {fileID: 863599052}
   bookcase: {fileID: 0}
+  infoEnabler: {fileID: 7493386515500166296}
 --- !u!1 &1059560988 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 2037af698594e6a4497fdcead2541d3c,
@@ -66983,7 +66984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1001 &7898082220005612865
 PrefabInstance:
   m_ObjectHideFlags: 0
