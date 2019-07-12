@@ -12,6 +12,7 @@ public class WaterBar : MonoBehaviour
     public GameObject water;
     
     public float waterValue=100;
+    public float rate = .01f;
 
     public int frame;
     
@@ -50,7 +51,7 @@ public class WaterBar : MonoBehaviour
 //                waterValue -= .0005f;
 //
 //            }
-            waterValue -= .01f; //figure out the water draining speed
+            waterValue -= rate; //figure out the water draining speed
             waterSlide.value = waterSlide.GetComponent<WaterBar>().waterValue;
         }
         
