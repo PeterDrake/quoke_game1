@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.InventoryEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 
@@ -31,6 +32,12 @@ public class DialogueManager : MonoBehaviour
     public Inventory my_targetInventory;
 
     public GameObject eventTracker;
+
+    public GameObject Node1InvalidEnabler;
+    public Text node1InvalidText;
+    
+    public GameObject Node2InvalidEnabler;
+    public Text node2InvalidText;
 
     private int i = 0;
     // Start is called before the first frame update
@@ -65,6 +72,19 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    public IEnumerator CloseInvalidN1()
+    {
+        yield return new WaitForSeconds(3f);
+        Node1InvalidEnabler.SetActive(false);
+    }
+
+    public IEnumerator CloseInvalidN2()
+    {
+        yield return new WaitForSeconds(3f);
+        Node2InvalidEnabler.SetActive(false);
+
+    }
+    
     public void NextNodeR1()
     {
         // button click should change the active node to the next node... 
@@ -89,7 +109,10 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("you don't have" + my_hasItemNode1.name);
+            Node1InvalidEnabler.SetActive(true);
+            node1InvalidText.text = "you are missing required " + my_hasItemNode1.name + "!";
+           // Debug.Log("you don't have" +  my_hasItemNode1.name);
+            StartCoroutine(CloseInvalidN1());
         }
        
     }
@@ -99,7 +122,7 @@ public class DialogueManager : MonoBehaviour
 
 
         if (my_hasItemNode2 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode2.name)) 
-            {
+        {
                if (my_losesNode2 != null){my_LoseItem(my_losesNode2); }
                if (my_itemToAddNode2 != null){my_AddItem(my_itemToAddNode2); }
 
@@ -114,7 +137,14 @@ public class DialogueManager : MonoBehaviour
                {
                    Deactivate();
                }
-            }
+        }
+        else
+        {
+            Node2InvalidEnabler.SetActive(true);
+            node2InvalidText.text = "you are missing required " + my_hasItemNode2.name + "!";
+            //Debug.Log("you don't have" +  my_hasItemNode2.name);
+            StartCoroutine(CloseInvalidN2());
+        }
         
         
     }
