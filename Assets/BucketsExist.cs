@@ -15,7 +15,13 @@ public class BucketsExist : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+     void Update()
+    {
+        
+        
+    }
+
+    public void BucketInventory()
     {
         if (starter.active == false)
         {
@@ -25,13 +31,6 @@ public class BucketsExist : MonoBehaviour
             }
             
         }
-        
-    }
-
-    void BucketInventory()
-    {
-       
-
     }
     
 

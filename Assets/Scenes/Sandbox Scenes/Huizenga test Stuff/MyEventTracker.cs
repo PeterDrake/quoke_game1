@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using MoreMountains.InventoryEngine;
 using MoreMountains.TopDownEngine;
@@ -9,7 +11,8 @@ using UnityEngine.SceneManagement;
 public class MyEventTracker : MonoBehaviour
 {
     public Inventory mainInventory;
-    
+
+    public int itemIndex;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,19 @@ public class MyEventTracker : MonoBehaviour
             return true;
         }
         else return false;
+    }
+
+    public int my_InventorySlot(string my_itemname)
+    {
+        for (int i = 0; i < mainInventory.NumberOfFilledSlots; i++)
+        {
+            if (String.Compare(my_itemname,mainInventory.Content[i].name)==0)
+            {
+                itemIndex = i;
+            }
+        }
+        return itemIndex;
+
 
     }
 

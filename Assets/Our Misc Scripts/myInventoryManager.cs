@@ -4,6 +4,7 @@ using MoreMountains.Tools;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using Boo.Lang.Environments;
 using UnityEngine.UI;
 using MoreMountains.InventoryEngine;
 
@@ -16,19 +17,24 @@ namespace MoreMountains.InventoryEngine
 
         public GameObject my_selectorDisplay;
         public InventorySlot my_inventorySlot;
+        private InventorySlot bucketSlot;
         public GameObject eventTracker;
         public GameObject bookcase;
         private Inventory my_inventory;
 
         private Inventory[] my_invent_list;
         private int my_index;
+        private int bucketIndex;
         private InventoryItem my_item;
+        private InventoryItem bucketItem;
+        private Inventory mainInventory;
         
 
         // Start is called before the first frame update
         void Start()
         {
             StartCoroutine(my_OpenInvent());
+            
         }
 
         // Update is called once per frame
@@ -77,6 +83,14 @@ namespace MoreMountains.InventoryEngine
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("SecureBookcase"))
                 {
                     bookcase.GetComponent<SecureBookshelf>().SecureShelf();
+                }
+
+                if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket"))
+                {
+                    bucketIndex = eventTracker.GetComponent<MyEventTracker>().my_InventorySlot("Bucket");
+                    Debug.Log(bucketIndex);
+                    bucketItem = mainInventory.Content[bucketIndex];
+                    //disable the slot
                 }
             }
         }
