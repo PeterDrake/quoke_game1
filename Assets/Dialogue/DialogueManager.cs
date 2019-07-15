@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.InventoryEngine;
+using MoreMountains.TopDownEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -39,11 +40,16 @@ public class DialogueManager : MonoBehaviour
     public GameObject Node2InvalidEnabler;
     public Text node2InvalidText;
 
+    public GameObject myPlayer;
+    public GameObject myGameManager; 
+
     private int i = 0;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Initiate());
+        myPlayer = GameObject.FindWithTag("Player");
+
 
     }
 
@@ -91,6 +97,7 @@ public class DialogueManager : MonoBehaviour
 
         if (my_hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode1.name))
         {
+            Debug.Log(Time.timeScale);
                 if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
                 if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
 
@@ -163,7 +170,9 @@ public class DialogueManager : MonoBehaviour
     {
         //my_AddItem(); // just here temporarily for testing 
       //  NewHead();
+        myPlayer.GetComponent<CharacterPause>().UnPauseCharacter();
         dialogueEnabler.SetActive(false);
+        myGameManager.GetComponent<GameManager>().Pause();
     }
 
     public void my_AddItem(InventoryItem my_itemToAdd)
