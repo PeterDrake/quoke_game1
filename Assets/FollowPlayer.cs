@@ -16,14 +16,14 @@ public class FollowPlayer : MonoBehaviour
     public NavMeshAgent npc;
     public int i = -500;
 
-    private Vector4 pos; 
+    private Vector3 pos; 
    // private float speed = 3.0f;
     void Start ()
     {
         //At the start of the game, the zombies will find the gameobject called wayPoint.
       //  wayPoint = GameObject.Find("wayPoint");
       Vector3 add = new Vector3(2, 0, 4);
-      pos = me.transform.position + add;
+      pos = player.transform.position;
     }
  
     void Update ()
@@ -33,7 +33,7 @@ public class FollowPlayer : MonoBehaviour
         //Here, the zombie's will follow the waypoint.
         if (i>0)
         {       
-            npc.SetDestination(player.transform.position);
+            npc.SetDestination(pos);
             Debug.Log(npc.destination);
             
             // transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
