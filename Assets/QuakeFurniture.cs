@@ -30,6 +30,8 @@ public class QuakeFurniture : MonoBehaviour
         yield return new WaitForSeconds(3f);
         while (i < falling_objects.Length && underTable)
         {
+            //falling_objects[i].GetComponent<Rigidbody>().useGravity = true;
+            //falling_objects[i].GetComponent<FallingFurnitureDeath>().falling();
             falling_objects[i].SetActive(true);
             yield return new WaitForSeconds(fallRate);
             i++;

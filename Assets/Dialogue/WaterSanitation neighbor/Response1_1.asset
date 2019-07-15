@@ -23,9 +23,7 @@ MonoBehaviour:
     type: 2}
   PlayerReceivesNode2: {fileID: 11400000, guid: 8578bbf3d881193409380b0c0c0b3f45,
     type: 2}
-  DoesPlayerHaveNode1: {fileID: 11400000, guid: 8578bbf3d881193409380b0c0c0b3f45,
-    type: 2}
-  DoesPlayerHaveNode2: {fileID: 11400000, guid: 8578bbf3d881193409380b0c0c0b3f45,
-    type: 2}
+  DoesPlayerHaveNode1: {fileID: 0}
+  DoesPlayerHaveNode2: {fileID: 0}
   PlayerLosesNode1: {fileID: 0}
   PlayerLosesNode2: {fileID: 0}
