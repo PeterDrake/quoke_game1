@@ -38165,6 +38165,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winScreen: {fileID: 1197202742}
+  myPlayer: {fileID: 0}
+  myGameManager: {fileID: 598334956}
   Level: {fileID: 105135216}
 --- !u!114 &1197202745
 MonoBehaviour:
@@ -64206,8 +64208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathScreen: {fileID: 2058319912}
-  end: {fileID: 0}
-  level: {fileID: 105135216}
+  myPlayer: {fileID: 0}
+  myGameManager: {fileID: 598334956}
 --- !u!114 &2058319914
 MonoBehaviour:
   m_ObjectHideFlags: 0
