@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class interactWithObject : MonoBehaviour
 {
 
     public GameObject interactNotifier;
+
+    public Text interactText;
+
+    public string newInteractText;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,7 @@ public class interactWithObject : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactNotifier.SetActive(true);
+            interactText.GetComponent<InteractText>().ChangeText(newInteractText);
         }
     }
 
@@ -41,7 +47,7 @@ public class interactWithObject : MonoBehaviour
             
             if (Input.GetKeyDown("e"))
             {
-                Debug.Log("This has been activated");
+                //Debug.Log("This has been activated");
             }
         }
     }
