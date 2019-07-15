@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class MyEventTracker : MonoBehaviour
 {
     public Inventory mainInventory;
-
+    public InventorySlot my_slot;
     public int itemIndex;
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,8 @@ public class MyEventTracker : MonoBehaviour
         else return false;
     }
 
-    public int my_InventorySlot(string my_itemname)
+    //Get the inventory slot of an item
+    public int my_InventorySlotIndex(string my_itemname)
     {
         for (int i = 0; i < mainInventory.NumberOfFilledSlots; i++)
         {
@@ -49,10 +50,17 @@ public class MyEventTracker : MonoBehaviour
             }
         }
         return itemIndex;
-
-
     }
 
+    public InventorySlot my_InventorySlot()
+    {
+        for (int i = 0; i < mainInventory.NumberOfFilledSlots; i++)
+        {
+            
+        }
+        
+        return my_slot;
+    }
     public void my_NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

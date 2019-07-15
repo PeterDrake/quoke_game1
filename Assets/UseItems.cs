@@ -25,14 +25,17 @@ public class UseItems : MonoBehaviour
     public GameObject gas;
     public Inventory mainInventory;
     public GameObject buckets;
+
+    public GameObject inventoryDisplay;
+    public List<GameObject> inventorySlots ;
     private InventoryItem item;
     private InventoryItem nextItem;
     private InventorySlot inventorySlot;
+    
     private int index;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -40,8 +43,11 @@ public class UseItems : MonoBehaviour
     {
         
     }
-
-   public void Use()
+    
+    //Use the item as specified depending on what it is and then
+    //Remove it from the inventory and move the subsequent ones into the removed item's place
+    
+    public void Use()
     { 
         inventorySlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
         index = inventorySlot.Index;
@@ -56,6 +62,15 @@ public class UseItems : MonoBehaviour
         {
             Debug.Log("Sanitation pamphlet");
             buckets.GetComponent<BucketsExist>().BucketInventory();
+            
+        }
+        
+        inventorySlots=inventoryDisplay.GetComponent<InventoryDisplay>().SlotContainer;
+        Debug.Log("the number of slots: "+inventorySlots.Count);
+        Debug.Log("there is perhaps: "+inventorySlots);
+        for (int i = 0; i < inventorySlots.Count; i++)
+        {
+            Debug.Log(inventorySlots[i]);
         }
         
         mainInventory.GetComponent<Inventory>().RemoveItem(index, 1);

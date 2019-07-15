@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using MoreMountains.Tools;
 using UnityEngine.EventSystems;
@@ -14,33 +15,39 @@ namespace MoreMountains.InventoryEngine
     {
 
         public int selectionNumber;
-
-        public GameObject my_selectorDisplay;
         public InventorySlot my_inventorySlot;
-        private InventorySlot bucketSlot;
+        public GameObject my_selectorDisplay;
         public GameObject eventTracker;
         public GameObject bookcase;
+        public GameObject inventoryDisplay;
+        public Text name;
+        
+        private List<GameObject> slots;
+        private Inventory mainInventory;
         private Inventory my_inventory;
-
         private Inventory[] my_invent_list;
-        private int my_index;
-        private int bucketIndex;
+        private InventorySlot bucketSlot;
+        private InventorySlot inventorySlot;
         private InventoryItem my_item;
         private InventoryItem bucketItem;
-        private Inventory mainInventory;
         
+        private int my_index;
+        private int bucketIndex;
 
         // Start is called before the first frame update
         void Start()
         {
             StartCoroutine(my_OpenInvent());
-            
+            slots = inventoryDisplay.GetComponent<InventoryDisplay>().SlotContainer;
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            bucketSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+            bucketIndex = bucketSlot.Index;
+            bucketItem = bucketSlot.ParentInventoryDisplay.TargetInventory.Content[bucketIndex];
+            name.GetComponent<Text>().text = bucketItem.name;
         }
 
         IEnumerator my_OpenInvent()
@@ -56,7 +63,7 @@ namespace MoreMountains.InventoryEngine
             my_index = my_inventorySlot.Index;
             my_item = my_inventorySlot.ParentInventoryDisplay.TargetInventory.Content[my_index];
             
-            Debug.Log(my_item.name);
+            //Debug.Log(my_item.name);
             
             my_invent_list = FindObjectsOfType<Inventory>();
             my_inventory = my_invent_list[1];
@@ -64,9 +71,8 @@ namespace MoreMountains.InventoryEngine
             my_inventory.AddItem(my_item,1);
             my_inventorySlot.DisableSlot();
             //make a counter for the number of items selected... select 2 out of 4, etc. 
-            
-            
-			
+
+
         }
 
 
@@ -77,7 +83,6 @@ namespace MoreMountains.InventoryEngine
             selectionNumber--;
             if (selectionNumber <= 0)
             {
-                
                 GetComponent<InventoryInputManager>().CloseInventory();
                 my_selectorDisplay.SetActive(false);
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("SecureBookcase"))
@@ -87,12 +92,15 @@ namespace MoreMountains.InventoryEngine
 
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket"))
                 {
-                    bucketIndex = eventTracker.GetComponent<MyEventTracker>().my_InventorySlot("Bucket");
-                    Debug.Log(bucketIndex);
-                    bucketItem = mainInventory.Content[bucketIndex];
-                    //disable the slot
+                   // bucketIndex = eventTracker.GetComponent<MyEventTracker>().my_InventorySlotIndex("Bucket");
+                    //bucketSlot = eventTracker.GetComponent<MyEventTracker>().my_InventorySlot();
                 }
             }
+        }
+
+        public void Name()
+        {
+            Debug.Log("name");
         }
         
     }

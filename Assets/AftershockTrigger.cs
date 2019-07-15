@@ -7,14 +7,13 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.Rendering.PostProcessing;
 using MoreMountains.Feedbacks;
+using MoreMountains.FeedbacksForThirdParty;
 
-namespace MoreMountains.FeedbacksForThirdParty
+public class AftershockTrigger : MonoBehaviour
 {
-
-    public class MyShakeTrigger : MonoBehaviour
-    {
-
-        public GameObject my_camera;
+    // Start is called before the first frame update
+    
+      public GameObject my_camera;
         public float amplitude;
         public float frequency;
         public float duration;
@@ -31,10 +30,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public string textToDisplay2;
 
-        public GameObject fallingLights;
-        public GameObject enableDoors;
-
-        public bool tableFlag = true;
+//        public GameObject fallingLights;
+//        public GameObject enableDoors;
+//public bool tableFlag = true;
         public bool cheatQuake = false;
         
 
@@ -43,7 +41,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         void Start()
         {
             //lightRB= light1.GetComponent<Rigidbody>();
-            tableFlag = true;
+            //tableFlag = true;
             StartCoroutine(QuakeDown());
 
         }
@@ -80,15 +78,16 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public IEnumerator ShakeIt()
         {
-            while (tableFlag)
-            {
-                my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
-                yield return new WaitForSeconds(duration);
+           // while (tableFlag)
+           //{
+           
+               my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
+               yield return new WaitForSeconds(duration);
 
 
-            }
-            EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
-            enableDoors.SetActive(false);
+          // }
+           EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
+//            enableDoors.SetActive(false);
             
         }
         
@@ -102,10 +101,9 @@ namespace MoreMountains.FeedbacksForThirdParty
             StartCoroutine(ShakeIt());
            // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
             my_bookshelf.GetComponent<MyFallingObject>().Fall();
-            fallingLights.GetComponent<QuakeFurniture>().Drop();
+            //fallingLights.GetComponent<QuakeFurniture>().Drop();
 
 
 
         }
-    }
 }
