@@ -25,9 +25,13 @@ public class UseItems : MonoBehaviour
     public GameObject gas;
     public Inventory mainInventory;
     public GameObject buckets;
-
     public GameObject inventoryDisplay;
-    public List<GameObject> inventorySlots ;
+    public List<GameObject> inventorySlots;
+    public Text selected;
+
+    private InventorySlot selectedSlot;
+    private int selectedIndex;
+    private InventoryItem selectedItem;
     private InventoryItem item;
     private InventoryItem nextItem;
     private InventorySlot inventorySlot;
@@ -41,7 +45,10 @@ public class UseItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+        selectedIndex = selectedSlot.Index;
+        selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
+        selected.GetComponent<Text>().text = selectedItem.name;
     }
     
     //Use the item as specified depending on what it is and then
