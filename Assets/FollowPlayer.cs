@@ -62,7 +62,7 @@ public class FollowPlayer : MonoBehaviour
             position.x = Mathf.Lerp(me.transform.position.x, player.transform.position.x, interpolation);
             GameObject.FindWithTag("NPC2").transform.position = position;
             transform.position = position;
-            Debug.Log("player position:"+player.transform.position);
+           // Debug.Log("player position:"+player.transform.position);
         }
         i++;
 
