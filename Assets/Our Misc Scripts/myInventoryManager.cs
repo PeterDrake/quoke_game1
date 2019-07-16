@@ -19,6 +19,7 @@ namespace MoreMountains.InventoryEngine
         public GameObject my_selectorDisplay;
         public GameObject eventTracker;
         public GameObject bookcase;
+        public GameObject infoEnabler;
         public GameObject inventoryDisplay;
         public Text name;
         
@@ -89,6 +90,11 @@ namespace MoreMountains.InventoryEngine
                 {
                     bookcase.GetComponent<SecureBookshelf>().SecureShelf();
                 }
+               
+                ///opens first instruction
+                infoEnabler.SetActive(true);
+                
+                
 
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket"))
                 {
