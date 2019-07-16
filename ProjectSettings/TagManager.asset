@@ -11,6 +11,7 @@ TagManager:
   - MainInventory
   - Wrench
   - Ground
+  - NPC2
   layers:
   - Default
   - TransparentFX
