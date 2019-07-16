@@ -2,26 +2,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
+using MoreMountains.InventoryEngine;
+//using NUnit.Framework.Internal.Commands;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Water;
 
+
 public class WaterBar : MonoBehaviour
 {
     public Slider waterSlide;
-    public GameObject water;
     
     public float waterValue=100;
     public float rate = .01f;
 
     public int frame;
+
     
-    // Start is called before the first frame update
-//    void Start()
-//    {
-//        frame = -1000;
-//=======
-//    public float frame=-100;
+    public Text deathText;
+
+    public Inventory mainInventory;
+//
+//    private int wIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -51,12 +53,20 @@ public class WaterBar : MonoBehaviour
 //                waterValue -= .0005f;
 //
 //            }
-            waterValue -= rate; //figure out the water draining speed
+            waterValue -= rate;
+
             waterSlide.value = waterSlide.GetComponent<WaterBar>().waterValue;
         }
+
+        if (waterSlide.GetComponent<Slider>().value <= waterSlide.GetComponent<Slider>().minValue)
+        {
+            deathText.text = "Dehydration ended you!";
+
+        }
+
+
         
     }
-
 //    void OnTriggerEnter(Collider other)
 //    {
 //        if (other.CompareTag("Player"))

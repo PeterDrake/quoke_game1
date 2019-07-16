@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.TopDownEngine;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityScript.Steps;
 
 public class TalkToPerson : MonoBehaviour
@@ -13,7 +14,13 @@ public class TalkToPerson : MonoBehaviour
     public GameObject dialogueCanvas;
     public GameObject canvasEnabler;
     public GameObject interactNotifier;
+
+    public Text InteractText;
+    
+
     private bool head_flag;
+    public GameObject myPlayer;
+    public GameObject myGameManager;
 
     private bool isColliding;
     // Start is called before the first frame update
@@ -21,6 +28,8 @@ public class TalkToPerson : MonoBehaviour
     {
         head_flag = false;
         isColliding = false;
+        myPlayer = GameObject.FindWithTag("Player");
+
     }
 
     // Update is called once per frame
@@ -45,6 +54,7 @@ public class TalkToPerson : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactNotifier.SetActive(true);
+            InteractText.GetComponent<InteractText>().ChangeText("Press 'E' to talk");
         }
     }
 
@@ -68,6 +78,11 @@ public class TalkToPerson : MonoBehaviour
                 isColliding = true;
                 
                 canvasEnabler.SetActive(true);
+                
+                //Pausing? 
+                myPlayer.GetComponent<CharacterPause>().PauseCharacter();
+                myGameManager.GetComponent<GameManager>().Pause();
+
                 if (head_flag == false)
                 {
                     dialogueCanvas.GetComponent<DialogueDisplay>().dialogue = mainDialogue;

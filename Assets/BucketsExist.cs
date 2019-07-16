@@ -15,24 +15,22 @@ public class BucketsExist : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+     void Update()
+    {
+        
+        
+    }
+
+    public void BucketInventory()
     {
         if (starter.active == false)
         {
             if ((eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket")))
             {
-                Debug.Log(" buckets in there");
                 buckets.SetActive(false);
             }
             
         }
-        
-    }
-
-    void BucketInventory()
-    {
-       
-
     }
     
 
