@@ -14,7 +14,7 @@ public class FollowPlayer : MonoBehaviour
     
     private GameObject me;
     public GameObject npc;
-    private GameObject player;
+    public GameObject player;
    // public NavMeshAgent npc;
     public int i = -500;
     public Rigidbody rigidbody;
@@ -39,17 +39,18 @@ public class FollowPlayer : MonoBehaviour
     void LateUpdate ()
     {
 
-        Debug.Log(transform.position);
+      //  Debug.Log(transform.position);
             
-            rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
+//            rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
+            rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
             pos = transform.position;
             pos.y = 1;
             near = player.transform.position - new Vector3(1, 0, 1);
             transform.position = Vector3.MoveTowards(pos, near, speed * Time.deltaTime);
-           //transform.position = player.transform.position + diff;
-           rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
-           
-            Debug.Log(transform.position);
+            diff.y = 1;
+            //transform.position = player.transform.position + diff;
+            //Debug.Log("npc: "+transform.position);
+            Debug.Log("Player: "+player.transform.position);
         
     }
 }

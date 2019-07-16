@@ -97,8 +97,6 @@ namespace MoreMountains.InventoryEngine
                 ///opens first instruction
                 infoEnabler.SetActive(true);
                 
-                
-
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket"))
                 {
                    // bucketIndex = eventTracker.GetComponent<MyEventTracker>().my_InventorySlotIndex("Bucket");

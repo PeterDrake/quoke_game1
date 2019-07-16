@@ -152,7 +152,6 @@ public class DialogueManager : MonoBehaviour
             StartCoroutine(CloseInvalidN2());
         }
         
-        
     }
     
     public void NewHead ()
