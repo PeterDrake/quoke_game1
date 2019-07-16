@@ -38,17 +38,8 @@ public class FollowPlayer : MonoBehaviour
  
     void LateUpdate ()
     {
-//            float interpolation = speed * Time.deltaTime;
-//            Vector3 position = me.transform.position;
-//            Debug.Log(position);
-//            position.z = Mathf.Lerp(me.transform.position.z, player.transform.position.z, interpolation);
-//            position.x = Mathf.Lerp(me.transform.position.x, player.transform.position.x, interpolation);
-//            Debug.Log(position);
-//            GameObject.FindWithTag("NPC2").transform.position = position;
-//            transform.Translate(position); 
-//            Debug.Log("player position:"+player.transform.position)
-        
-            Debug.Log(transform.position);
+
+        Debug.Log(transform.position);
             
             rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
             pos = transform.position;

@@ -45,10 +45,13 @@ namespace MoreMountains.InventoryEngine
         // Update is called once per frame
         void Update()
         {
+            if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
+            {
             bucketSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
             bucketIndex = bucketSlot.Index;
             bucketItem = bucketSlot.ParentInventoryDisplay.TargetInventory.Content[bucketIndex];
             name.GetComponent<Text>().text = bucketItem.name;
+            }
         }
 
         IEnumerator my_OpenInvent()

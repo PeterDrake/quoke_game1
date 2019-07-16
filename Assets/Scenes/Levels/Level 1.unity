@@ -34268,9 +34268,9 @@ MonoBehaviour:
   my_inventorySlot: {fileID: 0}
   my_selectorDisplay: {fileID: 1057398008}
   eventTracker: {fileID: 863599052}
-  bookcase: {fileID: 0}
+  bookcase: {fileID: 1650371930}
   infoEnabler: {fileID: 7493386515500166296}
-  inventoryDisplay: {fileID: 381251932}
+  inventoryDisplay: {fileID: 506791190}
   name: {fileID: 1325514421}
 --- !u!1 &1059560988 stripped
 GameObject:
