@@ -12,6 +12,7 @@ TagManager:
   - Wrench
   - Ground
   - NPC2
+  - House
   layers:
   - Default
   - TransparentFX

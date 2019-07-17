@@ -8,7 +8,7 @@ public class UnderTable : MonoBehaviour
 {
 
     public GameObject fallingObjects;
-
+    public GameObject aftershocktrigger;
     public GameObject quakeTrigger;
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class UnderTable : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             quakeTrigger.GetComponent<MyShakeTrigger>().tableFlag = false;
+            aftershocktrigger.GetComponent<AftershockTrigger>().tableFlag = false;
             fallingObjects.GetComponent<QuakeFurniture>().underTable = false;
         }
     } 

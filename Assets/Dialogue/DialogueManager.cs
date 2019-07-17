@@ -49,8 +49,6 @@ public class DialogueManager : MonoBehaviour
     {
         StartCoroutine(Initiate());
         myPlayer = GameObject.FindWithTag("Player");
-
-
     }
 
     IEnumerator Initiate()
