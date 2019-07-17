@@ -97,7 +97,7 @@ public class DialogueManager : MonoBehaviour
 
         if (my_hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode1.name))
         {
-                if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
+                 if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
                 if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
 
                 if (responseNodeOne != null)
