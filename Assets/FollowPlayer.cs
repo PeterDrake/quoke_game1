@@ -8,6 +8,7 @@ using MoreMountains.TopDownEngine;
 using TreeEditor;
 using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
+using UnityEngine.UI;
 
 
 public class FollowPlayer : MonoBehaviour
@@ -22,12 +23,19 @@ public class FollowPlayer : MonoBehaviour
    // public NavMeshAgent npc;
     public int i = -500;
     public Rigidbody rigidbody;
+    public float speed;
+    public Slider playerHealth;
+    public Text deathText;
+    public bool follow = false;
+    public bool fall = false;
+    public bool goBookshelf = false;
+
+    
     private Vector3 pos;
+    private Quaternion rot;
     private Vector3 diff;
     private Vector3 far;
     private Vector3 near;
-    private bool follow = false;
-    public float speed;
    // private float speed = 3.0f;
    
    /**
@@ -40,11 +48,16 @@ public class FollowPlayer : MonoBehaviour
         //me = GameObject.FindWithTag("NPC2");
         diff = transform.position - player.transform.position;
         diff.y = 1;
+        transform.rotation= Quaternion.Euler(0,0,0);
 
     }
     
     /**
-     * NPC follows the player by moving towards them and stopping 1 unit x and z near them.
+     * 
+     * NPC follows the player by moving towards them and stopping 1 unit x and z near them --> the follow if statement
+     * When they are inside, NPC goes in front of the bookcase and stands there --> the goBookshelf if statement
+     * if the bookcase falls, NPC dies and player loses the game --> the fall if statement
+     *
      */
     void Update ()
     {
@@ -70,8 +83,60 @@ public class FollowPlayer : MonoBehaviour
             }
 
         }
+        
+
+        if (goBookshelf)
+        {
+            if (Vector3.Distance(transform.position,bookshelf.transform.position)< 2f)
+            {
+                transform.position = transform.position;
+                rigidbody.isKinematic = false;
+            }
+
+            else
+            {
+                follow = false;
+                far = bookshelf.transform.position - new Vector3(7, 0, 1);
+                near = bookshelf.transform.position - new Vector3(1, 0, 0);
+                pos = Vector3.MoveTowards(transform.position, bookshelf.transform.position, 1f * Time.deltaTime);
+                pos.y = 1;
+                transform.position = pos;
+//            Go();
+//            Debug.Log("far"+far);
+//            Debug.Log("near"+near);
+//            Debug.Log("bookshelf"+bookshelf.transform.position);
+//            Debug.Log(transform.position);
+//            Debug.Log("far");
+//        if (Vector3.Distance(transform.position,far)<.01f)
+//        {
+                //Debug.Log("near");
+//            pos = 
+//            pos.y = 1;
+                // transform.position = Vector3.MoveTowards(transform.position, near, 1f * Time.deltaTime);
+                //rigidbody.isKinematic = false;
+                //}
+            }
+        }
+
+        if (fall)
+        {
+            if (transform.rotation.x <= 0)
+            {
+                Debug.Log("fallen");
+                transform.rotation= Quaternion.Euler(90,0,0);
+                pos = transform.position;
+                pos.y = pos.y - 1;
+                transform.position = pos;
+                deathText.text= "Your friend died, Game Over!";
+                playerHealth.GetComponent<Slider>().value = playerHealth.GetComponent<Slider>().minValue;
+                fall = false;
+                
+            }
+
+        }
 //        Debug.Log("npc: "+transform.position);
 //        Debug.Log("Player: "+player.transform.position);
+
     }
     
     /**
@@ -87,34 +152,24 @@ public class FollowPlayer : MonoBehaviour
                 follow = true;
             }
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Ground"))
-        {
-            Debug.Log(other.gameObject.name);
-            Debug.Log("in the house");
-            follow = false;
-            far = bookshelf.transform.position - new Vector3(7, 0, 1);
-            near = bookshelf.transform.position - new Vector3(1, 0, 0);
-            Go();
-        }
-    }
-
-    void Go()
-    {
-        transform.position = Vector3.MoveTowards(transform.position,far, speed*Time.deltaTime);
-        Debug.Log(far);
-        Debug.Log(near);
-        Debug.Log(transform.position);
-        Debug.Log("far");
         
-        if (Vector3.Distance(transform.position,far)<.01f)
-        {
-            Debug.Log("near");
-            transform.position = Vector3.MoveTowards(transform.position,near,speed*Time.deltaTime);
-        }
-
     }
+
+//    private void OnTriggerEnter(Collider other)
+//    {
+//        if (other.CompareTag("Bookshelf"))
+//        {
+//            fall = true;
+//        }
+//    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Door"))
+        {
+            goBookshelf = true;
+
+        }
+    }
+    
 }

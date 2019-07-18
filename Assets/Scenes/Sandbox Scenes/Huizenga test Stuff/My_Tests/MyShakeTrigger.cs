@@ -104,8 +104,6 @@ namespace MoreMountains.FeedbacksForThirdParty
             //my_bookshelf.GetComponent<MyFallingObject>().Fall();
             fallingLights.GetComponent<QuakeFurniture>().Drop();
 
-
-
         }
     }
 }

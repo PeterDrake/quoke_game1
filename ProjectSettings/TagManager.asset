@@ -13,6 +13,8 @@ TagManager:
   - Ground
   - NPC2
   - House
+  - Door
+  - Bookshelf
   layers:
   - Default
   - TransparentFX

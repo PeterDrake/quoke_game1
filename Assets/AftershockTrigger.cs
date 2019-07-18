@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using Boo.Lang;
+using Boo.Lang.Environments;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.Rendering.PostProcessing;
@@ -25,10 +26,9 @@ public class AftershockTrigger : MonoBehaviour
         public GameObject EventTracker;
         public String textToDisplay1;
         public string textToDisplay2;
-        public string textToDisplay3;
         public bool tableFlag = true;
         public bool cheatQuake = false;
-        
+        public bool happened = false;
         // public GameObject fallingLights;
         //public GameObject enableDoors;
         // public GameObject light1;
@@ -79,8 +79,8 @@ public class AftershockTrigger : MonoBehaviour
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
                 yield return new WaitForSeconds(duration);
             }
-            
-            EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay3);
+            InfoEnabler.SetActive(false);
+            happened = true;
             aftershock.SetActive(false);
 //            enableDoors.SetActive(false);
         }
@@ -96,11 +96,11 @@ public class AftershockTrigger : MonoBehaviour
                 EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay1);
             }
             StartCoroutine(ShakeIt());
-            
             my_bookshelf.GetComponent<MyFallingObject>().Fall();
+         //  my_bookshelf.GetComponent<MyFallingObject>().NPCDeath();
             //fallingLights.GetComponent<QuakeFurniture>().Drop();
             // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
 
-            
+
         }
 }
