@@ -19,7 +19,7 @@ MonoBehaviour:
   Quantity: 1
   ItemName: Bucket
   ShortDescription: Bucket
-  Description: For the two bucket system
+  Description: For two bucket system
   CanMoveObject: 1
   CanSwapObject: 1
   Icon: {fileID: 21300012, guid: 358b5d9f23bc9413e87c9948acc67ee1, type: 3}

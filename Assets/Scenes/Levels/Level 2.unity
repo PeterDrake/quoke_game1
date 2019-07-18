@@ -2253,83 +2253,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 8340e8586e8556c4b82f331a034bae19, type: 3}
---- !u!1 &60811210 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1077657506260428, guid: 2660cd93116a246439780568b58eca30,
-    type: 3}
-  m_PrefabInstance: {fileID: 1644618408}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &60811213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281933473497796, guid: 2660cd93116a246439780568b58eca30,
     type: 3}
   m_PrefabInstance: {fileID: 1644618408}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &60811214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60811210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ecbb77b0f5472a4aaa1b8aa42f09ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 3aea6e2ccc5eca74fa50828ff0d29f30, type: 2}
-  Quantity: 1
-  PickableIfInventoryIsFull: 0
-  PickAsMuchQuantityAsPossible: 0
-  DisableObjectWhenDepleted: 0
-  Effect: {fileID: 0}
-  PickSfx: {fileID: 0}
---- !u!114 &60811215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60811210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86fd837a0abc28d4d91c55590bd2c090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 3aea6e2ccc5eca74fa50828ff0d29f30, type: 2}
-  Quantity: 1
-  PickableIfInventoryIsFull: 0
-  PickAsMuchQuantityAsPossible: 0
-  DisableObjectWhenDepleted: 0
---- !u!114 &60811216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60811210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06bc8db249bcd4089a4337445b9b019b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  my_default: {fileID: 2100000, guid: 28646867ddcf90a4989276acd313ea43, type: 2}
-  my_blink: {fileID: 2100000, guid: aaba4d803c43eab40953642d24a76bc9, type: 2}
---- !u!114 &60811217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60811210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8903f6a62cf834aba6623b2f216466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starter: {fileID: 1057398008}
-  buckets: {fileID: 60811210}
-  eventTracker: {fileID: 863599052}
 --- !u!1 &61766699 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c8782ba1607055049947e23f11da596b,
@@ -23829,83 +23758,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 5b202f804b89a644fa9ae69497c4ab17, type: 3}
---- !u!1 &755289012 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1077657506260428, guid: 2660cd93116a246439780568b58eca30,
-    type: 3}
-  m_PrefabInstance: {fileID: 1308132233}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &755289013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755289012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06bc8db249bcd4089a4337445b9b019b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  my_default: {fileID: 2100000, guid: 28646867ddcf90a4989276acd313ea43, type: 2}
-  my_blink: {fileID: 2100000, guid: aaba4d803c43eab40953642d24a76bc9, type: 2}
 --- !u!4 &755289016 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4281933473497796, guid: 2660cd93116a246439780568b58eca30,
     type: 3}
   m_PrefabInstance: {fileID: 1308132233}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &755289017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755289012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ecbb77b0f5472a4aaa1b8aa42f09ee5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 3aea6e2ccc5eca74fa50828ff0d29f30, type: 2}
-  Quantity: 1
-  PickableIfInventoryIsFull: 0
-  PickAsMuchQuantityAsPossible: 0
-  DisableObjectWhenDepleted: 0
-  Effect: {fileID: 0}
-  PickSfx: {fileID: 0}
---- !u!114 &755289018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755289012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86fd837a0abc28d4d91c55590bd2c090, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 3aea6e2ccc5eca74fa50828ff0d29f30, type: 2}
-  Quantity: 1
-  PickableIfInventoryIsFull: 0
-  PickAsMuchQuantityAsPossible: 0
-  DisableObjectWhenDepleted: 0
---- !u!114 &755289019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 755289012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b8903f6a62cf834aba6623b2f216466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  starter: {fileID: 1057398008}
-  buckets: {fileID: 755289012}
-  eventTracker: {fileID: 863599052}
 --- !u!1001 &763769909
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42690,10 +42548,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Bucket_01 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1077657506260428, guid: 2660cd93116a246439780568b58eca30, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4281933473497796, guid: 2660cd93116a246439780568b58eca30, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.087882996
@@ -52236,10 +52090,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Prop_Bucket_01
       objectReference: {fileID: 0}
-    - target: {fileID: 1077657506260428, guid: 2660cd93116a246439780568b58eca30, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4281933473497796, guid: 2660cd93116a246439780568b58eca30, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1421127
@@ -52284,6 +52134,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 60811217, guid: 2660cd93116a246439780568b58eca30, type: 3}
+      propertyPath: starter
+      value: 
+      objectReference: {fileID: 1057398008}
+    - target: {fileID: 60811217, guid: 2660cd93116a246439780568b58eca30, type: 3}
+      propertyPath: eventTracker
+      value: 
+      objectReference: {fileID: 863599052}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2660cd93116a246439780568b58eca30, type: 3}
 --- !u!1001 &1644695600
