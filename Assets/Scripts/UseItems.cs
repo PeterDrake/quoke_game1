@@ -52,6 +52,10 @@ public class UseItems : MonoBehaviour
             selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
             selected.GetComponent<Text>().text = selectedItem.name;
         }
+        else
+        {
+            selected.GetComponent<Text>().text = null;
+        }
     }
     
     //Use the item as specified depending on what it is and then

@@ -3725,6 +3725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallingObjects: {fileID: 324698025}
+  aftershocktrigger: {fileID: 0}
   quakeTrigger: {fileID: 734707327}
 --- !u!65 &112992046
 BoxCollider:
@@ -51504,6 +51505,7 @@ MonoBehaviour:
   rb: {fileID: 1650371934}
   health: {fileID: 396833523}
   DeathScreen: {fileID: 2058319912}
+  npc2: {fileID: 0}
   death: {fileID: 791766140}
   isEnabled: 0
 --- !u!54 &1650371934
@@ -65003,7 +65005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8764e085193e1ee4690199b101dfb73e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.93
+      value: -1.07
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8764e085193e1ee4690199b101dfb73e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -65028,6 +65030,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 8764e085193e1ee4690199b101dfb73e, type: 3}
       propertyPath: m_RootOrder
       value: 73
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8764e085193e1ee4690199b101dfb73e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0911
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 8764e085193e1ee4690199b101dfb73e, type: 3}
       propertyPath: m_Materials.Array.data[0]

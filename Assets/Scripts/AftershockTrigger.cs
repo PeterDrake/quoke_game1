@@ -15,16 +15,19 @@ public class AftershockTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     
-        public GameObject my_camera;
         public float amplitude;
         public float frequency;
         public float duration;
+        public GameObject my_camera;
+
         public GameObject my_bookshelf;
         public GameObject straps;
         public GameObject aftershock;
         public GameObject InfoEnabler;
         public GameObject EventTracker;
+        public GameObject tableCheck;
         public String textToDisplay1;
+        
         public string textToDisplay2;
         public bool tableFlag = true;
         public bool cheatQuake = false;
@@ -96,6 +99,7 @@ public class AftershockTrigger : MonoBehaviour
                 EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay1);
             }
             StartCoroutine(ShakeIt());
+            tableCheck.SetActive(true);
             my_bookshelf.GetComponent<MyFallingObject>().Fall();
          //  my_bookshelf.GetComponent<MyFallingObject>().NPCDeath();
             //fallingLights.GetComponent<QuakeFurniture>().Drop();
