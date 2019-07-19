@@ -71,7 +71,6 @@ public class TalkToPerson : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-           
             if (Input.GetKeyDown("e"))
             {
                 if(isColliding) return;

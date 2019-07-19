@@ -19,7 +19,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         public float frequency;
         public float duration;
        // public GameObject gas;
-        public GameObject my_bookshelf;
+        //public GameObject my_bookshelf;
        // public GameObject light1;
         //public Material mat;
         
@@ -101,10 +101,8 @@ namespace MoreMountains.FeedbacksForThirdParty
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay1);
             StartCoroutine(ShakeIt());
            // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
-            my_bookshelf.GetComponent<MyFallingObject>().Fall();
+            //my_bookshelf.GetComponent<MyFallingObject>().Fall();
             fallingLights.GetComponent<QuakeFurniture>().Drop();
-
-
 
         }
     }
