@@ -30946,11 +30946,11 @@ MonoBehaviour:
   ToggleInvKey: 105
   ToggleInvAltKey: 0
   CancelKey: 27
-  MoveKey: insert
+  MoveKey: right
   MoveAltKey: joystick button 2
   EquipKey: home
   EquipAltKey: home
-  UseKey: end
+  UseKey: enter
   UseAltKey: end
   EquipOrUseKey: space
   EquipOrUseAltKey: joystick button 0
