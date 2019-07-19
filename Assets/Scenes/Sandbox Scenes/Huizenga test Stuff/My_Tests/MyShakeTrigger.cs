@@ -37,7 +37,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public bool tableFlag = true;
         public bool cheatQuake = false;
-
+        
         private string sceneName;
 
         // Start is called before the first frame update
