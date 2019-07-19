@@ -22,6 +22,7 @@ namespace MoreMountains.InventoryEngine
         public GameObject infoEnabler;
         public GameObject inventoryDisplay;
         public Text name;
+        public GameObject mainInventoryIM;
         
         private List<GameObject> slots;
         private Inventory mainInventory;
@@ -31,7 +32,7 @@ namespace MoreMountains.InventoryEngine
         private InventorySlot inventorySlot;
         private InventoryItem my_item;
         private InventoryItem bucketItem;
-        
+
         private int my_index;
         private int bucketIndex;
 
@@ -94,8 +95,11 @@ namespace MoreMountains.InventoryEngine
                     bookcase.GetComponent<SecureBookshelf>().SecureShelf();
                 }
                
-                ///opens first instruction
+                ///opens first instruction & maininventory
                 infoEnabler.SetActive(true);
+                mainInventoryIM.GetComponent<InventoryInputManager>().OpenInventory();
+
+                
                 
                 
 
