@@ -54,17 +54,17 @@ public class DeathGas : MonoBehaviour
                     //break;
                 }
 
-/*
-                if (gasOff == false)
-                {
-                    {
-                        death.text = "YOU DIED OF A GAS EXPLOSION :(";
-                        Debug.Log(death.text);
-                        health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
-                    }
-
-                }
-                */
+//*
+//                if (gasOff == false)
+//                {
+//                    {
+//                        death.text = "YOU DIED OF A GAS EXPLOSION :(";
+//                        Debug.Log(death.text);
+//                        health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
+//                    }
+//
+//                }
+//                */
             }
 
         }

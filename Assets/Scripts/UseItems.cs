@@ -45,10 +45,13 @@ public class UseItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
-        selectedIndex = selectedSlot.Index;
-        selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
-        selected.GetComponent<Text>().text = selectedItem.name;
+        if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
+        {
+            selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+            selectedIndex = selectedSlot.Index;
+            selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
+            selected.GetComponent<Text>().text = selectedItem.name;
+        }
     }
     
     //Use the item as specified depending on what it is and then

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCname: Gee
   NPCimage: {fileID: 21300004, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
-  NPCtext: Well I have some water I could share, but could you help me with a house?
+  NPCtext: Well I have some water I could share, could you help me with a house?
   ResponseOne: Of course, my house is undamaged, you can stay there.
   nextNodeOne: {fileID: 0}
   ResponseTwo: I mean if that's what it takes to get water...

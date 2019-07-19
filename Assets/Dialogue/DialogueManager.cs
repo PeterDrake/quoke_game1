@@ -49,8 +49,6 @@ public class DialogueManager : MonoBehaviour
     {
         StartCoroutine(Initiate());
         myPlayer = GameObject.FindWithTag("Player");
-
-
     }
 
     IEnumerator Initiate()
@@ -151,7 +149,6 @@ public class DialogueManager : MonoBehaviour
             //Debug.Log("you don't have" +  my_hasItemNode2.name);
             StartCoroutine(CloseInvalidN2());
         }
-        
         
     }
     

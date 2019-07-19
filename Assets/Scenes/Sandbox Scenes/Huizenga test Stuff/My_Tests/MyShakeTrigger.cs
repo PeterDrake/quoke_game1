@@ -7,6 +7,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.Rendering.PostProcessing;
 using MoreMountains.Feedbacks;
+using UnityEngine.SceneManagement;
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -36,8 +37,8 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public bool tableFlag = true;
         public bool cheatQuake = false;
-        
 
+        private string sceneName;
 
         // Start is called before the first frame update
         void Start()
@@ -45,7 +46,9 @@ namespace MoreMountains.FeedbacksForThirdParty
             //lightRB= light1.GetComponent<Rigidbody>();
             tableFlag = true;
             StartCoroutine(QuakeDown());
-
+            Scene currentScene = SceneManager.GetActiveScene ();
+            sceneName = currentScene.name;
+//            Debug.Log(sceneName);
         }
 
         // Update is called once per frame
@@ -101,10 +104,11 @@ namespace MoreMountains.FeedbacksForThirdParty
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay1);
             StartCoroutine(ShakeIt());
            // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
-            my_bookshelf.GetComponent<MyFallingObject>().Fall();
-            fallingLights.GetComponent<QuakeFurniture>().Drop();
-
-
+           if (string.Compare(sceneName, "Level 1") ==0)
+           {
+               my_bookshelf.GetComponent<MyFallingObject>().Fall();
+           }
+           fallingLights.GetComponent<QuakeFurniture>().Drop();
 
         }
     }

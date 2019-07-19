@@ -28,13 +28,13 @@ namespace MoreMountains.InventoryEngine
         private Inventory mainInventory;
         private Inventory my_inventory;
         private Inventory[] my_invent_list;
-        private InventorySlot bucketSlot;
+        private InventorySlot selectedSlot;
         private InventorySlot inventorySlot;
         private InventoryItem my_item;
-        private InventoryItem bucketItem;
-
+        private InventoryItem selectedItem;
+        
         private int my_index;
-        private int bucketIndex;
+        private int selectedIndex;
 
         // Start is called before the first frame update
         void Start()
@@ -47,11 +47,12 @@ namespace MoreMountains.InventoryEngine
         void Update()
         {
             if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
+                
             {
-            bucketSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
-            bucketIndex = bucketSlot.Index;
-            bucketItem = bucketSlot.ParentInventoryDisplay.TargetInventory.Content[bucketIndex];
-            name.GetComponent<Text>().text = bucketItem.name;
+                selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+                selectedIndex = selectedSlot.Index;
+                selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
+                name.GetComponent<Text>().text = selectedItem.name;
             }
         }
 
@@ -101,8 +102,6 @@ namespace MoreMountains.InventoryEngine
 
                 
                 
-                
-
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket"))
                 {
                    // bucketIndex = eventTracker.GetComponent<MyEventTracker>().my_InventorySlotIndex("Bucket");

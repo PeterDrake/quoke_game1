@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using UnityEditorInternal;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 
 /**
@@ -17,7 +19,15 @@ public class Pushable : MonoBehaviour
 {
     public GameObject straps;
     public GameObject protector;
+    public GameObject interactNotifier;
+    public GameObject npc2;
+    public GameObject rearrange;
+    public Text interactText;
+
+    public bool safe= false;
     private bool strapsOff;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,19 +37,32 @@ public class Pushable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rearrange.GetComponent<Rearrange>().rearrange)
+        {
+            if(Input.GetKeyDown("r"))
+            {
+                protector.SetActive(true);
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+                GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+                npc2.GetComponent<FollowPlayer>().follow = true;
+                npc2.GetComponent<FollowPlayer>().goBookshelf = false;
+                safe = true;
+                interactNotifier.SetActive(false);
+                
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if ((other.CompareTag("Player"))&&(strapsOff == false))
         {
-           // Debug.Log("can move the bookcase");
-           protector.SetActive(true);
-           GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
-           GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
-           GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-           transform.Translate(Time.deltaTime, 0, 0,Space.Self);
+            interactNotifier.SetActive(true);
+            interactText.text = "Press R to rearrange furniture";
             
+
         }
     }
+
+   
 }
