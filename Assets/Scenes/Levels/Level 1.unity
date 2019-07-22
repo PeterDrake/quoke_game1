@@ -3697,7 +3697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &112992044
 Transform:
   m_ObjectHideFlags: 0
@@ -3727,6 +3727,7 @@ MonoBehaviour:
   fallingObjects: {fileID: 324698025}
   aftershocktrigger: {fileID: 0}
   quakeTrigger: {fileID: 734707327}
+  tableCheck: {fileID: 0}
 --- !u!65 &112992046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41095,6 +41096,11 @@ PrefabInstance:
       propertyPath: enableDoors
       value: 
       objectReference: {fileID: 54491705}
+    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
+        type: 3}
+      propertyPath: tablecheck
+      value: 
+      objectReference: {fileID: 112992043}
     m_RemovedComponents:
     - {fileID: 8851373175332053533, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
     - {fileID: 8851373175332053534, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
