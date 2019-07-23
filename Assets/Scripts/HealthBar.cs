@@ -27,9 +27,8 @@ public class HealthBar : MonoBehaviour
        //Dying of Dehydration
         if (waterSlide.value <= waterSlide.minValue)
         {
-            value -= 1f;
+            value -= 2f;
             healthSlide.value = value;
-            deathText.GetComponent<Text>().text = "You died of dehydration";
         }
 
         if (healthSlide.value <= healthSlide.minValue)

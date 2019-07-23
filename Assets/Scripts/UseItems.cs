@@ -28,6 +28,7 @@ public class UseItems : MonoBehaviour
     public GameObject inventoryDisplay;
     public GameObject waterQuest;
     public GameObject Sanitation;
+    public GameObject health;
 
     public List<GameObject> inventorySlots;
     public Text selected;
@@ -78,8 +79,7 @@ public class UseItems : MonoBehaviour
         item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
         if (String.Compare(item.name, "Water")==0)
         {
-            water.GetComponent<WaterBar>().waterValue = 0;
-            water.GetComponent<WaterBar>().rate = 0;
+            health.GetComponent<Slider>().value = 0;
             deathText.text = "You drank unpurified water :(";
 
 //            Debug.Log("Water level increased");

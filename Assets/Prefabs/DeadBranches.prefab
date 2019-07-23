@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_default: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
-  my_blink: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  my_blink: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
 --- !u!114 &8110123940003733820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_default: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
-  my_blink: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  my_blink: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
 --- !u!114 &4854468369812556028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_default: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
-  my_blink: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  my_blink: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
 --- !u!114 &3582412246475893270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_default: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
-  my_blink: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  my_blink: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
 --- !u!114 &6973471645352796386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_default: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
-  my_blink: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  my_blink: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
 --- !u!114 &2555376983367679080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_default: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
-  my_blink: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  my_blink: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
 --- !u!114 &8924994217742588253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_default: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
-  my_blink: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  my_blink: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
 --- !u!114 &6416858809412941563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_default: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
-  my_blink: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  my_blink: {fileID: 2100000, guid: ad6f9b1da37ddd445bf4601b2a5a42c3, type: 2}
 --- !u!1 &8486508176651965328
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 8330943169723641747}
   - component: {fileID: 4896464936929361378}
   - component: {fileID: 8890371916214148905}
+  - component: {fileID: 535813724}
   m_Layer: 0
   m_Name: DeadBranches
   m_TagString: Carbon
@@ -142,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 8486508176651965328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.57282966, y: 0.57282966, z: 0.57282966}
   m_Children:
   - {fileID: 6218471805444467015}
   - {fileID: 6123292291601737380}
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ecbb77b0f5472a4aaa1b8aa42f09ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 0}
+  Item: {fileID: 11400000, guid: 5bebac3ad08ba134ba3fed23afe60b7b, type: 2}
   Quantity: 1
   PickableIfInventoryIsFull: 0
   PickAsMuchQuantityAsPossible: 0
@@ -251,6 +252,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blinking: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+--- !u!114 &535813724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8486508176651965328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06bc8db249bcd4089a4337445b9b019b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_default: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  my_blink: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &1964780788956749900
 PrefabInstance:
   m_ObjectHideFlags: 0

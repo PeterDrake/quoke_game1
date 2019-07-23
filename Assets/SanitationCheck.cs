@@ -18,7 +18,7 @@ public class SanitationCheck : MonoBehaviour
     public GameObject plasticBags;
     public GameObject sanitizer;
     public GameObject inventoryCanvas;
-
+    public GameObject combineButton;
     public GameObject mainInventory;
     //public GameObject carbon;
     public bool netTalked = false;
@@ -69,16 +69,12 @@ public class SanitationCheck : MonoBehaviour
 //            sanitation.text = "talk to NET";
 //        
     }
-
-   
-
     /*
      * 
      * Checks if the pamphlet has been used and enables the blinking components for the toilet
      * 
      */
-    
-    
+
     public void PamphletUsed()
     {
             buckets.GetComponent<BucketsExist>().BucketInventory();
@@ -164,7 +160,11 @@ public class SanitationCheck : MonoBehaviour
                  sanitizerText.color = Color.green;
              }
              
-//             QuestComplete();
+             if ((carbon>=2) &&(bucketsnumber>=2)&&(plasticBagsnumber>=1)&&(sanitizerNumber>=1))
+             {
+                 combineButton.SetActive(true);
+             }
+             
          }
          
          else

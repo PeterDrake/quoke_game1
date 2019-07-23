@@ -13,7 +13,7 @@ public class WaterQuest : MonoBehaviour
     public GameObject objective;
     public GameObject eventTracker;
     public GameObject inventoryCanvas;
-
+    public GameObject purifyButton;
     private bool purified;
 
     // Start is called before the first frame update
@@ -23,8 +23,24 @@ public class WaterQuest : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { 
+        Button();
         Remove();
+        
+    }
+
+    public void Button()
+    {
+        for (int i = 0; i < mainInventory.GetComponent<Inventory>().NumberOfFilledSlots; i++)
+        {
+            if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Water"))
+            {
+                if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Iodine"))
+                {
+                    purifyButton.SetActive(true);
+                }
+            }
+        }
     }
 
     public void MakeWater()
