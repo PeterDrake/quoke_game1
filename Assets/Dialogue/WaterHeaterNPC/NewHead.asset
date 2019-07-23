@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCname: Marcus
   NPCimage: {fileID: 0}
-  NPCtext: 
-  ResponseOne: 
-  nextNodeOne: {fileID: 0}
-  ResponseTwo: 
-  nextNodeTwo: {fileID: 0}
+  NPCtext: This is my house right here, the green one
+  ResponseOne: It looks safe to me.
+  nextNodeOne: {fileID: 11400000, guid: 28f7abc9ba2f54e9d99d93f534cfa164, type: 2}
+  ResponseTwo: (No response)
+  nextNodeTwo: {fileID: 11400000, guid: 28f7abc9ba2f54e9d99d93f534cfa164, type: 2}
   PlayerReceivesNode1: {fileID: 0}
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}

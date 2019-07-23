@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
   m_Name: NewNode2
   m_EditorClassIdentifier: 
-  NPCname: 
+  NPCname: Marcus
   NPCimage: {fileID: 0}
-  NPCtext: 
-  ResponseOne: 
+  NPCtext: Alright Lets head inside
+  ResponseOne: (Follow Marcus)
   nextNodeOne: {fileID: 0}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}
