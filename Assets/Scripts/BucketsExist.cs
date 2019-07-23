@@ -9,7 +9,6 @@ public class BucketsExist : MonoBehaviour
 {
     public GameObject starter;
     public GameObject bucket1;
-    public GameObject bucket2;
     public GameObject eventTracker;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +30,6 @@ public class BucketsExist : MonoBehaviour
             if ((eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket")))
             {
                 bucket1.SetActive(false);
-                bucket2.SetActive(false);
 
             }
             

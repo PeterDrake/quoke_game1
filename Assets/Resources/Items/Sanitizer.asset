@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
   m_Name: Sanitizer
   m_EditorClassIdentifier: 
-  ItemID: 
+  ItemID: Sanitizer
   TargetInventoryName: MainInventory
   Usable: 0
   Equippable: 0
   Quantity: 1
   ItemName: Sanitizer
   ShortDescription: To clean your hands
-  Description: 
+  Description: 'After using the two buckets
+
+'
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 21300012, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
+  Icon: {fileID: 21300010, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
   Prefab: {fileID: 100000, guid: d1bf853df0df2ef4e939b6a602147956, type: 3}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}

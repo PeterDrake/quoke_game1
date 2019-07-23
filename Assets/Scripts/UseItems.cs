@@ -80,23 +80,33 @@ public class UseItems : MonoBehaviour
         item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
         if (String.Compare(item.name, "Water")==0)
         {
-            Debug.Log("Water level increased");
-            water.GetComponent<WaterBar>().waterValue = 100;
-            water.GetComponent<WaterBar>().rate = 0;
-            String waterText = "Accomplished";
-            waterQuest.GetComponent<UpdateQuests>().updateWater(waterText);
+//            Debug.Log("Water level increased");
+//            water.GetComponent<WaterBar>().waterValue = 100;
+//            water.GetComponent<WaterBar>().rate = 0;
+//            String waterText = "Accomplished";
+//            waterQuest.GetComponent<UpdateQuests>().updateWater(waterText);
         }
 
         else if (string.Compare(item.name, "Sanitation Pamphlet") == 0)
         {
             Sanitation.GetComponent<SanitationCheck>().PamphletUsed();
+           // Sanitation.GetComponent<SanitationCheck>().Collection();
         }
+        Re_Move(index);
         
-        mainInventory.GetComponent<Inventory>().RemoveItem(index, 1);
-        for (int i = index; i < mainInventory.NumberOfFilledSlots; i++)
+    }
+    
+    /*
+     * Remove the item at the specified index
+     * and move the items after it into the spots in front of them till there are no more gaps
+     */
+
+    public void Re_Move(int inddex)
+    {
+        mainInventory.GetComponent<Inventory>().RemoveItem(inddex, 1);
+        for (int i = inddex; i < mainInventory.NumberOfFilledSlots; i++)
         {
             mainInventory.MoveItem(i + 1, i);
-//                inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index+1].
         }
     }
 }
