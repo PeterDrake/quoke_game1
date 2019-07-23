@@ -40,6 +40,7 @@ public class SanitationCheck : MonoBehaviour
     
     private bool spUsed= false;
 
+    private bool done = false;
     /*
      * If the Sanitation pamphlet is in the inventory, they don't have to go talk to the NET,
      * Otherwise inform them that they should go talk to the NET
@@ -62,12 +63,15 @@ public class SanitationCheck : MonoBehaviour
     void Update()
     { 
         Collection();
+        Remove();
 //        if(!eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Sanitation Pamphlet"))
 //        {
 //            sanitation.text = "talk to NET";
 //        
     }
-    
+
+   
+
     /*
      * 
      * Checks if the pamphlet has been used and enables the blinking components for the toilet
@@ -186,12 +190,21 @@ public class SanitationCheck : MonoBehaviour
         if ((carbon>=2) &&(bucketsnumber>=2)&&(plasticBagsnumber>=1)&&(sanitizerNumber>=1))
         {
             Debug.Log("You have everything :)");
+            done = true;
             quests.GetComponent<UpdateQuests>().updateSanitation(SanitationDone);
+        }
+    }
+
+    private void Remove()
+    {
+        if (done)
+        {
+        
             for (int i = 0; i < mainInventory.GetComponent<Inventory>().Content.Length; i++)
             {
                 if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Bucket")==0)
                 {
-                     inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
+                    inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
                 }
                 else if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Plastic Bags")==0)
                 {

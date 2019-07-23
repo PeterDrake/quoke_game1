@@ -31,7 +31,7 @@ public class UseItems : MonoBehaviour
 
     public List<GameObject> inventorySlots;
     public Text selected;
-
+    public Text deathText;
     private InventorySlot selectedSlot;
     private int selectedIndex;
     private InventoryItem selectedItem;
@@ -65,9 +65,7 @@ public class UseItems : MonoBehaviour
      *
      * Use the item as specified depending on what it is and then
      * Remove it from the inventory and move the subsequent ones into the removed item's place
-     * If it is water,
-     *     increase the watervalue to 100 and keep it there
-     *     show that the water quest is accomplished,
+     * If it is water, kill the person as it is not purified
      * If it is hte sanitation pamphlet, begin the sanitation pursue quests
      * 
      */
@@ -80,9 +78,12 @@ public class UseItems : MonoBehaviour
         item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
         if (String.Compare(item.name, "Water")==0)
         {
+            water.GetComponent<WaterBar>().waterValue = 0;
+            water.GetComponent<WaterBar>().rate = 0;
+            deathText.text = "You drank unpurified water :(";
+
 //            Debug.Log("Water level increased");
 //            water.GetComponent<WaterBar>().waterValue = 100;
-//            water.GetComponent<WaterBar>().rate = 0;
 //            String waterText = "Accomplished";
 //            waterQuest.GetComponent<UpdateQuests>().updateWater(waterText);
         }
