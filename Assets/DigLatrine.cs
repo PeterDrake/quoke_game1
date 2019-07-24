@@ -18,7 +18,7 @@ public class DigLatrine : MonoBehaviour
                 if (isColliding) return;
                 isColliding = true;
 
-                if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("shovel"))
+                if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Shovel"))
                 {
                     Debug.Log("success");
                 }

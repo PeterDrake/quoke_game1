@@ -9,7 +9,7 @@ public class PickupHose : MonoBehaviour
     
     private bool isColliding;
 
-    public BaseItem hose;
+    public BaseItem itemtoReceive;
     public GameObject ThisGameObject;
 
     //this is just to hijack a function from it
@@ -24,7 +24,7 @@ public class PickupHose : MonoBehaviour
                 if (isColliding) return;
                 isColliding = true;
 
-                DialogueManager.GetComponent<DialogueManager>().my_AddItem(hose);
+                DialogueManager.GetComponent<DialogueManager>().my_AddItem(itemtoReceive);
 
                 ThisGameObject.SetActive(false);
 

@@ -11,17 +11,9 @@ public class DontTalkWhileMoving : MonoBehaviour
     public GameObject AItarget;
 
     public GameObject dialogueManager;
-    // Start is called before the first frame update
-    void Start()
-    {
-      //  StartCoroutine(ImMoving());
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject interactEnabler;
+  
 
     public void ConversationOver()
     {
@@ -37,7 +29,8 @@ public class DontTalkWhileMoving : MonoBehaviour
     public IEnumerator ImMoving()
     {
         GetComponent<CapsuleCollider>().enabled = false;
-        yield return new WaitForSeconds(17f);
+        interactEnabler.SetActive(false);
+        yield return new WaitForSeconds(15.5f);
         GetComponent<CapsuleCollider>().enabled = true;
         
 
