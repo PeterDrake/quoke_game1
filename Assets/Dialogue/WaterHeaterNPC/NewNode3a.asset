@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCname: Marcus
   NPCimage: {fileID: 0}
-  NPCtext: Yeah there is a hose around the side of my house, that should do it.
+  NPCtext: Yeah there is a hose around the back of my house, that should do it.
   ResponseOne: Thanks I'm on it.
   nextNodeOne: {fileID: 0}
   ResponseTwo: 

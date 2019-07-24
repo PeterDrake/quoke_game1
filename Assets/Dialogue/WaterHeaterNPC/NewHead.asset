@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCname: Marcus
   NPCimage: {fileID: 0}
-  NPCtext: This is my house right here, the green one
+  NPCtext: This is my house right here.
   ResponseOne: It looks safe to me.
   nextNodeOne: {fileID: 11400000, guid: 28f7abc9ba2f54e9d99d93f534cfa164, type: 2}
   ResponseTwo: (No response)

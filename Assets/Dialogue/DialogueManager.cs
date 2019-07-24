@@ -196,7 +196,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             i++;
-            Debug.Log(i);
+           // Debug.Log(i);
 
         }
 

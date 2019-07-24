@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCname: Marcus
   NPCimage: {fileID: 0}
-  NPCtext: Hmmm, I'm not sure, but I bet you can find something around here.
+  NPCtext: Alright, this will teach you how, but you're going to need something to
+    get the water out of the tank
   ResponseOne: Ok, I'll try to find something.
   nextNodeOne: {fileID: 0}
   ResponseTwo: 

@@ -2,13 +2,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MoreMountains.InventoryEngine;
 
 public class TapHeater : MonoBehaviour
 {
     private bool isColliding;
 
     public GameObject eventTracker;
-    // Start is called before the first frame update
+    
+    //this is just to hijack a function from it
+    public GameObject DialogueManager;
+    public BaseItem water;
+    public BaseItem hose;
     
     private void OnTriggerStay(Collider other) 
     {
@@ -22,6 +27,9 @@ public class TapHeater : MonoBehaviour
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("hose"))
                 {
                     Debug.Log("success");
+                    DialogueManager.GetComponent<DialogueManager>().my_AddItem(water);
+                    DialogueManager.GetComponent<DialogueManager>().my_LoseItem(hose);
+
                 }
                 else
                 {
@@ -33,6 +41,14 @@ public class TapHeater : MonoBehaviour
             }
             
 
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isColliding = false;
         }
     }
 }

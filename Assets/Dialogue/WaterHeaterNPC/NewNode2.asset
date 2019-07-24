@@ -17,8 +17,7 @@ MonoBehaviour:
   NPCtext: Alright, lets head inside. Do you know how to tap a water heater?
   ResponseOne: Yeah, but do you have something to get the water out of the tank with?
   nextNodeOne: {fileID: 11400000, guid: 6f7cde7c7494a4d0f95bdea96e14b3d0, type: 2}
-  ResponseTwo: Alright, this will teach you how, but you're going to need something
-    to get the water out of the tank
+  ResponseTwo: No I'm not sure how.
   nextNodeTwo: {fileID: 11400000, guid: e261e2bb4ccc94a1590b52090ab71350, type: 2}
   PlayerReceivesNode1: {fileID: 0}
   PlayerReceivesNode2: {fileID: 11400000, guid: ef398b4b768084b82a9ec0f264b81b44,
