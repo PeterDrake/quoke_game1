@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using MoreMountains.InventoryEngine;
-//using NUnit.Framework.Internal.Commands;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -80,12 +79,8 @@ public class UseItems : MonoBehaviour
         if (String.Compare(item.name, "Water")==0)
         {
             health.GetComponent<Slider>().value = 0;
-            deathText.text = "You drank unpurified water :(";
-
-//            Debug.Log("Water level increased");
-//            water.GetComponent<WaterBar>().waterValue = 100;
-//            String waterText = "Accomplished";
-//            waterQuest.GetComponent<UpdateQuests>().updateWater(waterText);
+            deathText.text = "You drank unpurified water :("; 
+            
         }
 
         else if (string.Compare(item.name, "Sanitation Pamphlet") == 0)
@@ -94,7 +89,6 @@ public class UseItems : MonoBehaviour
            // Sanitation.GetComponent<SanitationCheck>().Collection();
         }
         Re_Move(index);
-        
     }
     
     /*
@@ -110,4 +104,5 @@ public class UseItems : MonoBehaviour
             mainInventory.MoveItem(i + 1, i);
         }
     }
+    
 }

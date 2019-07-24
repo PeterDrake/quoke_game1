@@ -51,7 +51,6 @@ public class SanitationCheck : MonoBehaviour
     void Start()
     {
         SanitationDone = "Accomplished";
-       Debug.Log(mainInventory.GetComponent<Inventory>().Content.Length);
     }
     
     // Update is called once per frame
@@ -64,11 +63,9 @@ public class SanitationCheck : MonoBehaviour
     { 
         Collection();
         Remove();
-//        if(!eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Sanitation Pamphlet"))
-//        {
-//            sanitation.text = "talk to NET";
-//        
+
     }
+    
     /*
      * 
      * Checks if the pamphlet has been used and enables the blinking components for the toilet
@@ -77,7 +74,6 @@ public class SanitationCheck : MonoBehaviour
 
     public void PamphletUsed()
     {
-            buckets.GetComponent<BucketsExist>().BucketInventory();
             EnableObjects();
             sanitation.text = "Find";
             spUsed = true;
@@ -94,10 +90,15 @@ public class SanitationCheck : MonoBehaviour
         deadBranches3.GetComponent<BlinkingObject>().my_blink = mat;
         plasticBags.GetComponent<BlinkingObject>().my_blink = mat;
         sanitizer.GetComponent<BlinkingObject>().my_blink = mat;
+        buckets.GetComponent<BlinkingObject>().my_blink = mat;
     }
 
 /*
  * checks what items have been collected and if they are enough
+ *Turns the words green if it is the right amount
+ *
+ *     WE HAVE TO DECIDE WHETHER THE SANITATION NEEDS TO BE USED WHEN IT IS GOTTEN FROM THE NPC
+ * 
  */
     public void Collection()
     {
@@ -115,28 +116,23 @@ public class SanitationCheck : MonoBehaviour
                  {
                      if (mainInventory.GetComponent<Inventory>().Content[i].Prefab.CompareTag("Carbon"))
                      {
-                         int button = i;
                          carbon++;
-                         Debug.Log("One more carbon");
                      }
                  }
 
                  if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Bucket") == 0)
                  {
                      bucketsnumber++;
-                     Debug.Log("One more bucket");
                  }
 
                  if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Plastic Bags") == 0)
                  {
                      plasticBagsnumber++;
-                     Debug.Log("One plastic bag");
                  }
 
                  if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Sanitizer") == 0)
                  {
                      sanitizerNumber++;
-                     Debug.Log("One Sanitizer");
                  }
              }
 
@@ -182,14 +178,13 @@ public class SanitationCheck : MonoBehaviour
     public void QuestComplete()
     {
         Collection();
-        Debug.Log("Carbon"+carbon);
-        Debug.Log("Buckets"+bucketsnumber);
-        Debug.Log("sanitizer"+sanitizer);
-        Debug.Log("plastic Bags"+plasticBags);
+//        Debug.Log("Carbon"+carbon);
+//        Debug.Log("Buckets"+bucketsnumber);
+//        Debug.Log("sanitizer"+sanitizer);
+//        Debug.Log("plastic Bags"+plasticBags);
         
         if ((carbon>=2) &&(bucketsnumber>=2)&&(plasticBagsnumber>=1)&&(sanitizerNumber>=1))
         {
-            Debug.Log("You have everything :)");
             done = true;
             quests.GetComponent<UpdateQuests>().updateSanitation(SanitationDone);
         }
@@ -199,29 +194,35 @@ public class SanitationCheck : MonoBehaviour
     {
         if (done)
         {
-        
             for (int i = 0; i < mainInventory.GetComponent<Inventory>().Content.Length; i++)
             {
-                if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Bucket")==0)
+                if (mainInventory.GetComponent<Inventory>().Content[i] != null)
                 {
-                    inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
-                }
-                else if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Plastic Bags")==0)
-                {
-                    inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
-                }
-                else if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Sanitizer")==0)
-                {
-                    inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
-                }
-                else if (mainInventory.GetComponent<Inventory>().Content[i].Prefab)
-                {
-                    if (mainInventory.GetComponent<Inventory>().Content[i].Prefab.CompareTag("Carbon"))
+                    if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Bucket") == 0)
                     {
                         inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
                     }
+                    else if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Plastic Bags") == 0)
+                    {
+                        inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
+                    }
+                    else if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Sanitizer") == 0)
+                    {
+                        inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
+                    }
+                    
+                    else if (mainInventory.GetComponent<Inventory>().Content[i].Prefab)
+                    {
+                        if (mainInventory.GetComponent<Inventory>().Content[i].Prefab.CompareTag("Carbon"))
+                        {
+                            inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
+                        }
+                    }
                 }
             }
+            
+            combineButton.SetActive(false);
+            done = false;
         }
     }
 }

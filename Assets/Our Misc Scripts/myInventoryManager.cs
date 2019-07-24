@@ -21,10 +21,10 @@ namespace MoreMountains.InventoryEngine
         public GameObject bookcase;
         public GameObject infoEnabler;
         public GameObject inventoryDisplay;
-        public Text name;
         public GameObject mainInventoryIM;
-        
-        private List<GameObject> slots;
+        public GameObject bucket1;
+        public Text name;
+
         private Inventory mainInventory;
         private Inventory my_inventory;
         private Inventory[] my_invent_list;
@@ -40,7 +40,6 @@ namespace MoreMountains.InventoryEngine
         void Start()
         {
             StartCoroutine(my_OpenInvent());
-            slots = inventoryDisplay.GetComponent<InventoryDisplay>().SlotContainer;
         }
 
         // Update is called once per frame
@@ -104,9 +103,9 @@ namespace MoreMountains.InventoryEngine
                 
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket"))
                 {
-                   // bucketIndex = eventTracker.GetComponent<MyEventTracker>().my_InventorySlotIndex("Bucket");
-                    //bucketSlot = eventTracker.GetComponent<MyEventTracker>().my_InventorySlot();
+                    bucket1.SetActive(false);
                 }
+                
             }
         }
         

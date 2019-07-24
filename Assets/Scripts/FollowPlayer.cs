@@ -15,27 +15,34 @@ public class FollowPlayer : MonoBehaviour
 {
 
     
-    private GameObject me;
     public GameObject npc;
     public GameObject player;
-    public Dialogue housing;
     public GameObject bookshelf;
-   // public NavMeshAgent npc;
-    public int i = -500;
+    public GameObject couch;
+    public GameObject carpet;
+    public Dialogue housing;
     public Rigidbody rigidbody;
-    public float speed;
     public Slider playerHealth;
     public Text deathText;
+    
+    public float speed;
+    public int i = -500;
+    
     public bool follow = false;
     public bool fall = false;
     public bool goBookshelf = false;
-
+    public bool waterGiven = false;
     
+    private GameObject me;
+    private Vector3 place;
     private Vector3 pos;
     private Quaternion rot;
     private Vector3 diff;
     private Vector3 far;
     private Vector3 near;
+
+    private int a=1;
+    private int b = 1;
    // private float speed = 3.0f;
    
    /**
@@ -45,10 +52,11 @@ public class FollowPlayer : MonoBehaviour
     {
         rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
         player = GameObject.FindWithTag("Player");
-        //me = GameObject.FindWithTag("NPC2");
         diff = transform.position - player.transform.position;
         diff.y = 1;
         transform.rotation= Quaternion.Euler(0,0,0);
+        a = 1;
+        place = couch.transform.position;
 
     }
     
@@ -59,11 +67,9 @@ public class FollowPlayer : MonoBehaviour
      * if the bookcase falls, NPC dies and player loses the game --> the fall if statement
      *
      */
+    
     void Update ()
     {
-
-      //  Debug.Log(transform.position);
-//            rigidbody.constraints = RigidbodyConstraints.FreezePositionY;
         if (follow)
         {
             if (Vector3.Distance(player.transform.position,transform.position) < 2f)
@@ -72,35 +78,56 @@ public class FollowPlayer : MonoBehaviour
             }
             else
             {
-                //diff = transform.position - player.transform.position;
                 rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
                 pos = transform.position;
                 pos.y = 1;
                 diff.y = 1;
-               // near = player.transform.position + new Vector3(1, 0, 1);
-                //transform.position = near;
-                transform.position = Vector3.MoveTowards(pos, player.transform.position, speed * Time.deltaTime);
+               transform.position = Vector3.MoveTowards(pos, player.transform.position, speed * Time.deltaTime);
             }
-
         }
         
-
         if (goBookshelf)
         {
-            if (Vector3.Distance(transform.position,bookshelf.transform.position)< 2f)
+           
+            if(Vector3.Distance(transform.position,place) > 2f)
             {
-                transform.position = transform.position;
-                rigidbody.isKinematic = false;
+                follow = false;
+//                far = couch.transform.position + new Vector3(2, 0, -1);
+//                near = carpet.transform.position + new Vector3(1, 0, 1);
+                pos = Vector3.MoveTowards(transform.position, place, 2f * Time.deltaTime);
+                pos.y = 1;
+                transform.position = pos;
+//                pos = Vector3.MoveTowards(transform.position, near, 1f * Time.deltaTime);
+//                pos.y = 1;
+//                transform.position = pos;
+//                pos = Vector3.MoveTowards(transform.position, bookshelf.transform.position, 1f * Time.deltaTime);
+//                pos.y = 1;
+//                transform.position = pos;
             }
 
             else
             {
-                follow = false;
-                far = bookshelf.transform.position - new Vector3(7, 0, 1);
-                near = bookshelf.transform.position - new Vector3(1, 0, 0);
-                pos = Vector3.MoveTowards(transform.position, bookshelf.transform.position, 1f * Time.deltaTime);
-                pos.y = 1;
-                transform.position = pos;
+                transform.position = transform.position;
+                rigidbody.isKinematic = false;
+                a+=b;
+                if (a==1)
+                {
+                    place = couch.transform.position;
+                }
+                else if (a == 2)
+                {
+                    place = carpet.transform.position;
+                }
+                
+                else if(a==3)
+                {
+                    b = 0;
+                    place = bookshelf.transform.position;
+                }
+                
+            }
+            
+            
 //            Go();
 //            Debug.Log("far"+far);
 //            Debug.Log("near"+near);
@@ -109,20 +136,19 @@ public class FollowPlayer : MonoBehaviour
 //            Debug.Log("far");
 //        if (Vector3.Distance(transform.position,far)<.01f)
 //        {
-                //Debug.Log("near");
+//                Debug.Log("near");
 //            pos = 
 //            pos.y = 1;
-                // transform.position = Vector3.MoveTowards(transform.position, near, 1f * Time.deltaTime);
-                //rigidbody.isKinematic = false;
-                //}
-            }
+//                 transform.position = Vector3.MoveTowards(transform.position, near, 1f * Time.deltaTime);
+//                rigidbody.isKinematic = false;
+//                }
+//            
         }
 
         if (fall)
         {
             if (transform.rotation.x <= 0)
             {
-                Debug.Log("fallen");
                 transform.rotation= Quaternion.Euler(90,0,0);
                 pos = transform.position;
                 pos.y = pos.y - 1;
@@ -150,6 +176,7 @@ public class FollowPlayer : MonoBehaviour
             if (Input.GetKeyDown("e"))
             {
                 follow = true;
+                waterGiven = true;
             }
         }
         

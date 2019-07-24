@@ -22,7 +22,7 @@ MonoBehaviour:
   Description: Drink before dehydrating
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 21300060, guid: 704c91aaf5f4d2849870d811230cfc61, type: 3}
+  Icon: {fileID: 21300000, guid: 9800c0d3bebe94639a539244d7aa1740, type: 3}
   Prefab: {fileID: 0}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}
