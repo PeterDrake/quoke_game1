@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
   m_Name: NewNode3a
   m_EditorClassIdentifier: 
-  NPCname: 
+  NPCname: Marcus
   NPCimage: {fileID: 0}
-  NPCtext: 
-  ResponseOne: 
+  NPCtext: Yeah there is a hose around the side of my house, that should do it.
+  ResponseOne: Thanks I'm on it.
   nextNodeOne: {fileID: 0}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}
