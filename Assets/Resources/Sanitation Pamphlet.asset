@@ -23,7 +23,7 @@ MonoBehaviour:
   CanMoveObject: 1
   CanSwapObject: 1
   Icon: {fileID: 21300006, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
-  Prefab: {fileID: 0}
+  Prefab: {fileID: 100000, guid: 38f07b19695befa43a4fd6f98f8b94b8, type: 3}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}
   PrefabDropMaxDistance: {x: 3, y: 3, z: 0}

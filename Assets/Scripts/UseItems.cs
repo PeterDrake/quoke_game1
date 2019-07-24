@@ -26,9 +26,13 @@ public class UseItems : MonoBehaviour
     public Inventory mainInventory;
     public GameObject buckets;
     public GameObject inventoryDisplay;
+    public GameObject waterQuest;
+    public GameObject Sanitation;
+    public GameObject health;
+
     public List<GameObject> inventorySlots;
     public Text selected;
-
+    public Text deathText;
     private InventorySlot selectedSlot;
     private int selectedIndex;
     private InventoryItem selectedItem;
@@ -52,10 +56,21 @@ public class UseItems : MonoBehaviour
             selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
             selected.GetComponent<Text>().text = selectedItem.name;
         }
+        else
+        {
+            selected.GetComponent<Text>().text = null;
+        }
     }
     
-    //Use the item as specified depending on what it is and then
-    //Remove it from the inventory and move the subsequent ones into the removed item's place
+    /**
+     *
+     * Use the item as specified depending on what it is and then
+     * Remove it from the inventory and move the subsequent ones into the removed item's place
+     * If it is water, kill the person as it is not purified
+     * If it is hte sanitation pamphlet, begin the sanitation pursue quests
+     * 
+     */
+    
     
     public void Use()
     { 
@@ -64,30 +79,35 @@ public class UseItems : MonoBehaviour
         item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
         if (String.Compare(item.name, "Water")==0)
         {
-            Debug.Log("Water level increased");
-            water.GetComponent<WaterBar>().waterValue = 100;
+            health.GetComponent<Slider>().value = 0;
+            deathText.text = "You drank unpurified water :(";
+
+//            Debug.Log("Water level increased");
+//            water.GetComponent<WaterBar>().waterValue = 100;
+//            String waterText = "Accomplished";
+//            waterQuest.GetComponent<UpdateQuests>().updateWater(waterText);
         }
 
-        else if (string.Compare(item.name,"Sanitation Pamphlet")==0)
+        else if (string.Compare(item.name, "Sanitation Pamphlet") == 0)
         {
-            Debug.Log("Sanitation pamphlet");
-            buckets.GetComponent<BucketsExist>().BucketInventory();
-            
+            Sanitation.GetComponent<SanitationCheck>().PamphletUsed();
+           // Sanitation.GetComponent<SanitationCheck>().Collection();
         }
+        Re_Move(index);
         
-        inventorySlots=inventoryDisplay.GetComponent<InventoryDisplay>().SlotContainer;
-        Debug.Log("the number of slots: "+inventorySlots.Count);
-        Debug.Log("there is perhaps: "+inventorySlots);
-        for (int i = 0; i < inventorySlots.Count; i++)
-        {
-            Debug.Log(inventorySlots[i]);
-        }
-        
-        mainInventory.GetComponent<Inventory>().RemoveItem(index, 1);
-        for (int i = index; i < mainInventory.NumberOfFilledSlots; i++)
+    }
+    
+    /*
+     * Remove the item at the specified index
+     * and move the items after it into the spots in front of them till there are no more gaps
+     */
+
+    public void Re_Move(int inddex)
+    {
+        mainInventory.GetComponent<Inventory>().RemoveItem(inddex, 1);
+        for (int i = inddex; i < mainInventory.NumberOfFilledSlots; i++)
         {
             mainInventory.MoveItem(i + 1, i);
-//                inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index+1].
         }
     }
 }

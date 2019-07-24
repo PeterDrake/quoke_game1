@@ -32,6 +32,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public string textToDisplay2;
 
+        public GameObject tablecheck;
         public GameObject fallingLights;
         public GameObject enableDoors;
 
@@ -92,7 +93,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             }
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
             enableDoors.SetActive(false);
-            
+
         }
         
         
@@ -103,6 +104,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             InfoEnabler.SetActive(true);
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay1);
             StartCoroutine(ShakeIt());
+            tablecheck.SetActive(true);
            // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
            if (string.Compare(sceneName, "Level 1") ==0)
            {

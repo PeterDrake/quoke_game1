@@ -15,6 +15,7 @@ TagManager:
   - House
   - Door
   - Bookshelf
+  - Carbon
   layers:
   - Default
   - TransparentFX

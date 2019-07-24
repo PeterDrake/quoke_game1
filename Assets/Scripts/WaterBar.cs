@@ -34,6 +34,10 @@ public class WaterBar : MonoBehaviour
     }
 
     // Update is called once per frame
+    
+    /**
+     * Drain the water
+     */
     void Update()
     {
 
@@ -44,15 +48,6 @@ public class WaterBar : MonoBehaviour
         }
         else
         {
-//            if (waterValue <50)
-//            {
-//                waterValue -= .005f;
-//            }
-//            else
-//            {
-//                waterValue -= .0005f;
-//
-//            }
             waterValue -= rate;
 
             waterSlide.value = waterSlide.GetComponent<WaterBar>().waterValue;
@@ -63,22 +58,6 @@ public class WaterBar : MonoBehaviour
             deathText.text = "Dehydration ended you!";
 
         }
-
-
-        
     }
-//    void OnTriggerEnter(Collider other)
-//    {
-//        if (other.CompareTag("Player"))
-//        {
-//            
-//            waterSlide.GetComponent<WaterBar>().frame = -1000;
-//            waterValue = 100;
-//            waterSlide.GetComponent<WaterBar>().waterValue = waterValue;
-//            water.SetActive(false);
-//        }
-//        
-//    }
-
 
 }

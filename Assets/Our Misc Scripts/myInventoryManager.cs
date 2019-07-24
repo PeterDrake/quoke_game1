@@ -109,11 +109,7 @@ namespace MoreMountains.InventoryEngine
                 }
             }
         }
-
-        public void Name()
-        {
-            Debug.Log("name");
-        }
+        
         
     }
 }
