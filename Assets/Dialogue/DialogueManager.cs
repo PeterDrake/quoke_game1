@@ -41,7 +41,10 @@ public class DialogueManager : MonoBehaviour
     public Text node2InvalidText;
 
     public GameObject myPlayer;
-    public GameObject myGameManager; 
+    public GameObject myGameManager;
+
+    public bool NPCL3;
+    public GameObject NPCl3interact;
 
     private int i = 0;
     // Start is called before the first frame update
@@ -168,6 +171,11 @@ public class DialogueManager : MonoBehaviour
       //  NewHead();
         myPlayer.GetComponent<CharacterPause>().UnPauseCharacter();
         dialogueEnabler.SetActive(false);
+        if (NPCL3)
+        {
+            NPCl3interact.GetComponent<DontTalkWhileMoving>().ConversationOver();
+        }
+
         myGameManager.GetComponent<GameManager>().Pause();
     }
 
@@ -188,7 +196,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             i++;
-            Debug.Log(i);
+           // Debug.Log(i);
 
         }
 

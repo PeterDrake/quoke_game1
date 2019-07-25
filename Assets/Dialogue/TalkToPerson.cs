@@ -20,6 +20,7 @@ public class TalkToPerson : MonoBehaviour
     private bool head_flag;
     public GameObject myPlayer;
     public GameObject myGameManager;
+    public bool NPCL3 ;
 
     private bool isColliding;
     // Start is called before the first frame update
@@ -62,7 +63,7 @@ public class TalkToPerson : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactNotifier.SetActive(false);
- 
+           
         }
     }
 
