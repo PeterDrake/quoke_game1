@@ -41101,6 +41101,11 @@ PrefabInstance:
       propertyPath: tablecheck
       value: 
       objectReference: {fileID: 112992043}
+    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
+        type: 3}
+      propertyPath: dustStormPrefab
+      value: 
+      objectReference: {fileID: 100000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 3}
     m_RemovedComponents:
     - {fileID: 8851373175332053533, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
     - {fileID: 8851373175332053534, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
@@ -59338,6 +59343,7 @@ MonoBehaviour:
   InteractText: {fileID: 1987072560}
   myPlayer: {fileID: 0}
   myGameManager: {fileID: 598334956}
+  NPCL3: 0
 --- !u!114 &1908103262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63420,6 +63426,8 @@ MonoBehaviour:
   node2InvalidText: {fileID: 34205743}
   myPlayer: {fileID: 0}
   myGameManager: {fileID: 598334956}
+  NPCL3: 0
+  NPCl3interact: {fileID: 0}
 --- !u!114 &2030455253
 MonoBehaviour:
   m_ObjectHideFlags: 0
