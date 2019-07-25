@@ -24,7 +24,7 @@ public class Pushable : MonoBehaviour
     public GameObject rearrange;
     public Text interactText;
 
-    public bool safe;
+    public bool safe= false;
     private bool strapsOff;
     
     

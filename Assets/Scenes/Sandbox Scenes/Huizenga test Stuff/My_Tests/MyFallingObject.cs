@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MyFallingObject : MonoBehaviour
@@ -14,21 +15,38 @@ public class MyFallingObject : MonoBehaviour
     public GameObject npc2;
     public Text death;
     public bool isEnabled = false;
+
+    private Scene currentScene;
+
+    private string sceneName;
     //public Vector3 push_point;
     void Start()
     {
+        currentScene = SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
         rb = GetComponent<Rigidbody>();
     }
 
     public void Fall()
     {
-        if (GetComponent<Pushable>().safe == false)
+        if (string.Compare(sceneName, "Level 2")==0)
         {
-            Debug.Log(GetComponent<Pushable>().safe);
+            if (GetComponent<Pushable>().safe == false)
+            {
+                Debug.Log(GetComponent<Pushable>().safe);
+                isEnabled = true;
+                rb.AddRelativeForce(Vector3.forward * thrust);
+                StartCoroutine(BookshelfDeactivate());
+            }
+        }
+        else
+        {
+//            Debug.Log(GetComponent<Pushable>().safe);
             isEnabled = true;
             rb.AddRelativeForce(Vector3.forward * thrust);
             StartCoroutine(BookshelfDeactivate());
         }
+        
     }
 
 //    public void NPCDeath()
