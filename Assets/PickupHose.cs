@@ -11,9 +11,9 @@ public class PickupHose : MonoBehaviour
 
     public BaseItem itemtoReceive;
     public GameObject ThisGameObject;
-
     //this is just to hijack a function from it
     public GameObject DialogueManager;
+    public GameObject interactNotifier;
    
     private void OnTriggerStay(Collider other) 
     {
@@ -25,7 +25,9 @@ public class PickupHose : MonoBehaviour
                 isColliding = true;
 
                 DialogueManager.GetComponent<DialogueManager>().my_AddItem(itemtoReceive);
-
+                
+                interactNotifier.SetActive(false);
+                
                 ThisGameObject.SetActive(false);
 
             }
