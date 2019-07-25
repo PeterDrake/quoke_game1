@@ -22,7 +22,7 @@ MonoBehaviour:
   Description: Easy to eat and cook if you want
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 21300000, guid: 5b1a64ea234fb2343b8d0686c51280de, type: 3}
+  Icon: {fileID: 21300000, guid: f3db9dc3ed94b124084de59627ff951e, type: 3}
   Prefab: {fileID: 191648, guid: 347cbd6c4c794e84da446d818bfc540b, type: 3}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}

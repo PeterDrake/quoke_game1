@@ -106,7 +106,7 @@ public class SanitationCheck : MonoBehaviour
          bucketsnumber = 0;
          plasticBagsnumber = 0;
          sanitizerNumber = 0;
-         if (spUsed || netTalked)
+         if (spUsed)
          {
              for (int i = 0; i < mainInventory.GetComponent<Inventory>().NumberOfFilledSlots; i++)
              {

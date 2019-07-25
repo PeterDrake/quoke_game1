@@ -177,6 +177,7 @@ public class FollowPlayer : MonoBehaviour
             {
                 follow = true;
                 waterGiven = true;
+                GetComponent<CapsuleCollider>().enabled = false;
             }
         }
         
@@ -195,6 +196,8 @@ public class FollowPlayer : MonoBehaviour
         if (other.CompareTag("Door"))
         {
             goBookshelf = true;
+            //disable following player dialogue trigger collider. 
+            //.enabled()fa
 
         }
     }

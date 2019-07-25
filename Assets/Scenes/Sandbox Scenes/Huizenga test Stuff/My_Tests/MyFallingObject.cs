@@ -26,7 +26,6 @@ public class MyFallingObject : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         rb = GetComponent<Rigidbody>();
-        Debug.Log(rearranger.GetComponent<Rearrange>().safe);
 
     }
 
@@ -51,16 +50,22 @@ public class MyFallingObject : MonoBehaviour
         
     }
 
-//    public void NPCDeath()
-//    {
-//        npc2.GetComponent<FollowPlayer>().fall = true;
-//    }
+    public void NPCDeath()
+    {
+//        if (rearranger.GetComponent<Rearrange>().safe == false)
+//        {
+//            npc2.GetComponent<FollowPlayer>().fall = true;
+//        }
+    }
 
     public IEnumerator BookshelfDeactivate()
     {
         yield return new WaitForSeconds(2f);
         isEnabled = false; 
         GetComponent<Rigidbody>().isKinematic = true;
+        Debug.Log("happened here");
+        npc2.GetComponent<FollowPlayer>().fall = true;
+
     }
 
 
@@ -82,27 +87,28 @@ public class MyFallingObject : MonoBehaviour
             }
         }
         
-        if (other.gameObject.CompareTag("NPC2"))
-        {
-            if (rearranger.GetComponent<Rearrange>().safe==false)
-            {
-                npc2.GetComponent<FollowPlayer>().fall = true;
-
-            }
-        }
+//        if (other.gameObject.CompareTag("NPC2"))
+//        {
+//            if (rearranger.GetComponent<Rearrange>().safe==false)
+//            {
+//                npc2.GetComponent<FollowPlayer>().fall = true;
+//
+//            }
+//        }
     }
 
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("NPC2"))
-        {
-            if (rearranger.GetComponent<Rearrange>().safe==false)
-            {
-                Debug.Log("supposed to happen");
-                npc2.GetComponent<FollowPlayer>().fall = true;
-
-            }
-        }
+//        Debug.Log(rearranger.GetComponent<Rearrange>().safe);
+//        if (other.gameObject.CompareTag("NPC2"))
+//        {
+//            if (rearranger.GetComponent<Rearrange>().safe==false)
+//            {
+//                Debug.Log("supposed to happen");
+//                npc2.GetComponent<FollowPlayer>().fall = true;
+//
+//            }
+//        }
     }
     
 }

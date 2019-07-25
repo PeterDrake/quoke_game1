@@ -8,6 +8,7 @@ using MoreMountains.InventoryEngine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.XR.WSA.WebCam;
 using Debug = UnityEngine.Debug;
 
 /** A script to use the items
@@ -28,7 +29,8 @@ public class UseItems : MonoBehaviour
     public GameObject waterQuest;
     public GameObject Sanitation;
     public GameObject health;
-
+    public GameObject starter;
+    
     public List<GameObject> inventorySlots;
     public Text selected;
     public Text deathText;
@@ -48,17 +50,21 @@ public class UseItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
+        if (starter.active == false)
         {
             selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
             selectedIndex = selectedSlot.Index;
             selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
-            selected.GetComponent<Text>().text = selectedItem.name;
+            if (selectedItem != null)
+            {
+                selected.GetComponent<Text>().text = selectedItem.name;
+            }
+            else
+            {
+                selected.GetComponent<Text>().text = null;
+            }
         }
-        else
-        {
-            selected.GetComponent<Text>().text = null;
-        }
+       
     }
     
     /**

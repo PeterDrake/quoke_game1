@@ -102,9 +102,9 @@ public class AftershockTrigger : MonoBehaviour
             StartCoroutine(ShakeIt());
             tableCheck.SetActive(true);
             my_bookshelf.GetComponent<MyFallingObject>().Fall();
-         //  my_bookshelf.GetComponent<MyFallingObject>().NPCDeath();
-            //fallingLights.GetComponent<QuakeFurniture>().Drop();
-            // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
+           // my_bookshelf.GetComponent<MyFallingObject>().NPCDeath();
+           //fallingLights.GetComponent<QuakeFurniture>().Drop();
+           // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
 
 
         }
