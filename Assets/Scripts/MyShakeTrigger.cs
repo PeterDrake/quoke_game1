@@ -41,6 +41,8 @@ namespace MoreMountains.FeedbacksForThirdParty
         
         private string sceneName;
 
+        public GameObject dustStormPrefab;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -57,7 +59,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         {
             if (Input.GetKeyDown("p"))
             {
-               quakeTrigger();
+               QuakeTrigger();
                cheatQuake = true;
             }
         }
@@ -69,7 +71,7 @@ namespace MoreMountains.FeedbacksForThirdParty
            yield return new WaitForSeconds(15f);
            if (cheatQuake == false)
            {
-               quakeTrigger();   
+               QuakeTrigger();   
            }
 
 
@@ -84,6 +86,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public IEnumerator ShakeIt()
         {
+            Instantiate(dustStormPrefab, new Vector3(100, 10, -65), Quaternion.identity);
             while (tableFlag)
             {
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
@@ -99,7 +102,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         
         
 
-        private void quakeTrigger()
+        private void QuakeTrigger()
         {
             InfoEnabler.SetActive(true);
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay1);
