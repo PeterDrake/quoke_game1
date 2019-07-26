@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using MoreMountains.TopDownEngine;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityScript.Steps;
 
-public class TalkToPerson : MonoBehaviour
+public class TalkToFollowingNPC : MonoBehaviour
 {
-
     public Dialogue mainDialogue;
     public Dialogue newHead;
     public GameObject dialogueCanvas;
     public GameObject canvasEnabler;
     public GameObject interactNotifier;
-
+    public GameObject NPC;
     public Text InteractText;
     
     private bool head_flag;
@@ -51,12 +49,14 @@ public class TalkToPerson : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            interactNotifier.SetActive(true);
-            InteractText.GetComponent<InteractText>().ChangeText("Press 'E' to talk");
-            
-        }
+
+            if (other.CompareTag("Player"))
+            {
+                
+
+            }
+        
+        
     }
 
     public void OnTriggerExit(Collider other)
@@ -72,12 +72,17 @@ public class TalkToPerson : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (NPC.GetComponent<FollowPlayer>().follow == false)
+            {
+                interactNotifier.SetActive(true);
+                InteractText.GetComponent<InteractText>().ChangeText("Press 'E' to talk");
+            }
             if (Input.GetKeyDown("e"))
             {
+                Debug.Log(mainDialogue.NPCname);
                 if(isColliding) return;
                 isColliding = true;
                 canvasEnabler.SetActive(true);
-                
                 //Pausing? 
                 myPlayer.GetComponent<CharacterPause>().PauseCharacter();
                 myGameManager.GetComponent<GameManager>().Pause();
@@ -88,12 +93,11 @@ public class TalkToPerson : MonoBehaviour
                     head_flag = true;
                     StartCoroutine(my_pause());
                 }
-                
                 else
                 {
                     dialogueCanvas.GetComponent<DialogueDisplay>().dialogue = newHead;
+                    
                 }
-                
                 dialogueCanvas.GetComponent<DialogueDisplay>().my_update(); 
                 dialogueCanvas.GetComponent<DialogueManager>().Refresh();
                 StartCoroutine(Reset());

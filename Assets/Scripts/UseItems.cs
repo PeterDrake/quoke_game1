@@ -104,7 +104,6 @@ public class UseItems : MonoBehaviour
 
     public void Re_Move(int inddex)
     {
-        Debug.Log(inddex);
         mainInventory.GetComponent<Inventory>().RemoveItem(inddex, 1);
         for (int i = inddex; i < mainInventory.NumberOfFilledSlots; i++)
         {

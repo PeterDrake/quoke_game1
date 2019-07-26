@@ -21,6 +21,8 @@ public class FollowPlayer : MonoBehaviour
     public GameObject couch;
     public GameObject carpet;
     public GameObject placeHolder;
+    public GameObject dialogueCanvas;
+    public GameObject empty;
     public Rigidbody rigidbody;
     public Slider playerHealth;
     public Text deathText;
@@ -57,6 +59,7 @@ public class FollowPlayer : MonoBehaviour
         transform.rotation= Quaternion.Euler(0,0,0);
         a = 1;
         place = couch.transform.position;
+        Debug.Log("happening");
 
     }
     
@@ -70,6 +73,8 @@ public class FollowPlayer : MonoBehaviour
     
     void Update ()
     {
+        DisableDialogue();
+
         if (follow)
         {
             if (Vector3.Distance(player.transform.position,transform.position) < 2f)
@@ -127,22 +132,6 @@ public class FollowPlayer : MonoBehaviour
                 
             }
             
-            
-//            Go();
-//            Debug.Log("far"+far);
-//            Debug.Log("near"+near);
-//            Debug.Log("bookshelf"+bookshelf.transform.position);
-//            Debug.Log(transform.position);
-//            Debug.Log("far");
-//        if (Vector3.Distance(transform.position,far)<.01f)
-//        {
-//                Debug.Log("near");
-//            pos = 
-//            pos.y = 1;
-//                 transform.position = Vector3.MoveTowards(transform.position, near, 1f * Time.deltaTime);
-//                rigidbody.isKinematic = false;
-//                }
-//            
         }
 
         if (fall)
@@ -177,29 +166,34 @@ public class FollowPlayer : MonoBehaviour
             {
                 follow = true;
                 waterGiven = true;
-                placeHolder.GetComponent<CapsuleCollider>().enabled = false;
-                placeHolder.SetActive(false);
+                
             }
         }
         
     }
 
-//    private void OnTriggerEnter(Collider other)
-//    {
-//        if (other.CompareTag("Bookshelf"))
-//        {
-//            fall = true;
-//        }
-//    }
+    void DisableDialogue()
+    {
+        Debug.Log(dialogueCanvas.GetComponent<DialogueDisplay>().nextNodeOne);
+        if ((dialogueCanvas.GetComponent<DialogueDisplay>().nextNodeOne == null) && (follow==true))
+        {
+            Debug.Log("it is null");
+            placeHolder.GetComponent<CapsuleCollider>().enabled = false;
+            placeHolder.GetComponent<TalkToPerson>().interactNotifier.SetActive(false);
+            placeHolder.GetComponent<TalkToPerson>().interactNotifier = empty;
+            placeHolder.GetComponent<TalkToPerson>().InteractText = null;
+            placeHolder.GetComponent<TalkToPerson>().interactNotifier.SetActive(true);
+
+        }
+
+    }
+    
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Door"))
         {
             goBookshelf = true;
-            //disable following player dialogue trigger collider. 
-            //.enabled()fa
-
         }
     }
     

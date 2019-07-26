@@ -222,7 +222,6 @@ public class SanitationCheck : MonoBehaviour
             }
             
             combineButton.SetActive(false);
-            done = false;
         }
     }
     

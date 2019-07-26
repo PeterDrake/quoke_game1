@@ -63,15 +63,17 @@ public class Rearrange : MonoBehaviour
         {
             rearrange = true;
             interactNotifier.SetActive(true);
-            interactText.text = "Press R to rearrange furniture";
-        }
+            interactText.GetComponent<InteractText>().ChangeText("Press R to rearrange furniture");
 
-//
-//        if ((other.CompareTag("Player")) && (strapsOff == false))
-//        {
-//            
-//
-//
-//        }
+        }
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            interactNotifier.SetActive(false);
+        }
     }
 }
