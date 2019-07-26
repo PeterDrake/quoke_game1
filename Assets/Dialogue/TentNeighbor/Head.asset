@@ -16,9 +16,9 @@ MonoBehaviour:
   NPCimage: {fileID: 0}
   NPCtext: I'm agitated
   ResponseOne: I'll provide you comfort for shelter
-  nextNodeOne: {fileID: 0}
+  nextNodeOne: {fileID: 11400000, guid: d46a6ff37954344629d480896ba893b1, type: 2}
   ResponseTwo: Don't worry I have a gun, I'll protect us.
-  nextNodeTwo: {fileID: 0}
+  nextNodeTwo: {fileID: 11400000, guid: e8e6e36ea3d8943db8a476acd6f0bdac, type: 2}
   PlayerReceivesNode1: {fileID: 0}
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}

@@ -24,7 +24,7 @@ public class EnterTent : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("you can enter");
+                    Debug.Log("you can enter, you win");
                 }
 
                
