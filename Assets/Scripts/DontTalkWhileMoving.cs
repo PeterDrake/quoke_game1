@@ -30,7 +30,7 @@ public class DontTalkWhileMoving : MonoBehaviour
     {
         GetComponent<CapsuleCollider>().enabled = false;
         interactEnabler.SetActive(false);
-        yield return new WaitForSeconds(15.5f);
+        yield return new WaitForSeconds(13f);
         GetComponent<CapsuleCollider>().enabled = true;
         
 
