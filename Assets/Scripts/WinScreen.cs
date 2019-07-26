@@ -10,21 +10,36 @@ public class WinScreen : MonoBehaviour
     public GameObject winScreen;
     public GameObject myPlayer;
     public GameObject myGameManager;
-
+    
     //public GameObject end;
-
+    public GameObject objective;
     public GameObject Level;
+    public GameObject aftershockTrigger;
+    public bool sanitation;
+    public bool shelter;
+    public bool water;
+    public bool aftershock;
+    
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(MyPause());
-  
+        myPlayer = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+//        sanitation = objective.GetComponent<UpdateQuests>().sanitationBool;
+//        shelter = objective.GetComponent<UpdateQuests>().shelterBool;
+//        water = objective.GetComponent<UpdateQuests>().waterBool;
+//        aftershock = aftershockTrigger.GetComponent<AftershockTrigger>().happened;
+//
+//        if (sanitation && shelter && water && aftershock)
+//        {
+//            Won();
+//        }
+
     }
 
    
@@ -38,7 +53,7 @@ public class WinScreen : MonoBehaviour
     }
     
     
-    public void PlayerDeath()
+    public void Won()
     {
         winScreen.SetActive(true);
         StartCoroutine(MyPause());
@@ -48,6 +63,8 @@ public class WinScreen : MonoBehaviour
     public void NextLevel()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level 2");
+
+       
     }
 }

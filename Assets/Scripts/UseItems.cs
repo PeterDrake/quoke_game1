@@ -5,10 +5,10 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using MoreMountains.InventoryEngine;
-//using NUnit.Framework.Internal.Commands;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.XR.WSA.WebCam;
 using Debug = UnityEngine.Debug;
 
 /** A script to use the items
@@ -29,7 +29,8 @@ public class UseItems : MonoBehaviour
     public GameObject waterQuest;
     public GameObject Sanitation;
     public GameObject health;
-
+    public GameObject starter;
+    
     public List<GameObject> inventorySlots;
     public Text selected;
     public Text deathText;
@@ -49,17 +50,21 @@ public class UseItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
+        if (starter.active == false)
         {
             selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
             selectedIndex = selectedSlot.Index;
             selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
-            selected.GetComponent<Text>().text = selectedItem.name;
+            if (selectedItem != null)
+            {
+                selected.GetComponent<Text>().text = selectedItem.name;
+            }
+            else
+            {
+                selected.GetComponent<Text>().text = null;
+            }
         }
-        else
-        {
-            selected.GetComponent<Text>().text = null;
-        }
+       
     }
     
     /**
@@ -80,12 +85,8 @@ public class UseItems : MonoBehaviour
         if (String.Compare(item.name, "Water")==0)
         {
             health.GetComponent<Slider>().value = 0;
-            deathText.text = "You drank unpurified water :(";
-
-//            Debug.Log("Water level increased");
-//            water.GetComponent<WaterBar>().waterValue = 100;
-//            String waterText = "Accomplished";
-//            waterQuest.GetComponent<UpdateQuests>().updateWater(waterText);
+            deathText.text = "You drank unpurified water :("; 
+            
         }
 
         else if (string.Compare(item.name, "Sanitation Pamphlet") == 0)
@@ -94,7 +95,6 @@ public class UseItems : MonoBehaviour
            // Sanitation.GetComponent<SanitationCheck>().Collection();
         }
         Re_Move(index);
-        
     }
     
     /*
@@ -110,4 +110,5 @@ public class UseItems : MonoBehaviour
             mainInventory.MoveItem(i + 1, i);
         }
     }
+    
 }

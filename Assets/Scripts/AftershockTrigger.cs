@@ -83,8 +83,8 @@ public class AftershockTrigger : MonoBehaviour
                 yield return new WaitForSeconds(duration);
             }
             InfoEnabler.SetActive(false);
-            happened = true;
             aftershock.SetActive(false);
+            happened = true;
 //            enableDoors.SetActive(false);
         }
         
@@ -101,9 +101,9 @@ public class AftershockTrigger : MonoBehaviour
             StartCoroutine(ShakeIt());
             tableCheck.SetActive(true);
             my_bookshelf.GetComponent<MyFallingObject>().Fall();
-         //  my_bookshelf.GetComponent<MyFallingObject>().NPCDeath();
-            //fallingLights.GetComponent<QuakeFurniture>().Drop();
-            // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
+           // my_bookshelf.GetComponent<MyFallingObject>().NPCDeath();
+           //fallingLights.GetComponent<QuakeFurniture>().Drop();
+           // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
 
 
         }
