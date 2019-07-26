@@ -22,7 +22,7 @@ MonoBehaviour:
   Description: DeadLeaves as carbon material
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 75d67f0ce881c7848aabd3bfbbb0da50, type: 3}
   Prefab: {fileID: 2466409040574510278, guid: fc8e0d01e458a4645a651f58ccfdb911, type: 3}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}

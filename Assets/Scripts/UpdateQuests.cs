@@ -15,22 +15,29 @@ public class UpdateQuests : MonoBehaviour
     public GameObject water;
     public GameObject sanitation;
 
+    public bool shelterBool = false;
+    public bool waterBool = false;
+    public bool sanitationBool = false;
+
     public void updateWater(string newWaterText)
     {
         waterText.GetComponent<Text>().text = newWaterText;
         water.GetComponent<Image>().color = Color.green;
+        waterBool = true;
     }
     
     public void updateShelter(string newShelterText)
     {
         shelterText.GetComponent<Text>().text = newShelterText;
         shelter.GetComponent<Image>().color = Color.green;
+        shelterBool = true;
     }
     
     public void updateSanitation(string newSanitationText)
     {
         sanitationText.GetComponent<Text>().text = newSanitationText;
         sanitation.GetComponent<Image>().color = Color.green;
+        sanitationBool = true;
     }
     
     

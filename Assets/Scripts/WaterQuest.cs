@@ -51,7 +51,6 @@ public class WaterQuest : MonoBehaviour
             {
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Iodine"))
                 {
-                    Debug.Log("Water level increased");
                     water.GetComponent<WaterBar>().waterValue = 100;
                     water.GetComponent<WaterBar>().rate = 0;
                     String waterText = "Accomplished";
@@ -61,26 +60,30 @@ public class WaterQuest : MonoBehaviour
             }
         }
 
-        Debug.Log(purified);
     }
  
     public void Remove(){
+        
         if (purified)
         {
-            for (int i = 0; i < mainInventory.GetComponent<Inventory>().NumberOfFilledSlots+1; i++)
+            for (int i = 0; i < mainInventory.GetComponent<Inventory>().NumberOfFilledSlots; i++)
             {
-                if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Water")==0)
+                if (mainInventory.GetComponent<Inventory>().Content[i] != null)
                 {
-                    inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
+
+                    if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Water") == 0)
+                    {
+                        inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
+                    }
+
+                    if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name, "Iodine") == 0)
+                    {
+                        inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
+                    }
                 }
-                    
-                if (string.Compare(mainInventory.GetComponent<Inventory>().Content[i].name,"Iodine")==0)
-                {
-                    inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
-                }
-                    
             }
-                
+            purifyButton.SetActive(false);
+            purified = false;
         }
     }
         

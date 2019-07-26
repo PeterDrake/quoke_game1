@@ -16,15 +16,16 @@ namespace MoreMountains.InventoryEngine
 
         public int selectionNumber;
         public InventorySlot my_inventorySlot;
+        public GameObject starter;
         public GameObject my_selectorDisplay;
         public GameObject eventTracker;
         public GameObject bookcase;
         public GameObject infoEnabler;
         public GameObject inventoryDisplay;
-        public Text name;
         public GameObject mainInventoryIM;
-        
-        private List<GameObject> slots;
+        public GameObject bucket1;
+        public Text name;
+
         private Inventory mainInventory;
         private Inventory my_inventory;
         private Inventory[] my_invent_list;
@@ -40,19 +41,35 @@ namespace MoreMountains.InventoryEngine
         void Start()
         {
             StartCoroutine(my_OpenInvent());
-            slots = inventoryDisplay.GetComponent<InventoryDisplay>().SlotContainer;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
-                
+//            if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
+//                
+//            {
+//                selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+//                selectedIndex = selectedSlot.Index;
+//                selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
+//                name.GetComponent<Text>().text = selectedItem.name;
+//            }
+//
+
+            selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+
+            if (selectedSlot !=null)
             {
-                selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
                 selectedIndex = selectedSlot.Index;
                 selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
-                name.GetComponent<Text>().text = selectedItem.name;
+                if (selectedItem != null)
+                {
+                    name.GetComponent<Text>().text = selectedItem.name;
+                }
+                else
+                {
+                    name.GetComponent<Text>().text = null;
+                }
             }
         }
 
@@ -104,9 +121,9 @@ namespace MoreMountains.InventoryEngine
                 
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket"))
                 {
-                   // bucketIndex = eventTracker.GetComponent<MyEventTracker>().my_InventorySlotIndex("Bucket");
-                    //bucketSlot = eventTracker.GetComponent<MyEventTracker>().my_InventorySlot();
+                    bucket1.SetActive(false);
                 }
+                
             }
         }
         

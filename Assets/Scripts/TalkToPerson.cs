@@ -17,7 +17,6 @@ public class TalkToPerson : MonoBehaviour
 
     public Text InteractText;
     
-
     private bool head_flag;
     public GameObject myPlayer;
     public GameObject myGameManager;
@@ -36,7 +35,7 @@ public class TalkToPerson : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator my_pause()
@@ -56,6 +55,7 @@ public class TalkToPerson : MonoBehaviour
         {
             interactNotifier.SetActive(true);
             InteractText.GetComponent<InteractText>().ChangeText("Press 'E' to talk");
+            
         }
     }
 
@@ -76,7 +76,6 @@ public class TalkToPerson : MonoBehaviour
             {
                 if(isColliding) return;
                 isColliding = true;
-                
                 canvasEnabler.SetActive(true);
                 
                 //Pausing? 
@@ -89,17 +88,16 @@ public class TalkToPerson : MonoBehaviour
                     head_flag = true;
                     StartCoroutine(my_pause());
                 }
+                
                 else
                 {
                     dialogueCanvas.GetComponent<DialogueDisplay>().dialogue = newHead;
-
                 }
+                
                 dialogueCanvas.GetComponent<DialogueDisplay>().my_update(); 
                 dialogueCanvas.GetComponent<DialogueManager>().Refresh();
                 StartCoroutine(Reset());
-
-
-
+                
             }
         }
     }

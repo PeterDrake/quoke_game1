@@ -22,7 +22,7 @@ MonoBehaviour:
   Description: For two bucket system
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 21300012, guid: 358b5d9f23bc9413e87c9948acc67ee1, type: 3}
+  Icon: {fileID: 21300000, guid: fc793da4e7b4d4f50bf9daba6cc69b64, type: 3}
   Prefab: {fileID: 1077657506260428, guid: 2660cd93116a246439780568b58eca30, type: 3}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}

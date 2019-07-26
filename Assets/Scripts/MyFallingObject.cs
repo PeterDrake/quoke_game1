@@ -11,6 +11,7 @@ public class MyFallingObject : MonoBehaviour
     public float thrust;
     public Rigidbody rb;
     public Slider health;
+    public GameObject rearranger;
     public GameObject DeathScreen;
     public GameObject npc2;
     public Text death;
@@ -25,15 +26,16 @@ public class MyFallingObject : MonoBehaviour
         currentScene = SceneManager.GetActiveScene();
         sceneName = currentScene.name;
         rb = GetComponent<Rigidbody>();
+
     }
 
     public void Fall()
     {
         if (string.Compare(sceneName, "Level 2")==0)
         {
-            if (GetComponent<Pushable>().safe == false)
+            if (rearranger.GetComponent<Rearrange>().safe == false)
             {
-                Debug.Log(GetComponent<Pushable>().safe);
+                Debug.Log(rearranger.GetComponent<Rearrange>().safe);
                 isEnabled = true;
                 rb.AddRelativeForce(Vector3.forward * thrust);
                 StartCoroutine(BookshelfDeactivate());
@@ -41,7 +43,6 @@ public class MyFallingObject : MonoBehaviour
         }
         else
         {
-//            Debug.Log(GetComponent<Pushable>().safe);
             isEnabled = true;
             rb.AddRelativeForce(Vector3.forward * thrust);
             StartCoroutine(BookshelfDeactivate());
@@ -49,39 +50,65 @@ public class MyFallingObject : MonoBehaviour
         
     }
 
-//    public void NPCDeath()
-//    {
-//        npc2.GetComponent<FollowPlayer>().fall = true;
-//    }
+    public void NPCDeath()
+    {
+//        if (rearranger.GetComponent<Rearrange>().safe == false)
+//        {
+//            npc2.GetComponent<FollowPlayer>().fall = true;
+//        }
+    }
 
     public IEnumerator BookshelfDeactivate()
     {
         yield return new WaitForSeconds(2f);
         isEnabled = false; 
         GetComponent<Rigidbody>().isKinematic = true;
+        Debug.Log("happened here");
+        npc2.GetComponent<FollowPlayer>().fall = true;
+
     }
 
 
     //how do we ensure that the Earthquake is actually happening?
     public void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.CompareTag("Player"))
         {
-             if ((isEnabled))
-             {
-                 Debug.Log("Player Hit");
-                 death.text = "Your bookcase crushed you to death! :(";
-                 health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
+//            Debug.Log("supposed to happen::Trigger");
+            Debug.Log(rearranger.GetComponent<Rearrange>().safe);
+
+            if ((isEnabled))
+            {
+                Debug.Log("Player Hit");
+                death.text = "Your bookcase crushed you to death! :(";
+                health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
 //          DeathScreen.GetComponent<Death>().PlayerDeath();
-             }
+            }
         }
+        
+//        if (other.gameObject.CompareTag("NPC2"))
+//        {
+//            if (rearranger.GetComponent<Rearrange>().safe==false)
+//            {
+//                npc2.GetComponent<FollowPlayer>().fall = true;
+//
+//            }
+//        }
     }
 
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("NPC2"))
-        {
-            npc2.GetComponent<FollowPlayer>().fall = true;
-        }
+//        Debug.Log(rearranger.GetComponent<Rearrange>().safe);
+//        if (other.gameObject.CompareTag("NPC2"))
+//        {
+//            if (rearranger.GetComponent<Rearrange>().safe==false)
+//            {
+//                Debug.Log("supposed to happen");
+//                npc2.GetComponent<FollowPlayer>().fall = true;
+//
+//            }
+//        }
     }
+    
 }

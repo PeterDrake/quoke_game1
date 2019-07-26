@@ -24,7 +24,6 @@ public class NETinfo : MonoBehaviour
         if (netTalk>2)
         {
             sanitation.GetComponent<SanitationCheck>().netTalked = true;
-            sanitation.GetComponent<SanitationCheck>().PamphletUsed();
         }
     }
 

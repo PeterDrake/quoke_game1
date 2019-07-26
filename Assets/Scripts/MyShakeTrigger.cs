@@ -74,14 +74,10 @@ namespace MoreMountains.FeedbacksForThirdParty
                QuakeTrigger();   
            }
 
-
            //yield return new WaitForSeconds(10f);
            //InfoEnabler.SetActive(false);
            //EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
           // enableDoors.SetActive(false);
-           
-
-
         }
 
         public IEnumerator ShakeIt()
@@ -91,8 +87,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             {
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
                 yield return new WaitForSeconds(duration);
-
-
+                
             }
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
             enableDoors.SetActive(false);
