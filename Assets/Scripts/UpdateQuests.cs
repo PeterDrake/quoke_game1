@@ -14,7 +14,7 @@ public class UpdateQuests : MonoBehaviour
     public GameObject shelter;
     public GameObject water;
     public GameObject sanitation;
-
+    public GameObject infoEnabler;
     public bool shelterBool = false;
     public bool waterBool = false;
     public bool sanitationBool = false;
@@ -31,6 +31,7 @@ public class UpdateQuests : MonoBehaviour
         shelterText.GetComponent<Text>().text = newShelterText;
         shelter.GetComponent<Image>().color = Color.green;
         shelterBool = true;
+        infoEnabler.SetActive(false);
     }
     
     public void updateSanitation(string newSanitationText)

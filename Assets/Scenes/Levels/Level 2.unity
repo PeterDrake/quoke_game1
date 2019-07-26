@@ -4195,6 +4195,7 @@ MonoBehaviour:
   shelter: {fileID: 1983505895}
   water: {fileID: 645734663}
   sanitation: {fileID: 655760434}
+  infoEnabler: {fileID: 947499063}
   shelterBool: 0
   waterBool: 0
   sanitationBool: 0
@@ -4358,6 +4359,7 @@ MonoBehaviour:
   tableCheck: {fileID: 714940241}
   textToDisplay1: Rearrange the Bookcase furniture
   textToDisplay2: Crawl under the table with 'C' and hold it to stay crouched under
+  textToDisplay3: 
   tableFlag: 1
   cheatQuake: 0
   happened: 0
@@ -10990,6 +10992,26 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: bd583406e90c4044993888c457abef5a, type: 3}
+--- !u!1 &350672825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 5c3d48b0326cd42099d35bb6d9e08468,
+    type: 3}
+  m_PrefabInstance: {fileID: 702879062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &350672832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350672825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06bc8db249bcd4089a4337445b9b019b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  my_default: {fileID: 2100000, guid: dc043a9656f81bc488510dcda2b382ab, type: 2}
+  my_blink: {fileID: 2100000, guid: dc043a9656f81bc488510dcda2b382ab, type: 2}
 --- !u!1001 &351180285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21511,12 +21533,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a5054160cd9c142a767ce0ced41ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainInventory: {fileID: 890900704}
   water: {fileID: 1240251244}
+  mainInventory: {fileID: 890900704}
   objective: {fileID: 111437459}
   eventTracker: {fileID: 863599052}
   inventoryCanvas: {fileID: 927360735}
   purifyButton: {fileID: 1461167405}
+  iodine: {fileID: 350672825}
+  mat: {fileID: 2100000, guid: 0e0015bbc14f39f46b331e5daaa1ec98, type: 2}
 --- !u!1001 &646823176
 PrefabInstance:
   m_ObjectHideFlags: 0

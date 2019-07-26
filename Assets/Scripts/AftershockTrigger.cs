@@ -26,9 +26,11 @@ public class AftershockTrigger : MonoBehaviour
         public GameObject InfoEnabler;
         public GameObject EventTracker;
         public GameObject tableCheck;
-        public String textToDisplay1;
         
+        public String textToDisplay1;
         public string textToDisplay2;
+        public string textToDisplay3;
+
         public bool tableFlag = true;
         public bool cheatQuake = false;
         public bool happened = false;
@@ -82,9 +84,11 @@ public class AftershockTrigger : MonoBehaviour
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
                 yield return new WaitForSeconds(duration);
             }
+            
             InfoEnabler.SetActive(false);
-            aftershock.SetActive(false);
             happened = true;
+            EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay3);
+            aftershock.SetActive(false);
 //            enableDoors.SetActive(false);
         }
         

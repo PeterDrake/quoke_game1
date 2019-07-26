@@ -8,12 +8,15 @@ using UnityEngine.UI;
 
 public class WaterQuest : MonoBehaviour
 {
-    public GameObject mainInventory;
     public Slider water;
+    public GameObject mainInventory;
     public GameObject objective;
     public GameObject eventTracker;
     public GameObject inventoryCanvas;
     public GameObject purifyButton;
+    public GameObject iodine;
+
+    public Material mat;
     private bool purified;
 
     // Start is called before the first frame update
@@ -35,6 +38,7 @@ public class WaterQuest : MonoBehaviour
         {
             if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Water"))
             {
+                iodine.GetComponent<BlinkingObject>().my_blink = mat;
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Iodine"))
                 {
                     purifyButton.SetActive(true);

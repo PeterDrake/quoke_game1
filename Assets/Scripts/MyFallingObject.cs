@@ -75,8 +75,6 @@ public class MyFallingObject : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-//            Debug.Log("supposed to happen::Trigger");
-            Debug.Log(rearranger.GetComponent<Rearrange>().safe);
 
             if ((isEnabled))
             {

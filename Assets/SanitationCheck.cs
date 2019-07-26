@@ -210,7 +210,6 @@ public class SanitationCheck : MonoBehaviour
                     {
                         inventoryCanvas.GetComponent<UseItems>().Re_Move(i);
                     }
-                    
                     else if (mainInventory.GetComponent<Inventory>().Content[i].Prefab)
                     {
                         if (mainInventory.GetComponent<Inventory>().Content[i].Prefab.CompareTag("Carbon"))
@@ -220,7 +219,6 @@ public class SanitationCheck : MonoBehaviour
                     }
                 }
             }
-            
             combineButton.SetActive(false);
         }
     }
