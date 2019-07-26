@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Start
   m_EditorClassIdentifier: 
   NPCname: Joe (NET)
-  NPCimage: {fileID: 21300000, guid: 079f5a8d00f74c84181be0a872b4c39d, type: 3}
+  NPCimage: {fileID: 21300000, guid: 337347c8cffb43547bb9b516f0f289af, type: 3}
   NPCtext: OOf! that was quite something, how are you holding on?
   ResponseOne: Yeah I am okay, you?
   nextNodeOne: {fileID: 11400000, guid: 338184c2fc1f522439b96fd235f55c71, type: 2}

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: Response3
+  m_Name: Response1
   m_EditorClassIdentifier: 
   NPCname: Joe (NET)
-  NPCimage: {fileID: 21300000, guid: 079f5a8d00f74c84181be0a872b4c39d, type: 3}
-  NPCtext: Not really, but I know more people will need shelter, so I may tell you
-    later.
-  ResponseOne: Okay for sure.
-  nextNodeOne: {fileID: 0}
-  ResponseTwo: Well... let's see what they can help with...
-  nextNodeTwo: {fileID: 0}
+  NPCimage: {fileID: 21300000, guid: 337347c8cffb43547bb9b516f0f289af, type: 3}
+  NPCtext: I am okay, what's your next plan?
+  ResponseOne: Trying to figure out where to stay?
+  nextNodeOne: {fileID: 11400000, guid: c5bb9cee7a0a40b4687abcf9480df739, type: 2}
+  ResponseTwo: Well there was work, but now... I guess I am worried about tonight's
+    shelter
+  nextNodeTwo: {fileID: 11400000, guid: c5bb9cee7a0a40b4687abcf9480df739, type: 2}
   PlayerReceivesNode1: {fileID: 0}
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}

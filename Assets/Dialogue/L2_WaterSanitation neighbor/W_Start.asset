@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: New Start
+  m_Name: Start
   m_EditorClassIdentifier: 
   NPCname: Gee
-  NPCimage: {fileID: 21300004, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
-  NPCtext: How have you been surviving?
-  ResponseOne: Alright, except I need to take care of our waste, but I don't know
-    how
-  nextNodeOne: {fileID: 11400000, guid: cbb9179a37af0574c9fbdc061151d987, type: 2}
-  ResponseTwo: Things could be better, I have a deep need to poo but don't know how
-  nextNodeTwo: {fileID: 11400000, guid: cbb9179a37af0574c9fbdc061151d987, type: 2}
+  NPCimage: {fileID: 21300000, guid: 415cbe5820edc1648a800b748e52fe0f, type: 3}
+  NPCtext: Oh you survived the Earthquake
+  ResponseOne: Yes, but I am so thirsty, I don't know how long I will last haha. How
+    are you?
+  nextNodeOne: {fileID: 11400000, guid: ecd41922488851940a2d7ac158d6427a, type: 2}
+  ResponseTwo: Yeah, surprised me too. How are you holding on?
+  nextNodeTwo: {fileID: 11400000, guid: c5bb9cee7a0a40b4687abcf9480df739, type: 2}
   PlayerReceivesNode1: {fileID: 0}
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}

@@ -16,6 +16,7 @@ namespace MoreMountains.InventoryEngine
 
         public int selectionNumber;
         public InventorySlot my_inventorySlot;
+        public GameObject starter;
         public GameObject my_selectorDisplay;
         public GameObject eventTracker;
         public GameObject bookcase;
@@ -45,13 +46,30 @@ namespace MoreMountains.InventoryEngine
         // Update is called once per frame
         void Update()
         {
-            if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
-                
+//            if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
+//                
+//            {
+//                selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+//                selectedIndex = selectedSlot.Index;
+//                selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
+//                name.GetComponent<Text>().text = selectedItem.name;
+//            }
+//
+
+            selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+
+            if (selectedSlot !=null)
             {
-                selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
                 selectedIndex = selectedSlot.Index;
                 selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
-                name.GetComponent<Text>().text = selectedItem.name;
+                if (selectedItem != null)
+                {
+                    name.GetComponent<Text>().text = selectedItem.name;
+                }
+                else
+                {
+                    name.GetComponent<Text>().text = null;
+                }
             }
         }
 

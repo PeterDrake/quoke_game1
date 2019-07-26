@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: Response2
+  m_Name: Response4
   m_EditorClassIdentifier: 
-  NPCname: Gee
-  NPCimage: {fileID: 21300004, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
-  NPCtext: Oh thank you, I am sure i can figure out a way to help you
-  ResponseOne: Haha, that's nice of you.
-  nextNodeOne: {fileID: 11400000, guid: cbb9179a37af0574c9fbdc061151d987, type: 2}
-  ResponseTwo: For sure, just pull your weight. Jk... maybe.
-  nextNodeTwo: {fileID: 11400000, guid: cbb9179a37af0574c9fbdc061151d987, type: 2}
-  PlayerReceivesNode1: {fileID: 0}
+  NPCname: Joe (NET)
+  NPCimage: {fileID: 21300000, guid: 337347c8cffb43547bb9b516f0f289af, type: 3}
+  NPCtext: I see, well I have this pamphlet, and it may have the information you seek
+  ResponseOne: Oh, that could definitely help
+  nextNodeOne: {fileID: 0}
+  ResponseTwo: I already have one, but wasn't sure what it was for
+  nextNodeTwo: {fileID: 0}
+  PlayerReceivesNode1: {fileID: 11400000, guid: 4529c30e923a79f4d85e3fbb4ceb3699,
+    type: 2}
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}
   DoesPlayerHaveNode2: {fileID: 0}

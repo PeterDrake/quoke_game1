@@ -73,10 +73,8 @@ public class TalkToPerson : MonoBehaviour
         {
             if (Input.GetKeyDown("e"))
             {
-
                 if(isColliding) return;
                 isColliding = true;
-                
                 canvasEnabler.SetActive(true);
                 
                 //Pausing? 
@@ -97,9 +95,7 @@ public class TalkToPerson : MonoBehaviour
                 dialogueCanvas.GetComponent<DialogueDisplay>().my_update(); 
                 dialogueCanvas.GetComponent<DialogueManager>().Refresh();
                 StartCoroutine(Reset());
-
-
-
+                
             }
         }
     }

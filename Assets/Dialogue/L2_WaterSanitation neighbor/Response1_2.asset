@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: Response2
+  m_Name: Response1_2
   m_EditorClassIdentifier: 
-  NPCname: Joe (NET)
-  NPCimage: {fileID: 21300000, guid: 079f5a8d00f74c84181be0a872b4c39d, type: 3}
-  NPCtext: Your house looks fine, you can probably stay there, be careful of aftershocks
-    though.
-  ResponseOne: Oh really, that's great thanks! Bye.
-  nextNodeOne: {fileID: 0}
-  ResponseTwo: 'I can stay there! Thanks, do you need anything? '
-  nextNodeTwo: {fileID: 11400000, guid: 08f62c32f684ce24db12b8ef2d7997cc, type: 2}
+  NPCname: Gee
+  NPCimage: {fileID: 21300000, guid: 415cbe5820edc1648a800b748e52fe0f, type: 3}
+  NPCtext: I am okay, I just don't have a place to stay now...
+  ResponseOne: Well you can crash with me, we have to help each other now, do you
+    have water by any chance?
+  nextNodeOne: {fileID: 11400000, guid: 0de8faa8ff121d443bb287e07363947b, type: 2}
+  ResponseTwo: If you stay at my place, you could be useful in the future
+  nextNodeTwo: {fileID: 11400000, guid: 0de8faa8ff121d443bb287e07363947b, type: 2}
   PlayerReceivesNode1: {fileID: 0}
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}

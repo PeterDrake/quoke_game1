@@ -20,7 +20,7 @@ public class FollowPlayer : MonoBehaviour
     public GameObject bookshelf;
     public GameObject couch;
     public GameObject carpet;
-    public Dialogue housing;
+    public GameObject placeHolder;
     public Rigidbody rigidbody;
     public Slider playerHealth;
     public Text deathText;
@@ -177,7 +177,8 @@ public class FollowPlayer : MonoBehaviour
             {
                 follow = true;
                 waterGiven = true;
-                GetComponent<CapsuleCollider>().enabled = false;
+                placeHolder.GetComponent<CapsuleCollider>().enabled = false;
+                placeHolder.SetActive(false);
             }
         }
         

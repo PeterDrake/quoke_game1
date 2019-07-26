@@ -82,7 +82,6 @@ public class AftershockTrigger : MonoBehaviour
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
                 yield return new WaitForSeconds(duration);
             }
-            
             InfoEnabler.SetActive(false);
             aftershock.SetActive(false);
             happened = true;

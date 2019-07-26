@@ -63,7 +63,7 @@ public class SanitationCheck : MonoBehaviour
     { 
         Collection();
         Remove();
-
+       
     }
     
     /*
@@ -225,4 +225,6 @@ public class SanitationCheck : MonoBehaviour
             done = false;
         }
     }
+    
+    
 }
