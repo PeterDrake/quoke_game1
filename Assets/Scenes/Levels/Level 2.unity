@@ -8372,7 +8372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cc464aac6a969764c98fa39f8a7775ec, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cc464aac6a969764c98fa39f8a7775ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14773,7 +14773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4712246713671880, guid: b50622dd96db62349a8853c755b5cbf5, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4712246713671880, guid: b50622dd96db62349a8853c755b5cbf5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -43771,7 +43771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterSlide: {fileID: 1240251244}
-  starterInventory: {fileID: 0}
+  starterInventory: {fileID: 398958317}
   waterValue: 0
   rate: 0.001
   frame: -100
@@ -63975,9 +63975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dc01081a9eec043ada59eea033697c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanitation: {fileID: 655760434}
-  objective: {fileID: 111437459}
-  netTalk: 0
 --- !u!114 &1908103261
 MonoBehaviour:
   m_ObjectHideFlags: 0
