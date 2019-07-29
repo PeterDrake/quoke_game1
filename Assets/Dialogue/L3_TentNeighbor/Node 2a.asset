@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
   m_Name: Node 2a
   m_EditorClassIdentifier: 
-  NPCname: 
+  NPCname: Kiara
   NPCimage: {fileID: 0}
-  NPCtext: 
-  ResponseOne: 
+  NPCtext: Thanks for the comfort, I have space in my tent
+  ResponseOne: Thanks!
   nextNodeOne: {fileID: 0}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}

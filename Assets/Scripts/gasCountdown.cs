@@ -6,21 +6,12 @@ using UnityEngine.UI;
 
 public class gasCountdown : MonoBehaviour
 {
-
+    /// <summary>
+    /// countdown for gas explosion. Starts after talking to NPC. players has x seconds to turn off the gas before they die
+    /// </summary>
+    
     public Text death;
-
     public Slider health;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void OnTriggerExit(Collider other)
     {
@@ -32,6 +23,8 @@ public class gasCountdown : MonoBehaviour
 
     public IEnumerator gasExplosion()
     {
+        
+        // this number controls time until explosion
         yield return new WaitForSeconds(15f);
         death.text = "YOU DIED OF A GAS EXPLOSION :(";
         health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;

@@ -13,12 +13,7 @@ using UnityStandardAssets.Characters.ThirdPerson;
             StartCoroutine(GroundDistance());
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
+       
         public IEnumerator GroundDistance()
         {
             yield return new WaitForSeconds(.3f);
