@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class SanitationCaller : MonoBehaviour
     public Slider health;
     public GameObject eventTracker;
     public Text death;
-
+    public GameObject objective;
     public Text sanitation;
 
     private bool bushPoop;
@@ -37,7 +38,7 @@ public class SanitationCaller : MonoBehaviour
     IEnumerator PoopTime()
     {
        yield return new WaitForSeconds(180f);
-       if (!GetComponent<SanitationCheck>().spUsed)
+       if (!objective.GetComponent<UpdateQuests>().sanitationBool)
        {
            sanitationCanvas.SetActive(true);
        }
