@@ -13,18 +13,16 @@ public class loseItem : MonoBehaviour
     public GameObject DialogueManager;
 
     public InventoryItem itemToLose;
-    // Start is called before the first frame update
-
-
     
     
-    
+    //checks if player is colliding, pressing 'e' and then they 'pick up' the item
     private void OnTriggerStay(Collider other) 
     {
         if (other.CompareTag("Player"))
         {
             if (Input.GetKeyDown("e"))
             {
+                //makes sure the player doesn't quickly double hit 'e' and get redundant effect
                 if (isColliding) return;
                 isColliding = true;
 
@@ -47,6 +45,7 @@ public class loseItem : MonoBehaviour
         }
     }
 
+    //checks if the player left (resets the IsColliding)
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))

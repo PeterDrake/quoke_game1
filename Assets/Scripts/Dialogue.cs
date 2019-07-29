@@ -6,6 +6,10 @@ using MoreMountains.InventoryEngine;
 [CreateAssetMenu(fileName = "New Dialogue", menuName = "Create Dialogue")]
 public class Dialogue : ScriptableObject
 {
+    /// <summary>
+    /// Scriptable object script for creating dialogues
+    /// </summary>
+    
     public string NPCname;
     public Sprite NPCimage;
     public string NPCtext;
@@ -16,8 +20,7 @@ public class Dialogue : ScriptableObject
     public string ResponseTwo;
     public Dialogue nextNodeTwo;
 
-    //public InventoryItem PlayerReceives;
-    //public InventoryItem DoesPlayerHave;
+    
     
     public InventoryItem PlayerReceivesNode1;
     public InventoryItem PlayerReceivesNode2; 

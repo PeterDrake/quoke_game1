@@ -11,17 +11,10 @@ public class interactWithObject : MonoBehaviour
     public Text interactText;
 
     public string newInteractText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
+    
+    //This script pops up an inputted interact text to display when the player has an opportunity to do something. Ex. 'press 'E' to tap water heater'
+    
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

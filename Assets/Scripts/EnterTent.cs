@@ -6,7 +6,8 @@ public class EnterTent : MonoBehaviour
 {
     public GameObject eventTracker;
     private bool isColliding;
-    // Start is called before the first frame update
+
+    //checks if player has gun and if they can/cant enter the tent
     private void OnTriggerStay(Collider other) 
     {
         if (other.CompareTag("Player"))
