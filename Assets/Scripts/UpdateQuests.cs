@@ -14,11 +14,15 @@ public class UpdateQuests : MonoBehaviour
     public GameObject shelter;
     public GameObject water;
     public GameObject sanitation;
-
+    public GameObject infoEnabler;
     public bool shelterBool = false;
     public bool waterBool = false;
     public bool sanitationBool = false;
 
+    /*
+     * After a quest has been completed,
+     * change the text, turn the icon and turn the bool to true
+     */
     public void updateWater(string newWaterText)
     {
         waterText.GetComponent<Text>().text = newWaterText;

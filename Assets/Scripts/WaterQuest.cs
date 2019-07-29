@@ -6,14 +6,20 @@ using MoreMountains.InventoryEngine;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class WaterQuest : MonoBehaviour
 {
-    public GameObject mainInventory;
     public Slider water;
+    public GameObject mainInventory;
     public GameObject objective;
     public GameObject eventTracker;
     public GameObject inventoryCanvas;
     public GameObject purifyButton;
+    public GameObject iodine;
+    public GameObject infoEnabler;
+    public String text1;
+    public Material mat;
+    
     private bool purified;
 
     // Start is called before the first frame update
@@ -21,20 +27,41 @@ public class WaterQuest : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
+    /*
+     * call the button method that brings the purify button to life,
+     * the remove method which clears the inventory of the items used
+     *
+     * if the water level reaches 50,
+     * give the hint to find water and make the iodine blink;
+     *  
+     */
     void Update()
     { 
-        Button();
+        ButtonOn();
         Remove();
-        
+
+        if (water.GetComponent<WaterBar>().waterValue <=50)
+        {
+            infoEnabler.SetActive(true);
+            eventTracker.GetComponent<InformationCanvas>().DisplayInfo(text1);
+            iodine.GetComponent<BlinkingObject>().my_blink = mat;
+        }
     }
 
-    public void Button()
+    /*
+     * go through the inventory
+     * if there is water in the inventory, make the iodine blink;
+     * if there is water and iodine in the inventory ensure, enable the purify button
+     * 
+     */
+    public void ButtonOn()
     {
         for (int i = 0; i < mainInventory.GetComponent<Inventory>().NumberOfFilledSlots; i++)
         {
             if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Water"))
             {
+                iodine.GetComponent<BlinkingObject>().my_blink = mat;
+                
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Iodine"))
                 {
                     purifyButton.SetActive(true);
@@ -43,27 +70,32 @@ public class WaterQuest : MonoBehaviour
         }
     }
 
+    /*
+     * If the button is pressed,
+     * increase the water level to 100,
+     * the depletion rate to 0;
+     * change the text in the water quest to accomplished
+     * and the color of the water icon to green
+     */
     public void MakeWater()
     {
-        for (int i = 0; i < mainInventory.GetComponent<Inventory>().NumberOfFilledSlots; i++)
-        {
-            if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Water"))
-            {
-                if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Iodine"))
-                {
-                    water.GetComponent<WaterBar>().waterValue = 100;
-                    water.GetComponent<WaterBar>().rate = 0;
-                    String waterText = "Accomplished";
-                    objective.GetComponent<UpdateQuests>().updateWater(waterText);
-                    purified = true;
-                }
-            }
-        }
-
+        
+        water.GetComponent<WaterBar>().waterValue = 100; 
+        water.GetComponent<WaterBar>().rate = 0;
+        String waterText = "Accomplished";
+        objective.GetComponent<UpdateQuests>().updateWater(waterText);
+        purified = true;
+        
     }
  
-    public void Remove(){
-        
+    /*
+     * remove the water and iodine from the inventory
+     * and move the items to left by to fill the slots
+     * remove the purify button
+     * 
+     */
+    public void Remove()
+    {
         if (purified)
         {
             for (int i = 0; i < mainInventory.GetComponent<Inventory>().NumberOfFilledSlots; i++)
@@ -82,8 +114,8 @@ public class WaterQuest : MonoBehaviour
                     }
                 }
             }
+            
             purifyButton.SetActive(false);
-            purified = false;
         }
     }
         

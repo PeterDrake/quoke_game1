@@ -5,6 +5,9 @@ using System.Net.Mime;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * For the empty game object that checks for collision with the bookcase
+ */
 public class Rearrange : MonoBehaviour
 {
     public bool rearrange = false;
@@ -24,12 +27,19 @@ public class Rearrange : MonoBehaviour
 
     }
 
+    /*
+     * if hte player is close enough to the bookcase and presses 'r'
+     *     set the protector bookcase to true, disable rigidbody movements
+     * if the player is also with the waterNPC,
+     *     make the NPC follow the player again,
+     *     and disable the go to bookshelf method.
+     */
+    
     // Update is called once per frame
     void Update()
     {
         strapsOff = straps.activeSelf;
         
-        strapsOff = straps.activeSelf;
         if (rearrange)
         {
             if(Input.GetKeyDown("r"))
@@ -43,19 +53,22 @@ public class Rearrange : MonoBehaviour
                     npc2.GetComponent<FollowPlayer>().follow = true;
                     npc2.GetComponent<FollowPlayer>().goBookshelf = false;
                 }
-            
                 safe = true;
                 interactNotifier.SetActive(false);
-                
             }
         }
-
+        
         if (strapsOff)
         {
             safe = true;
         }
 
     }
+    
+    /*
+     * If the player enters the trigger area and the bookcase was not strapped,
+     * tell the player to press r to rearrange the furniture
+     */
 
     private void OnTriggerEnter(Collider other)
     {
@@ -68,6 +81,10 @@ public class Rearrange : MonoBehaviour
         }
         
     }
+    
+    /*
+     * if the player leaves the trigger area, turn the interact notifier off.
+     */
 
     private void OnTriggerExit(Collider other)
     {

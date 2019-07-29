@@ -21,10 +21,15 @@ public class HealthBar : MonoBehaviour
     }
 
     // Update is called once per frame
+    
+    /*
+     * if the player's water drains to 0,
+     * their health depletes to 0,
+     *
+     * if the health is 0, they die
+     */
     void Update()
     {
-
-       //Dying of Dehydration
         if (waterSlide.value <= waterSlide.minValue)
         {
             value -= 2f;
