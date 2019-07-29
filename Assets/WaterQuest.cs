@@ -15,8 +15,10 @@ public class WaterQuest : MonoBehaviour
     public GameObject inventoryCanvas;
     public GameObject purifyButton;
     public GameObject iodine;
-
+    public GameObject infoEnabler;
+    public String text1;
     public Material mat;
+    
     private bool purified;
 
     // Start is called before the first frame update
@@ -29,6 +31,14 @@ public class WaterQuest : MonoBehaviour
     { 
         Button();
         Remove();
+
+        if (water.GetComponent<WaterBar>().waterValue <=50)
+        {
+            infoEnabler.SetActive(true);
+            eventTracker.GetComponent<InformationCanvas>().DisplayInfo(text1);
+            iodine.GetComponent<BlinkingObject>().my_blink = mat;
+
+        }
         
     }
 
@@ -39,6 +49,7 @@ public class WaterQuest : MonoBehaviour
             if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Water"))
             {
                 iodine.GetComponent<BlinkingObject>().my_blink = mat;
+                
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Iodine"))
                 {
                     purifyButton.SetActive(true);

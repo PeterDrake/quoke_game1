@@ -82,7 +82,7 @@ public class UseItems : MonoBehaviour
         inventorySlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
         index = inventorySlot.Index;
         item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
-        if (String.Compare(item.name, "Water")==0)
+        if (String.Compare(item.name, "Water") == 0)
         {
             health.GetComponent<Slider>().value = 0;
             deathText.text = "You drank unpurified water :("; 
@@ -94,6 +94,7 @@ public class UseItems : MonoBehaviour
             Sanitation.GetComponent<SanitationCheck>().PamphletUsed();
            // Sanitation.GetComponent<SanitationCheck>().Collection();
         }
+        
         Re_Move(index);
     }
     

@@ -22,6 +22,8 @@ public class SanitationCheck : MonoBehaviour
     public GameObject mainInventory;
     //public GameObject carbon;
     public bool netTalked = false;
+    public bool spUsed= false;
+    
     public Material mat;
 
     public Text sanitation;
@@ -38,7 +40,6 @@ public class SanitationCheck : MonoBehaviour
     private int sanitizerNumber ;
     private string SanitationDone;
     
-    private bool spUsed= false;
 
     private bool done = false;
     /*
@@ -163,10 +164,10 @@ public class SanitationCheck : MonoBehaviour
              
          }
          
-         else
-         {
-             sanitation.text = "Talk to NPC";
-         }
+//         else
+//         {
+//             sanitation.text = "Talk to NET";
+//         }
     }
 
     /*

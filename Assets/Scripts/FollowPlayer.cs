@@ -59,7 +59,6 @@ public class FollowPlayer : MonoBehaviour
         transform.rotation= Quaternion.Euler(0,0,0);
         a = 1;
         place = couch.transform.position;
-        Debug.Log("happening");
 
     }
     
@@ -174,10 +173,8 @@ public class FollowPlayer : MonoBehaviour
 
     void DisableDialogue()
     {
-        Debug.Log(dialogueCanvas.GetComponent<DialogueDisplay>().nextNodeOne);
         if ((dialogueCanvas.GetComponent<DialogueDisplay>().nextNodeOne == null) && (follow==true))
         {
-            Debug.Log("it is null");
             placeHolder.GetComponent<CapsuleCollider>().enabled = false;
             placeHolder.GetComponent<TalkToPerson>().interactNotifier.SetActive(false);
             placeHolder.GetComponent<TalkToPerson>().interactNotifier = empty;

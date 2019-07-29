@@ -8,7 +8,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Water;
 
-
 public class WaterBar : MonoBehaviour
 {
     public Slider waterSlide;
@@ -22,8 +21,7 @@ public class WaterBar : MonoBehaviour
     public Text deathText;
 
     public Inventory mainInventory;
-//
-//    private int wIndex;
+
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +54,6 @@ public class WaterBar : MonoBehaviour
         if (waterSlide.GetComponent<Slider>().value <= waterSlide.GetComponent<Slider>().minValue)
         {
             deathText.text = "Dehydration ended you!";
-
         }
     }
 
