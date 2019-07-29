@@ -5,22 +5,15 @@ using UnityEngine.UI;
 
 public class InformationCanvas : MonoBehaviour
 {
+    
+    // changes the what the information canvas displays 'Exit the house', 'Turn off the gas' , etc.
 
     public GameObject textCanvas;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void DisplayInfo(string textToDisplay)
     {
         textCanvas.GetComponent<Text>().text = textToDisplay;
     }
+    
 }

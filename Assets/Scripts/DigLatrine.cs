@@ -5,6 +5,10 @@ using UnityEngine;
 public class DigLatrine : MonoBehaviour
 {
     
+    /// <summary>
+    ///Dig pit latrine logic (insert proper animation, cues, etc. where current debug logs are)
+    /// </summary>
+    
     private bool isColliding;
 
     public GameObject eventTracker;

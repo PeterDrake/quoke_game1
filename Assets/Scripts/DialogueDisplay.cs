@@ -7,6 +7,10 @@ using MoreMountains.InventoryEngine;
 
 public class DialogueDisplay : MonoBehaviour
 {
+    /// <summary>
+    ///This script translates the info from the dialogue scriptable object and actually displays it on the screen
+    /// </summary>
+    
     public Dialogue dialogue;
 
     public Image artworkImage; 

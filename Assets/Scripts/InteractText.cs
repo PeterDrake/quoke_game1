@@ -6,17 +6,9 @@ using UnityEngine.UI;
 public class InteractText : MonoBehaviour
 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    /// <summary>
+    /// Chnages the interact text
+    /// </summary>
 
     public void ChangeText(string newInteract)
     {

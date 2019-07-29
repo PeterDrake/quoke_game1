@@ -8,6 +8,10 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 
 {
+    /// <summary>
+    /// Handles all of the logic for having a conversation
+    /// </summary>
+    
     public Canvas dialogueDisplay;
 
     public Dialogue active;
@@ -20,8 +24,6 @@ public class DialogueManager : MonoBehaviour
 
     public Dialogue newHead;
 
-   // public InventoryItem my_itemToAdd;
-   // public InventoryItem my_hasItem;
     
     public InventoryItem my_itemToAddNode1;
     public InventoryItem my_hasItemNode1;
