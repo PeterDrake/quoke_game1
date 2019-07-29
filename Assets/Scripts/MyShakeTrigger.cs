@@ -11,6 +11,10 @@ using UnityEngine.SceneManagement;
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
+    
+    /// <summary>
+    /// Handles the earthquake, falling object calls, effects, information, etc.
+    /// </summary>
 
     public class MyShakeTrigger : MonoBehaviour
     {

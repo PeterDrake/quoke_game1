@@ -8,6 +8,9 @@ using UnityScript.Steps;
 
 public class TalkToPerson : MonoBehaviour
 {
+    /// <summary>
+    /// handles how to start/which conversation you will have with an NPC. Pauses game during a conversation. 
+    /// </summary>
 
     public Dialogue mainDialogue;
     public Dialogue newHead;
@@ -23,6 +26,7 @@ public class TalkToPerson : MonoBehaviour
     public bool NPCL3 ;
 
     private bool isColliding;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -32,11 +36,6 @@ public class TalkToPerson : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     IEnumerator my_pause()
     {
@@ -68,7 +67,7 @@ public class TalkToPerson : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider other) // this is triggering it too much.. So Iscolliding/Reset make sure we avoid duplicate calls
+    private void OnTriggerStay(Collider other) 
     {
         if (other.CompareTag("Player"))
         {

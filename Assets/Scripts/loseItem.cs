@@ -6,6 +6,11 @@ using MoreMountains.InventoryEngine;
 public class loseItem : MonoBehaviour
 
 {
+    /// <summary>
+    ///Player loses an item on key check. Ex. throws away gun in dumpster. 
+    /// Designed for actions in game where and item would be used/removed, etc. 
+    /// </summary>
+    
     private bool isColliding;
 
     public GameObject eventTracker;
