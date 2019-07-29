@@ -11,6 +11,10 @@ using UnityEngine.SceneManagement;
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
+    
+    /// <summary>
+    /// Handles the earthquake, falling object calls, effects, information, etc.
+    /// </summary>
 
     public class MyShakeTrigger : MonoBehaviour
     {
@@ -32,10 +36,12 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public string textToDisplay2;
 
+        public string textToDisplay3;
         public GameObject tablecheck;
         public GameObject fallingLights;
         public GameObject enableDoors;
-
+        public GameObject objective;
+        
         public bool tableFlag = true;
         public bool cheatQuake = false;
         
@@ -51,7 +57,6 @@ namespace MoreMountains.FeedbacksForThirdParty
             StartCoroutine(QuakeDown());
             Scene currentScene = SceneManager.GetActiveScene ();
             sceneName = currentScene.name;
-//            Debug.Log(sceneName);
         }
 
         // Update is called once per frame
@@ -61,6 +66,11 @@ namespace MoreMountains.FeedbacksForThirdParty
             {
                QuakeTrigger();
                cheatQuake = true;
+            }
+
+            if (objective.GetComponent<UpdateQuests>().shelterBool)
+            {
+                EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay3);
             }
         }
         
@@ -87,7 +97,6 @@ namespace MoreMountains.FeedbacksForThirdParty
             {
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
                 yield return new WaitForSeconds(duration);
-                
             }
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
             enableDoors.SetActive(false);

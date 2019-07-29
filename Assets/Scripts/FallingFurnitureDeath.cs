@@ -6,23 +6,18 @@ using UnityEngine.UI;
 
 public class FallingFurnitureDeath : MonoBehaviour
 {
+    /// <summary>
+    /// When a piece of furniture falls on the player from the quake it kills them.
+    /// after it hits the ground ~1.5f it will disable the ability to kill
+    /// </summary>
+    
     public Slider health;
     public GameObject DeathScreen;
 
     public Text death;
 
     private bool isEnabled = true;
-    // Start is called before the first frame update
-//    void Start()
-//    {
-//        
-//    }
-//
-//    // Update is called once per frame
-//    void Update()
-//    {
-//
-//    }
+
 
     private void OnEnable()
     {
@@ -51,9 +46,6 @@ public class FallingFurnitureDeath : MonoBehaviour
         }
     }
 
-//    public void falling()
-//    {
-//        
-//    }
+
 
 }

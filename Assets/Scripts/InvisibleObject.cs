@@ -30,7 +30,6 @@ public class InvisibleObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-          //  Debug.Log("Player entered the trigger");
             roof.GetComponent<Renderer>().material = transparentMaterial;
         }
     }
@@ -38,7 +37,6 @@ public class InvisibleObject : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                //Debug.Log("Player entered the trigger");
                 roof.GetComponent<Renderer>().material = transparentMaterial;
             }
         }
@@ -47,7 +45,6 @@ public class InvisibleObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //Debug.Log("Player exited the trigger");
             roof.GetComponent<Renderer>().material = opaqueMaterial;
         }
     }

@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class DisableAfterQuake : MonoBehaviour
 {
+    /// <summary>
+    /// Door locks disable after quakes
+    /// </summary>
+    
     public GameObject thisDoor;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void enableDoors()
     {

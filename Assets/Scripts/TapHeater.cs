@@ -6,6 +6,10 @@ using MoreMountains.InventoryEngine;
 
 public class TapHeater : MonoBehaviour
 {
+    /// <summary>
+    /// "taps water heater" Essentially just a lose hose, gain water, with appropriate checks
+    /// </summary>
+    
     private bool isColliding;
 
     public GameObject eventTracker;

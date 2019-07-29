@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
   m_Name: Node 2b
   m_EditorClassIdentifier: 
-  NPCname: 
+  NPCname: Kiara
   NPCimage: {fileID: 0}
-  NPCtext: 
-  ResponseOne: A gun!!!? That's terrifying. Please leave
+  NPCtext: A gun!!!? That's terrifying. Please leave
+  ResponseOne: Uhhh what gun, I'll get rid of it
   nextNodeOne: {fileID: 0}
-  ResponseTwo: 
+  ResponseTwo: (no response)
   nextNodeTwo: {fileID: 0}
   PlayerReceivesNode1: {fileID: 0}
   PlayerReceivesNode2: {fileID: 0}

@@ -19,7 +19,11 @@ public class Win : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    /*
+     * If all 3 quests have been completed and the aftershock happened
+     *     let the player win
+     * 
+     */
     void Update()
     {
         sanitation = objective.GetComponent<UpdateQuests>().sanitationBool;
