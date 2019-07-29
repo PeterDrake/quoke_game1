@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.TopDownEngine;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class InformationCanvas : MonoBehaviour
 {
-
+    public Text info;
     public GameObject textCanvas;
     // Start is called before the first frame update
     void Start()
@@ -23,4 +24,6 @@ public class InformationCanvas : MonoBehaviour
     {
         textCanvas.GetComponent<Text>().text = textToDisplay;
     }
+
+  
 }

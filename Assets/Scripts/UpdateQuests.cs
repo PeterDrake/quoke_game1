@@ -19,6 +19,10 @@ public class UpdateQuests : MonoBehaviour
     public bool waterBool = false;
     public bool sanitationBool = false;
 
+    /*
+     * After a quest has been completed,
+     * change the text, turn the icon and turn the bool to true
+     */
     public void updateWater(string newWaterText)
     {
         waterText.GetComponent<Text>().text = newWaterText;
@@ -31,7 +35,6 @@ public class UpdateQuests : MonoBehaviour
         shelterText.GetComponent<Text>().text = newShelterText;
         shelter.GetComponent<Image>().color = Color.green;
         shelterBool = true;
-        infoEnabler.SetActive(false);
     }
     
     public void updateSanitation(string newSanitationText)

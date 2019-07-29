@@ -8,7 +8,7 @@ public class HousingQuest : MonoBehaviour
 {
     private string shelterText;
 
-    public GameObject shelter;
+    public GameObject objective;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +22,10 @@ public class HousingQuest : MonoBehaviour
     }
     
     /**
-     *
      *After talking to the NET officer make the housing quest accomplished
-     * 
      */
+
+    
 
     private void OnTriggerStay(Collider other)
     {
@@ -34,7 +34,7 @@ public class HousingQuest : MonoBehaviour
             if (Input.GetKeyDown("e"))
             {
                 shelterText = "Accomplished";
-                shelter.GetComponent<UpdateQuests>().updateShelter(shelterText);
+                objective.GetComponent<UpdateQuests>().updateShelter(shelterText);
             }
         }
     }

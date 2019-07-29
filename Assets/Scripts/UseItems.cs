@@ -12,11 +12,9 @@ using UnityEngine.XR.WSA.WebCam;
 using Debug = UnityEngine.Debug;
 
 /** A script to use the items
- *
- *water to increase the hydration levels
- * the sanitation pamphlet to allow the use of buckets (?)
- * Food to feed the person (?), do we have eating levels?
- * Secure bookshelf to add bolts to it
+ * It checks the inventory for the selected item, depending on what it is executes series of action
+ * Then removes the used item from the inventory
+ * 
  * *
  */
 public class UseItems : MonoBehaviour
@@ -67,39 +65,33 @@ public class UseItems : MonoBehaviour
        
     }
     
-    /**
-     *
-     * Use the item as specified depending on what it is and then
-     * Remove it from the inventory and move the subsequent ones into the removed item's place
-     * If it is water, kill the person as it is not purified
-     * If it is hte sanitation pamphlet, begin the sanitation pursue quests
-     * 
-     */
-    
+   /* water is unpurified so you die
+    * the sanitation pamphlet allows the collection of everything needed for the twin bucket
+    */
     
     public void Use()
     { 
         inventorySlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
         index = inventorySlot.Index;
         item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
+        
         if (String.Compare(item.name, "Water") == 0)
         {
             health.GetComponent<Slider>().value = 0;
             deathText.text = "You drank unpurified water :("; 
             
         }
-
+        
         else if (string.Compare(item.name, "Sanitation Pamphlet") == 0)
         {
             Sanitation.GetComponent<SanitationCheck>().PamphletUsed();
-           // Sanitation.GetComponent<SanitationCheck>().Collection();
         }
         
         Re_Move(index);
     }
     
-    /*
-     * Remove the item at the specified index
+    
+    /* Remove the item at the specified index
      * and move the items after it into the spots in front of them till there are no more gaps
      */
 

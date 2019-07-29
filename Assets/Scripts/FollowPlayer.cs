@@ -63,10 +63,13 @@ public class FollowPlayer : MonoBehaviour
     }
     
     /**
+     * disable the dialogue, 
+     * NPC follows the player by moving towards them and stopping 2 unit x and z near them --> the follow if statement
      * 
-     * NPC follows the player by moving towards them and stopping 1 unit x and z near them --> the follow if statement
      * When they are inside, NPC goes in front of the bookcase and stands there --> the goBookshelf if statement
-     * if the bookcase falls, NPC dies and player loses the game --> the fall if statement
+     *     depending on the counter, they will first go to the couch, then to the red carpet the finally the bookshelf
+     * 
+     * if the bookcase falls, npc is crashed, dies and player loses the game --> the fall if statement
      *
      */
     
@@ -96,17 +99,9 @@ public class FollowPlayer : MonoBehaviour
             if(Vector3.Distance(transform.position,place) > 2f)
             {
                 follow = false;
-//                far = couch.transform.position + new Vector3(2, 0, -1);
-//                near = carpet.transform.position + new Vector3(1, 0, 1);
                 pos = Vector3.MoveTowards(transform.position, place, 2f * Time.deltaTime);
                 pos.y = 1;
                 transform.position = pos;
-//                pos = Vector3.MoveTowards(transform.position, near, 1f * Time.deltaTime);
-//                pos.y = 1;
-//                transform.position = pos;
-//                pos = Vector3.MoveTowards(transform.position, bookshelf.transform.position, 1f * Time.deltaTime);
-//                pos.y = 1;
-//                transform.position = pos;
             }
 
             else
@@ -148,13 +143,12 @@ public class FollowPlayer : MonoBehaviour
             }
 
         }
-//        Debug.Log("npc: "+transform.position);
-//        Debug.Log("Player: "+player.transform.position);
 
     }
     
     /**
      * After the player starts conversing with the NPC, enable the follow system
+     * 
      */
 
     private void OnTriggerStay(Collider other)
@@ -165,15 +159,19 @@ public class FollowPlayer : MonoBehaviour
             {
                 follow = true;
                 waterGiven = true;
-                
             }
         }
         
     }
+    
+    /*
+     * disable the dialogue notifier for this player
+     *     by changing what is in the interactNotifier 
+     */
 
     void DisableDialogue()
     {
-        if ((dialogueCanvas.GetComponent<DialogueDisplay>().nextNodeOne == null) && (follow==true))
+        if ((dialogueCanvas.GetComponent<DialogueDisplay>().nextNodeOne == null) && (follow))
         {
             placeHolder.GetComponent<CapsuleCollider>().enabled = false;
             placeHolder.GetComponent<TalkToPerson>().interactNotifier.SetActive(false);
@@ -185,7 +183,10 @@ public class FollowPlayer : MonoBehaviour
 
     }
     
-
+    /*
+     * If the npc goes through the door, enable the follow bookshelf
+     * 
+     */
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Door"))

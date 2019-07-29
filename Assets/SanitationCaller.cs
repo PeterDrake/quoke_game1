@@ -36,7 +36,7 @@ public class SanitationCaller : MonoBehaviour
 
     IEnumerator PoopTime()
     {
-       yield return new WaitForSeconds(10f);
+       yield return new WaitForSeconds(180f);
        if (!GetComponent<SanitationCheck>().spUsed)
        {
            sanitationCanvas.SetActive(true);

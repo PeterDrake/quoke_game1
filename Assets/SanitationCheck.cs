@@ -20,8 +20,6 @@ public class SanitationCheck : MonoBehaviour
     public GameObject inventoryCanvas;
     public GameObject combineButton;
     public GameObject mainInventory;
-    //public GameObject carbon;
-    public bool netTalked = false;
     public bool spUsed= false;
     
     public Material mat;
@@ -54,11 +52,11 @@ public class SanitationCheck : MonoBehaviour
         SanitationDone = "Accomplished";
     }
     
-    // Update is called once per frame
     
     /*
      * Update what items of the Sanitation have been acquired
-     * It will only be activated if the Sanitation Pamphlet has been used
+     *     It will only be activated if the Sanitation Pamphlet has been used
+     * After combining the items, remove them from inventory
      */
     void Update()
     { 
@@ -67,10 +65,8 @@ public class SanitationCheck : MonoBehaviour
        
     }
     
-    /*
-     * 
-     * Checks if the pamphlet has been used and enables the blinking components for the toilet
-     * 
+    /* 
+     * Checks if the pamphlet has been used and call Enable
      */
 
     public void PamphletUsed()
@@ -80,6 +76,9 @@ public class SanitationCheck : MonoBehaviour
             spUsed = true;
     }
     
+    /*
+     * Enable after the pamphlet has been used, enable the blinking object on all materials for the twin bucket
+     */
     public void EnableObjects()
     {
         deadLeaves.GetComponent<BlinkingObject>().my_blink = mat;
@@ -94,19 +93,19 @@ public class SanitationCheck : MonoBehaviour
         buckets.GetComponent<BlinkingObject>().my_blink = mat;
     }
 
-/*
- * checks what items have been collected and if they are enough
- *Turns the words green if it is the right amount
- *
- *     WE HAVE TO DECIDE WHETHER THE SANITATION NEEDS TO BE USED WHEN IT IS GOTTEN FROM THE NPC
- * 
- */
+    /*
+     * if the sanitation pamphlet has been used
+     *     checks what items have been collected and if they are enough
+     * Turns the words green if it is the right amount and then enables the combine button
+     * 
+     */
     public void Collection()
     {
          carbon = 0;
          bucketsnumber = 0;
          plasticBagsnumber = 0;
          sanitizerNumber = 0;
+         
          if (spUsed)
          {
              for (int i = 0; i < mainInventory.GetComponent<Inventory>().NumberOfFilledSlots; i++)
@@ -173,24 +172,23 @@ public class SanitationCheck : MonoBehaviour
     /*
      * checks if all items have been collected
      * makes the toilet
-     * removes the used items from the inventory
      * Updates the quest to completed
      */
+    
     public void QuestComplete()
     {
         Collection();
-//        Debug.Log("Carbon"+carbon);
-//        Debug.Log("Buckets"+bucketsnumber);
-//        Debug.Log("sanitizer"+sanitizer);
-//        Debug.Log("plastic Bags"+plasticBags);
-        
-        if ((carbon>=2) &&(bucketsnumber>=2)&&(plasticBagsnumber>=1)&&(sanitizerNumber>=1))
+
+        if ((carbon>=2) && (bucketsnumber>=2) && (plasticBagsnumber>=1) && (sanitizerNumber>=1))
         {
             done = true;
             quests.GetComponent<UpdateQuests>().updateSanitation(SanitationDone);
         }
     }
-
+    
+    /*
+     * remove the used item from the inventory and make the combine button disappear
+     */
     private void Remove()
     {
         if (done)
