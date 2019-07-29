@@ -28,6 +28,7 @@ public class TalkToPerson : MonoBehaviour
     private bool isColliding;
     
     // Start is called before the first frame update
+    //finds player
     void Start()
     {
         head_flag = false;
@@ -77,10 +78,12 @@ public class TalkToPerson : MonoBehaviour
                 isColliding = true;
                 canvasEnabler.SetActive(true);
                 
-                //Pausing? 
+                //Pauses the character while they are in dialogue
                 myPlayer.GetComponent<CharacterPause>().PauseCharacter();
                 myGameManager.GetComponent<GameManager>().Pause();
 
+                
+                //If the player has already talked to the NPC the NPCs new head will be displayed
                 if (head_flag == false)
                 {
                     dialogueCanvas.GetComponent<DialogueDisplay>().dialogue = mainDialogue;
