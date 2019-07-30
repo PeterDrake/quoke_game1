@@ -97,7 +97,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public IEnumerator FlapDoors(float duration)
         {
-            Debug.Log("Commencing flap!");
             GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
             Rigidbody[] bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
             Clobberer[] clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
@@ -105,11 +104,9 @@ namespace MoreMountains.FeedbacksForThirdParty
             {
                 c.enabled = true;
             }
-            Debug.Log("Bodies: " + bodies.Length);
             while (duration > 0)
             {
                 Vector3 kick = Random.onUnitSphere * 1;
-                Debug.Log("Kick: " + kick);
                 foreach (Rigidbody b in bodies)
                 {
                     b.AddRelativeForce(kick, ForceMode.Impulse);
@@ -129,7 +126,7 @@ namespace MoreMountains.FeedbacksForThirdParty
  
             while (tableFlag)
             {
-//                my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
+                my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
                 StartCoroutine(FlapDoors(duration));
                 yield return new WaitForSeconds(duration);
             }

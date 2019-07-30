@@ -2804,17 +2804,17 @@ PrefabInstance:
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.103838325
+      value: -0.103882074
       objectReference: {fileID: 0}
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 2.3450007
+      value: 2.345
       objectReference: {fileID: 0}
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.38309383
+      value: -0.38305354
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec2fa44603608446883e14e08fa9e472, type: 3}
@@ -4052,7 +4052,7 @@ RectTransform:
   - {fileID: 1626126724}
   - {fileID: 1987072559}
   m_Father: {fileID: 1918232351}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13231,7 +13231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterSlide: {fileID: 1240251244}
   healthSlide: {fileID: 396833523}
-  death: {fileID: 2058319912}
+  death: {fileID: 1212127348}
   deathText: {fileID: 791766140}
 --- !u!222 &396833525
 CanvasRenderer:
@@ -28180,7 +28180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1918232351}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &863599054
 MonoBehaviour:
@@ -39016,6 +39016,53 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 369771881}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1212127348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212127349}
+  - component: {fileID: 1212127350}
+  m_Layer: 0
+  m_Name: DeathManager
+  m_TagString: Death
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1212127349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212127348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2058319919}
+  m_Father: {fileID: 1918232351}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1212127350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212127348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc447610c557439595f647c23b3f41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathScreen: {fileID: 2058319912}
+  deathText: {fileID: 791766140}
+  myGameManager: {fileID: 598334956}
 --- !u!4 &1213455342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4003928836360918, guid: e450ed6affa64194498d0a1bed36ceab,
@@ -42460,7 +42507,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2058319913}
+      - m_Target: {fileID: 0}
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
@@ -45612,17 +45659,17 @@ PrefabInstance:
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.1038841
+      value: -0.10388279
       objectReference: {fileID: 0}
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 2.3449988
+      value: 2.345
       objectReference: {fileID: 0}
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.38306332
+      value: -0.38304302
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec2fa44603608446883e14e08fa9e472, type: 3}
@@ -57805,17 +57852,17 @@ PrefabInstance:
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.10389936
+      value: -0.10388279
       objectReference: {fileID: 0}
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 2.344998
+      value: 2.3450003
       objectReference: {fileID: 0}
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.38304806
+      value: -0.38304743
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec2fa44603608446883e14e08fa9e472, type: 3}
@@ -59318,17 +59365,17 @@ PrefabInstance:
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -0.10386884
+      value: -0.10388279
       objectReference: {fileID: 0}
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 2.344998
+      value: 2.345
       objectReference: {fileID: 0}
     - target: {fileID: 3639708161001148741, guid: ec2fa44603608446883e14e08fa9e472,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
-      value: -0.38306332
+      value: -0.38305253
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec2fa44603608446883e14e08fa9e472, type: 3}
@@ -60457,10 +60504,10 @@ Transform:
   - {fileID: 1919321264}
   - {fileID: 1383464899}
   - {fileID: 1197202743}
-  - {fileID: 2058319919}
   - {fileID: 863599053}
   - {fileID: 115838260}
   - {fileID: 8773408578395620206}
+  - {fileID: 1212127349}
   - {fileID: 1441189671}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -64968,7 +65015,6 @@ GameObject:
   - component: {fileID: 2058319916}
   - component: {fileID: 2058319915}
   - component: {fileID: 2058319914}
-  - component: {fileID: 2058319913}
   m_Layer: 0
   m_Name: DeathScreen
   m_TagString: Untagged
@@ -64976,21 +65022,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &2058319913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058319912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc447610c557439595f647c23b3f41b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathScreen: {fileID: 2058319912}
-  myPlayer: {fileID: 0}
-  myGameManager: {fileID: 598334956}
 --- !u!114 &2058319914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65093,14 +65124,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2058319912}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 791766139}
   - {fileID: 1321142440}
-  m_Father: {fileID: 1918232351}
-  m_RootOrder: 7
+  m_Father: {fileID: 1212127349}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -72884,7 +72915,7 @@ RectTransform:
   m_Children:
   - {fileID: 1140581295}
   m_Father: {fileID: 1918232351}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

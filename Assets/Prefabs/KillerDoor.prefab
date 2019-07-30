@@ -109,7 +109,7 @@ MonoBehaviour:
   MaxAngle: 269
   MinAngleLock: 90
   MaxAngleLock: 270
-  SafeLockDuration: 1
+  SafeLockDuration: 0
   Door: {fileID: 9131449306309008200}
 --- !u!1 &2078298294263794286
 GameObject:
@@ -264,7 +264,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 4.69, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 109.446106, y: 2.3449998, z: -73.23304}
+  m_ConnectedAnchor: {x: -0.1038841, y: 2.3449998, z: -0.38304806}
   m_UseSpring: 1
   m_Spring:
     spring: 1
@@ -313,6 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c36dbf553744ad49a2690fc756a5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enabled: 0
 --- !u!1 &4378546810290315791
 GameObject:
   m_ObjectHideFlags: 0

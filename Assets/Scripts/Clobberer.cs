@@ -24,7 +24,7 @@ public class Clobberer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (enabled && other.gameObject.CompareTag("Player"))
         {
             death.PlayerDeath("You were hit by a door!");
         }
