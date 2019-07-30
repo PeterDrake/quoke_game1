@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3rd node L1 NPC
   m_EditorClassIdentifier: 
   NPCname: Neighbor
-  NPCimage: {fileID: 0}
+  NPCimage: {fileID: 21300000, guid: 95baf73dbe1e0ac428adf63b493e14d3, type: 3}
   NPCtext: I think its your house, here take this wrench and go turn your gas valve
     off
   ResponseOne: Ok, thanks, I'll trade this chocolate bar for it
