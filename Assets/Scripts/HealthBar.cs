@@ -38,7 +38,7 @@ public class HealthBar : MonoBehaviour
 
         if (healthSlide.value <= healthSlide.minValue)
         {
-            death.GetComponent<Death>().PlayerDeath();
+            death.GetComponent<Death>().PlayerDeath("You Died");
         }
         
     }
