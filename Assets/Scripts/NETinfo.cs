@@ -1,11 +1,11 @@
-﻿//using System;
-//using System.Collections;
-//using System.Collections.Generic;
-//using System.Security.Cryptography.X509Certificates;
-//using UnityEngine;
-//
-//public class NETinfo : MonoBehaviour
-//{
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using UnityEngine;
+
+public class NETinfo : MonoBehaviour
+{
 //    public GameObject sanitation;
 //    public GameObject objective;
 //
@@ -35,4 +35,4 @@
 //            }
 //        }
 //    }
-//}
+}

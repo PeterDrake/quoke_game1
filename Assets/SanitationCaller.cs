@@ -37,8 +37,8 @@ public class SanitationCaller : MonoBehaviour
 
     IEnumerator PoopTime()
     {
-       yield return new WaitForSeconds(180f);
-       if (!objective.GetComponent<UpdateQuests>().sanitationBool)
+       yield return new WaitForSeconds(120f);
+       if (objective.GetComponent<UpdateQuests>().sanitationBool == false)
        {
            sanitationCanvas.SetActive(true);
        }
