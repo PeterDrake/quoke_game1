@@ -93,6 +93,10 @@ namespace MoreMountains.FeedbacksForThirdParty
         public IEnumerator ShakeIt()
         {
             Instantiate(dustStormPrefab, new Vector3(100, 10, -65), Quaternion.identity);
+            foreach (GameObject door in GameObject.FindGameObjectsWithTag("Door"))
+            {
+                Destroy(door);
+            }
             while (tableFlag)
             {
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
