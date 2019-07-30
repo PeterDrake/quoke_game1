@@ -22,6 +22,7 @@ public class UpdateQuests : MonoBehaviour
     /*
      * After a quest has been completed,
      * change the text, turn the icon and turn the bool to true
+     * 
      */
     public void updateWater(string newWaterText)
     {

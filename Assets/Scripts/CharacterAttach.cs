@@ -38,46 +38,30 @@ public class CharacterAttach : MonoBehaviour
     /*Assign a character to a name */
     public void Assign()
     {
-//        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-//        Debug.Log(numPlayers);
+        
         buttonName= EventSystem.current.currentSelectedGameObject.name;
-//        Debug.Log(buttonName+"+");
-//        Debug.Log(players.ElementAt(1).transform.name+"+");
         for (int i = 0; i < numPlayers ; i++)
         {
             if (players[i].transform.name == buttonName)
             {
                 _character = players[i];
-                //Debug.Log("does this work");
-            //    levelManager.GetComponent<LevelManager>().PlayerPrefabs[0] = players[i];
-//                Debug.Log(players[i].transform.name);
-//                Debug.Log(players[i].GetType());
-//                Debug.Log(players[i]);
-//                Debug.Log("same");
+            
             }
         }
         
-//        Debug.Log(_character.transform.name);
-//        Debug.Log(_character.GetType());
-       Debug.Log(_character);
-        //selectB.SetActive(true);
+
+        Debug.Log(_character);
     }
     
-    /*Selecting the character and passing it to the level manager   */
+    /*
+     * Selecting the character and passing it to the level manager
+     */
     public void Selection()
     {
-//        C1 c1inst=new C1()
-//        Method m = c1inst.getClass().getDeclaredMethod("printing", null);
-//        m.setAccessible(true);
-//        m.invoke(t, null);
-        
+
         levelManager.GetComponent<LevelManager>().PlayerPrefabs[0] = _character;
         Debug.Log(levelManager.GetComponent<LevelManager>().PlayerPrefabs[0]);
         selected = true;
-//        Debug.Log("I work");
-////       DontDestroyOnLoad(_character);
-////        SceneManager.LoadScene("Liza");
-
     }
     
   

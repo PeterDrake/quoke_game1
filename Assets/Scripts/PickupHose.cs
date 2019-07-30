@@ -6,7 +6,6 @@ using MoreMountains.InventoryEngine;
 public class PickupHose : MonoBehaviour
 {
     
-    
     private bool isColliding;
 
     public BaseItem itemtoReceive;
