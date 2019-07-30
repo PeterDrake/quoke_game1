@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4th node L1 NPC
   m_EditorClassIdentifier: 
   NPCname: Neighbor
-  NPCimage: {fileID: 0}
+  NPCimage: {fileID: 21300000, guid: 95baf73dbe1e0ac428adf63b493e14d3, type: 3}
   NPCtext: 
   ResponseOne: Thanks
   nextNodeOne: {fileID: 0}
@@ -23,3 +23,5 @@ MonoBehaviour:
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}
   DoesPlayerHaveNode2: {fileID: 0}
+  PlayerLosesNode1: {fileID: 0}
+  PlayerLosesNode2: {fileID: 0}

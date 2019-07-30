@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: new head L1 NPC
   m_EditorClassIdentifier: 
   NPCname: Neighbor
-  NPCimage: {fileID: 0}
+  NPCimage: {fileID: 21300000, guid: 95baf73dbe1e0ac428adf63b493e14d3, type: 3}
   NPCtext: How's the gas problem?
   ResponseOne: Working on it.
   nextNodeOne: {fileID: 0}
   ResponseTwo: (no response)
   nextNodeTwo: {fileID: 0}
-  PlayerReceives: {fileID: 0}
-  DoesPlayerHave: {fileID: 0}
+  PlayerReceivesNode1: {fileID: 0}
+  PlayerReceivesNode2: {fileID: 0}
+  DoesPlayerHaveNode1: {fileID: 0}
+  DoesPlayerHaveNode2: {fileID: 0}
+  PlayerLosesNode1: {fileID: 0}
+  PlayerLosesNode2: {fileID: 0}
