@@ -39856,11 +39856,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterSlide: {fileID: 1240251244}
-  starterInventory: {fileID: 0}
+  starterInventory: {fileID: 1057398008}
   waterValue: 0
   rate: 0.005
   frame: 0
-  deathText: {fileID: 0}
+  deathText: {fileID: 791766140}
 --- !u!1 &1240671495 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1990216340993278, guid: 5afed722cc07f0045bfb9c283f384e9c,

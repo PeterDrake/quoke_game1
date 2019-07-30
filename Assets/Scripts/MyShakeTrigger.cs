@@ -8,6 +8,7 @@ using Cinemachine;
 using UnityEngine.Rendering.PostProcessing;
 using MoreMountains.Feedbacks;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -90,16 +91,32 @@ namespace MoreMountains.FeedbacksForThirdParty
           // enableDoors.SetActive(false);
         }
 
+        private void FlapDoors(float duration)
+        {
+            Debug.Log("Commencing flap!");
+            GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
+            Rigidbody[] bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
+            Debug.Log("Bodies: " + bodies);
+            while (duration > 0)
+            {
+                Debug.Log("Flap.");
+                Vector3 kick = Random.onUnitSphere;
+                foreach (Rigidbody b in bodies)
+                {
+                    b.AddRelativeForce(kick);
+                }
+                duration -= 1;
+            }
+        }
+        
         public IEnumerator ShakeIt()
         {
             Instantiate(dustStormPrefab, new Vector3(100, 10, -65), Quaternion.identity);
-            foreach (GameObject door in GameObject.FindGameObjectsWithTag("Door"))
-            {
-                Destroy(door);
-            }
+ 
             while (tableFlag)
             {
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
+                FlapDoors(duration);
                 yield return new WaitForSeconds(duration);
             }
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
