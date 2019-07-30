@@ -29,7 +29,7 @@ public class UnderTable : MonoBehaviour
     {
         
     }
-
+    
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
@@ -41,6 +41,7 @@ public class UnderTable : MonoBehaviour
                 aftershocktrigger.GetComponent<AftershockTrigger>().tableFlag = false;
                 tableCheck.SetActive(false);
             }
+            
             fallingObjects.GetComponent<QuakeFurniture>().underTable = false;
         }
     } 

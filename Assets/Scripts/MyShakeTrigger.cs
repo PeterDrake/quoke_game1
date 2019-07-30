@@ -69,9 +69,12 @@ namespace MoreMountains.FeedbacksForThirdParty
                cheatQuake = true;
             }
 
-            if (objective.GetComponent<UpdateQuests>().shelterBool)
+            if (string.Compare(sceneName, "Level 2") == 0)
             {
-                EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay3);
+               if (objective.GetComponent<UpdateQuests>().shelterBool)
+               {
+                   EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay3);
+               }
             }
         }
         

@@ -24,9 +24,7 @@ public class HousingQuest : MonoBehaviour
     /**
      *After talking to the NET officer make the housing quest accomplished
      */
-
     
-
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))

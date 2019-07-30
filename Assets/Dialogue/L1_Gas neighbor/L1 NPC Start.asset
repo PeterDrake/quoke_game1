@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: L1 NPC Start
   m_EditorClassIdentifier: 
   NPCname: Neighbor
-  NPCimage: {fileID: 0}
+  NPCimage: {fileID: 21300000, guid: 95baf73dbe1e0ac428adf63b493e14d3, type: 3}
   NPCtext: Wow, that was crazy, are you ok?
   ResponseOne: A little shaken up, but I'm ok
   nextNodeOne: {fileID: 11400000, guid: 22b00db2165bc4338a7225c05398f4b4, type: 2}
