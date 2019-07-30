@@ -22,7 +22,7 @@ public class Clobberer : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (enabled && other.gameObject.CompareTag("Player"))
         {
