@@ -7,6 +7,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.Rendering.PostProcessing;
 using MoreMountains.Feedbacks;
+using MoreMountains.TopDownEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -99,6 +100,11 @@ namespace MoreMountains.FeedbacksForThirdParty
             Debug.Log("Commencing flap!");
             GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
             Rigidbody[] bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
+            Clobberer[] clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
+            foreach (Clobberer c in clobberers)
+            {
+                c.enabled = true;
+            }
             Debug.Log("Bodies: " + bodies.Length);
             while (duration > 0)
             {
@@ -110,6 +116,10 @@ namespace MoreMountains.FeedbacksForThirdParty
                 }
                 yield return new WaitForSeconds(0.25f);
                 duration -= 0.25f;
+            }
+            foreach (Clobberer c in clobberers)
+            {
+                c.enabled = false;
             }
         }
         
