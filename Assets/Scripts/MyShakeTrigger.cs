@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using Boo.Lang;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.Rendering.PostProcessing;
 using MoreMountains.Feedbacks;
+using MoreMountains.TopDownEngine;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace MoreMountains.FeedbacksForThirdParty
 {
@@ -49,6 +52,12 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public GameObject dustStormPrefab;
 
+        // TODO Move these into a separate object
+        private GameObject[] doors;
+        private Rigidbody[] bodies;
+        private BoxCollider[] colliders;
+        private Clobberer[] clobberers;
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -57,6 +66,11 @@ namespace MoreMountains.FeedbacksForThirdParty
             StartCoroutine(QuakeDown());
             Scene currentScene = SceneManager.GetActiveScene ();
             sceneName = currentScene.name;
+            doors = GameObject.FindGameObjectsWithTag("Door");
+            bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
+            colliders = Array.ConvertAll(doors, d => d.GetComponent(typeof(BoxCollider)) as BoxCollider);
+
+            clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
         }
 
         // Update is called once per frame
@@ -93,13 +107,36 @@ namespace MoreMountains.FeedbacksForThirdParty
           // enableDoors.SetActive(false);
         }
 
+        public IEnumerator FlapDoors(float duration)
+        {
+            while (duration > 0)
+            {
+                Vector3 kick = Random.onUnitSphere * 1;
+                foreach (Rigidbody b in bodies)
+                {
+                    b.AddRelativeForce(kick, ForceMode.Impulse);
+                }
+                yield return new WaitForSeconds(0.25f);
+                duration -= 0.25f;
+            }
+        }
+        
         public IEnumerator ShakeIt()
         {
             Instantiate(dustStormPrefab, new Vector3(100, 10, -65), Quaternion.identity);
+            foreach (Clobberer c in clobberers)
+            {
+                c.enabled = true;
+            }
             while (tableFlag)
             {
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
+                StartCoroutine(FlapDoors(duration));
                 yield return new WaitForSeconds(duration);
+            }
+            foreach (Clobberer c in clobberers)
+            {
+                c.enabled = false;
             }
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
             enableDoors.SetActive(false);
