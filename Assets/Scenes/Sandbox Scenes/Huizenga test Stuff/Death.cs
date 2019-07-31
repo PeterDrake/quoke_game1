@@ -10,7 +10,7 @@ public class Death : MonoBehaviour
 { 
     public GameObject deathScreen;
     public Text deathText;
-    public GameObject myPlayer;
+    private GameObject myPlayer;
     public GameObject myGameManager;
 
     // Start is called before the first frame update
