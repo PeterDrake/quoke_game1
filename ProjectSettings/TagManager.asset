@@ -18,6 +18,7 @@ TagManager:
   - Carbon
   - DialogueManager
   - Death
+  - DoorEntrance
   layers:
   - Default
   - TransparentFX

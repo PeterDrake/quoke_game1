@@ -28,7 +28,7 @@ public class Rearrange : MonoBehaviour
     }
 
     /*
-     * if hte player is close enough to the bookcase and presses 'r'
+     * if the player is close enough to the bookcase and presses 'r'
      *     set the protector bookcase to true, disable rigidbody movements
      * if the player is also with the waterNPC,
      *     make the NPC follow the player again,

@@ -123,11 +123,13 @@ namespace MoreMountains.FeedbacksForThirdParty
         
         public IEnumerator ShakeIt()
         {
-            Instantiate(dustStormPrefab, new Vector3(100, 10, -65), Quaternion.identity);
+
+           Instantiate(dustStormPrefab, new Vector3(100, 10, -65), Quaternion.identity);
             foreach (Clobberer c in clobberers)
             {
                 c.enabled = true;
             }
+
             while (tableFlag)
             {
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
