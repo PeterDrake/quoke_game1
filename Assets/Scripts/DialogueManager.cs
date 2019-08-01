@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     public Text node2InvalidText;
 
     public GameObject myPlayer;
-    public GameObject myGameManager;
+    //public GameObject myGameManager;
 
     public bool NPCL3;
     public GameObject NPCl3interact;
@@ -169,8 +169,7 @@ public class DialogueManager : MonoBehaviour
 
     public void Deactivate()
     {
-        //my_AddItem(); // just here temporarily for testing 
-      //  NewHead();
+       
         myPlayer.GetComponent<CharacterPause>().UnPauseCharacter();
         dialogueEnabler.SetActive(false);
         if (NPCL3)
@@ -178,7 +177,7 @@ public class DialogueManager : MonoBehaviour
             NPCl3interact.GetComponent<DontTalkWhileMoving>().ConversationOver();
         }
 
-        myGameManager.GetComponent<GameManager>().Pause();
+        GameManager.Instance.UnPause();
     }
 
     public void my_AddItem(InventoryItem my_itemToAdd)

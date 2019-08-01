@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class WinScreen : MonoBehaviour
 {
     public GameObject winScreen;
-    public GameObject myPlayer;
-    public GameObject myGameManager;
+    private GameObject myPlayer;
+    //public GameObject myGameManager;
     
     //public GameObject end;
     public GameObject objective;
@@ -49,7 +49,7 @@ public class WinScreen : MonoBehaviour
         myPlayer = GameObject.FindWithTag("Player");
         yield return new WaitForSeconds(.1f);
         myPlayer.GetComponent<CharacterPause>().PauseCharacter();
-        myGameManager.GetComponent<GameManager>().Pause();
+        GameManager.Instance.Pause();
     }
     
     
@@ -62,8 +62,12 @@ public class WinScreen : MonoBehaviour
 
     public void NextLevel()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene("Level 2");
+        
+       // string currentSceneName = SceneManager.GetActiveScene().name;
+       myPlayer.GetComponent<CharacterPause>().UnPauseCharacter();
+       GameManager.Instance.UnPause();
+        int sceneNumber = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneNumber + 1);
 
        
     }

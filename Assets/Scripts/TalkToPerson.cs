@@ -22,7 +22,7 @@ public class TalkToPerson : MonoBehaviour
     
     private bool head_flag;
     public GameObject myPlayer;
-    public GameObject myGameManager;
+   // public GameObject myGameManager;
     public bool NPCL3 ;
 
     private bool isColliding;
@@ -80,7 +80,7 @@ public class TalkToPerson : MonoBehaviour
                 
                 //Pauses the character while they are in dialogue
                 myPlayer.GetComponent<CharacterPause>().PauseCharacter();
-                myGameManager.GetComponent<GameManager>().Pause();
+                GameManager.Instance.Pause();
 
                 
                 //If the player has already talked to the NPC the NPCs new head will be displayed
