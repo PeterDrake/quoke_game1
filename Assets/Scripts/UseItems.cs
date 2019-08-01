@@ -26,17 +26,20 @@ public class UseItems : MonoBehaviour
     public GameObject Sanitation;
     public GameObject health;
     public GameObject starter;
-    
+    public GameObject eventTracker;
+    public GameObject useButton;
+    public GameObject bucket;
     public List<GameObject> inventorySlots;
     public Text selected;
     public Text deathText;
+
+    private Rigidbody rb;
     private InventorySlot selectedSlot;
     private int selectedIndex;
     private InventoryItem selectedItem;
     private InventoryItem item;
     private InventoryItem nextItem;
     private InventorySlot inventorySlot;
-    
     private int index;
     // Start is called before the first frame update
     void Start()
@@ -46,6 +49,15 @@ public class UseItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ((eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Water"))||(eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Sanitation Pamphlet")))
+        {
+            useButton.SetActive(true);
+        }
+        else
+        {
+            useButton.SetActive(false);
+        }
+        
         if (starter.active == false)
         {
             selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
@@ -73,7 +85,7 @@ public class UseItems : MonoBehaviour
         index = inventorySlot.Index;
         item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
         
-        if (String.Compare(item.name, "Water") == 0)
+        if (String.Compare(item.name, "Dirty wWater") == 0)
         {
             health.GetComponent<Slider>().value = 0;
             deathText.text = "You drank unpurified water :("; 
@@ -87,8 +99,27 @@ public class UseItems : MonoBehaviour
         
         Re_Move(index);
     }
-    
-    
+
+    public void Drop()
+    {
+        inventorySlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+        index = inventorySlot.Index;
+        item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
+        item.Prefab.AddComponent<Rigidbody>();
+        inventorySlot.Drop();
+        item.Prefab.GetComponent<Rigidbody>().useGravity = true;
+        StartCoroutine(RemoveRigidBody());
+    }
+
+    public IEnumerator RemoveRigidBody()
+    {
+        yield return new WaitForSeconds(2f); 
+        Debug.Log("here");
+        bucket = item.Prefab;
+        DestroyImmediate(bucket.GetComponent<Rigidbody>(),true);
+    }
+
+
     /* Remove the item at the specified index
      * and move the items after it into the spots in front of them till there are no more gaps
      */
@@ -101,5 +132,5 @@ public class UseItems : MonoBehaviour
             mainInventory.MoveItem(i + 1, i);
         }
     }
-    
+
 }

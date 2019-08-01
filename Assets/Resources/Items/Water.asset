@@ -17,7 +17,7 @@ MonoBehaviour:
   Usable: 1
   Equippable: 0
   Quantity: 1
-  ItemName: Water
+  ItemName: Dirty Water
   ShortDescription: Drink
   Description: Drink before dehydrating
   CanMoveObject: 1

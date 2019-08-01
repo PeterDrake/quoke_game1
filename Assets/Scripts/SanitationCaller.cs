@@ -1,20 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.WSA.WebCam;
 
 public class SanitationCaller : MonoBehaviour
 {
     public GameObject sanitationCanvas;
-    public Slider health;
     public GameObject eventTracker;
+    public GameObject starter;
+    public Slider health;
     public Text death;
     public GameObject objective;
     public Text sanitation;
-
+    public Text buttonText;
+    
     private bool bushPoop;
-
     private bool sanitationPoo;
 // Start is called before the first frame update
     void Start()
@@ -31,6 +34,19 @@ public class SanitationCaller : MonoBehaviour
             {
                 health.GetComponent<Slider>().value = 0;
                 death.text = "Lack of Sanitation killed you!";
+            }
+        }
+        if (starter.activeSelf == false)
+        {
+            if (GetComponent<SanitationCheck>().spUsed)
+            {
+                buttonText.text = "Find the rest of the carbon and make the toilet";
+            }
+
+            if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Sanitation Pamphlet"))
+            {
+                buttonText.text = "Use the sanitation pamphlet";
+
             }
         }
     }

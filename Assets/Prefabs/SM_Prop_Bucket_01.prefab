@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   my_default: {fileID: 2100000, guid: 28646867ddcf90a4989276acd313ea43, type: 2}
-  my_blink: {fileID: 2100000, guid: aaba4d803c43eab40953642d24a76bc9, type: 2}
+  my_blink: {fileID: 2100000, guid: 28646867ddcf90a4989276acd313ea43, type: 2}
 --- !u!114 &1047152064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ecbb77b0f5472a4aaa1b8aa42f09ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 11400000, guid: 3aea6e2ccc5eca74fa50828ff0d29f30, type: 2}
+  Item: {fileID: 0}
   Quantity: 1
   PickableIfInventoryIsFull: 0
   PickAsMuchQuantityAsPossible: 0
