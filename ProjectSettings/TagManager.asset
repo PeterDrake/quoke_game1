@@ -17,6 +17,7 @@ TagManager:
   - Bookshelf
   - Carbon
   - DialogueManager
+  - Death
   layers:
   - Default
   - TransparentFX

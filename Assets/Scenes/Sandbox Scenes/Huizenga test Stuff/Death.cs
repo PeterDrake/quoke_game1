@@ -4,13 +4,13 @@ using System.Linq;
 using MoreMountains.TopDownEngine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Death : MonoBehaviour
 { 
     public GameObject deathScreen;
-    //public GameObject end;
-    //public GameObject level;
-    public GameObject myPlayer;
+    public Text deathText;
+    private GameObject myPlayer;
     public GameObject myGameManager;
 
     // Start is called before the first frame update
@@ -34,12 +34,13 @@ public class Death : MonoBehaviour
         myGameManager.GetComponent<GameManager>().Pause();
     }
     
-    public void PlayerDeath()
+    public void PlayerDeath(string textOnDeath)
     {
+        deathText.text = textOnDeath;
         deathScreen.SetActive(true);
         StartCoroutine(MyPause());
-       // myPlayer.GetComponent<CharacterPause>().PauseCharacter();
-        //myGameManager.GetComponent<GameManager>().Pause();
+        
+
         
 
     }
