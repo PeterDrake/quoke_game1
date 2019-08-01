@@ -30,7 +30,7 @@ public class AftershockEnabler : MonoBehaviour
     {
         if (other.CompareTag("NPC2"))
         {
-           // Debug.Log("Aftershock starter");
+            Debug.Log("Aftershock starter");
             aftershock.SetActive(true);
         }
     }

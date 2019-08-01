@@ -187,8 +187,9 @@ public class FollowPlayer : MonoBehaviour
      */
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Door"))
+        if (other.CompareTag("DoorEntrance"))
         {
+            Debug.Log("happening");
             goBookshelf = true;
         }
     }
