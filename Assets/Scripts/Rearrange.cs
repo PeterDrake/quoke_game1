@@ -76,7 +76,7 @@ public class Rearrange : MonoBehaviour
         {
             rearrange = true;
             interactNotifier.SetActive(true);
-            interactText.GetComponent<InteractText>().ChangeText("Press R to rearrange furniture");
+            interactText.GetComponent<InteractText>().ChangeText("Press R to rearrange furniture in the bookshelf");
 
         }
         
