@@ -5,15 +5,16 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using MoreMountains.InventoryEngine;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
-/** A script to use the items
+/** A script to use/drop the items
  * It checks the inventory for the selected item, depending on what it is executes series of action
  * Then removes the used item from the inventory
  * 
- * *
+ * 
  */
 public class UseItems : MonoBehaviour
 {
@@ -28,18 +29,19 @@ public class UseItems : MonoBehaviour
     public GameObject starter;
     public GameObject eventTracker;
     public GameObject useButton;
-    public GameObject bucket;
+    public GameObject dropped;
     public List<GameObject> inventorySlots;
     public Text selected;
     public Text deathText;
 
+    private GameObject player;
     private Rigidbody rb;
     private InventorySlot selectedSlot;
-    private int selectedIndex;
     private InventoryItem selectedItem;
     private InventoryItem item;
     private InventoryItem nextItem;
     private InventorySlot inventorySlot;
+    private int selectedIndex;
     private int index;
     // Start is called before the first frame update
     void Start()
@@ -99,24 +101,27 @@ public class UseItems : MonoBehaviour
         
         Re_Move(index);
     }
+    
+    /*
+     * Drop items somewhere near the player
+     */
 
     public void Drop()
     {
+        player = GameObject.FindWithTag("Player");
         inventorySlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
         index = inventorySlot.Index;
         item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
-        item.Prefab.AddComponent<Rigidbody>();
+        mainInventory.TargetTransform = player.transform;
+        
+        dropped = item.Prefab;
         inventorySlot.Drop();
-        item.Prefab.GetComponent<Rigidbody>().useGravity = true;
-        StartCoroutine(RemoveRigidBody());
-    }
 
-    public IEnumerator RemoveRigidBody()
-    {
-        yield return new WaitForSeconds(2f); 
-        Debug.Log("here");
-        bucket = item.Prefab;
-        DestroyImmediate(bucket.GetComponent<Rigidbody>(),true);
+        for (int i = index; i < mainInventory.NumberOfFilledSlots; i++)
+        {
+            mainInventory.MoveItem(i + 1, i);
+        }
+        
     }
 
 
