@@ -5,15 +5,16 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using MoreMountains.InventoryEngine;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
-/** A script to use the items
+/** A script to use/drop the items
  * It checks the inventory for the selected item, depending on what it is executes series of action
  * Then removes the used item from the inventory
  * 
- * *
+ * 
  */
 public class UseItems : MonoBehaviour
 {
@@ -26,17 +27,21 @@ public class UseItems : MonoBehaviour
     public GameObject Sanitation;
     public GameObject health;
     public GameObject starter;
-    
+    public GameObject eventTracker;
+    public GameObject useButton;
+    public GameObject dropped;
     public List<GameObject> inventorySlots;
     public Text selected;
     public Text deathText;
+
+    private GameObject player;
+    private Rigidbody rb;
     private InventorySlot selectedSlot;
-    private int selectedIndex;
     private InventoryItem selectedItem;
     private InventoryItem item;
     private InventoryItem nextItem;
     private InventorySlot inventorySlot;
-    
+    private int selectedIndex;
     private int index;
     // Start is called before the first frame update
     void Start()
@@ -46,6 +51,15 @@ public class UseItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ((eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Water"))||(eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Sanitation Pamphlet")))
+        {
+            useButton.SetActive(true);
+        }
+        else
+        {
+            useButton.SetActive(false);
+        }
+        
         if (starter.active == false)
         {
             selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
@@ -73,7 +87,7 @@ public class UseItems : MonoBehaviour
         index = inventorySlot.Index;
         item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
         
-        if (String.Compare(item.name, "Water") == 0)
+        if (String.Compare(item.name, "Dirty wWater") == 0)
         {
             health.GetComponent<Slider>().value = 0;
             deathText.text = "You drank unpurified water :("; 
@@ -88,7 +102,29 @@ public class UseItems : MonoBehaviour
         Re_Move(index);
     }
     
-    
+    /*
+     * Drop items somewhere near the player
+     */
+
+    public void Drop()
+    {
+        player = GameObject.FindWithTag("Player");
+        inventorySlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
+        index = inventorySlot.Index;
+        item = inventorySlot.ParentInventoryDisplay.TargetInventory.Content[index];
+        mainInventory.TargetTransform = player.transform;
+        
+        dropped = item.Prefab;
+        inventorySlot.Drop();
+
+        for (int i = index; i < mainInventory.NumberOfFilledSlots; i++)
+        {
+            mainInventory.MoveItem(i + 1, i);
+        }
+        
+    }
+
+
     /* Remove the item at the specified index
      * and move the items after it into the spots in front of them till there are no more gaps
      */
@@ -101,5 +137,5 @@ public class UseItems : MonoBehaviour
             mainInventory.MoveItem(i + 1, i);
         }
     }
-    
+
 }

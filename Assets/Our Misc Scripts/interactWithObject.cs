@@ -22,6 +22,7 @@ public class interactWithObject : MonoBehaviour
             interactNotifier.SetActive(true);
             interactText.GetComponent<InteractText>().ChangeText(newInteractText);
         }
+        
     }
 
     public void OnTriggerExit(Collider other)
