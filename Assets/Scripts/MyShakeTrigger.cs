@@ -51,7 +51,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         private string sceneName;
 
         public GameObject dustStormPrefab;
-
+        
         // TODO Move these into a separate object
         private GameObject[] doors;
         private Rigidbody[] bodies;
@@ -61,7 +61,6 @@ namespace MoreMountains.FeedbacksForThirdParty
         // Start is called before the first frame update
         void Start()
         {
-            //lightRB= light1.GetComponent<Rigidbody>();
             tableFlag = true;
             StartCoroutine(QuakeDown());
             Scene currentScene = SceneManager.GetActiveScene ();

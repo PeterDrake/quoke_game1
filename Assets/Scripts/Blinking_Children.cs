@@ -17,6 +17,7 @@ public class Blinking_Children : MonoBehaviour
     /**
      * Make all the children of this gameObject blink when this one starts to
      * by comparing the name of the blinking material on the parent and the material 'mat' given in the script
+     * 
      */
     void Update()
     {

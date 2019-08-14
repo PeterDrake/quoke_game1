@@ -58,7 +58,7 @@ public class WaterQuest : MonoBehaviour
     {
         for (int i = 0; i < mainInventory.GetComponent<Inventory>().NumberOfFilledSlots; i++)
         {
-            if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Water"))
+            if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Dirty Water"))
             {
                 iodine.GetComponent<BlinkingObject>().my_blink = mat;
                 

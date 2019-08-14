@@ -46,16 +46,7 @@ namespace MoreMountains.InventoryEngine
         // Update is called once per frame
         void Update()
         {
-//            if (GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot != null)
-//                
-//            {
-//                selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
-//                selectedIndex = selectedSlot.Index;
-//                selectedItem = selectedSlot.ParentInventoryDisplay.TargetInventory.Content[selectedIndex];
-//                name.GetComponent<Text>().text = selectedItem.name;
-//            }
-//
-
+         
             selectedSlot = GetComponent<InventoryInputManager>().CurrentlySelectedInventorySlot;
 
             if (selectedSlot !=null)

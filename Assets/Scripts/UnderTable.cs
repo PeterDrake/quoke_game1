@@ -33,8 +33,11 @@ public class UnderTable : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
+            
         {
+            
             quakeTrigger.GetComponent<MyShakeTrigger>().tableFlag = false;
+            
             
             if (string.Compare(sceneName, "Level 2")==0)
             {
