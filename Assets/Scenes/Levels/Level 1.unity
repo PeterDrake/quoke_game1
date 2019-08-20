@@ -71757,6 +71757,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table
       objectReference: {fileID: 0}
+    - target: {fileID: 4361510413993049994, guid: 58e39cdbf50d647f7a7d1d4c4a91f851,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 112992043, guid: 58e39cdbf50d647f7a7d1d4c4a91f851, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 112992043, guid: 58e39cdbf50d647f7a7d1d4c4a91f851, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4361510413993468842, guid: 58e39cdbf50d647f7a7d1d4c4a91f851,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -71810,10 +71823,6 @@ PrefabInstance:
     - target: {fileID: 4361510413993468842, guid: 58e39cdbf50d647f7a7d1d4c4a91f851,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 112992043, guid: 58e39cdbf50d647f7a7d1d4c4a91f851, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 112992045, guid: 58e39cdbf50d647f7a7d1d4c4a91f851, type: 3}
