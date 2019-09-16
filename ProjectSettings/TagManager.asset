@@ -19,6 +19,9 @@ TagManager:
   - DialogueManager
   - Death
   - DoorEntrance
+  - Orange
+  - Green
+  - Blue
   layers:
   - Default
   - TransparentFX
