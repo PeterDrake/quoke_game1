@@ -4,7 +4,6 @@ using System.Security.Cryptography.X509Certificates;
 using MoreMountains.Tools;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.WSA.WebCam;
 
 public class SanitationCaller : MonoBehaviour
 {
