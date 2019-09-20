@@ -80,3 +80,6 @@ TagManager:
   - name: Above
     uniqueID: 961700441
     locked: 0
+  - name: MinigameItems
+    uniqueID: 3163055831
+    locked: 0
