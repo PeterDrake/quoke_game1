@@ -9,16 +9,7 @@ public class MiniGameCheck : MonoBehaviour
     public string correctTag;
 
     private MiniGameMaster MasterCheck;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 
     public void OnTriggerEnter(Collider other)
     {
@@ -26,17 +17,29 @@ public class MiniGameCheck : MonoBehaviour
         {
             //Debug.Log(correctTag +" is correct");
             MasterCheck = GameObject.Find("MinigameMaster").GetComponent<MiniGameMaster>();
-            if (correctTag == "Blue")
+            if (correctTag == "Bucket")
             {
-                MasterCheck.Blue = true;
+                MasterCheck.Bucket = true;
             }
-            if (correctTag == "Orange")
+            if (correctTag == "PlasticBag")
             {
-                MasterCheck.Orange = true;
+                MasterCheck.PlasticBag = true;
             }
-            if (correctTag == "Green")
+            if (correctTag == "Poop")
             {
-                MasterCheck.Green = true;
+                MasterCheck.Poop = true;
+            }
+            if (correctTag == "ToiletPaper")
+            {
+                MasterCheck.ToiletPaper = true;
+            }
+            if (correctTag == "Sawdust")
+            {
+                MasterCheck.Sawdust = true;
+            }
+            if (correctTag == "Pee")
+            {
+                MasterCheck.Pee = true;
             }
         }
         else
@@ -51,17 +54,29 @@ public class MiniGameCheck : MonoBehaviour
         {
             //Debug.Log(correctTag +" is correct");
             MasterCheck = GameObject.Find("MinigameMaster").GetComponent<MiniGameMaster>();
-            if (correctTag == "Blue")
+            if (correctTag == "Bucket")
             {
-                MasterCheck.Blue = false;
+                MasterCheck.Bucket = false;
             }
-            if (correctTag == "Orange")
+            if (correctTag == "PlasticBag")
             {
-                MasterCheck.Orange = false;
+                MasterCheck.PlasticBag = false;
             }
-            if (correctTag == "Green")
+            if (correctTag == "Poop")
             {
-                MasterCheck.Green = false;
+                MasterCheck.Poop = false;
+            }
+            if (correctTag == "ToiletPaper")
+            {
+                MasterCheck.ToiletPaper = false;
+            }
+            if (correctTag == "Sawdust")
+            {
+                MasterCheck.Sawdust = false;
+            }
+            if (correctTag == "Pee")
+            {
+                MasterCheck.Pee = false;
             }
         }
         else

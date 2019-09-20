@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class MiniGameMaster : MonoBehaviour
 {
-    public bool Orange;
 
-    public bool Green;
+    public bool Bucket;
 
-    public bool Blue; 
+    public bool PlasticBag;
+
+    public bool Poop;
+
+    public bool ToiletPaper;
+
+    public bool Sawdust;
+
+    public bool Pee;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +30,7 @@ public class MiniGameMaster : MonoBehaviour
 
     public void CheckCorrect()
     {
-        if (Orange && Green && Blue)
+        if (Bucket && PlasticBag && Poop && ToiletPaper && Sawdust && Pee)
         {
             Debug.Log("You solved the puzzle");
         }

@@ -22,6 +22,12 @@ TagManager:
   - Orange
   - Green
   - Blue
+  - ToiletPaper
+  - Sawdust
+  - PlasticBag
+  - Bucket
+  - Poop
+  - Pee
   layers:
   - Default
   - TransparentFX
