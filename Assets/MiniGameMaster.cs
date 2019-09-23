@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MiniGameMaster : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class MiniGameMaster : MonoBehaviour
     public bool Sawdust;
 
     public bool Pee;
+    
+    public GameObject Win;
+    
+    public GameObject Wrong;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,12 +37,23 @@ public class MiniGameMaster : MonoBehaviour
     {
         if (Bucket && PlasticBag && Poop && ToiletPaper && Sawdust && Pee)
         {
-            Debug.Log("You solved the puzzle");
+            Win.SetActive(true);
         }
         else
         {
-            Debug.Log("Something isn't in the right place");
+            StartCoroutine(TryAgain());
         }
     }
+
+    public IEnumerator TryAgain()
+    {
+        Wrong.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        Wrong.SetActive(false);
+
+        
+    }
+
+    
     
 }
