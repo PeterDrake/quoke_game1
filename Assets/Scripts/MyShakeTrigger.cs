@@ -131,7 +131,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
             while (tableFlag)
             {
-                my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency,false);
+                my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency, false);
                 StartCoroutine(FlapDoors(duration));
                 yield return new WaitForSeconds(duration);
             }
