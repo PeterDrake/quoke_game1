@@ -10,6 +10,7 @@ public class StartMiniGame : MonoBehaviour
 	public GameObject flange; //flange should be a gameobject with a box colider set to trigger and the 
 
 	public Vector3 attachedWrenchPosition;
+	public float z_offset;
 
 	GameObject wrench;
 
@@ -41,7 +42,7 @@ public class StartMiniGame : MonoBehaviour
 
 	GameObject CreateWrench()
 	{
-		var newWrench =  Instantiate(wrenchPrefab, Input.mousePosition, Quaternion.identity);
+		var newWrench =  Instantiate(wrenchPrefab, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z + z_offset), Quaternion.identity);
 		newWrench.AddComponent<ObjectFollowMouse>();
 		return newWrench;
 	}
