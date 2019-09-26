@@ -19,6 +19,15 @@ TagManager:
   - DialogueManager
   - Death
   - DoorEntrance
+  - Orange
+  - Green
+  - Blue
+  - ToiletPaper
+  - Sawdust
+  - PlasticBag
+  - Bucket
+  - Poop
+  - Pee
   layers:
   - Default
   - TransparentFX
@@ -70,4 +79,7 @@ TagManager:
     locked: 0
   - name: Above
     uniqueID: 961700441
+    locked: 0
+  - name: MinigameItems
+    uniqueID: 3163055831
     locked: 0
