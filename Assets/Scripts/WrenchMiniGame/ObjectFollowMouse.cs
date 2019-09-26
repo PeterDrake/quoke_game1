@@ -4,65 +4,28 @@ using UnityEngine;
 
 public class ObjectFollowMouse : MonoBehaviour
 {
-	private Vector3 mOffset;
-
-
-
-	private float mZCoord;
-
-
-
-	void OnMouseDown()
-
-	{
-
-		mZCoord = Camera.main.WorldToScreenPoint(
-
-			gameObject.transform.position).z;
-
-
-
-		// Store offset = gameobject world pos - mouse world pos
-
-		mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
-
+	private float obj_z;
+    
+	void Start() 
+    {
+        // gets constant z from camera position
+		obj_z = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
 	}
 
-
-
-	private Vector3 GetMouseAsWorldPoint()
-
+	void Update()
 	{
-
+		transform.position = GetMouseAsWorldPoint();
+	}
+    
+	private Vector3 GetMouseAsWorldPoint()
+	{
 		// Pixel coordinates of mouse (x,y)
-
 		Vector3 mousePoint = Input.mousePosition;
 
-
-
 		// z coordinate of game object on screen
-
-		mousePoint.z = mZCoord;
-
-
+		mousePoint.z = obj_z;
 
 		// Convert it to world points
-
 		return Camera.main.ScreenToWorldPoint(mousePoint);
-
 	}
-
-
-
-	void OnMouseDrag()
-
-	{
-
-		transform.position = GetMouseAsWorldPoint() + mOffset;
-
-	}
-
-
-
-
 }
