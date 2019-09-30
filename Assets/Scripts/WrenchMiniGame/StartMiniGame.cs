@@ -12,12 +12,17 @@ public class StartMiniGame : MonoBehaviour
 	public Vector3 attachedWrenchPosition;
 	public float z_offset;
 
+	public float flangeRotationUpperBound = -5f;
+	public float flangeRotationlowerBound = 95f;
+	public float targetRotation = 90f;
+	public float targetThreshold = 2f;
+
 	GameObject wrench;
 
 	void Start()
     {
-        
-    }
+        //attachedWrenchPosition = ;
+	}
 
     // Update is called once per frame
     void Update()
@@ -25,19 +30,26 @@ public class StartMiniGame : MonoBehaviour
         
     }
 
+	void success()
+	{
+		Debug.Log("Congratz, you have won!");
+		Destroy(flange.GetComponent<RotateObjectWithMouse>());
+	}
+
 	void AttachWrench()
 	{
-		Destroy(wrench.GetComponent<ObjectFollowMouse>());
 		flange.GetComponent<CollisionCallback>().RemoveCallback(wrench.tag);
-		wrench.transform.position = attachedWrenchPosition;
+		Destroy(wrench);
+		flange.transform.GetChild(0).gameObject.SetActive(true);
+		var comp = flange.AddComponent<RotateObjectWithMouse>();
+		comp.Initialize(flangeRotationlowerBound, flangeRotationUpperBound, targetRotation, targetThreshold, success);
 	}
 
 	public void StartGame()
-	{
+	{	
 		if (wrench) return;
 		wrench = CreateWrench();
 		flange.GetComponent<CollisionCallback>().AddCallback(wrench.tag, AttachWrench);
-		
 	}
 
 	GameObject CreateWrench()
