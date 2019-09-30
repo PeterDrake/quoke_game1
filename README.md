@@ -2,6 +2,8 @@ Game 1 of the Quoke project, teaching people to prepare for the Cascadia Subduct
 
 This repository, containing code for an NSF-funded project, is public. Paid assets from the Unity Asset Store are *not* included in the repository.
 
+You must currently use *exactly* Unity 2019.2.1f1. If this isn't available directly through UnityHub, you can go to the [Unity Archive Page](https://unity3d.com/get-unity/download/archive) and download it through UnityHub there.
+
 To open this project in Unity:
 
 1. Clone the repository as usual but *do not open it in Unity yet*. If you do, Unity build improper internal links to the missing assets.
