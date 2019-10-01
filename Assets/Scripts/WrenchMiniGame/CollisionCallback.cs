@@ -15,7 +15,6 @@ public class CollisionCallback : MonoBehaviour
 
 	void OnTriggerEnter(Collider obj)
 	{
-		Debug.Log(obj);
 		if (callback_functions.ContainsKey(obj.tag))
 		{
 			callback_functions[obj.tag]();
