@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class interactWithObject : MonoBehaviour
 {
-
     public GameObject interactNotifier;
+
 
     public Text interactText;
 

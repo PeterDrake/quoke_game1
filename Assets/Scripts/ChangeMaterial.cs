@@ -10,23 +10,35 @@ public class ChangeMaterial : MonoBehaviour
     float timer;
     bool highlighted;
 
-    // Start is called before the first frame update
-    void Start() {
-    }
-
     // Update is called once per frame
-    void Update() {
+    void OnTriggerStay(Collider other) 
+    {
         timer += Time.deltaTime;
-        if (timer > 0.5) {
-            timer = 0;
-            if (highlighted) {
-                yourObject.GetComponent<MeshRenderer>().material = material1;
-                highlighted = false;
+        if (other.CompareTag("Player"))
+        {
+            if (timer > 0.5)
+            {
+                timer = 0;
+                if (highlighted)
+                {
+                    yourObject.GetComponent<MeshRenderer>().material = material1;
+                    highlighted = false;
+                }
+                else
+                {
+                    yourObject.GetComponent<MeshRenderer>().material = material2;
+                    highlighted = true;
+                }
             }
-            else {
-                yourObject.GetComponent<MeshRenderer>().material = material2;
-                highlighted = true;
-            }
+        }
+    }
+    
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            yourObject.GetComponent<MeshRenderer>().material = material1;
+ 
         }
     }
 }
