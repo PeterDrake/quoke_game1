@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class interactWithObject : MonoBehaviour
 {
-
     public GameObject interactNotifier;
+
 
     public Text interactText;
 
@@ -41,7 +41,7 @@ public class interactWithObject : MonoBehaviour
             
             if (Input.GetKeyDown("e"))
             {
-                //Debug.Log("This has been activated");
+                Debug.Log("This has been activated");
             }
         }
     }
