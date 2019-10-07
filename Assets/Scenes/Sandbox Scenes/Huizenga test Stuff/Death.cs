@@ -34,7 +34,6 @@ public class Death : MonoBehaviour
         
 
         
-
     }
 
     public void RestartLevel()

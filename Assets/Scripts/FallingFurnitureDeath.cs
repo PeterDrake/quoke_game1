@@ -33,16 +33,11 @@ public class FallingFurnitureDeath : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (isEnabled && other.gameObject.CompareTag("Player"))
         {
-            if (isEnabled)
-            {
-                Debug.Log("Player Hit");
-                death.text = "Crushed by falling object";
-                health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
-                
-            }
-           
+            Debug.Log("Player Hit");
+            death.text = "Crushed by falling object";
+            health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
         }
     }
 

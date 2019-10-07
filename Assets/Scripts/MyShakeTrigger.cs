@@ -9,6 +9,7 @@ using Cinemachine;
 using UnityEngine.Rendering.PostProcessing;
 using MoreMountains.Feedbacks;
 using MoreMountains.TopDownEngine;
+using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -21,7 +22,12 @@ namespace MoreMountains.FeedbacksForThirdParty
 
     public class MyShakeTrigger : MonoBehaviour
     {
-
+        public bool adminMode = true;
+        private bool haveObjective = false;
+        private bool textDisplayed = false;
+        private UpdateQuests quests;
+        
+            
         public GameObject my_camera;
         public float amplitude;
         public float frequency;
@@ -70,23 +76,24 @@ namespace MoreMountains.FeedbacksForThirdParty
             colliders = Array.ConvertAll(doors, d => d.GetComponent(typeof(BoxCollider)) as BoxCollider);
 
             clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
+            if (objective != null) quests = objective.GetComponent<UpdateQuests>();
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown("p"))
+            if (adminMode && Input.GetKeyDown("p"))
             {
-               QuakeTrigger();
-               cheatQuake = true;
+                cheatQuake = true;
+                QuakeTrigger();
+               
             }
 
-            if (string.Compare(sceneName, "Level 2") == 0)
+            if (haveObjective && !textDisplayed && quests.shelterBool)
             {
-               if (objective.GetComponent<UpdateQuests>().shelterBool)
-               {
-                   EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay3);
-               }
+                textDisplayed = true;
+                EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay3);
             }
         }
         
@@ -154,10 +161,10 @@ namespace MoreMountains.FeedbacksForThirdParty
             StartCoroutine(ShakeIt());
             tablecheck.SetActive(true);
            // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
-           if (string.Compare(sceneName, "Level 1") ==0)
-           {
-               my_bookshelf.GetComponent<MyFallingObject>().Fall();
-           }
+           //if (string.Compare(sceneName, "Level 1") == 0)
+           //{
+            my_bookshelf.GetComponent<MyFallingObject>().Fall();
+           //}
            fallingLights.GetComponent<QuakeFurniture>().Drop();
 
         }
