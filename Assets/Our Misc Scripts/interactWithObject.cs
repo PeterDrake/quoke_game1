@@ -41,7 +41,7 @@ public class interactWithObject : MonoBehaviour
             
             if (Input.GetKeyDown("e"))
             {
-                //Debug.Log("This has been activated");
+                Debug.Log("This has been activated");
             }
         }
     }
