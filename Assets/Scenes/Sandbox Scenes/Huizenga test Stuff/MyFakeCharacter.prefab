@@ -16889,8 +16889,8 @@ MonoBehaviour:
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
   AbilityPermitted: 1
-  MainInventoryName: SuitMainInventory
-  WeaponInventoryName: SuitWeaponInventory
+  MainInventoryName: MainInventory
+  WeaponInventoryName: 
   HotbarInventoryName: 
 --- !u!114 &2918004722776999719
 MonoBehaviour:
