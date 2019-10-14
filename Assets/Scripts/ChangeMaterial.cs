@@ -16,7 +16,7 @@ public class ChangeMaterial : MonoBehaviour
         timer += Time.deltaTime;
         if (other.CompareTag("Player"))
         {
-            if (timer > 0.5)
+            if (timer > 1)
             {
                 timer = 0;
                 if (highlighted)
