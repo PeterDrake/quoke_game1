@@ -7,19 +7,10 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Slider waterSlide;
-    public Slider healthSlide;
+
     private float value;
     
-    public GameObject death;
-
-    public Text deathText;
     // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("Is this still used?");
-        value = healthSlide.GetComponent<Slider>().value;
-
-    }
 
     // Update is called once per frame
     
@@ -34,13 +25,12 @@ public class HealthBar : MonoBehaviour
         if (waterSlide.value <= waterSlide.minValue)
         {
             value -= 2f;
-            healthSlide.value = value;
         }
 
-        if (healthSlide.value <= healthSlide.minValue)
+        /*if (healthSlide.value <= healthSlide.minValue)
         {
             death.GetComponent<Death>().PlayerDeath("You Died");
-        }
+        }*/
         
     }
 }

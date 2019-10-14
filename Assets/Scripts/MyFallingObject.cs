@@ -25,12 +25,17 @@ public class MyFallingObject : MonoBehaviour
         var sceneName = SceneManager.GetActiveScene().name;
         isSceneTwo = string.Compare(sceneName, "Level 2") == 0;
         rb = GetComponent<Rigidbody>();
-        _rearranger = rearranger.GetComponent<Rearrange>();
+        //_rearranger = rearranger.GetComponent<Rearrange>();
 
     }
 
     public void Fall()
     {
+        isEnabled = true;
+        rb.AddRelativeForce(Vector3.forward * thrust);
+        StartCoroutine(BookshelfDeactivate());
+        
+        /*
         if (isSceneTwo)
         {
             if (_rearranger.safe == false)
@@ -45,7 +50,7 @@ public class MyFallingObject : MonoBehaviour
             isEnabled = true;
             rb.AddRelativeForce(Vector3.forward * thrust);
             StartCoroutine(BookshelfDeactivate());
-        }
+        }*/
         
     }
     
@@ -63,17 +68,13 @@ public class MyFallingObject : MonoBehaviour
 
     }
 
-
-    //how do we ensure that the Earthquake is actually happening?
+    
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (isEnabled && other.gameObject.CompareTag("Player"))
         {
-            if ((isEnabled))
-            {
-                Debug.Log("Player Hit");
-                Death.Manager.PlayerDeath("Your bookcase crushed you to death! :(");
-            }
+            Debug.Log("Player Hit");
+            Death.Manager.PlayerDeath("Your bookcase crushed you to death! :(");
         }
     }
     

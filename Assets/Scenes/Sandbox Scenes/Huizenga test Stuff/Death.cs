@@ -25,11 +25,10 @@ public class Death : MonoBehaviour
    }
 
 
-   public IEnumerator MyPause()
+   private IEnumerator MyPause()
     {
         yield return new WaitForSeconds(.1f);
         pause.PauseCharacter();
-        //myGameManager.GetComponent<GameManager>().Pause();
         GameManager.Instance.Pause();
         
     }
