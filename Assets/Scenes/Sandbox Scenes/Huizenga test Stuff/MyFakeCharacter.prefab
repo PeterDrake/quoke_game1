@@ -16706,7 +16706,7 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
+  AbilityPermitted: 0
   Movement: 0
   InputAuthorized: 1
   WalkSpeed: 4
@@ -16737,7 +16737,7 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
+  AbilityPermitted: 0
   CrawlAuthorized: 1
   CrawlSpeed: 2
   ResizeColliderWhenCrouched: 1
@@ -16767,7 +16767,7 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
+  AbilityPermitted: 0
   RunSpeed: 8
   AutoRun: 0
   AutoRunThreshold: 0.6
@@ -16788,7 +16788,7 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
+  AbilityPermitted: 0
   JumpProportionalToPress: 1
   MinimumPressTime: 0.4
   JumpForce: 10
@@ -16833,7 +16833,7 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
+  AbilityPermitted: 0
   DashMode: 1
   DashDirection: {x: 0, y: 0, z: 1}
   DashDistance: 10
@@ -16888,7 +16888,7 @@ MonoBehaviour:
   AbilityStopSfx: {fileID: 0}
   AbilityStartFeedbacks: {fileID: 0}
   AbilityStopFeedbacks: {fileID: 0}
-  AbilityPermitted: 1
+  AbilityPermitted: 0
   MainInventoryName: MainInventory
   WeaponInventoryName: 
   HotbarInventoryName: 
