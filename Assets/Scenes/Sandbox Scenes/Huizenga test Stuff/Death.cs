@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using MoreMountains.TopDownEngine;
@@ -11,16 +12,23 @@ public class Death : MonoBehaviour
 { 
     public GameObject deathScreen;
     public Text deathText;
-    private GameObject myPlayer;
-   // public GameObject myGameManager;
+    private CharacterPause pause; 
 
+    public static Death Manager;
     
+   
+   public void Start()
+   {
+       pause = GameObject.FindWithTag("Player").GetComponent<CharacterPause>();
+       if (Manager == null) Manager = this;
+       else Destroy(this);
+   }
 
-    public IEnumerator MyPause()
+
+   public IEnumerator MyPause()
     {
-        myPlayer = GameObject.FindWithTag("Player");
         yield return new WaitForSeconds(.1f);
-        myPlayer.GetComponent<CharacterPause>().PauseCharacter();
+        pause.PauseCharacter();
         //myGameManager.GetComponent<GameManager>().Pause();
         GameManager.Instance.Pause();
         
@@ -31,14 +39,11 @@ public class Death : MonoBehaviour
         deathText.text = textOnDeath;
         deathScreen.SetActive(true);
         StartCoroutine(MyPause());
-        
-
-        
     }
 
     public void RestartLevel()
     {
-        myPlayer.GetComponent<CharacterPause>().UnPauseCharacter();
+        pause.UnPauseCharacter();
         //myGameManager.GetComponent<GameManager>().UnPause();
         GameManager.Instance.UnPause();
         string currentSceneName = SceneManager.GetActiveScene().name;

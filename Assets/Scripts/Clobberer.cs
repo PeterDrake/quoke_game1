@@ -5,14 +5,11 @@ using UnityEngine;
 
 public class Clobberer : MonoBehaviour
 {
-    private Death death; // How we announce death
-
     public bool enabled;
     
     // Start is called before the first frame update
     void Start()
     {
-        death = GameObject.FindGameObjectWithTag("Death").GetComponent<Death>();
         enabled = false;
     }
 
@@ -26,7 +23,7 @@ public class Clobberer : MonoBehaviour
     {
         if (enabled && other.gameObject.CompareTag("Player"))
         {
-            death.PlayerDeath("You were hit by a door!");
+            Death.Manager.PlayerDeath("You were hit by a door!");
         }
     }
 }

@@ -487,7 +487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!65 &12333916
@@ -2756,7 +2756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &78781276
@@ -3448,7 +3448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &100423180
@@ -4736,7 +4736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &139443006
@@ -6442,7 +6442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &173599201
@@ -6573,7 +6573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &175204320
@@ -6976,7 +6976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &184296633
@@ -8440,7 +8440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &235273845
@@ -10861,7 +10861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &301623557
@@ -11269,7 +11269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &309836384
@@ -12993,7 +12993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &360289654
@@ -13685,7 +13685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &379333602
@@ -15410,7 +15410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &420566188
@@ -16654,7 +16654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &463548355
@@ -16811,7 +16811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!65 &466895720
@@ -17014,7 +17014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!65 &468364797
@@ -19897,7 +19897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &546799612
@@ -19963,7 +19963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 100
   rb: {fileID: 548386336}
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   rearranger: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   npc2: {fileID: 0}
@@ -21620,7 +21620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &599535563
@@ -22037,7 +22037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &617908957
@@ -22221,7 +22221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &619284288
@@ -22449,7 +22449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &622595919
@@ -22570,81 +22570,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 8340e8586e8556c4b82f331a034bae19, type: 3}
---- !u!1 &625755336
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 625755337}
-  - component: {fileID: 625755339}
-  - component: {fileID: 625755338}
-  m_Layer: 5
-  m_Name: Fill
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &625755337
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625755336}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1185147291}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &625755338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625755336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.11690103, g: 0.6698113, b: 0.29320624, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &625755339
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625755336}
-  m_CullTransparentMesh: 0
 --- !u!1001 &627428884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22967,7 +22892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &629884986
@@ -23435,7 +23360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!65 &638634101
@@ -23565,7 +23490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &638927935
@@ -25666,7 +25591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!65 &706198750
@@ -27039,7 +26964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &765661935
@@ -27922,7 +27847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &791694372
@@ -30237,7 +30162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &836059609
@@ -31942,7 +31867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &893283173
@@ -34741,7 +34666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!65 &953540102
@@ -35154,7 +35079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &965460230
@@ -35690,7 +35615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &981563963
@@ -35890,7 +35815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &986096387
@@ -37965,7 +37890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1040258116
@@ -38236,7 +38161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1043687110
@@ -38686,7 +38611,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1052236206
@@ -39752,7 +39677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1078401304
@@ -41738,7 +41663,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1138283984
@@ -42383,7 +42308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1158548088
@@ -43284,7 +43209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1172530129
@@ -43615,7 +43540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1175397353
@@ -43840,42 +43765,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 46e74d47dc1843040a0d54125519afe0, type: 3}
---- !u!1 &1185147290
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1185147291}
-  m_Layer: 5
-  m_Name: Fill Area
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1185147291
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1185147290}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 625755337}
-  m_Father: {fileID: 1191911501}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -0.002494812, y: 0}
-  m_SizeDelta: {x: -0.0050049, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1188348150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1083019890985836, guid: 63dbf9966d2ddff4ba7fa227bc245716,
@@ -43987,7 +43876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1188492676
@@ -44033,123 +43922,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &1191911500
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1191911501}
-  - component: {fileID: 1191911504}
-  - component: {fileID: 1191911503}
-  - component: {fileID: 1191911502}
-  m_Layer: 5
-  m_Name: HealthSlider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1191911501
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191911500}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2099996107}
-  - {fileID: 1185147291}
-  - {fileID: 1877857663}
-  m_Father: {fileID: 1799768453}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 150, y: 20}
-  m_SizeDelta: {x: 160, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1191911502
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191911500}
-  m_CullTransparentMesh: 0
---- !u!114 &1191911503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191911500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3967c19c13ec7f249a43de803696096f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waterSlide: {fileID: 21572754}
-  healthSlide: {fileID: 1191911504}
-  death: {fileID: 0}
-  deathText: {fileID: 0}
---- !u!114 &1191911504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1191911500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 625755338}
-  m_FillRect: {fileID: 625755337}
-  m_HandleRect: {fileID: 0}
-  m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 0
-  m_Value: 100
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1194545884
 GameObject:
   m_ObjectHideFlags: 0
@@ -46197,7 +45969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1255630379
@@ -46482,7 +46254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1259234392
@@ -46684,7 +46456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1261105349
@@ -48520,7 +48292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1306330156
@@ -50015,7 +49787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1335337130
@@ -54025,7 +53797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1455244455
@@ -54469,7 +54241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1462345837
@@ -54968,7 +54740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1468180260
@@ -56162,7 +55934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1496809284
@@ -57165,7 +56937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1516991731
@@ -57296,7 +57068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1517263564
@@ -57634,7 +57406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1522264951
@@ -59279,7 +59051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1561726999
@@ -59436,7 +59208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1568041263
@@ -59674,7 +59446,6 @@ Transform:
   m_LocalPosition: {x: 150, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1799768453}
   - {fileID: 1661965464}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -60972,7 +60743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1595601192
@@ -62839,7 +62610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1648384202
@@ -63286,7 +63057,7 @@ RectTransform:
   m_Children:
   - {fileID: 21572752}
   m_Father: {fileID: 1574933415}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -65300,7 +65071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1718675344
@@ -65846,7 +65617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1735265450
@@ -67216,7 +66987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1787715258
@@ -67574,7 +67345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1796480675
@@ -67687,105 +67458,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 8340e8586e8556c4b82f331a034bae19, type: 3}
---- !u!1 &1799768452
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1799768453}
-  - component: {fileID: 1799768456}
-  - component: {fileID: 1799768455}
-  - component: {fileID: 1799768454}
-  m_Layer: 5
-  m_Name: HealthCanvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1799768453
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799768452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 1191911501}
-  m_Father: {fileID: 1574933415}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &1799768454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799768452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1799768455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799768452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &1799768456
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1799768452}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1001 &1799967599
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68056,7 +67728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1801809261
@@ -69461,7 +69133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1832132608
@@ -70865,85 +70537,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 407790dd1c3280640a785d19f9c4c7b1, type: 3}
---- !u!1 &1877857662
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1877857663}
-  - component: {fileID: 1877857665}
-  - component: {fileID: 1877857664}
-  m_Layer: 5
-  m_Name: HealthText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1877857663
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877857662}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1191911501}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 20, y: 5}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1877857664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877857662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.6784314, g: 0.07450981, b: 0.14901961, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Health:'
---- !u!222 &1877857665
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877857662}
-  m_CullTransparentMesh: 0
 --- !u!1 &1880176233 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1990216340993278, guid: 5afed722cc07f0045bfb9c283f384e9c,
@@ -71157,7 +70750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1882059545
@@ -71811,7 +71404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1901831118
@@ -71968,7 +71561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1909402817
@@ -73213,7 +72806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &1940614180
@@ -74843,7 +74436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &2000153440
@@ -75606,7 +75199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &2026776438
@@ -75892,7 +75485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &2032665215
@@ -76145,7 +75738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &2034977223
@@ -77082,7 +76675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &2062268212
@@ -77857,7 +77450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &2073435999
@@ -78472,81 +78065,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 407790dd1c3280640a785d19f9c4c7b1, type: 3}
---- !u!1 &2099996106
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2099996107}
-  - component: {fileID: 2099996109}
-  - component: {fileID: 2099996108}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &2099996107
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099996106}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1191911501}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2099996108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099996106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &2099996109
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2099996106}
-  m_CullTransparentMesh: 0
 --- !u!1001 &2103135298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -79558,7 +79076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80679a8a6d79545faa734c6a70361835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 1191911504}
+  health: {fileID: 0}
   DeathScreen: {fileID: 541251619}
   death: {fileID: 287504477}
 --- !u!64 &2142818247
