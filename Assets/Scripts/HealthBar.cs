@@ -10,9 +10,6 @@ public class HealthBar : MonoBehaviour
 
     private float value;
     
-    // Start is called before the first frame update
-
-    // Update is called once per frame
     
     /*
      * if the player's water drains to 0,
@@ -20,6 +17,13 @@ public class HealthBar : MonoBehaviour
      *
      * if the health is 0, they die
      */
+
+    private void Start()
+    {
+        Debug.Log("This script is no longer used, deleting! 'HealthBar'");
+        Destroy(this);
+    }
+
     void Update()
     {
         if (waterSlide.value <= waterSlide.minValue)
