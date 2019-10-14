@@ -14,23 +14,23 @@ public class DialogueManager : MonoBehaviour
     
     public Canvas dialogueDisplay;
 
-    public Dialogue active;
+    private Dialogue active;
 
-    public Dialogue responseNodeOne;
+    private Dialogue responseNodeOne;
 
-    public Dialogue responseNodeTwo;
+    private Dialogue responseNodeTwo;
 
     public GameObject dialogueEnabler;
 
     public Dialogue newHead;
 
     
-    public InventoryItem my_itemToAddNode1;
-    public InventoryItem my_hasItemNode1;
-    public InventoryItem my_itemToAddNode2;
-    public InventoryItem my_hasItemNode2;
-    public InventoryItem my_losesNode1;
-    public InventoryItem my_losesNode2;
+    private InventoryItem my_itemToAddNode1;
+    private InventoryItem my_hasItemNode1;
+    private InventoryItem my_itemToAddNode2;
+    private InventoryItem my_hasItemNode2;
+    private InventoryItem my_losesNode1;
+    private InventoryItem my_losesNode2;
     
     public Inventory my_targetInventory;
 
@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject Node2InvalidEnabler;
     public Text node2InvalidText;
 
-    public GameObject myPlayer;
+    private GameObject myPlayer;
     //public GameObject myGameManager;
 
     public bool NPCL3;
@@ -53,7 +53,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(Initiate());
-        myPlayer = GameObject.FindWithTag("Player");
+        myPlayer = GameObject.FindWithTag("FakePlayer");
     }
 
     IEnumerator Initiate()
