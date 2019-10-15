@@ -21,9 +21,11 @@ public class TalkToPerson : MonoBehaviour
     public Text InteractText;
     
     private bool head_flag;
-    public GameObject myPlayer;
+    private GameObject myPlayer;
    // public GameObject myGameManager;
-    public bool NPCL3 ;
+    
+   //this NPCl3 will probably go...but leave it for now please - Peter H
+   public bool NPCL3 ;
 
     private bool isColliding;
     
@@ -33,7 +35,7 @@ public class TalkToPerson : MonoBehaviour
     {
         head_flag = false;
         isColliding = false;
-        myPlayer = GameObject.FindWithTag("Player");
+        myPlayer = GameObject.FindWithTag("FakePlayer");
 
     }
 
@@ -78,9 +80,11 @@ public class TalkToPerson : MonoBehaviour
                 isColliding = true;
                 canvasEnabler.SetActive(true);
                 
-                //Pauses the character while they are in dialogue
+                //Pauses the character while they are in dialogue .. come back to this..
+                /*
                 myPlayer.GetComponent<CharacterPause>().PauseCharacter();
                 GameManager.Instance.Pause();
+                */
 
                 
                 //If the player has already talked to the NPC the NPCs new head will be displayed

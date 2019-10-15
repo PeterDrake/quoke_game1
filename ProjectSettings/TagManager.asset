@@ -28,6 +28,7 @@ TagManager:
   - Bucket
   - Poop
   - Pee
+  - FakePlayer
   layers:
   - Default
   - TransparentFX

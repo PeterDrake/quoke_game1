@@ -9,24 +9,22 @@ public class gasCountdown : MonoBehaviour
     /// <summary>
     /// countdown for gas explosion. Starts after talking to NPC. players has x seconds to turn off the gas before they die
     /// </summary>
-    
-    public Text death;
-    public Slider health;
+    ///
+    private bool gasTriggered = false;
 
     public void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!gasTriggered && other.CompareTag("Player"))
         {
+            gasTriggered = true;
             StartCoroutine(gasExplosion());
         }
     }
 
     public IEnumerator gasExplosion()
     {
-        
         // this number controls time until explosion
         yield return new WaitForSeconds(15f);
-        death.text = "YOU DIED OF A GAS EXPLOSION :(";
-        health.GetComponent<Slider>().value = health.GetComponent<Slider>().minValue;
+        Death.Manager.PlayerDeath("YOU DIED OF A GAS EXPLOSION :(");
     }
 }

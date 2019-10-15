@@ -15,15 +15,15 @@ namespace MoreMountains.InventoryEngine
     {
 
         public int selectionNumber;
-        public InventorySlot my_inventorySlot;
-        public GameObject starter;
-        public GameObject my_selectorDisplay;
-        public GameObject eventTracker;
-        public GameObject bookcase;
+        private InventorySlot my_inventorySlot;
+        //public GameObject starter;
+        private GameObject my_selectorDisplay;
+        //public GameObject eventTracker;
+       // public GameObject bookcase;
         public GameObject infoEnabler;
-        public GameObject inventoryDisplay;
+       // public GameObject inventoryDisplay;
         public GameObject mainInventoryIM;
-        public GameObject bucket1;
+       // public GameObject bucket1;
         public Text name;
 
         private Inventory mainInventory;
@@ -67,7 +67,9 @@ namespace MoreMountains.InventoryEngine
         IEnumerator my_OpenInvent()
         {
             yield return new WaitForEndOfFrame();
-            GetComponent<InventoryInputManager>().OpenInventory();
+            //GetComponent<InventoryInputManager>().OpenInventory();
+            mainInventoryIM.GetComponent<InventoryInputManager>().OpenInventory();
+
 
         }
         public void ChangeInventory()
@@ -99,21 +101,24 @@ namespace MoreMountains.InventoryEngine
             {
                 GetComponent<InventoryInputManager>().CloseInventory();
                 my_selectorDisplay.SetActive(false);
+                /*
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("SecureBookcase"))
                 {
                     bookcase.GetComponent<SecureBookshelf>().SecureShelf();
                 }
+                */
                
                 ///opens first instruction & maininventory
                 infoEnabler.SetActive(true);
                 mainInventoryIM.GetComponent<InventoryInputManager>().OpenInventory();
 
                 
-                
+               /* 
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Bucket"))
                 {
                     bucket1.SetActive(false);
                 }
+                */
                 
             }
         }

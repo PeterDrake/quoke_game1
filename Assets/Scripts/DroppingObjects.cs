@@ -8,9 +8,6 @@ public class DroppingObjects : MonoBehaviour
 {
     // Start is called before the first frame update
     public Rigidbody rb;
-    public Slider health;
-    
-    
     //public Vector3 push_point;
     void Start()
     {
@@ -26,20 +23,9 @@ public class DroppingObjects : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("Player Hit");
-            health.GetComponent<Slider>().value -= 5f;
+            Death.Manager.PlayerDeath("Killed by falling Object");
 
         }
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-       
-        if (other.gameObject.CompareTag("Player"))
-        {
-            health.GetComponent<Slider>().value -= 5f;
-        }
-      
-    }
-
    
 }

@@ -9,50 +9,48 @@ using UnityStandardAssets.Water;
 
 public class WaterBar : MonoBehaviour
 {
-    public Slider waterSlide;
+    public Slider waterSlider;
     public GameObject starterInventory;
-    public float waterValue=100;
-    public float rate = .01f;
-
-    public int frame;
     
-    public Text deathText;
-
-
-
-    // Start is called before the first frame update
+    public float waterValue = 100;
+    public float rate = .01f;
+    
+    private int safety_frames = 60;
+    
     void Start()
     {
-        frame = -50;
+        Debug.Log("WaterBar Created");
         waterValue = 100;
 
     }
 
-    // Update is called once per frame
-    
     /**
      * After the player has picked from the starter inventory
      * Drain the water at a small rate,
      * if the water level reaches 0, the person dies. 
      */
+    
     void Update()
     {
         if (starterInventory.activeSelf == false)
         {
-            if (frame < 10)
+            if (safety_frames > 0)
             {
-                frame++;
+                safety_frames--;
             }
             else
             {
                 waterValue -= rate;
-                waterSlide.value = waterSlide.GetComponent<WaterBar>().waterValue;
+                waterSlider.value = waterValue; // set slider to reflect hydration
+                
+                if (waterValue <= 0)
+                {
+                    Death.Manager.PlayerDeath("Dehydration ended you!");
+                    Destroy(this);
+                }
             }
 
-            if (waterSlide.GetComponent<Slider>().value <= waterSlide.GetComponent<Slider>().minValue)
-            {
-                deathText.text = "Dehydration ended you!";
-            }
+            
         }
         
     }

@@ -8,30 +8,18 @@ using UnityEngine.UI;
 
 public class DeathGas : MonoBehaviour
 {
-    public Slider health;
-
     public Inventory main;
     public GameObject gas;
     public Material mat;
     public GameObject EventTracker;
     public GameObject win;
-    public Text death;
     private bool gasOff = false;
-
-    // Start is called before the first frame update
+    private MyEventTracker eventTracker;
     
-    /*
-     * initialize the length of the inventory
-     */
-    void Start()
+    
+    public void Start()
     {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        eventTracker = EventTracker.GetComponent<MyEventTracker>();
     }
 
     /*
@@ -41,23 +29,11 @@ public class DeathGas : MonoBehaviour
      */
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!gasOff && other.CompareTag("Player") && Input.GetKeyDown("e") && eventTracker.my_CheckInventory("Wrench"))
         {
-            if (Input.GetKeyDown("e"))
-            {
-                if (EventTracker.GetComponent<MyEventTracker>().my_CheckInventory("Wrench"))
-                {
-                    gas.GetComponent<BlinkingObject>().my_blink = mat;
-                    win.SetActive(true);
-                    gasOff = true;
-                    
-                }
-                
-            }
-
+            gas.GetComponent<BlinkingObject>().my_blink = mat;
+            win.SetActive(true);
+            gasOff = true;
         }
-
-        
-        
     }
 }
