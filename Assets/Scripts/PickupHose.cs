@@ -5,32 +5,37 @@ using MoreMountains.InventoryEngine;
 
 public class PickupHose : MonoBehaviour
 {
-    
-    private bool isColliding;
-
     public BaseItem itemtoReceive;
     public GameObject ThisGameObject;
-   
-    //this is just to hijack a function from it
-    public GameObject DialogueManager;
-    
+
     public GameObject interactNotifier;
-   
+
+    private Inventory inv;
+    private bool isColliding;
+    public bool killAfterUse = true;
+
+    public void Start()
+    {
+        inv = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
+    }
+
     private void OnTriggerStay(Collider other) 
     {
         if (other.CompareTag("Player"))
         {
-            if (Input.GetKeyDown("e"))
+            
+            if (Input.GetAxis("Interact") != 0)
             {
                 if (isColliding) return;
                 isColliding = true;
 
-                DialogueManager.GetComponent<DialogueManager>().my_AddItem(itemtoReceive);
-                
-                interactNotifier.SetActive(false);
-                
-                ThisGameObject.SetActive(false);
+                if (itemtoReceive != null)
+                {
+                    inv.AddItem(itemtoReceive,1);
+                }
 
+                interactNotifier.SetActive(false);
+                if (killAfterUse) Destroy(this);
             }
             
 
