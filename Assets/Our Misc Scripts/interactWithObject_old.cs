@@ -6,6 +6,13 @@ using UnityEngine.UI;
 
 public class interactWithObject_old : MonoBehaviour
 {
+    /*
+     * This Script *should be* no longer in use!
+     *
+     */
+    
+    
+    
     public GameObject interactNotifier;
     public Text interactText;
     public string newInteractText;
