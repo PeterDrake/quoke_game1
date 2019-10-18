@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.InventoryEngine;
 
-public class PickupHose : MonoBehaviour
+public class InteractWithObject : MonoBehaviour
 {
     //-----Material Blinking-------
     public bool BlinkWhenPlayerNear = true;
@@ -17,26 +17,27 @@ public class PickupHose : MonoBehaviour
     //-----------------------------
     
     //-----Item Manipulation------
-    public BaseItem itemtoReceive;
-    public GameObject interactNotifier;
+    public BaseItem itemToReceive;
     private Inventory inventory;
     //---------------------------
     
-    //private bool isColliding;
+    //-----Interaction Text-----
+    public string InteractionDisplayText;
+    public InteractText interactText;
+    //---------------------------
+    
     
     public bool killAfterUse = true;
 
     public void Start()
     {
-        Debug.Log("This script has changed, make sure its ok!" + gameObject.name);
         // get reference for inventory manipulation   
         inventory = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
         
-        // materials for material blinking
+    // materials for material blinking
         mat_original = gameObject.GetComponent<MeshRenderer>().material;
         mat_blink = Resources.Load("Transparent Object 1", typeof(Material)) as Material;
         _meshRenderer = GetComponent<MeshRenderer>();
-        
     }
     
     public void FixedUpdate()
@@ -65,9 +66,9 @@ public class PickupHose : MonoBehaviour
     {
         if (playerInCollider && Input.GetAxis("Interact") > 0)
         {
-            if (itemtoReceive != null) inventory.AddItem(itemtoReceive,1);
+            if (itemToReceive != null) inventory.AddItem(itemToReceive,1);
 
-            interactNotifier.SetActive(false);
+            interactText.ToggleVisibility(false);
             if (killAfterUse) Destroy(this);
         }
     }
@@ -76,30 +77,16 @@ public class PickupHose : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            interactText.ChangeText(InteractionDisplayText);
             playerInCollider = true;
         }
     }
-
-    /*private void OnTriggerStay(Collider other) 
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (!isColliding && Input.GetAxis("Interact") > 0)
-            {
-                isColliding = true;
-
-               
-            }
-            
-
-        }
-    }*/
     
     public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            //isColliding = false;
+            interactText.ToggleVisibility(false);
             playerInCollider = false;
             _meshRenderer.material = mat_original;
  
