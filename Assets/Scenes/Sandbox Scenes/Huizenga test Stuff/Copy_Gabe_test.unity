@@ -5461,6 +5461,10 @@ MonoBehaviour:
   Node2InvalidEnabler: {fileID: 311436861}
   node2InvalidText: {fileID: 2000349552}
   NPCL3: 0
+  testingAnnette: 1
+  ASanitation: 1
+  A5to11: {fileID: 11400000, guid: 2e26263593fb54b96ac6c9b77e9bf63b, type: 2}
+  A5to67: {fileID: 11400000, guid: 4889171cf4e24468487feb350bc786a8, type: 2}
   NPCl3interact: {fileID: 0}
 --- !u!223 &122899376
 Canvas:
@@ -31919,7 +31923,7 @@ GameObject:
   - component: {fileID: 633749426}
   - component: {fileID: 633749425}
   m_Layer: 0
-  m_Name: Bob (1)
+  m_Name: Annette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31937,8 +31941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d14b4fe33e9f4dcca4aba17c8601586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDialogue: {fileID: 11400000, guid: 9618bc752681647979cc3018febf8046, type: 2}
-  newHead: {fileID: 11400000, guid: 6d844b6c02d91453b8345909e57475dd, type: 2}
+  mainDialogue: {fileID: 11400000, guid: 870fa446ca9c94bbfbc1418cd01593e4, type: 2}
+  newHead: {fileID: 0}
   dialogueCanvas: {fileID: 122899373}
   canvasEnabler: {fileID: 139692044}
   interactNotifier: {fileID: 298938074}
