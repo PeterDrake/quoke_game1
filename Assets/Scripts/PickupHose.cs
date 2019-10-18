@@ -6,8 +6,6 @@ using MoreMountains.InventoryEngine;
 public class PickupHose : MonoBehaviour
 {
     public BaseItem itemtoReceive;
-    public GameObject ThisGameObject;
-
     public GameObject interactNotifier;
 
     private Inventory inv;
