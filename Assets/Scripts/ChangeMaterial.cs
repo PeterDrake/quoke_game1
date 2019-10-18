@@ -12,8 +12,9 @@ public class ChangeMaterial : MonoBehaviour
     private bool inCollider;
     
     public void Start()
-    { 
-       material1 = gameObject.GetComponent<MeshRenderer>().material;
+    {
+        Destroy(this);
+        material1 = gameObject.GetComponent<MeshRenderer>().material;
        material2 = Resources.Load("Transparent Object 1", typeof(Material)) as Material;
     }
     
