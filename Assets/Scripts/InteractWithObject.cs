@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.InventoryEngine;
+using UnityEngine.Events;
 
 public class InteractWithObject : MonoBehaviour
 {
@@ -26,8 +27,17 @@ public class InteractWithObject : MonoBehaviour
     public InteractText interactText;
     //---------------------------
     
+    //------Event Methods--------
+    [Header("Called when Player presses Interact Button (likely 'e')")]
+    public UnityEvent CallOnInteract;
+    [Header("Called when Player enters the trigger collider on this object")]
+    public UnityEvent CallOnEnterCollider;
+    //----------------------------
+    
     
     public bool killAfterUse = true;
+    private byte interactionDelayFrames = 0;
+    private byte interactionDelayFramesMax = 60;
 
     public void Start()
     {
@@ -64,19 +74,34 @@ public class InteractWithObject : MonoBehaviour
 
     public void Update()
     {
-        if (playerInCollider && Input.GetAxis("Interact") > 0)
+        if (interactionDelayFrames <= 0 && playerInCollider && Input.GetAxis("Interact") > 0)
         {
-            if (itemToReceive != null) inventory.AddItem(itemToReceive,1);
-
+            interactionDelayFrames = interactionDelayFramesMax;
+            if (itemToReceive != null)
+            {
+                inventory.AddItem(itemToReceive,1);
+                itemToReceive = null;
+            }
+            CallOnInteract.Invoke();
             interactText.ToggleVisibility(false);
-            if (killAfterUse) Destroy(this);
+            if (killAfterUse)
+            {
+                _meshRenderer.material = mat_original;
+                Destroy(this);
+            }
         }
+        else if (interactionDelayFrames > 0)
+        {
+            interactionDelayFrames--;    
+        }
+        
     }
 
     void OnTriggerEnter(Collider other) 
     {
         if (other.CompareTag("Player"))
         {
+            CallOnEnterCollider.Invoke();
             interactText.ChangeText(InteractionDisplayText);
             playerInCollider = true;
         }
