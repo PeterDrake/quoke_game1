@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCname: Annette
   NPCimage: {fileID: 0}
-  NPCtext: Nice to meet you. IHave you set up your sanitation system yet?
+  NPCtext: Nice to meet you. Have you set up your sanitation system yet?
   ResponseOne: Yes, I built a two-bucket system.
   nextNodeOne: {fileID: 11400000, guid: 4bcc1a143f87e427a9129bc10af0310c, type: 2}
   ResponseTwo: 

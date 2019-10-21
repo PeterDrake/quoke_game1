@@ -5461,10 +5461,8 @@ MonoBehaviour:
   Node2InvalidEnabler: {fileID: 311436861}
   node2InvalidText: {fileID: 2000349552}
   NPCL3: 0
-  testingAnnette: 1
-  ASanitation: 1
-  A5to11: {fileID: 11400000, guid: 2e26263593fb54b96ac6c9b77e9bf63b, type: 2}
-  A5to67: {fileID: 11400000, guid: 4889171cf4e24468487feb350bc786a8, type: 2}
+  LevelEvents: 1
+  levelEvents: {fileID: 583514030}
   NPCl3interact: {fileID: 0}
 --- !u!223 &122899376
 Canvas:
@@ -29529,6 +29527,7 @@ GameObject:
   - component: {fileID: 583514027}
   - component: {fileID: 583514029}
   - component: {fileID: 583514028}
+  - component: {fileID: 583514030}
   m_Layer: 0
   m_Name: Event Tracker
   m_TagString: Untagged
@@ -29579,6 +29578,23 @@ MonoBehaviour:
   mainInventory: {fileID: 603891175}
   my_slot: {fileID: 0}
   itemIndex: 0
+--- !u!114 &583514030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583514026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b091542850bdf49f5b3d1295a9675ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toiletComplete: 0
+  conditionMet: {fileID: 11400000, guid: 2e26263593fb54b96ac6c9b77e9bf63b, type: 2}
+  conditionNotMet: {fileID: 11400000, guid: 4889171cf4e24468487feb350bc786a8, type: 2}
+  myManager: {fileID: 122899375}
+  NPC: {fileID: 633749424}
 --- !u!1 &584029473
 GameObject:
   m_ObjectHideFlags: 0
@@ -36221,8 +36237,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallingObjects: {fileID: 719748102}
   aftershocktrigger: {fileID: 0}
-  quakeTrigger: {fileID: 0}
-  tableCheck: {fileID: 0}
+  quakeTrigger: {fileID: 1153004105}
+  tableCheck: {fileID: 731023256}
 --- !u!1 &732575362
 GameObject:
   m_ObjectHideFlags: 0
@@ -59253,6 +59269,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 8340e8586e8556c4b82f331a034bae19, type: 3}
+--- !u!1 &1153004105 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8851373175332053537, guid: 4800150a4897c4767a9d23875efc2743,
+    type: 3}
+  m_PrefabInstance: {fileID: 873538922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1153191057
 PrefabInstance:
   m_ObjectHideFlags: 0

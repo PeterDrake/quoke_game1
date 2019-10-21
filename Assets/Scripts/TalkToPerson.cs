@@ -91,7 +91,7 @@ public class TalkToPerson : MonoBehaviour
                 if (head_flag == false)
                 {
                     dialogueCanvas.GetComponent<DialogueDisplay>().dialogue = mainDialogue;
-                    head_flag = true;
+                    //head_flag = true;
                     StartCoroutine(my_pause());
                 }
                 

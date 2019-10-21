@@ -46,10 +46,10 @@ public class DialogueManager : MonoBehaviour
     //public GameObject myGameManager;
 
     public bool NPCL3;
-    public bool testingAnnette;
-    public bool ASanitation;
-    public Dialogue A5to11;
-    public Dialogue A5to67;
+    
+    public bool LevelEvents;
+    public levelEvents levelEvents;
+    private bool notChecked = true;
     
     public GameObject NPCl3interact;
 
@@ -117,20 +117,10 @@ public class DialogueManager : MonoBehaviour
                     Refresh();
                 }
                 /// testing Annette
-                else if (testingAnnette)
+                else if (LevelEvents && notChecked)
                 {
-                    if (ASanitation)
-                    {
-                        active = A5to11;
-                    }
-                    else
-                    {
-                        active = A5to67;
-                        Debug.Log("trying to switch");
-                    }
-                    dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
-                    dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
-                    Refresh();
+                    notChecked = false;
+                    levelEvents.changeDialogue();
                 }
                
                 else 

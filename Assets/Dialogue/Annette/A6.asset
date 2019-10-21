@@ -15,7 +15,7 @@ MonoBehaviour:
   NPCname: Annette
   NPCimage: {fileID: 0}
   NPCtext: You should probably get to work on that.
-  ResponseOne: 
+  ResponseOne: Will do!
   nextNodeOne: {fileID: 0}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}
