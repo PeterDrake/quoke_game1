@@ -34,8 +34,9 @@ public class InteractWithObject : MonoBehaviour
     public UnityEvent CallOnEnterCollider;
     //----------------------------
     
-    
+    [Header("'Kill After Use' destroys the script', 'Destroy Object After Use', destroys the whole game object")]
     public bool killAfterUse = true;
+    public bool DestoryObjectAfterUse = false;
     private byte interactionDelayFrames = 0;
     private byte interactionDelayFramesMax = 60;
 
@@ -84,6 +85,8 @@ public class InteractWithObject : MonoBehaviour
             }
             CallOnInteract.Invoke();
             interactText.ToggleVisibility(false);
+            if (DestoryObjectAfterUse) Destroy(gameObject);
+            
             if (killAfterUse)
             {
                 _meshRenderer.material = mat_original;
@@ -116,5 +119,10 @@ public class InteractWithObject : MonoBehaviour
             _meshRenderer.material = mat_original;
  
         }
+    }
+
+    public void SetInteractText(string newText)
+    {
+        this.InteractionDisplayText = newText;
     }
 }
