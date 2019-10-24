@@ -39,9 +39,11 @@ public class Bookcase : MonoBehaviour
             else
                 _interact.SetInteractText(NO_TOOLS);
             count++;
+            Debug.Log(count);
         }
         else
         {
+            GetComponent<MyFallingObject>().Fall();
             Debug.Log("FALLN");
         }
         

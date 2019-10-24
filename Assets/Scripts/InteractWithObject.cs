@@ -148,6 +148,7 @@ public class InteractWithObject : MonoBehaviour
     public void SetInteractText(string newText)
     {
         this.InteractionDisplayText = newText;
+        interactText.ChangeText(InteractionDisplayText);
     }
 
     public void DeleteItems()
