@@ -29,7 +29,6 @@ public class Bookcase : MonoBehaviour
         {
             if (_inventory.InventoryContains(CheckItem.name).Count > 0)
             {
-             _interact.interactText =    
             }
             count++;
         }
