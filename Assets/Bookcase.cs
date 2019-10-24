@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.InventoryEngine;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class Bookcase : MonoBehaviour
     
     private InteractWithObject _interact;
     private Inventory _inventory;
+
+    private bool PlayerHasItem = false;
     private void Start()
     {
         _interact = GetComponent<InteractWithObject>();
@@ -27,9 +30,14 @@ public class Bookcase : MonoBehaviour
     {
         if (count < KillCount)
         {
-            if (_inventory.InventoryContains(CheckItem.name).Count > 0)
+            if (PlayerHasItem || _inventory.InventoryContains(CheckItem.name).Count > 0)
             {
+                _interact.SetInteractText(HAS_TOOLS);
+                PlayerHasItem = true;
             }
+
+            else
+                _interact.SetInteractText(NO_TOOLS);
             count++;
         }
         else
@@ -37,6 +45,15 @@ public class Bookcase : MonoBehaviour
             Debug.Log("FALLN");
         }
         
+    }
+
+    public void Interaction()
+    {
+        if (PlayerHasItem)
+        {
+            _inventory.RemoveItem(Array.IndexOf(_inventory.Content, CheckItem),1);
+            Destroy(this);
+        }
     }
 
 

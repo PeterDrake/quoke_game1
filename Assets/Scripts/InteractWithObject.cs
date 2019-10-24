@@ -18,8 +18,10 @@ public class InteractWithObject : MonoBehaviour
     //-----------------------------
     
     //-----Item Manipulation------
-    public BaseItem itemToReceive;
+    public BaseItem[] itemToReceive = new BaseItem[1];
     private Inventory inventory;
+
+    private bool hasItem;
     //---------------------------
     
     //-----Interaction Text-----
@@ -38,12 +40,26 @@ public class InteractWithObject : MonoBehaviour
     public bool killAfterUse = true;
     public bool DestoryObjectAfterUse = false;
     private byte interactionDelayFrames = 0;
-    private byte interactionDelayFramesMax = 60;
+    private byte interactionDelayFramesMax = 20;
 
     public void Start()
     {
-        // get reference for inventory manipulation   
-        inventory = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
+        // get reference for inventory manipulation
+        hasItem = (itemToReceive != null);
+        if (hasItem && itemToReceive.Length > 0)
+        {
+            foreach (var item in itemToReceive)
+            {
+                if (item == null)
+                {
+                    hasItem = false;
+                    Debug.LogWarning(name+"has non-zero item-to-give length, but one of the items is null!");
+                    break;
+                }
+            }
+        }
+        if (hasItem) inventory = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
+        
         
     // materials for material blinking
         mat_original = gameObject.GetComponent<MeshRenderer>().material;
@@ -78,17 +94,24 @@ public class InteractWithObject : MonoBehaviour
         if (interactionDelayFrames <= 0 && playerInCollider && Input.GetAxis("Interact") > 0)
         {
             interactionDelayFrames = interactionDelayFramesMax;
-            if (itemToReceive != null)
+            if (hasItem && itemToReceive != null)
             {
-                inventory.AddItem(itemToReceive,1);
+                foreach (var item in itemToReceive)
+                    inventory.AddItem(item,1);
+
                 itemToReceive = null;
             }
             CallOnInteract.Invoke();
-            interactText.ToggleVisibility(false);
-            if (DestoryObjectAfterUse) Destroy(gameObject);
+
+            if (DestoryObjectAfterUse)
+            {
+                interactText.ToggleVisibility(false);
+                Destroy(gameObject);
+            }
             
             if (killAfterUse)
             {
+                interactText.ToggleVisibility(false);
                 _meshRenderer.material = mat_original;
                 Destroy(this);
             }
@@ -105,6 +128,7 @@ public class InteractWithObject : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             CallOnEnterCollider.Invoke();
+            
             interactText.ChangeText(InteractionDisplayText);
             playerInCollider = true;
         }
@@ -124,5 +148,11 @@ public class InteractWithObject : MonoBehaviour
     public void SetInteractText(string newText)
     {
         this.InteractionDisplayText = newText;
+    }
+
+    public void DeleteItems()
+    {
+        itemToReceive = null;
+        hasItem = false;
     }
 }
