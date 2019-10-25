@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
   m_Name: Bleach
   m_EditorClassIdentifier: 
-  ItemID: 
+  ItemID: Bleach
   TargetInventoryName: MainInventory
   Usable: 0
   Equippable: 0
   Quantity: 1
   ItemName: 
-  ShortDescription: 
+  ShortDescription: Bleach for water purification
   Description: 
   CanMoveObject: 1
   CanSwapObject: 1
