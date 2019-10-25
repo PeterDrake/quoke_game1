@@ -9,6 +9,7 @@ using Cinemachine;
 using UnityEngine.Rendering.PostProcessing;
 using MoreMountains.Feedbacks;
 using MoreMountains.TopDownEngine;
+using UnityEngine.Events;
 using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
@@ -63,6 +64,8 @@ namespace MoreMountains.FeedbacksForThirdParty
         private Rigidbody[] bodies;
         private BoxCollider[] colliders;
         private Clobberer[] clobberers;
+
+        private UnityEvent OnQuake; 
         
         // Start is called before the first frame update
         void Start()
@@ -156,17 +159,18 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         private void QuakeTrigger()
         {
+            OnQuake.Invoke();
             InfoEnabler.SetActive(true);
             EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay1);
             StartCoroutine(ShakeIt());
             tablecheck.SetActive(true);
-           // my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency);
-           //if (string.Compare(sceneName, "Level 1") == 0)
-           //{
             my_bookshelf.GetComponent<MyFallingObject>().Fall();
-           //}
-           fallingLights.GetComponent<QuakeFurniture>().Drop();
+            fallingLights.GetComponent<QuakeFurniture>().Drop();
+        }
 
+        public void CallOnQuake(UnityAction Listener)
+        {
+            OnQuake.AddListener(Listener);
         }
     }
 }

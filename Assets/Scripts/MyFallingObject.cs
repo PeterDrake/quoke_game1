@@ -12,60 +12,32 @@ public class MyFallingObject : MonoBehaviour
     public Rigidbody rb;
 
     
-    public GameObject rearranger;
+    /*public GameObject rearranger;
     public Rearrange _rearranger;
     
-    public GameObject npc2;
+    public GameObject npc2;*/
     public bool isEnabled = false;
-    
-    public bool isSceneTwo;
-    
+
     void Start()
     {
-        var sceneName = SceneManager.GetActiveScene().name;
-        isSceneTwo = string.Compare(sceneName, "Level 2") == 0;
+        Debug.Log("this script is no longer used! use bookcase instead");
+        Destroy(this);
         rb = GetComponent<Rigidbody>();
-        //_rearranger = rearranger.GetComponent<Rearrange>();
-
     }
 
     public void Fall()
     {
+        Debug.Log("called");
+        rb.isKinematic = false;
         isEnabled = true;
         rb.AddRelativeForce(Vector3.forward * thrust);
-        StartCoroutine(BookshelfDeactivate());
-        
-        /*
-        if (isSceneTwo)
-        {
-            if (_rearranger.safe == false)
-            {
-                isEnabled = true;
-                rb.AddRelativeForce(Vector3.forward * thrust);
-                StartCoroutine(BookshelfDeactivate());
-            }
-        }
-        else
-        {
-            isEnabled = true;
-            rb.AddRelativeForce(Vector3.forward * thrust);
-            StartCoroutine(BookshelfDeactivate());
-        }*/
-        
     }
-    
-    
-    public IEnumerator BookshelfDeactivate()
-    {
-        yield return new WaitForSeconds(2f);
-        isEnabled = false; 
-        rb.isKinematic = true;
-        
-        if (isSceneTwo)
-        {
-            npc2.GetComponent<FollowPlayer>().fall = true;
-        }
 
+    public void Disable()
+    {
+        Destroy(rb);
+        Destroy(GetComponent<BoxCollider>());
+        Destroy(this);
     }
 
     
