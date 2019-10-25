@@ -125,7 +125,7 @@ public class InteractWithObject : MonoBehaviour
 
     void OnTriggerEnter(Collider other) 
     {
-        if (other.CompareTag("Player"))
+        if (!playerInCollider && other.CompareTag("Player"))
         {
             CallOnEnterCollider.Invoke();
             

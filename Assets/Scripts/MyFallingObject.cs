@@ -12,28 +12,33 @@ public class MyFallingObject : MonoBehaviour
     public Rigidbody rb;
 
     
-    public GameObject rearranger;
+    /*public GameObject rearranger;
     public Rearrange _rearranger;
     
-    public GameObject npc2;
+    public GameObject npc2;*/
     public bool isEnabled = false;
-    
-    public bool isSceneTwo;
-    
+
     void Start()
     {
+        Debug.Log("this script is no longer used! use bookcase instead");
+        Destroy(this);
         rb = GetComponent<Rigidbody>();
-        //_rearranger = rearranger.GetComponent<Rearrange>();
     }
 
     public void Fall()
     {
+        Debug.Log("called");
         rb.isKinematic = false;
         isEnabled = true;
         rb.AddRelativeForce(Vector3.forward * thrust);
     }
-    
-    
+
+    public void Disable()
+    {
+        Destroy(rb);
+        Destroy(GetComponent<BoxCollider>());
+        Destroy(this);
+    }
 
     
     public void OnTriggerEnter(Collider other)
