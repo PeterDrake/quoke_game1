@@ -69,7 +69,7 @@ public class InteractWithObject : MonoBehaviour
     
     public void FixedUpdate()
     {
-        if (playerInCollider)
+        if (BlinkWhenPlayerNear && playerInCollider)
         {
             timer += Time.deltaTime;
             if (timer > .6)

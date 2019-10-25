@@ -10,8 +10,8 @@ public class Bookcase : MonoBehaviour
     [Header("Will check for this item to repair bookshelf")]
     public BaseItem CheckItem;
     
-    public const string NO_TOOLS = "This bookcase could fall over in an earthquake. I should secure it to the wall.";
-    public const string HAS_TOOLS = "Press 'e' to secure the bookshelf";
+    private const string NO_TOOLS = "This bookcase could fall over in an earthquake. I should secure it to the wall.";
+    private  const string HAS_TOOLS = "Press 'e' to secure the bookshelf";
     
     [Header("The bookcase will fall on the player the (kill_count)th time the player enters the collider")]
     public int KillCount = 4;
@@ -26,8 +26,8 @@ public class Bookcase : MonoBehaviour
     private bool PlayerHasItem = false;
     
     private Rigidbody rb;
-    private bool isEnabled = false;
-    
+    private bool isFalling = false;
+
     private void Start()
     {
         _interact = GetComponent<InteractWithObject>();
@@ -35,33 +35,34 @@ public class Bookcase : MonoBehaviour
         if (CheckItem == null) Debug.LogError("No item to check has been specified");
         
         rb = GetComponent<Rigidbody>();
+        
+        transform.Find("Fall Collider").GetComponent<CollisionCallback>().AddCallback("Player", HitPlayer);
     }
     public void UpdateState()
     {
-        if (!isEnabled)
-            if (count < KillCount)
+        if (isFalling) return;
+        if (count < KillCount)
+        {
+            if (PlayerHasItem || _inventory.InventoryContains(CheckItem.name).Count > 0)
             {
-                if (PlayerHasItem || _inventory.InventoryContains(CheckItem.name).Count > 0)
-                {
-                    _interact.BlinkWhenPlayerNear = true;
-                    _interact.SetInteractText(HAS_TOOLS);
-                    PlayerHasItem = true;
-                }
-
-                else
-                {
-                    _interact.BlinkWhenPlayerNear = false;
-                    _interact.SetInteractText(NO_TOOLS);
-                }
-
-                count++;
+                _interact.BlinkWhenPlayerNear = true;
+                _interact.SetInteractText(HAS_TOOLS);
+                PlayerHasItem = true;
             }
+
             else
-                Fall();
+            {
+                _interact.BlinkWhenPlayerNear = false;
+                _interact.SetInteractText(NO_TOOLS);
+            }
+
+            count++;
+            Debug.Log(count);
+        }
         else
         {
-            Debug.Log("Player Hit");
-            Death.Manager.PlayerDeath("Your bookcase crushed you to death! :(");
+            isFalling = true;
+            Fall();
         }
 
     }
@@ -78,10 +79,10 @@ public class Bookcase : MonoBehaviour
 
     private void Fall()
     {
-        GetComponent<BoxCollider>().size = new Vector3(1.5f,1.5f,1.5f);
+        if (!isFalling) return;
+        
         rb.isKinematic = false;
-        isEnabled = true;
-        rb.AddRelativeForce(Vector3.forward * FallThrust);
+        rb.AddRelativeTorque(new Vector3(1,0,0) * FallThrust,ForceMode.VelocityChange);
     }
 
     private void Disable()
@@ -90,7 +91,13 @@ public class Bookcase : MonoBehaviour
         Destroy(GetComponent<BoxCollider>());
         Destroy(this);
     }
-    
+
+
+    private void HitPlayer()
+    {
+        Debug.Log("Player Hit");
+        Death.Manager.PlayerDeath("Your bookcase crushed you to death! :(");
+    }
 
 
 
