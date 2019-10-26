@@ -22,7 +22,7 @@ MonoBehaviour:
   Description: used for poop
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 4cafb9504be1f584bba96fec879995ac, type: 3}
   Prefab: {fileID: 0}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}

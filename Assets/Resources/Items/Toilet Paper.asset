@@ -22,7 +22,7 @@ MonoBehaviour:
   Description: Toilet paper for bucket game
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 0}
+  Icon: {fileID: 21300000, guid: 12a5844169eb7374583f5a6d575ceff1, type: 3}
   Prefab: {fileID: 0}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}
