@@ -153,9 +153,6 @@ namespace MoreMountains.FeedbacksForThirdParty
             enableDoors.SetActive(false);
 
         }
-        
-        
-        
 
         private void QuakeTrigger()
         {

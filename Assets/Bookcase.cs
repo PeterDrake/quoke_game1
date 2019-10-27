@@ -27,6 +27,7 @@ public class Bookcase : MonoBehaviour
     
     private Rigidbody rb;
     private bool isFalling = false;
+    private BoxCollider fallCollider;
 
     private void Start()
     {
@@ -36,7 +37,10 @@ public class Bookcase : MonoBehaviour
         
         rb = GetComponent<Rigidbody>();
         
-        transform.Find("Fall Collider").GetComponent<CollisionCallback>().AddCallback("Player", HitPlayer);
+        fallCollider = transform.Find("Fall Collider").GetComponent<BoxCollider>(); 
+        fallCollider.gameObject.GetComponent<CollisionCallback>().AddCallback("Player", HitPlayer);
+        fallCollider.enabled = false;
+        Debug.Log(fallCollider);
     }
     public void UpdateState()
     {
@@ -80,7 +84,7 @@ public class Bookcase : MonoBehaviour
     private void Fall()
     {
         if (!isFalling) return;
-        
+        fallCollider.enabled = true;
         rb.isKinematic = false;
         rb.AddRelativeTorque(new Vector3(1,0,0) * FallThrust,ForceMode.VelocityChange);
     }
@@ -93,8 +97,10 @@ public class Bookcase : MonoBehaviour
     }
 
 
-    private void HitPlayer()
+    public void HitPlayer()
     {
+        Debug.Log("here");
+        if (!isFalling)return;
         Debug.Log("Player Hit");
         Death.Manager.PlayerDeath("Your bookcase crushed you to death! :(");
     }
