@@ -13,32 +13,36 @@ public class QuakeFurniture : MonoBehaviour
     
     public GameObject[] falling_objects;
     public float fallRate = .5f;
-    private int i = 0;
-    public bool underTable = true;
-    public GameObject myPlayer;
-    private Vector3 playerTransform;
+    public GameObject player;
     public GameObject playerKiller;
+    
+    private bool dropping;
+    private Vector3 playerTransform;
+    private int i = 0;
 
 
     private void Start()
     {
-        myPlayer = GameObject.FindWithTag("Player");
-        GameObject.Find("Quake").GetComponent<QuakeManager>().OnQuake.AddListener(Drop);
+        player = GameObject.FindWithTag("Player");
+        QuakeManager.Instance.OnQuake.AddListener(Drop);
     }
 
-    public void Drop()
+    private void Drop()
     {
         StartCoroutine(DropEm());
     }
-    
+
+    public void StopDrop()
+    {
+        dropping = false;
+    }
 
     public IEnumerator DropEm()
     {
+        dropping = true;
         yield return new WaitForSeconds(3f);
-        while (i < falling_objects.Length && underTable)
+        while (dropping &&  i < falling_objects.Length)
         {
-            //falling_objects[i].GetComponent<Rigidbody>().useGravity = true;
-            //falling_objects[i].GetComponent<FallingFurnitureDeath>().falling();
             falling_objects[i].SetActive(true);
             yield return new WaitForSeconds(fallRate);
             i++;
@@ -47,14 +51,12 @@ public class QuakeFurniture : MonoBehaviour
                 fallRate -= .005f;
             }
         }
-        ////drop directly on players head
+        // drop directly on players head
         if (i == falling_objects.Length)
         {
-            playerTransform = myPlayer.transform.position;
+            playerTransform = player.transform.position;
             playerKiller.transform.position = playerTransform + new Vector3(0f, 3f, 0f);
             playerKiller.SetActive(true);
         }
-
-
     }
 }

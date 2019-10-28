@@ -33,7 +33,6 @@ namespace MoreMountains.FeedbacksForThirdParty
         public string textToDisplay2;
 
         public string textToDisplay3;
-        public GameObject tablecheck;
         public GameObject fallingLights;
         public GameObject enableDoors;
         public GameObject objective;
@@ -80,7 +79,6 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         void Start()
         {
-
             StartCoroutine(QuakeCountdown());
 
             doors = GameObject.FindGameObjectsWithTag("Door");
@@ -145,7 +143,7 @@ namespace MoreMountains.FeedbacksForThirdParty
                 c.enabled = true;
             }
 
-            while (tableFlag)
+            while (Quaking)
             {
                 my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency, false);
                 StartCoroutine(FlapDoors(duration));
@@ -158,7 +156,6 @@ namespace MoreMountains.FeedbacksForThirdParty
             _informationCanvas.DisplayInfo(textToDisplay2);
             
             enableDoors.SetActive(false);
-            Quaking = false;
         }
 
         public void TriggerQuake()
@@ -171,9 +168,14 @@ namespace MoreMountains.FeedbacksForThirdParty
 
             _informationCanvas.DisplayInfo(textToDisplay1);
             
-            tablecheck.SetActive(true);
             StartCoroutine(ShakeIt());
             //other methods that used to be called here are called from OnQuake instead
+        }
+
+        public void StopQuake()
+        {
+            Debug.Log("Stop Quake Called"+Quaking);
+            Quaking = false;
         }
     }
 }

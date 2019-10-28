@@ -42,9 +42,8 @@ public class InteractWithObject : MonoBehaviour
     private byte interactionDelayFrames = 0;
     private byte interactionDelayFramesMax = 20;
 
-    public void Start()
+    private void Awake()
     {
-        // get reference for inventory manipulation
         hasItem = (itemToReceive != null);
         if (hasItem && itemToReceive.Length > 0)
         {
@@ -58,10 +57,18 @@ public class InteractWithObject : MonoBehaviour
                 }
             }
         }
+    }
+
+
+    public void Start()
+    {
+        if (interactText == null) interactText = GameObject.Find("Canvi").transform.Find("InteractNotifier").GetComponent<InteractText>();
+        
+        // get reference for inventory manipulation
         if (hasItem) inventory = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
         
         
-    // materials for material blinking
+        // materials for material blinking
         mat_original = gameObject.GetComponent<MeshRenderer>().material;
         mat_blink = Resources.Load("Transparent Object 1", typeof(Material)) as Material;
         _meshRenderer = GetComponent<MeshRenderer>();
