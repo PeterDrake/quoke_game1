@@ -8158,8 +8158,8 @@ Transform:
   - {fileID: 711950874}
   - {fileID: 1923602923}
   - {fileID: 500418372}
-  - {fileID: 432714704}
   - {fileID: 710735883}
+  - {fileID: 432714704}
   - {fileID: 361502290}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -16799,7 +16799,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
-  itemToReceive: []
+  itemToReceive:
+  - {fileID: 11400000, guid: f87d957b2e35bdd48aef018011aa9710, type: 2}
+  - {fileID: 11400000, guid: 8578bbf3d881193409380b0c0c0b3f45, type: 2}
   InteractionDisplayText: Press 'E' to Interact with Closet
   interactText: {fileID: 1009491751}
   CallOnInteract:
@@ -18196,7 +18198,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
-  itemToReceive: []
+  itemToReceive:
+  - {fileID: 11400000, guid: de4ee66e0735d429bb85e1a8fe2926bf, type: 2}
   InteractionDisplayText: Press 'E' to Pickup Bucket
   interactText: {fileID: 1009491751}
   CallOnInteract:
@@ -18210,7 +18213,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   killAfterUse: 1
-  DestoryObjectAfterUse: 0
+  DestoryObjectAfterUse: 1
 --- !u!1001 &364896458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25123,7 +25126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405492, guid: 4cd7f93b8e6d2774eb99e9517c1f5f8c, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 405492, guid: 4cd7f93b8e6d2774eb99e9517c1f5f8c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -25164,7 +25167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
-  itemToReceive: []
+  itemToReceive:
+  - {fileID: 11400000, guid: 9774c343522143f41992b1c98161b7b7, type: 2}
   InteractionDisplayText: Press 'E' to Pickup Sawdust
   interactText: {fileID: 1009491751}
   CallOnInteract:
@@ -33889,7 +33893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4281933473497796, guid: 8c1d25955cb4d43ee8db7fee48e1dac0, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4281933473497796, guid: 8c1d25955cb4d43ee8db7fee48e1dac0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -33959,7 +33963,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
-  itemToReceive: []
+  itemToReceive:
+  - {fileID: 11400000, guid: de4ee66e0735d429bb85e1a8fe2926bf, type: 2}
   InteractionDisplayText: Press 'E' to Pickup Bucket
   interactText: {fileID: 1009491751}
   CallOnInteract:
@@ -33973,7 +33978,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   killAfterUse: 1
-  DestoryObjectAfterUse: 0
+  DestoryObjectAfterUse: 1
 --- !u!1001 &711950873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34068,7 +34073,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
-  itemToReceive: []
+  itemToReceive:
+  - {fileID: 11400000, guid: 4529c30e923a79f4d85e3fbb4ceb3699, type: 2}
+  - {fileID: 11400000, guid: 7a90c45c8c6e25e42b8c297343ec4517, type: 2}
   InteractionDisplayText: Press 'E' to Get Items From Bathroom
   interactText: {fileID: 1009491751}
   CallOnInteract:
@@ -38853,6 +38860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CheckItem: {fileID: 0}
   KillCount: 4
+  FallThrust: 0
 --- !u!114 &827670016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38867,11 +38875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 100
   rb: {fileID: 827670019}
-  rearranger: {fileID: 0}
-  _rearranger: {fileID: 0}
-  npc2: {fileID: 0}
   isEnabled: 0
-  isSceneTwo: 0
 --- !u!114 &827670017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38911,7 +38915,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.16, y: 3.3485017, z: 4.66}
+  m_Size: {x: 2.81, y: 3.3485017, z: 5.44}
   m_Center: {x: 0.0000028610236, y: 1.6742508, z: 0}
 --- !u!54 &827670019
 Rigidbody:
@@ -75793,6 +75797,83 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 001714447b764f24b9bd5b22a78b0c63, type: 3}
+--- !u!1001 &1577616217
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1126369189}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_Name
+      value: Wall_Door_01_Yellow (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.4999952
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_RootMapOrder
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a0010a2005c9f54193ccd928b2d5819, type: 3}
+--- !u!1 &1577616218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 7a0010a2005c9f54193ccd928b2d5819,
+    type: 3}
+  m_PrefabInstance: {fileID: 1577616217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1577616219
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577616218}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 56ef55fe544175448906f84d2968c5b2, type: 3}
 --- !u!1001 &1579192615
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89703,7 +89784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 487146, guid: 94469aeaca2d49442af381840b70bb6c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 487146, guid: 94469aeaca2d49442af381840b70bb6c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -93276,7 +93357,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
-  itemToReceive: []
+  itemToReceive:
+  - {fileID: 11400000, guid: b12eb94a8d47c494290c29d4feb1270c, type: 2}
+  - {fileID: 11400000, guid: 085f79894830bfa43b1b882cedc7ffd2, type: 2}
   InteractionDisplayText: Press 'E' to Drink from Sink
   interactText: {fileID: 1009491751}
   CallOnInteract:
@@ -93327,7 +93410,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.5, y: 1.7186362, z: 5}
+  m_Size: {x: 3.54, y: 1.7186362, z: 4.16}
   m_Center: {x: -1.6134307, y: 0.8593181, z: 0.46592546}
 --- !u!1 &2019139555
 GameObject:
