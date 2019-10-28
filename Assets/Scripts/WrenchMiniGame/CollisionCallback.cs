@@ -23,7 +23,6 @@ public class CollisionCallback : MonoBehaviour
 
 	public void AddCallback(string tag, CallBack cb)
 	{
-		Debug.Log("here "+tag);
 		if (!callback_functions.ContainsKey(tag))
 		{
 			callback_functions.Add(tag, cb);

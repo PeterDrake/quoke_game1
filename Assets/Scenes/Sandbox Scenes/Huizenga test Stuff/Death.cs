@@ -30,7 +30,6 @@ public class Death : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         pause.PauseCharacter();
         GameManager.Instance.Pause();
-        
     }
     
     public void PlayerDeath(string textOnDeath)

@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class UnderTable : MonoBehaviour
 {
-
     public GameObject fallingObjects;
     public GameObject aftershocktrigger;
     public GameObject quakeTrigger;
@@ -23,22 +22,13 @@ public class UnderTable : MonoBehaviour
         sceneName = currentScene.name;
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-            
+        if (other.CompareTag("Player"))
         {
-            
-            quakeTrigger.GetComponent<MyShakeTrigger>().tableFlag = false;
-            
-            
+            QuakeManager.Instance.tableFlag = false;
+
             if (string.Compare(sceneName, "Level 2")==0)
             {
                 aftershocktrigger.GetComponent<AftershockTrigger>().tableFlag = false;

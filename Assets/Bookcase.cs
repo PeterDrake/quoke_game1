@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using MoreMountains.FeedbacksForThirdParty;
 using MoreMountains.InventoryEngine;
 using UnityEngine;
 
@@ -28,7 +29,7 @@ public class Bookcase : MonoBehaviour
     private Rigidbody rb;
     private bool isFalling = false;
     private BoxCollider fallCollider;
-
+    
     private void Start()
     {
         _interact = GetComponent<InteractWithObject>();
@@ -40,7 +41,8 @@ public class Bookcase : MonoBehaviour
         fallCollider = transform.Find("Fall Collider").GetComponent<BoxCollider>(); 
         fallCollider.gameObject.GetComponent<CollisionCallback>().AddCallback("Player", HitPlayer);
         fallCollider.enabled = false;
-        Debug.Log(fallCollider);
+
+        QuakeManager.Instance.OnQuake.AddListener(Fall);
     }
     public void UpdateState()
     {
@@ -64,10 +66,7 @@ public class Bookcase : MonoBehaviour
             Debug.Log(count);
         }
         else
-        {
-            isFalling = true;
-            Fall();
-        }
+            QuakeManager.Instance.TriggerQuake();
 
     }
 
@@ -81,9 +80,11 @@ public class Bookcase : MonoBehaviour
     }
     
 
-    private void Fall()
+    public void Fall()
     {
-        if (!isFalling) return;
+        if (isFalling) return;
+        isFalling = true;
+        
         fallCollider.enabled = true;
         rb.isKinematic = false;
         rb.AddRelativeTorque(new Vector3(1,0,0) * FallThrust,ForceMode.VelocityChange);
@@ -97,12 +98,11 @@ public class Bookcase : MonoBehaviour
     }
 
 
-    public void HitPlayer()
+    private void HitPlayer()
     {
-        Debug.Log("here");
         if (!isFalling)return;
         Debug.Log("Player Hit");
-        Death.Manager.PlayerDeath("Your bookcase crushed you to death! :(");
+        Death.Manager.PlayerDeath("Your bookcase crushed you :(");
     }
 
 

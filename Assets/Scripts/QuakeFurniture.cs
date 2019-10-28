@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.FeedbacksForThirdParty;
 using UnityEngine;
 
 public class QuakeFurniture : MonoBehaviour
@@ -22,6 +23,7 @@ public class QuakeFurniture : MonoBehaviour
     private void Start()
     {
         myPlayer = GameObject.FindWithTag("Player");
+        GameObject.Find("Quake").GetComponent<QuakeManager>().OnQuake.AddListener(Drop);
     }
 
     public void Drop()

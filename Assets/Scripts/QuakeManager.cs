@@ -1,16 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.Remoting.Messaging;
-using System.Security.Cryptography.X509Certificates;
-using Boo.Lang;
+using System.Linq.Expressions;
+using MoreMountains.Tools;
 using UnityEngine;
-using Cinemachine;
-using UnityEngine.Rendering.PostProcessing;
-using MoreMountains.Feedbacks;
-using MoreMountains.TopDownEngine;
 using UnityEngine.Events;
-using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
@@ -21,26 +14,19 @@ namespace MoreMountains.FeedbacksForThirdParty
     /// Handles the earthquake, falling object calls, effects, information, etc.
     /// </summary>
 
-    public class MyShakeTrigger : MonoBehaviour
+    public class QuakeManager : MonoBehaviour
     {
-        public bool adminMode = true;
-        private bool haveObjective = false;
-        private bool textDisplayed = false;
-        private UpdateQuests quests;
+        public static QuakeManager Instance;
         
-            
+        public bool adminMode = true;
+        public float TimeBeforeQuake = 15f;
+        
         public GameObject my_camera;
         public float amplitude;
         public float frequency;
         public float duration;
-       // public GameObject gas;
-        public GameObject my_bookshelf;
-       // public GameObject light1;
-        //public Material mat;
         
-       // private Rigidbody lightRB;
 
-        public GameObject InfoEnabler;
         public GameObject EventTracker;
         public String textToDisplay1;
 
@@ -55,32 +41,57 @@ namespace MoreMountains.FeedbacksForThirdParty
         public bool tableFlag = true;
         public bool cheatQuake = false;
         
-        private string sceneName;
-
         public GameObject dustStormPrefab;
-        
+
+        private bool haveObjective;
+        private bool textDisplayed;
+        private UpdateQuests quests;
+
         // TODO Move these into a separate object
         private GameObject[] doors;
         private Rigidbody[] bodies;
         private BoxCollider[] colliders;
         private Clobberer[] clobberers;
 
-        private UnityEvent OnQuake; 
+
+        public bool Quaking;
         
+        
+        /*Subscribed to onQuake:
+            QuakeFurniture
+            Bookcase
+            
+         
+         */
+        public UnityEvent OnQuake;
+
+        private InformationCanvas _informationCanvas; 
         // Start is called before the first frame update
+
+        private void Awake()
+        {
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(this);
+            
+            tableFlag = true;
+        }
+
         void Start()
         {
-            tableFlag = true;
-            StartCoroutine(QuakeDown());
-            Scene currentScene = SceneManager.GetActiveScene ();
-            sceneName = currentScene.name;
+
+            StartCoroutine(QuakeCountdown());
+
             doors = GameObject.FindGameObjectsWithTag("Door");
             bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
             colliders = Array.ConvertAll(doors, d => d.GetComponent(typeof(BoxCollider)) as BoxCollider);
-
             clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
+            
+            
             if (objective != null) quests = objective.GetComponent<UpdateQuests>();
 
+            _informationCanvas = EventTracker.GetComponent<InformationCanvas>();
         }
 
         // Update is called once per frame
@@ -89,31 +100,26 @@ namespace MoreMountains.FeedbacksForThirdParty
             if (adminMode && Input.GetKeyDown("p"))
             {
                 cheatQuake = true;
-                QuakeTrigger();
+                TriggerQuake();
                
             }
 
             if (haveObjective && !textDisplayed && quests.shelterBool)
             {
                 textDisplayed = true;
-                EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay3);
+                _informationCanvas.DisplayInfo(textToDisplay3);
             }
         }
         
         
 
-        public IEnumerator QuakeDown()
+        private IEnumerator QuakeCountdown()
         {
-           yield return new WaitForSeconds(15f);
-           if (cheatQuake == false)
+           yield return new WaitForSeconds(TimeBeforeQuake);
+           if (!cheatQuake)
            {
-               QuakeTrigger();   
+               TriggerQuake();   
            }
-
-           //yield return new WaitForSeconds(10f);
-           //InfoEnabler.SetActive(false);
-           //EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
-          // enableDoors.SetActive(false);
         }
 
         public IEnumerator FlapDoors(float duration)
@@ -130,10 +136,10 @@ namespace MoreMountains.FeedbacksForThirdParty
             }
         }
         
-        public IEnumerator ShakeIt()
+        private IEnumerator ShakeIt()
         {
-
-           Instantiate(dustStormPrefab, new Vector3(100, 10, -65), Quaternion.identity);
+            Debug.Log("Started");
+            Instantiate(dustStormPrefab, new Vector3(100, 10, -65), Quaternion.identity);
             foreach (Clobberer c in clobberers)
             {
                 c.enabled = true;
@@ -149,25 +155,25 @@ namespace MoreMountains.FeedbacksForThirdParty
             {
                 c.enabled = false;
             }
-            EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay2);
+            _informationCanvas.DisplayInfo(textToDisplay2);
+            
             enableDoors.SetActive(false);
-
+            Quaking = false;
         }
 
-        private void QuakeTrigger()
+        public void TriggerQuake()
         {
+            if(Quaking) return;
+            Quaking = true;
+            
+            StopAllCoroutines();
             OnQuake.Invoke();
-            InfoEnabler.SetActive(true);
-            EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay1);
-            StartCoroutine(ShakeIt());
-            tablecheck.SetActive(true);
-            my_bookshelf.GetComponent<MyFallingObject>().Fall();
-            fallingLights.GetComponent<QuakeFurniture>().Drop();
-        }
 
-        public void CallOnQuake(UnityAction Listener)
-        {
-            OnQuake.AddListener(Listener);
+            _informationCanvas.DisplayInfo(textToDisplay1);
+            
+            tablecheck.SetActive(true);
+            StartCoroutine(ShakeIt());
+            //other methods that used to be called here are called from OnQuake instead
         }
     }
 }
