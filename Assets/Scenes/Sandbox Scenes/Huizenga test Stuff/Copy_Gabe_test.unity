@@ -5461,6 +5461,7 @@ MonoBehaviour:
   node1InvalidText: {fileID: 983143562}
   Node2InvalidEnabler: {fileID: 311436861}
   node2InvalidText: {fileID: 2000349552}
+  nodeTwoButton: {fileID: 1821902943}
   NPCL3: 0
   LevelEvents: 1
   levelEvents: {fileID: 583514030}
@@ -6331,7 +6332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &139692045
 RectTransform:
   m_ObjectHideFlags: 0

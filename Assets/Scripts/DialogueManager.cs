@@ -45,6 +45,7 @@ public class DialogueManager : MonoBehaviour
     private GameObject myPlayer;
     //public GameObject myGameManager;
 
+    public GameObject nodeTwoButton;
     public bool NPCL3;
     
     public bool LevelEvents;
@@ -70,11 +71,16 @@ public class DialogueManager : MonoBehaviour
 
     public void Refresh()
     {
-
+        nodeTwoButton.SetActive(true);     
         active = dialogueDisplay.GetComponent<DialogueDisplay>().dialogue;
         // Debug.Log(active);
         responseNodeOne = dialogueDisplay.GetComponent<DialogueDisplay>().nextNodeOne; 
         responseNodeTwo = dialogueDisplay.GetComponent<DialogueDisplay>().nextNodeTwo;
+        if (responseNodeTwo == null)
+        { 
+            nodeTwoButton.SetActive(false);       
+        }
+
         my_itemToAddNode1 = dialogueDisplay.GetComponent<DialogueDisplay>().itemToReceiveNode1;
         my_hasItemNode1 = dialogueDisplay.GetComponent<DialogueDisplay>().hasItemNode1;
         my_itemToAddNode2 = dialogueDisplay.GetComponent<DialogueDisplay>().itemToReceiveNode2;
