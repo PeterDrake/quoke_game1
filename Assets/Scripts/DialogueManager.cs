@@ -71,7 +71,8 @@ public class DialogueManager : MonoBehaviour
 
     public void Refresh()
     {
-        nodeTwoButton.SetActive(true);     
+        nodeTwoButton.SetActive(true);    
+        
         active = dialogueDisplay.GetComponent<DialogueDisplay>().dialogue;
         // Debug.Log(active);
         responseNodeOne = dialogueDisplay.GetComponent<DialogueDisplay>().nextNodeOne; 
