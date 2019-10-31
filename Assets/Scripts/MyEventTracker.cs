@@ -14,6 +14,8 @@ public class MyEventTracker : MonoBehaviour
     public InventorySlot my_slot;
     public int itemIndex;
     
+    
+    
     public bool my_CheckInventory(string my_itemname)
     {
         if (mainInventory.GetQuantity(my_itemname) != 0)
@@ -55,12 +57,7 @@ public class MyEventTracker : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
     }
-    
-    
-    
-    ////other functions we will need? 
-    
-    ///Change an NPC to newHead..? 
+
     
     
 }
