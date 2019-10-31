@@ -22,8 +22,8 @@ namespace MoreMountains.FeedbacksForThirdParty
         public float TimeBeforeQuake = 15f;
         public float AftershockTime = 10f;
         
-        private float EntranceGraceTime = 2f;
-        
+        private float entranceGracePeriod = 2f;
+        private float timeTillQuake;
         
         public GameObject my_camera;
         public float amplitude;
@@ -58,6 +58,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
 
         public bool Quaking;
+        private byte quakes; //times quaked 
 
         private bool InQuakeZone;
         private bool CountdownFinished;
@@ -65,8 +66,6 @@ namespace MoreMountains.FeedbacksForThirdParty
         /*Subscribed to onQuake:
             QuakeFurniture
             Bookcase
-            
-         
          */
         public UnityEvent OnQuake;
 
@@ -114,7 +113,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             }
         }
 
-        private void TriggerCountdown(float time)
+        public void TriggerCountdown(float time)
         {
             CountdownFinished = false;
             StopCoroutine(nameof(QuakeCountdown));
@@ -123,8 +122,14 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         private IEnumerator QuakeCountdown(float CountdownTime)
         {
-           yield return new WaitForSeconds(CountdownTime);
-           CountdownFinished = true;
+            timeTillQuake = CountdownTime;
+            while (timeTillQuake > 0)
+            {
+                yield return new WaitForSeconds(1f);
+                timeTillQuake--;
+                Debug.Log("Time Till Quake: " + timeTillQuake);
+            }
+            CountdownFinished = true;
         }
 
         public IEnumerator FlapDoors(float duration)
@@ -164,6 +169,8 @@ namespace MoreMountains.FeedbacksForThirdParty
             _informationCanvas.DisplayInfo(textToDisplay2);
             
             enableDoors.SetActive(false);
+            
+            quakes++;
         }
 
         public void TriggerQuake()
@@ -182,6 +189,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public void StopQuake()
         {
+            if (!Quaking || quakes > 0) return;
             Debug.Log("Stop Quake Called"+Quaking);
             Quaking = false;
             TriggerCountdown(AftershockTime);
@@ -189,8 +197,8 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public void PlayerInQuakeZone(bool status)
         {
-            if (status && (InQuakeZone != status)) //accounts for duplicate fire of OnTriggerEnter
-                TriggerCountdown(EntranceGraceTime);
+            if (status && (CountdownFinished || timeTillQuake < entranceGracePeriod) && (InQuakeZone != status))
+                TriggerCountdown(entranceGracePeriod);
             
             InQuakeZone = status;
         }

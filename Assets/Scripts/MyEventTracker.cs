@@ -13,18 +13,7 @@ public class MyEventTracker : MonoBehaviour
     public Inventory mainInventory;
     public InventorySlot my_slot;
     public int itemIndex;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     public bool my_CheckInventory(string my_itemname)
     {
         if (mainInventory.GetQuantity(my_itemname) != 0)

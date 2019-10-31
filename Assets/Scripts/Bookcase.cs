@@ -29,6 +29,9 @@ public class Bookcase : MonoBehaviour
     private Rigidbody rb;
     private bool isFalling = false;
     private BoxCollider fallCollider;
+
+    [Header("Time it takes to trigger the earthquake after the bookcase is secured")]
+    public float TriggerTime = 5f;
     
     private void Start()
     {
@@ -47,6 +50,7 @@ public class Bookcase : MonoBehaviour
     public void UpdateState()
     {
         if (isFalling) return;
+        
         if (count < KillCount)
         {
             if (PlayerHasItem || _inventory.InventoryContains(CheckItem.name).Count > 0)
@@ -74,7 +78,8 @@ public class Bookcase : MonoBehaviour
     {
         if (PlayerHasItem)
         {
-            _inventory.RemoveItem(Array.FindIndex(_inventory.Content, row => row.ItemID == CheckItem.ItemID),1);
+            _inventory.RemoveItem(Array.FindIndex(_inventory.Content, row => row.ItemID == CheckItem.ItemID), 1);
+            QuakeManager.Instance.TriggerCountdown(TriggerTime);
             Disable();
         }
     }
