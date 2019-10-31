@@ -20,6 +20,10 @@ namespace MoreMountains.FeedbacksForThirdParty
         
         public bool adminMode = true;
         public float TimeBeforeQuake = 15f;
+        public float AftershockTime = 10f;
+        
+        private float EntranceGraceTime = 2f;
+        
         
         public GameObject my_camera;
         public float amplitude;
@@ -54,7 +58,9 @@ namespace MoreMountains.FeedbacksForThirdParty
 
 
         public bool Quaking;
-        
+
+        private bool InQuakeZone;
+        private bool CountdownFinished;
         
         /*Subscribed to onQuake:
             QuakeFurniture
@@ -79,7 +85,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         void Start()
         {
-            StartCoroutine(QuakeCountdown());
+            StartCoroutine(nameof(QuakeCountdown),TimeBeforeQuake);
 
             doors = GameObject.FindGameObjectsWithTag("Door");
             bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
@@ -95,11 +101,10 @@ namespace MoreMountains.FeedbacksForThirdParty
         // Update is called once per frame
         void Update()
         {
-            if (adminMode && Input.GetKeyDown("p"))
+
+            if (!cheatQuake && !Quaking && InQuakeZone && CountdownFinished || (adminMode && Input.GetKeyDown("p")))
             {
-                cheatQuake = true;
-                TriggerQuake();
-               
+                TriggerQuake();   
             }
 
             if (haveObjective && !textDisplayed && quests.shelterBool)
@@ -108,16 +113,18 @@ namespace MoreMountains.FeedbacksForThirdParty
                 _informationCanvas.DisplayInfo(textToDisplay3);
             }
         }
-        
-        
 
-        private IEnumerator QuakeCountdown()
+        private void TriggerCountdown(float time)
         {
-           yield return new WaitForSeconds(TimeBeforeQuake);
-           if (!cheatQuake)
-           {
-               TriggerQuake();   
-           }
+            CountdownFinished = false;
+            StopCoroutine(nameof(QuakeCountdown));
+            StartCoroutine(nameof(QuakeCountdown), time);
+        }
+
+        private IEnumerator QuakeCountdown(float CountdownTime)
+        {
+           yield return new WaitForSeconds(CountdownTime);
+           CountdownFinished = true;
         }
 
         public IEnumerator FlapDoors(float duration)
@@ -136,16 +143,17 @@ namespace MoreMountains.FeedbacksForThirdParty
         
         private IEnumerator ShakeIt()
         {
-            Debug.Log("Started");
             Instantiate(dustStormPrefab, new Vector3(100, 10, -65), Quaternion.identity);
+            
             foreach (Clobberer c in clobberers)
             {
                 c.enabled = true;
             }
 
+            var cam = my_camera.GetComponent<MMCinemachineCameraShaker>();
             while (Quaking)
             {
-                my_camera.GetComponent<MMCinemachineCameraShaker>().ShakeCamera(duration, amplitude, frequency, false);
+                cam.ShakeCamera(duration, amplitude, frequency, false);
                 StartCoroutine(FlapDoors(duration));
                 yield return new WaitForSeconds(duration);
             }
@@ -176,6 +184,15 @@ namespace MoreMountains.FeedbacksForThirdParty
         {
             Debug.Log("Stop Quake Called"+Quaking);
             Quaking = false;
+            TriggerCountdown(AftershockTime);
+        }
+
+        public void PlayerInQuakeZone(bool status)
+        {
+            if (status && (InQuakeZone != status)) //accounts for duplicate fire of OnTriggerEnter
+                TriggerCountdown(EntranceGraceTime);
+            
+            InQuakeZone = status;
         }
     }
 }

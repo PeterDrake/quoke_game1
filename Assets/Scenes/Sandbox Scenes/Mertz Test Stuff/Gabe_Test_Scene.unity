@@ -1784,6 +1784,95 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 279c872f11c1a8046bbbaf97a68caa9a, type: 3}
+--- !u!1 &38679194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 38679197}
+  - component: {fileID: 38679196}
+  - component: {fileID: 38679195}
+  m_Layer: 24
+  m_Name: Livingroom Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &38679195
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38679194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 1, z: 9.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &38679196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38679194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1057bb53b86a74b0a92fd7e962a1fcfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 179893047}
+        m_MethodName: PlayerInQuakeZone
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 179893047}
+        m_MethodName: PlayerInQuakeZone
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!4 &38679197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38679194}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 34.27, y: 0.49799728, z: 48.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &38774432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8362,7 +8451,7 @@ PrefabInstance:
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
       propertyPath: TimeBeforeQuake
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -8392,7 +8481,7 @@ PrefabInstance:
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
       propertyPath: cheatQuake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8851373175332053533, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
@@ -35764,6 +35853,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 4548053015945060060, guid: 5426248c4912f46128ccab4e9b467291,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5426248c4912f46128ccab4e9b467291, type: 3}
 --- !u!1001 &860845883
@@ -56721,7 +56815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 11400000, guid: 4529c30e923a79f4d85e3fbb4ceb3699, type: 2}
+  - {fileID: 11400000, guid: 3973b5986e0ecde4aaa24288688e920d, type: 2}
   - {fileID: 11400000, guid: 7a90c45c8c6e25e42b8c297343ec4517, type: 2}
   InteractionDisplayText: Press 'E' to Get Items From Bathroom
   interactText: {fileID: 0}
@@ -56759,8 +56853,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.36, y: 1.95, z: 8.04}
-  m_Center: {x: -0.000000014901161, y: 0.8568357, z: 0.6512499}
+  m_Size: {x: 9, y: 2, z: 5}
+  m_Center: {x: 0.14, y: 0.8568357, z: 2.45}
 --- !u!64 &1212833566
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -71066,6 +71160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawContentInInspector: 1
   Content:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -88863,7 +88958,7 @@ GameObject:
   - component: {fileID: 1925123745}
   - component: {fileID: 1925123747}
   - component: {fileID: 1925123746}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: Tablecheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88909,11 +89004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1057bb53b86a74b0a92fd7e962a1fcfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallingObjects: {fileID: 775036054}
-  aftershocktrigger: {fileID: 0}
-  quakeTrigger: {fileID: 0}
-  tableCheck: {fileID: 0}
-  OnUnderTable:
+  OnEnter:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 179893047}
@@ -88927,17 +89018,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 775036055}
-        m_MethodName: StopDrop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1925506144

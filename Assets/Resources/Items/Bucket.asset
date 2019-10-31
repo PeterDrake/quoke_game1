@@ -27,7 +27,7 @@ MonoBehaviour:
   SpawnShape: 0
   PrefabDropMinDistance: {x: 2, y: 0, z: 1}
   PrefabDropMaxDistance: {x: 3, y: 0, z: 2}
-  MaximumStack: 2
+  MaximumStack: 1
   ItemClass: 0
   TargetEquipmentInventoryName: 
   EquippedSound: {fileID: 0}

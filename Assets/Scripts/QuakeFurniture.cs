@@ -31,17 +31,12 @@ public class QuakeFurniture : MonoBehaviour
     {
         StartCoroutine(DropEm());
     }
-
-    public void StopDrop()
-    {
-        dropping = false;
-    }
-
-    public IEnumerator DropEm()
+    
+    private IEnumerator DropEm()
     {
         dropping = true;
         yield return new WaitForSeconds(3f);
-        while (dropping &&  i < falling_objects.Length)
+        while (QuakeManager.Instance.Quaking &&  i < falling_objects.Length)
         {
             falling_objects[i].SetActive(true);
             yield return new WaitForSeconds(fallRate);

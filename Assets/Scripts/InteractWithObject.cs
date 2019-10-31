@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.InventoryEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class InteractWithObject : MonoBehaviour
 {
@@ -137,6 +138,15 @@ public class InteractWithObject : MonoBehaviour
             CallOnEnterCollider.Invoke();
             
             interactText.ChangeText(InteractionDisplayText);
+            playerInCollider = true;
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (!playerInCollider && other.CompareTag("Player"))
+        {
+            interactText.ToggleVisibility(true);
             playerInCollider = true;
         }
     }
