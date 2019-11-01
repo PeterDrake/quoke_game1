@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
-  m_Name: Water
+  m_Name: BookcaseTools
   m_EditorClassIdentifier: 
-  ItemID: Water
+  ItemID: Bookcase Tools
   TargetInventoryName: MainInventory
-  Usable: 1
+  Usable: 0
   Equippable: 0
   Quantity: 1
-  ItemName: Clean Water
-  ShortDescription: Drink
-  Description: Drink before dehydrating
+  ItemName: 
+  ShortDescription: Tools for fixing bookcase
+  Description: 
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 21300000, guid: fcdefa0131b3d7045b0aaace3720a935, type: 3}
-  Prefab: {fileID: 100000, guid: b789ef475d96ad945990533a18f5e8a8, type: 3}
+  Icon: {fileID: 21300000, guid: b3cc5b710b9a51141b4330e6f1724f4e, type: 3}
+  Prefab: {fileID: 0}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}
   PrefabDropMaxDistance: {x: 3, y: 3, z: 0}
