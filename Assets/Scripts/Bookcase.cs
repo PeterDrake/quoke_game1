@@ -80,7 +80,7 @@ public class Bookcase : MonoBehaviour
 
     public void Interaction()
     {
-        if (PlayerHasItem)
+        if (!isFalling && PlayerHasItem)
         {
             ObjectiveManager.Instance.Satisfy("BOOKCASE");
             _inventory.RemoveItem(Array.FindIndex(_inventory.Content, row => row.ItemID == CheckItem.ItemID), 1);
@@ -90,7 +90,7 @@ public class Bookcase : MonoBehaviour
     }
     
 
-    public void Fall()
+    private void Fall()
     {
         if (isFalling) return;
         isFalling = true;
@@ -98,16 +98,13 @@ public class Bookcase : MonoBehaviour
         fallCollider.enabled = true;
         rb.isKinematic = false;
         rb.AddRelativeTorque(new Vector3(1,0,0) * FallThrust,ForceMode.VelocityChange);
-        while (rb.velocity.magnitude > 0)
-        {
-            ;
-        }
-        Disable();
     }
+
 
     private void Disable()
     {
         Destroy(rb);
+        Destroy(fallCollider.gameObject.GetComponent<CollisionCallback>());
         Destroy(GetComponent<BoxCollider>());
         Destroy(this);
     }
@@ -115,9 +112,14 @@ public class Bookcase : MonoBehaviour
 
     private void HitPlayer()
     {
-        if (!isFalling)return;
-        Debug.Log("Player Hit");
-        Death.Manager.PlayerDeath("Your bookcase crushed you :(");
+        if (!isFalling) return;
+        if (rb.velocity.magnitude <= 0) Disable();
+        else
+        {
+            Debug.Log("Player Hit");
+            Death.Manager.PlayerDeath("Your bookcase crushed you :(");            
+        }
+        
     }
 
 
