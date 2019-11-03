@@ -28429,6 +28429,11 @@ PrefabInstance:
       propertyPath: AftershockTime
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
+        type: 3}
+      propertyPath: showCountdown
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8851373175332053533, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
     - {fileID: 8851373175332053534, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
@@ -72937,7 +72942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8eefecb7c40e624c9121c2b13d22400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CheckItem: {fileID: 11400000, guid: f87d957b2e35bdd48aef018011aa9710, type: 2}
+  CheckItem: {fileID: 11400000, guid: ee4993de99e856e439452ecb90f1db03, type: 2}
   KillCount: 4
   FallThrust: 900000
   TriggerTime: 5

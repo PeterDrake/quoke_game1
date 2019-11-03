@@ -18,7 +18,11 @@ namespace MoreMountains.FeedbacksForThirdParty
     {
         public static QuakeManager Instance;
         
+        [Header("Admin Tools")]
         public bool adminMode = true;
+        public bool showCountdown = true;
+        [Space]
+        
         public float TimeBeforeQuake = 15f;
         public float AftershockTime = 10f;
         
@@ -57,7 +61,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         private Clobberer[] clobberers;
 
 
-        public bool Quaking;
+        [HideInInspector] public bool Quaking;
         private byte quakes; //times quaked 
 
         private bool InQuakeZone;
@@ -127,7 +131,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             {
                 yield return new WaitForSeconds(1f);
                 timeTillQuake--;
-                Debug.Log("Time Till Quake: " + timeTillQuake);
+                if (showCountdown) Debug.Log("Time Till Quake: " + timeTillQuake);
             }
             CountdownFinished = true;
         }

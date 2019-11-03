@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using MoreMountains.FeedbacksForThirdParty;
 using MoreMountains.InventoryEngine;
+using Unity.UNetWeaver;
 using UnityEngine;
 
 public class Bookcase : MonoBehaviour
@@ -38,7 +39,6 @@ public class Bookcase : MonoBehaviour
         _interact = GetComponent<InteractWithObject>();
         _inventory = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
         if (CheckItem == null) Debug.LogError("No item to check has been specified");
-        
         rb = GetComponent<Rigidbody>();
         
         fallCollider = transform.Find("Fall Collider").GetComponent<BoxCollider>(); 
@@ -59,9 +59,13 @@ public class Bookcase : MonoBehaviour
                 _interact.SetInteractText(HAS_TOOLS);
                 PlayerHasItem = true;
             }
-
             else
             {
+                foreach (var item in _inventory.Content)
+                {
+                    Debug.Log(item+"| ");
+                }
+                Debug.Log(_inventory.name);
                 _interact.BlinkWhenPlayerNear = false;
                 _interact.SetInteractText(NO_TOOLS);
             }
