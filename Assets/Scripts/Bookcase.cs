@@ -82,6 +82,7 @@ public class Bookcase : MonoBehaviour
     {
         if (PlayerHasItem)
         {
+            ObjectiveManager.Instance.Satisfy("BOOKCASE");
             _inventory.RemoveItem(Array.FindIndex(_inventory.Content, row => row.ItemID == CheckItem.ItemID), 1);
             QuakeManager.Instance.TriggerCountdown(TriggerTime);
             Disable();
@@ -97,6 +98,11 @@ public class Bookcase : MonoBehaviour
         fallCollider.enabled = true;
         rb.isKinematic = false;
         rb.AddRelativeTorque(new Vector3(1,0,0) * FallThrust,ForceMode.VelocityChange);
+        while (rb.velocity.magnitude > 0)
+        {
+            ;
+        }
+        Disable();
     }
 
     private void Disable()
