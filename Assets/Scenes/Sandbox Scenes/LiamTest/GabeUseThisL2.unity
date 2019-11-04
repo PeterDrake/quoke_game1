@@ -57107,11 +57107,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1345154192}
-        m_MethodName: 
+        m_MethodName: Interaction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -70576,6 +70576,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: fce810215b60ab84cafed4986abc9bb8, type: 3}
+--- !u!114 &1699552102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699552097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f1ca66f1777f641bef5abf7e09721d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1699966235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72937,7 +72949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8eefecb7c40e624c9121c2b13d22400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CheckItem: {fileID: 11400000, guid: f87d957b2e35bdd48aef018011aa9710, type: 2}
+  CheckItem: {fileID: 11400000, guid: ee4993de99e856e439452ecb90f1db03, type: 2}
   KillCount: 4
   FallThrust: 900000
   TriggerTime: 5

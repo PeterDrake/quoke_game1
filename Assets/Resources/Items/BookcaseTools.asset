@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
   m_Name: BookcaseTools
   m_EditorClassIdentifier: 
-  ItemID: Bookcase Tools
+  ItemID: BookcaseTools
   TargetInventoryName: MainInventory
   Usable: 0
   Equippable: 0

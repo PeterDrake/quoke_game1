@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fac9bd89dcafc049b19f543ccf8fd57, type: 3}
-  m_Name: Plastic Bags
+  m_Name: Bag
   m_EditorClassIdentifier: 
-  ItemID: Plastic Bags
+  ItemID: Bag
   TargetInventoryName: MainInventory
   Usable: 0
   Equippable: 0

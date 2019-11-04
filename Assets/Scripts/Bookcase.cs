@@ -47,6 +47,7 @@ public class Bookcase : MonoBehaviour
 
         QuakeManager.Instance.OnQuake.AddListener(Fall);
     }
+    
     public void UpdateState()
     {
         if (isFalling) return;
