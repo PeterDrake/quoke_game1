@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.TopDownEngine;
 using UnityEngine;
@@ -12,11 +13,24 @@ public class InformationCanvas : MonoBehaviour
 
     public Text info;
     public GameObject textCanvas;
-    
 
+    private GameObject toggle;
+
+    private void Start()
+    {
+        toggle = transform.Find("InfoCanvasToggle").gameObject;
+    }
+
+
+    public void ToggleDisplay(bool status)
+    {
+        toggle.SetActive(status);    
+    }
+    
     public void DisplayInfo(string textToDisplay)
     {
-        textCanvas.GetComponent<Text>().text = textToDisplay;
+        ToggleDisplay(true);
+        info.text = textToDisplay;
     }
 
 }
