@@ -36,7 +36,7 @@ public class Death : MonoBehaviour
     {
         deathText.text = textOnDeath;
         deathScreen.SetActive(true);
-        StartCoroutine(MyPause());
+       // StartCoroutine(MyPause());
     }
 
     public void RestartLevel()
