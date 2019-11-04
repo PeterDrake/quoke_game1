@@ -41,9 +41,10 @@ public class Death : MonoBehaviour
 
     public void RestartLevel()
     {
-        pause.UnPauseCharacter();
+        /* Removing Pause buggy stuff for now, will revisit*/
+      //  pause.UnPauseCharacter();
         //myGameManager.GetComponent<GameManager>().UnPause();
-        GameManager.Instance.UnPause();
+       // GameManager.Instance.UnPause();
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }
