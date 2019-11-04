@@ -52289,6 +52289,35 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 07dca419092c12f44b5c8ead83b9d6d7, type: 3}
+--- !u!114 &1228432477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228432472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f1ca66f1777f641bef5abf7e09721d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bucket: {fileID: 0}
+  Bag: {fileID: 0}
+  Sawdust: {fileID: 0}
+  Sanitizer: {fileID: 0}
+--- !u!65 &1228432478
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228432472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.000014, y: 5.7, z: 5.0000005}
+  m_Center: {x: -2.500007, y: -0.080299154, z: -2.5000002}
 --- !u!1 &1228858985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1990216340993278, guid: 5afed722cc07f0045bfb9c283f384e9c,
@@ -70636,18 +70665,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: fce810215b60ab84cafed4986abc9bb8, type: 3}
---- !u!114 &1699552102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699552097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f1ca66f1777f641bef5abf7e09721d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1699966235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73025,7 +73042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c36eea2c1ace4b5183069731daa7ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlinkWhenPlayerNear: 0
+  BlinkWhenPlayerNear: 1
   itemToReceive: []
   InteractionDisplayText: 
   interactText: {fileID: 577387407}
