@@ -11,8 +11,8 @@ using UnityEngine.SceneManagement;
 public class MyEventTracker : MonoBehaviour
 {
     public Inventory mainInventory;
-    public InventorySlot my_slot;
-    public int itemIndex;
+    private InventorySlot my_slot;
+    private int itemIndex;
     
     
     
