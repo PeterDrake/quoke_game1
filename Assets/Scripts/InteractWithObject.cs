@@ -137,7 +137,7 @@ public class InteractWithObject : MonoBehaviour
         {
             CallOnEnterCollider.Invoke();
             
-            interactText.ChangeText(InteractionDisplayText);
+            if (InteractionDisplayText != "") interactText.ChangeText(InteractionDisplayText);
             playerInCollider = true;
         }
     }

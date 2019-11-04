@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using MoreMountains.FeedbacksForThirdParty;
 using MoreMountains.InventoryEngine;
+using Unity.UNetWeaver;
 using UnityEngine;
 
 public class Bookcase : MonoBehaviour
@@ -38,7 +39,6 @@ public class Bookcase : MonoBehaviour
         _interact = GetComponent<InteractWithObject>();
         _inventory = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
         if (CheckItem == null) Debug.LogError("No item to check has been specified");
-        
         rb = GetComponent<Rigidbody>();
         
         fallCollider = transform.Find("Fall Collider").GetComponent<BoxCollider>(); 
@@ -60,9 +60,13 @@ public class Bookcase : MonoBehaviour
                 _interact.SetInteractText(HAS_TOOLS);
                 PlayerHasItem = true;
             }
-
             else
             {
+                foreach (var item in _inventory.Content)
+                {
+                    Debug.Log(item+"| ");
+                }
+                Debug.Log(_inventory.name);
                 _interact.BlinkWhenPlayerNear = false;
                 _interact.SetInteractText(NO_TOOLS);
             }
@@ -77,8 +81,9 @@ public class Bookcase : MonoBehaviour
 
     public void Interaction()
     {
-        if (PlayerHasItem)
+        if (!isFalling && PlayerHasItem)
         {
+            ObjectiveManager.Instance.Satisfy("BOOKCASE");
             _inventory.RemoveItem(Array.FindIndex(_inventory.Content, row => row.ItemID == CheckItem.ItemID), 1);
             QuakeManager.Instance.TriggerCountdown(TriggerTime);
             Disable();
@@ -86,7 +91,7 @@ public class Bookcase : MonoBehaviour
     }
     
 
-    public void Fall()
+    private void Fall()
     {
         if (isFalling) return;
         isFalling = true;
@@ -96,9 +101,11 @@ public class Bookcase : MonoBehaviour
         rb.AddRelativeTorque(new Vector3(1,0,0) * FallThrust,ForceMode.VelocityChange);
     }
 
+
     private void Disable()
     {
         Destroy(rb);
+        Destroy(fallCollider.gameObject.GetComponent<CollisionCallback>());
         Destroy(GetComponent<BoxCollider>());
         Destroy(this);
     }
@@ -106,9 +113,14 @@ public class Bookcase : MonoBehaviour
 
     private void HitPlayer()
     {
-        if (!isFalling)return;
-        Debug.Log("Player Hit");
-        Death.Manager.PlayerDeath("Your bookcase crushed you :(");
+        if (!isFalling) return;
+        if (rb.velocity.magnitude <= 0) Disable();
+        else
+        {
+            Debug.Log("Player Hit");
+            Death.Manager.PlayerDeath("Your bookcase crushed you :(");            
+        }
+        
     }
 
 

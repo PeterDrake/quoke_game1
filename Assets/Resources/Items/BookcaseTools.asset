@@ -17,7 +17,7 @@ MonoBehaviour:
   Usable: 0
   Equippable: 0
   Quantity: 1
-  ItemName: 
+  ItemName: BookcaseTools
   ShortDescription: Tools for fixing bookcase
   Description: 
   CanMoveObject: 1
