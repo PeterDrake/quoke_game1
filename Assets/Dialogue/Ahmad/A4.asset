@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: A13
+  m_Name: A4
   m_EditorClassIdentifier: 
-  NPCname: Annette
+  NPCname: Ahmad
   NPCimage: {fileID: 0}
-  NPCtext: "No, that building doesn\u2019t look safe. You wouldn\u2019t want to be
-    in there during an aftershock. I\u2019ve got some room in my truck."
-  ResponseOne: Thanks!
+  NPCtext: "Nice to meet you. I\u2019m glad you made it this far."
+  ResponseOne: Thanks, me too.
   nextNodeOne: {fileID: 0}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}

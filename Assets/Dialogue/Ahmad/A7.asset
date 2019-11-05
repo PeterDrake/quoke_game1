@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: A5 to A6or7
+  m_Name: A7
   m_EditorClassIdentifier: 
-  NPCname: Annette
+  NPCname: Ahmad
   NPCimage: {fileID: 0}
-  NPCtext: Have you set up your sanitation system yet?
-  ResponseOne: "No, I haven\u2019t put that together yet. "
-  nextNodeOne: {fileID: 11400000, guid: 3736f795abe26461695a2cd15793e223, type: 2}
-  ResponseTwo: 'My what? '
-  nextNodeTwo: {fileID: 11400000, guid: 62f408726bbd54aa3898c2430359d571, type: 2}
-  PlayerReceivesNode1: {fileID: 0}
+  NPCtext: " Your toilet. Bad sanitation is a recipe for disease. This pamphlet lists
+    some things you\u2019ll need to set up a two-bucket system."
+  ResponseOne: I don't have all that stuff.
+  nextNodeOne: {fileID: 11400000, guid: 6286b28d251d243ac91dcc6bf7ba46ca, type: 2}
+  ResponseTwo: 
+  nextNodeTwo: {fileID: 0}
+  PlayerReceivesNode1: {fileID: 11400000, guid: 4529c30e923a79f4d85e3fbb4ceb3699,
+    type: 2}
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}
   DoesPlayerHaveNode2: {fileID: 0}

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: A4
+  m_Name: A8 to A9or10
   m_EditorClassIdentifier: 
-  NPCname: Annette
+  NPCname: Ahmad
   NPCimage: {fileID: 0}
-  NPCtext: "Nice to meet you. I\u2019m glad you made it this far."
-  ResponseOne: Thanks, me too.
-  nextNodeOne: {fileID: 0}
-  ResponseTwo: 
-  nextNodeTwo: {fileID: 0}
+  NPCtext: Maybe you can find the rest of it around here somewhere.
+  ResponseOne: "Can\u2019t I just go behind some rubble?"
+  nextNodeOne: {fileID: 11400000, guid: 24f89ef756c924922a27dba0a5a2d9a3, type: 2}
+  ResponseTwo: "Okay, I\u2019ll go look for this stuff."
+  nextNodeTwo: {fileID: 11400000, guid: 5b71d7499a09340be8113717071a8696, type: 2}
   PlayerReceivesNode1: {fileID: 0}
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}

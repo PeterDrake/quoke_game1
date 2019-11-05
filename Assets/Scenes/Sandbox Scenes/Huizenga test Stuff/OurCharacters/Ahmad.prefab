@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 1877220423533564376}
   - component: {fileID: 7970341526918543400}
   m_Layer: 0
-  m_Name: Annette
+  m_Name: Ahmad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,11 @@ PrefabInstance:
     - target: {fileID: 13760674, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3fbc4723013d6134ba18114a6395e305, type: 2}
+      objectReference: {fileID: 2100000, guid: 26fa10a4c40808342a1dde99bd21d9e6, type: 2}
+    - target: {fileID: 13760674, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300036, guid: 4a5a8c8ff5d6d2e48ab8d2b27100cf57, type: 3}
     - target: {fileID: 13750414, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

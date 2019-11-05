@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: A2
+  m_Name: A1
   m_EditorClassIdentifier: 
-  NPCname: Annette
+  NPCname: Ahmad
   NPCimage: {fileID: 0}
-  NPCtext: "What? No, N-E-T. Neighborhood Emergency Teams. We\u2019re citizens with
-    some training in disaster preparedness."
-  ResponseOne: "\u2026"
-  nextNodeOne: {fileID: 11400000, guid: b24e32ddb33ae4514915fcb6e6f6c53e, type: 2}
+  NPCtext: "Hi, I\u2019m Annette. I\u2019m a NET. "
+  ResponseOne: ' Why did you say that twice? '
+  nextNodeOne: {fileID: 11400000, guid: 2e41d0a51084f4b5a9c894c56b8b1ab2, type: 2}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}
   PlayerReceivesNode1: {fileID: 0}

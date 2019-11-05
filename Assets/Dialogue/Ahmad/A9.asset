@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: A1
+  m_Name: A9
   m_EditorClassIdentifier: 
-  NPCname: Annette
+  NPCname: Ahmad
   NPCimage: {fileID: 0}
-  NPCtext: "Hi, I\u2019m Annette. I\u2019m a NET. "
-  ResponseOne: ' Why did you say that twice? '
-  nextNodeOne: {fileID: 11400000, guid: 2e41d0a51084f4b5a9c894c56b8b1ab2, type: 2}
+  NPCtext: Very bad idea. If everybody did that we would have a serious disease outbreak.
+  ResponseOne: Okay, I'll go look for this stuff.
+  nextNodeOne: {fileID: 11400000, guid: 5b71d7499a09340be8113717071a8696, type: 2}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}
   PlayerReceivesNode1: {fileID: 0}

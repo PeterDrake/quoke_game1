@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: A3
+  m_Name: A5 to A11
   m_EditorClassIdentifier: 
-  NPCname: Annette
+  NPCname: Ahmad
   NPCimage: {fileID: 0}
-  NPCtext: But also my name is Annette.
-  ResponseOne: "I\u2019m Tre."
-  nextNodeOne: {fileID: 11400000, guid: 117ef24edfc194342ae3b7c9638b9306, type: 2}
+  NPCtext: Nice to meet you. Have you set up your sanitation system yet?
+  ResponseOne: Yes, I built a two-bucket system.
+  nextNodeOne: {fileID: 11400000, guid: 4bcc1a143f87e427a9129bc10af0310c, type: 2}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}
   PlayerReceivesNode1: {fileID: 0}

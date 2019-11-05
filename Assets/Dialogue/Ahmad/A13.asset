@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
-  m_Name: A7
+  m_Name: A13
   m_EditorClassIdentifier: 
-  NPCname: Annette
+  NPCname: Ahmad
   NPCimage: {fileID: 0}
-  NPCtext: " Your toilet. Bad sanitation is a recipe for disease. This pamphlet lists
-    some things you\u2019ll need to set up a two-bucket system."
-  ResponseOne: I don't have all that stuff.
-  nextNodeOne: {fileID: 11400000, guid: 6286b28d251d243ac91dcc6bf7ba46ca, type: 2}
+  NPCtext: "No, that building doesn\u2019t look safe. You wouldn\u2019t want to be
+    in there during an aftershock. I\u2019ve got some room in my truck."
+  ResponseOne: Thanks!
+  nextNodeOne: {fileID: 0}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}
-  PlayerReceivesNode1: {fileID: 11400000, guid: 4529c30e923a79f4d85e3fbb4ceb3699,
-    type: 2}
+  PlayerReceivesNode1: {fileID: 0}
   PlayerReceivesNode2: {fileID: 0}
   DoesPlayerHaveNode1: {fileID: 0}
   DoesPlayerHaveNode2: {fileID: 0}
