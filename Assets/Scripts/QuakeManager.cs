@@ -62,7 +62,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
 
         [HideInInspector] public bool Quaking;
-        private byte quakes; //times quaked 
+        public byte quakes; //times quaked 
 
         private bool InQuakeZone;
         private bool CountdownFinished;

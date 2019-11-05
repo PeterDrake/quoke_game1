@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using MoreMountains.FeedbacksForThirdParty;
 using UnityEngine;
 
-public class QuakeFurniture : MonoBehaviour
+public class FallingObjects: MonoBehaviour
 {
     /// <summary>
     /// Drops and staggers the falling furniture, the longer the quake goes, the faster stuff falls, at the very end
@@ -12,22 +12,33 @@ public class QuakeFurniture : MonoBehaviour
     /// </summary>
     
     public GameObject[] falling_objects;
-    public float fallRate = .5f;
-    public GameObject player;
+    
+    private GameObject player;
     public GameObject playerKiller;
+
+    [Header("Delay before things start dropping")]
+    public float DropDelay = 3f;
+    
+    [Header("Time before falling objects kill the player")]
+    public float TotalDropTime = 15f;
+
+    private float fallRate;
+    
     
     private bool dropping;
     private Vector3 playerTransform;
     private int i = 0;
-
+    
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         QuakeManager.Instance.OnQuake.AddListener(Drop);
+        fallRate = TotalDropTime / (falling_objects.Length + 1);
+
     }
 
-    private void Drop()
+    public void Drop()
     {
         StartCoroutine(DropEm());
     }
@@ -35,22 +46,22 @@ public class QuakeFurniture : MonoBehaviour
     private IEnumerator DropEm()
     {
         dropping = true;
-        yield return new WaitForSeconds(3f);
-        while (QuakeManager.Instance.Quaking &&  i < falling_objects.Length)
+        yield return new WaitForSeconds(DropDelay);
+
+        foreach (var obj in falling_objects)
         {
-            falling_objects[i].SetActive(true);
-            yield return new WaitForSeconds(fallRate);
-            i++;
-            if (fallRate>.2f)
+            if (!obj.activeInHierarchy)
             {
-                fallRate -= .005f;
+                obj.SetActive(true);
+                yield return new WaitForSeconds(fallRate);
             }
+
+            if (!QuakeManager.Instance.Quaking) break;
         }
-        // drop directly on players head
-        if (i == falling_objects.Length)
+
+        if (QuakeManager.Instance.Quaking)
         {
-            playerTransform = player.transform.position;
-            playerKiller.transform.position = playerTransform + new Vector3(0f, 3f, 0f);
+            playerKiller.transform.position = player.transform.position + new Vector3(0f, 3f, 0f);
             playerKiller.SetActive(true);
         }
     }
