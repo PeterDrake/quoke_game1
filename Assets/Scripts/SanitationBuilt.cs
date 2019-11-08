@@ -43,7 +43,6 @@ public class SanitationBuilt : MonoBehaviour
     {
         if ((Conditions^0xF) == 0)
         {
-            Debug.Log("Toilet Time!");
             SceneManager.LoadScene("MiniGame", LoadSceneMode.Single);
         }
         else
