@@ -59,7 +59,7 @@ public class SanitationBuilt : MonoBehaviour
         if ((Conditions & 0x1) == 0 && _inventory.HasItem(Bucket, 2)) //first condition not met
             Conditions &= 0x1;
         
-        if ((Conditions & 0x2) == 0 && _inventory.HasItem(Bag, 2)) //second condition not met
+        if ((Conditions & 0x2) == 0 && _inventory.HasItem(Bag, 1)) //second condition not met
             Conditions &= 0x1;
         
         if ((Conditions & 0x8) == 0 && _inventory.HasItem(Sawdust, 1)) //third condition not met
