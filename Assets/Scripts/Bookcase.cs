@@ -101,6 +101,7 @@ public class Bookcase : MonoBehaviour
     {
         Destroy(rb);
         Destroy(fallCollider.gameObject.GetComponent<CollisionCallback>());
+        Destroy(GetComponent<InteractWithObject>());
         Destroy(GetComponent<BoxCollider>());
         Destroy(this);
     }

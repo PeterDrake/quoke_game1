@@ -56850,7 +56850,7 @@ PrefabInstance:
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
       propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -56940,7 +56940,7 @@ PrefabInstance:
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
       propertyPath: TimeBeforeQuake
-      value: 30
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -56956,11 +56956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 658570878}
+      objectReference: {fileID: 2105686912}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
       propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Fall
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -57347,11 +57347,11 @@ Transform:
   m_LocalPosition: {x: 32.38, y: -51.73, z: 64.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1462918070}
   - {fileID: 1868034938}
   - {fileID: 1224288534}
   - {fileID: 875614970}
   - {fileID: 181115401}
+  - {fileID: 1462918070}
   - {fileID: 1187625189}
   - {fileID: 737156670}
   - {fileID: 1564987369}
@@ -66003,7 +66003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55701ba4fbad4e548a5ea3c663931598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallingObjects: {fileID: 0}
+  FallingObjects: {fileID: 1208654822}
 --- !u!1001 &1363709372
 PrefabInstance:
   m_ObjectHideFlags: 0
