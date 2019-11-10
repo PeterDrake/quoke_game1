@@ -22,11 +22,11 @@ public class InteractText : MonoBehaviour
     public void ChangeText(string newInteract)
     {
         text.text = newInteract;
-        ToggleVisibility(newInteract.Length > 0);
+        ToggleVisibility(true);
     }
 
     public void ToggleVisibility(bool visible)
     {
-        displayToggler.SetActive(visible);
+        displayToggler.SetActive(visible && text.text.Length > 0);
     }
 }
