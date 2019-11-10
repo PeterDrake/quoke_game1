@@ -21,8 +21,8 @@ public class InteractText : MonoBehaviour
     
     public void ChangeText(string newInteract)
     {
-        ToggleVisibility(true);
         text.text = newInteract;
+        ToggleVisibility(newInteract.Length > 0);
     }
 
     public void ToggleVisibility(bool visible)

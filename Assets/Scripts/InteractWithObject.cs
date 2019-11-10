@@ -137,7 +137,8 @@ public class InteractWithObject : MonoBehaviour
         {
             CallOnEnterCollider.Invoke();
             
-            if (InteractionDisplayText != "") interactText.ChangeText(InteractionDisplayText);
+            interactText.ChangeText(InteractionDisplayText);
+            
             playerInCollider = true;
         }
     }
@@ -158,7 +159,6 @@ public class InteractWithObject : MonoBehaviour
             interactText.ToggleVisibility(false);
             playerInCollider = false;
             _meshRenderer.material = mat_original;
- 
         }
     }
 
