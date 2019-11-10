@@ -34,6 +34,7 @@ public class Death : MonoBehaviour
     
     public void PlayerDeath(string textOnDeath)
     {
+        Logger.Instance.Log("Player Death:"+textOnDeath);
         if (dead) return;
         
         dead = true;

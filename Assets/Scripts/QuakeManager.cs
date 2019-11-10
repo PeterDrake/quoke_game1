@@ -182,6 +182,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         public void TriggerQuake()
         {
             if(Quaking) return;
+            Logger.Instance.Log("Quake Triggered");
             Quaking = true;
             
             StopAllCoroutines();
@@ -196,6 +197,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         public void StopQuake()
         {
             if (!Quaking || quakes > 0) return;
+            Logger.Instance.Log("Quake Stopped");
             Debug.Log("Stop Quake Called"+Quaking);
             Quaking = false;
             TriggerCountdown(AftershockTime);

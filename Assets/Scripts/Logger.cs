@@ -7,7 +7,7 @@ using MoreMountains.Tools;
 public class Logger : Singleton<Logger>
 {
     private StreamWriter writer;
-    
+
     // Start is called before the first frame update
     public void Log(string message)
     {

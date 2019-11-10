@@ -13,6 +13,7 @@ public class InventoryHelper : MonoBehaviour
 
     public void AddItem(BaseItem item, int amt)
     {
+        Logger.Instance.Log("Player picked up item: "+item.name);
         _inventory.AddItem(item, amt);
         CheckOnAdd.Invoke();
     }
@@ -33,6 +34,7 @@ public class InventoryHelper : MonoBehaviour
 
     public void RemoveItem(BaseItem item)
     {
+        Logger.Instance.Log("Item removed from inventory"+item.name);
         _inventory.RemoveItem(Array.FindIndex(_inventory.Content, row => row.ItemID == item.ItemID), 1);
     }
 
