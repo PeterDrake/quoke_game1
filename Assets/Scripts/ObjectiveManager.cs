@@ -13,18 +13,18 @@ public class ObjectiveManager : MonoBehaviour
     [SerializeField] private Dictionary<String, bool> events;
     private Dictionary<String, LinkedList<Callback>> callbacks;
 
-    void Start()
+
+    private void Awake()
     {
         // singleton structure
         if (Instance == null)
             Instance = this;
         else
             Destroy(this);
-        
+            
         callbacks = new Dictionary<string, LinkedList<Callback>>();
         events = new Dictionary<string, bool>();
     }
-
 
     public bool Register(String key, Callback cb=null)
     {

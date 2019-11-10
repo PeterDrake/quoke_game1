@@ -23,7 +23,7 @@ public class Bookcase : MonoBehaviour
     private int count = 0;
     
     private InteractWithObject _interact;
-    private Inventory _inventory;
+    private InventoryHelper _inventory;
 
     private bool PlayerHasItem = false;
     
@@ -37,7 +37,7 @@ public class Bookcase : MonoBehaviour
     private void Start()
     {
         _interact = GetComponent<InteractWithObject>();
-        _inventory = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
+        _inventory = GameObject.FindWithTag("MainInventory").GetComponent<InventoryHelper>();
         if (CheckItem == null) Debug.LogError("No item to check has been specified");
         rb = GetComponent<Rigidbody>();
         
@@ -54,7 +54,7 @@ public class Bookcase : MonoBehaviour
         
         if (count < KillCount)
         {
-            if (PlayerHasItem || _inventory.InventoryContains(CheckItem.name).Count > 0)
+            if (PlayerHasItem || _inventory.HasItem(CheckItem,1))
             {
                 _interact.BlinkWhenPlayerNear = true;
                 _interact.SetInteractText(HAS_TOOLS);
@@ -62,11 +62,6 @@ public class Bookcase : MonoBehaviour
             }
             else
             {
-                foreach (var item in _inventory.Content)
-                {
-                    Debug.Log(item+"| ");
-                }
-                Debug.Log(_inventory.name);
                 _interact.BlinkWhenPlayerNear = false;
                 _interact.SetInteractText(NO_TOOLS);
             }
@@ -84,7 +79,7 @@ public class Bookcase : MonoBehaviour
         if (!isFalling && PlayerHasItem)
         {
             ObjectiveManager.Instance.Satisfy("BOOKCASE");
-            _inventory.RemoveItem(Array.FindIndex(_inventory.Content, row => row.ItemID == CheckItem.ItemID), 1);
+            _inventory.RemoveItem(CheckItem, 1);
             QuakeManager.Instance.TriggerCountdown(TriggerTime);
             Disable();
         }

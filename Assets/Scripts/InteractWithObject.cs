@@ -20,7 +20,7 @@ public class InteractWithObject : MonoBehaviour
     
     //-----Item Manipulation------
     public BaseItem[] itemToReceive = new BaseItem[1];
-    private Inventory inventory;
+    private InventoryHelper inventory;
 
     private bool hasItem;
     //---------------------------
@@ -66,7 +66,7 @@ public class InteractWithObject : MonoBehaviour
         if (interactText == null) interactText = GameObject.Find("Canvi").transform.Find("InteractNotifier").GetComponent<InteractText>();
         
         // get reference for inventory manipulation
-        if (hasItem) inventory = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
+        if (hasItem) inventory = GameObject.FindWithTag("MainInventory").GetComponent<InventoryHelper>();
         
         
         // materials for material blinking
