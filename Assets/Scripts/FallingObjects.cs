@@ -33,7 +33,6 @@ public class FallingObjects: MonoBehaviour
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
-        QuakeManager.Instance.OnQuake.AddListener(Drop);
         fallRate = TotalDropTime / (falling_objects.Length + 1);
 
     }
@@ -46,20 +45,20 @@ public class FallingObjects: MonoBehaviour
     private IEnumerator DropEm()
     {
         dropping = true;
-        yield return new WaitForSeconds(DropDelay);
+        if(DropDelay > 0) yield return new WaitForSeconds(DropDelay);
 
         foreach (var obj in falling_objects)
         {
             if (!obj.activeInHierarchy)
             {
                 obj.SetActive(true);
-                yield return new WaitForSeconds(fallRate);
+                if(fallRate > 0) yield return new WaitForSeconds(fallRate);
             }
 
             if (!QuakeManager.Instance.Quaking) break;
         }
 
-        if (QuakeManager.Instance.Quaking)
+        if (QuakeManager.Instance.Quaking && playerKiller != null)
         {
             playerKiller.transform.position = player.transform.position + new Vector3(0f, 3f, 0f);
             playerKiller.SetActive(true);

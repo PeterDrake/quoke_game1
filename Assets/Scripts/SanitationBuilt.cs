@@ -56,7 +56,7 @@ public class SanitationBuilt : MonoBehaviour
             _interact.SetInteractText("You need to gather more items");
         }
     }
-//CAMERA, ui, move stage up a lot
+    //CAMERA, ui, move stage up a lot
     private void UpdateConditions() //called every time an item is added to the inventory 
     {
         if ((Conditions ^ 0xF) == 0) return;

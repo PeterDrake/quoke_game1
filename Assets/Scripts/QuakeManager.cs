@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Linq.Expressions;
 using MoreMountains.Tools;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -62,7 +63,8 @@ namespace MoreMountains.FeedbacksForThirdParty
 
 
         [HideInInspector] public bool Quaking;
-        public byte quakes; //times quaked 
+        
+        [Unity.Collections.ReadOnly] public byte quakes; //times quaked 
 
         private bool InQuakeZone;
         private bool CountdownFinished;

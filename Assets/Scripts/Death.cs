@@ -15,7 +15,7 @@ public class Death : MonoBehaviour
     private CharacterPause pause; 
 
     public static Death Manager;
-    
+    private bool dead;
    
    public void Start()
    {
@@ -34,6 +34,9 @@ public class Death : MonoBehaviour
     
     public void PlayerDeath(string textOnDeath)
     {
+        if (dead) return;
+        
+        dead = true;
         deathText.text = textOnDeath;
         deathScreen.SetActive(true);
        // StartCoroutine(MyPause());
