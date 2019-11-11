@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 public class levelEvents : MonoBehaviour
 
 {
-    public bool toiletComplete;
+    private bool toiletComplete;
     private Dialogue active;
     public Dialogue conditionMet; //if condition is met
     public Dialogue conditionNotMet; //if condition is not met
@@ -28,6 +28,17 @@ public class levelEvents : MonoBehaviour
 
     public void changeDialogue()
     {
+
+        ///Peter H modify this call at some point to return the number to check for 2 buckets
+        if (GetComponent<MyEventTracker>().my_CheckInventory("Bucket")
+            && GetComponent<MyEventTracker>().my_CheckInventory("Sawdust")
+            && GetComponent<MyEventTracker>().my_CheckInventory("Bag")
+            && GetComponent<MyEventTracker>().my_CheckInventory("Sanitizer"))
+        {
+            toiletComplete = true;
+        }
+        
+        
         if (toiletComplete)
         {
             active = conditionMet;
