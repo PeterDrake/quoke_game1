@@ -14,8 +14,46 @@ public class MyEventTracker : MonoBehaviour
     private InventorySlot my_slot;
     private int itemIndex;
     
+    //temp
+    public GameObject CleanWaterButton;
+    public GameObject myDialogueManager;
+    public InventoryItem DirtyWater;
+    public InventoryItem Bleach;
+    public InventoryItem Water;
+    private bool notActivated;
+
+    public void Start()
+    {
+        notActivated = true;
+    }
+
+    //this is expensive, fix this later - Peter H
+    public void FixedUpdate()
+    {
     
+        if (my_CheckInventory("Bleach")&& my_CheckInventory("DirtyWater") && notActivated)
+        {
+            
+            CleanWaterButton.SetActive(true);
+        }
+    }
+
+    public void CleanWater()
+    {
+        myDialogueManager.GetComponent<DialogueManager>().my_LoseItem(DirtyWater);
+        myDialogueManager.GetComponent<DialogueManager>().my_LoseItem(Bleach);
+        myDialogueManager.GetComponent<DialogueManager>().my_AddItem(Water);
+        notActivated = false;
+        CleanWaterButton.SetActive(false);
+
+
+
+    }
     
+       
+    
+
+
     public bool my_CheckInventory(string my_itemname)
     {
         if (mainInventory.GetQuantity(my_itemname) != 0)

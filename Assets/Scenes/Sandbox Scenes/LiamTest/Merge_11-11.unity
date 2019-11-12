@@ -4830,7 +4830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetInventoryName: MainInventory
   NumberOfRows: 1
-  NumberOfColumns: 8
+  NumberOfColumns: 9
   TargetChoiceInventory: {fileID: 124199982}
   ItemClass: 0
   DrawEmptySlots: 1
@@ -4857,7 +4857,7 @@ MonoBehaviour:
   TitleFontSize: 20
   TitleColor: {r: 1, g: 0.9764151, b: 0.9764151, a: 1}
   TitleOffset: {x: 0, y: 0, z: 0}
-  TitleAlignment: 1
+  TitleAlignment: 4
   QtyFont: {fileID: 0}
   QtyFontSize: 12
   QtyColor: {r: 0, g: 0, b: 0, a: 1}
@@ -21306,7 +21306,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 59e3f46809760144e8197c1e9e946f29, type: 3}
-    m_FontSize: 24
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -21317,7 +21317,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Use
+  m_Text: Purify Water
 --- !u!222 &424521139
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26951,6 +26951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DrawContentInInspector: 1
   Content:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -40270,6 +40271,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainInventory: {fileID: 550718317}
+  CleanWaterButton: {fileID: 2032566321}
+  myDialogueManager: {fileID: 1051373317}
+  DirtyWater: {fileID: 11400000, guid: 75c7fc8d6c517234aa3ce9cafa58a06e, type: 2}
+  Bleach: {fileID: 11400000, guid: 085f79894830bfa43b1b882cedc7ffd2, type: 2}
+  Water: {fileID: 11400000, guid: 8578bbf3d881193409380b0c0c0b3f45, type: 2}
 --- !u!4 &856623863
 Transform:
   m_ObjectHideFlags: 0
@@ -99537,7 +99543,7 @@ GameObject:
   - component: {fileID: 2032566324}
   - component: {fileID: 2032566323}
   m_Layer: 5
-  m_Name: UseButton
+  m_Name: PurifyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99607,8 +99613,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 16835150}
-        m_MethodName: Drop
+      - m_Target: {fileID: 856623862}
+        m_MethodName: CleanWater
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
