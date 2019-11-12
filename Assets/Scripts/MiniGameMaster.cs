@@ -25,7 +25,11 @@ public class MiniGameMaster : MonoBehaviour
     public GameObject Wrong;
     
     public UnityAction OnWin;
-    
+
+    public void Start()
+    {
+        //OnWin= new UnityAction();
+    }
 
     public void CheckCorrect()
     {

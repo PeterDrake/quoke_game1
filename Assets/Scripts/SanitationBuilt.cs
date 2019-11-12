@@ -77,7 +77,8 @@ public class SanitationBuilt : MonoBehaviour
     private void StartMinigame(Scene scn, LoadSceneMode lsm)
     {
         SceneManager.sceneLoaded -= StartMinigame;
-        GameManager.Instance.Pause();
+        //GameManager.Instance.Pause();
+        StatusManager.Manager.enabled = false;
         (canvi = GameObject.Find("Canvi")).SetActive(false);
         (camera = GameObject.Find("Cameras")).SetActive(false);
         GameObject.Find("MinigameMaster").GetComponent<MiniGameMaster>().OnWin += MiniGameFinished;
@@ -85,7 +86,9 @@ public class SanitationBuilt : MonoBehaviour
     }
     private void MiniGameFinished()//this is not getting called
     {
-        GameManager.Instance.UnPause();
+        //GameManager.Instance.UnPause();
+        StatusManager.Manager.enabled = true;
+
         SceneManager.UnloadSceneAsync(MiniGameSceneName);
         canvi.SetActive(true);
         
