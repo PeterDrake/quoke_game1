@@ -55,6 +55,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject NPCl3interact;
 
     private int i = 0;
+
+    private bool DontDoThisTwice;
     // Start is called before the first frame update
     void Start()
     {
@@ -112,7 +114,12 @@ public class DialogueManager : MonoBehaviour
 
         if (my_hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode1.name))
         {
-                 if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
+            if (ObjectiveManager.Instance.Check("TOILETEVENT"))
+            {
+                DontDoThisTwice = true;
+                ObjectiveManager.Instance.Satisfy("LEVELFINISHED");
+            }
+                if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
                 if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
 
                 if (responseNodeOne != null)
@@ -189,14 +196,14 @@ public class DialogueManager : MonoBehaviour
     public void Deactivate()
     {
        
-        myPlayer.GetComponent<CharacterPause>().UnPauseCharacter();
+        //myPlayer.GetComponent<CharacterPause>().UnPauseCharacter();
         dialogueEnabler.SetActive(false);
         if (NPCL3)
         {
             NPCl3interact.GetComponent<DontTalkWhileMoving>().ConversationOver();
         }
 
-        GameManager.Instance.UnPause();
+        //GameManager.Instance.UnPause();
     }
 
     public void my_AddItem(InventoryItem my_itemToAdd)

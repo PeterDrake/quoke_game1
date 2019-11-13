@@ -14,26 +14,12 @@ public class levelEvents : MonoBehaviour
     public DialogueManager myManager;
 
     public GameObject NPC;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     public void changeDialogue()
     {
 
         ///Peter H modify this call at some point to return the number to check for 2 buckets
-        if (GetComponent<MyEventTracker>().my_CheckInventory("Bucket")
-            && GetComponent<MyEventTracker>().my_CheckInventory("Sawdust")
-            && GetComponent<MyEventTracker>().my_CheckInventory("Bag")
-            && GetComponent<MyEventTracker>().my_CheckInventory("Sanitizer"))
+        if (ObjectiveManager.Instance.Check("TOILETEVENT"))
         {
             toiletComplete = true;
         }
@@ -46,7 +32,7 @@ public class levelEvents : MonoBehaviour
         else
         {
             active = conditionNotMet;
-          ///  Debug.Log("trying to switch");
+          
         }
 
         NPC.transform.GetComponent<TalkToPerson>().mainDialogue = active;

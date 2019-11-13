@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class VanNextLevel : MonoBehaviour
 {
-    private const string EventKey = "TOILETEVENT";
+    private const string EventKey = "LEVELFINISHED";
     private const string SATISFIED = "Press 'e' to Rest in Van";
     private const string NOT_SATISFIED = "";
     
