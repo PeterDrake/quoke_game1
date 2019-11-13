@@ -8,7 +8,7 @@ public class CollisionCallback : MonoBehaviour
 
 	private Dictionary<string, CallBack> callback_functions;
 
-	public void Start()
+	public void Awake()
 	{
 		callback_functions = new Dictionary<string, CallBack>();
 	}

@@ -18,7 +18,7 @@ public class TalkToPerson : MonoBehaviour
     public GameObject canvasEnabler;
     public GameObject interactNotifier;
 
-    public Text InteractText;
+   // public Text InteractText;
     
     private bool head_flag;
     private GameObject myPlayer;
@@ -55,8 +55,8 @@ public class TalkToPerson : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            interactNotifier.SetActive(true);
-            InteractText.GetComponent<InteractText>().ChangeText("Press 'E' to talk");
+            //interactNotifier.SetActive(true);
+            interactNotifier.GetComponent<InteractText>().ChangeText("Press 'E' to talk");
             
         }
     }
@@ -65,8 +65,8 @@ public class TalkToPerson : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            interactNotifier.SetActive(false);
-           
+           // interactNotifier.SetActive(false);
+           interactNotifier.GetComponent<InteractText>().ToggleVisibility(false);
         }
     }
 
@@ -91,7 +91,7 @@ public class TalkToPerson : MonoBehaviour
                 if (head_flag == false)
                 {
                     dialogueCanvas.GetComponent<DialogueDisplay>().dialogue = mainDialogue;
-                    head_flag = true;
+                    //head_flag = true;
                     StartCoroutine(my_pause());
                 }
                 

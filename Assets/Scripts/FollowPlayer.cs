@@ -174,7 +174,7 @@ public class FollowPlayer : MonoBehaviour
             placeHolder.GetComponent<CapsuleCollider>().enabled = false;
             placeHolder.GetComponent<TalkToPerson>().interactNotifier.SetActive(false);
             placeHolder.GetComponent<TalkToPerson>().interactNotifier = empty;
-            placeHolder.GetComponent<TalkToPerson>().InteractText = null;
+           // placeHolder.GetComponent<TalkToPerson>().InteractText = null;
             placeHolder.GetComponent<TalkToPerson>().interactNotifier.SetActive(true);
 
         }

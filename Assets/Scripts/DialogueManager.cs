@@ -45,10 +45,18 @@ public class DialogueManager : MonoBehaviour
     private GameObject myPlayer;
     //public GameObject myGameManager;
 
+    public GameObject nodeTwoButton;
     public bool NPCL3;
+    
+    public bool LevelEvents;
+    public levelEvents levelEvents;
+    private bool notChecked = true;
+    
     public GameObject NPCl3interact;
 
     private int i = 0;
+
+    private bool DontDoThisTwice;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,11 +73,17 @@ public class DialogueManager : MonoBehaviour
 
     public void Refresh()
     {
-
+        nodeTwoButton.SetActive(true);    
+        
         active = dialogueDisplay.GetComponent<DialogueDisplay>().dialogue;
         // Debug.Log(active);
         responseNodeOne = dialogueDisplay.GetComponent<DialogueDisplay>().nextNodeOne; 
         responseNodeTwo = dialogueDisplay.GetComponent<DialogueDisplay>().nextNodeTwo;
+        if (responseNodeTwo == null)
+        { 
+            nodeTwoButton.SetActive(false);       
+        }
+
         my_itemToAddNode1 = dialogueDisplay.GetComponent<DialogueDisplay>().itemToReceiveNode1;
         my_hasItemNode1 = dialogueDisplay.GetComponent<DialogueDisplay>().hasItemNode1;
         my_itemToAddNode2 = dialogueDisplay.GetComponent<DialogueDisplay>().itemToReceiveNode2;
@@ -100,7 +114,12 @@ public class DialogueManager : MonoBehaviour
 
         if (my_hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode1.name))
         {
-                 if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
+            if (ObjectiveManager.Instance.Check("TOILETEVENT"))
+            {
+                DontDoThisTwice = true;
+                ObjectiveManager.Instance.Satisfy("LEVELFINISHED");
+            }
+                if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
                 if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
 
                 if (responseNodeOne != null)
@@ -111,7 +130,14 @@ public class DialogueManager : MonoBehaviour
                     dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
                     Refresh();
                 }
-                else
+                /// testing Annette
+                else if (LevelEvents && notChecked)
+                {
+                    notChecked = false;
+                    levelEvents.changeDialogue();
+                }
+               
+                else 
                 {
                     Deactivate();
                 }
@@ -170,14 +196,14 @@ public class DialogueManager : MonoBehaviour
     public void Deactivate()
     {
        
-        myPlayer.GetComponent<CharacterPause>().UnPauseCharacter();
+        //myPlayer.GetComponent<CharacterPause>().UnPauseCharacter();
         dialogueEnabler.SetActive(false);
         if (NPCL3)
         {
             NPCl3interact.GetComponent<DontTalkWhileMoving>().ConversationOver();
         }
 
-        GameManager.Instance.UnPause();
+        //GameManager.Instance.UnPause();
     }
 
     public void my_AddItem(InventoryItem my_itemToAdd)

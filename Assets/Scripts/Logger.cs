@@ -7,10 +7,14 @@ using MoreMountains.Tools;
 public class Logger : Singleton<Logger>
 {
     private StreamWriter writer;
+
+    private const bool DoLog = false; // change to true if you want logging
     
-    // Start is called before the first frame update
+    
     public void Log(string message)
     {
+        if (!DoLog) return;
+        
         int time = (int)Math.Round(Time.realtimeSinceStartup);
         writer.WriteLine(time + ": " + message);
         Debug.Log(time + ": " + message);
@@ -18,6 +22,8 @@ public class Logger : Singleton<Logger>
 
     protected void Awake()
     {
+        if (!DoLog) return;
+        
         base.Awake();
         writer = new StreamWriter(GenerateFileName());
         Log("Game started.");
@@ -25,6 +31,8 @@ public class Logger : Singleton<Logger>
 
     protected void OnApplicationQuit()
     {
+        if (!DoLog) return;
+        
         Log("Game ended.");
         writer.Close();
     }
