@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using MoreMountains.FeedbacksForThirdParty;
+﻿using MoreMountains.FeedbacksForThirdParty;
 using MoreMountains.InventoryEngine;
-using Unity.UNetWeaver;
 using UnityEngine;
 
 public class Bookcase : MonoBehaviour
