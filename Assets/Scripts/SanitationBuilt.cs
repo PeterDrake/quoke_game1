@@ -20,6 +20,8 @@ public class SanitationBuilt : MonoBehaviour
     private BaseItem Sawdust;
     private BaseItem Sanitizer;
     private BaseItem ToiletPaper;
+
+    public GameObject Buckets;
  
     private bool HasSanitizer;
     private bool HasBuckets;
@@ -84,7 +86,8 @@ public class SanitationBuilt : MonoBehaviour
         (canvi = GameObject.Find("Canvi")).SetActive(false);
         (camera = GameObject.Find("Cameras")).SetActive(false);
         GameObject.Find("MinigameMaster").GetComponent<MiniGameMaster>().OnWin += MiniGameFinished;
-
+        Buckets.SetActive(true);
+        Destroy(gameObject);
     }
     private void MiniGameFinished()//this is not getting called
     {
@@ -102,6 +105,7 @@ public class SanitationBuilt : MonoBehaviour
         _inventory.RemoveItem( Sawdust, 1);
         _inventory.RemoveItem( Sanitizer, 1);
         _inventory.RemoveItem( ToiletPaper, 1);
+
         Destroy(this);
     }
 }
