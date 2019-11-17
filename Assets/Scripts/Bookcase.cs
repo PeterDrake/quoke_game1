@@ -40,7 +40,7 @@ public class Bookcase : MonoBehaviour
         fallCollider.gameObject.GetComponent<CollisionCallback>().AddCallback("Player", HitPlayer);
         fallCollider.enabled = false;
 
-        QuakeManager.Instance.OnQuake.AddListener(Fall);
+        //QuakeManager.Instance.OnQuake.AddListener(Fall);
     }
     
     public void UpdateState()
@@ -81,7 +81,7 @@ public class Bookcase : MonoBehaviour
     }
     
 
-    private void Fall()
+    public void Fall()
     {
         if (isFalling) return;
         isFalling = true;
