@@ -120,8 +120,8 @@ public class DialogueManager : MonoBehaviour
                 DontDoThisTwice = true;
                 ObjectiveManager.Instance.Satisfy("LEVELFINISHED");
             }
-                if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
-                if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
+            if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
+            if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
 
                 if (responseNodeOne != null)
                 {

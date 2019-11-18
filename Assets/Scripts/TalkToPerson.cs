@@ -79,12 +79,9 @@ public class TalkToPerson : MonoBehaviour
                 if(isColliding) return;
                 isColliding = true;
                 canvasEnabler.SetActive(true);
-                
-                //Pauses the character while they are in dialogue .. come back to this..
-                /*
-                myPlayer.GetComponent<CharacterPause>().PauseCharacter();
-                GameManager.Instance.Pause();
-                */
+                interactNotifier.GetComponent<InteractText>().ToggleVisibility(false);
+
+             
 
                 
                 //If the player has already talked to the NPC the NPCs new head will be displayed

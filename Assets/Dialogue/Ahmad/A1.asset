@@ -15,7 +15,7 @@ MonoBehaviour:
   NPCname: Ahmad
   NPCimage: {fileID: 0}
   NPCtext: "Hi, I\u2019m Ahmad. I\u2019m a NET. "
-  ResponseOne: ' Why did you say that twice? '
+  ResponseOne: Ahmad, Annette, which is it?
   nextNodeOne: {fileID: 11400000, guid: 2e41d0a51084f4b5a9c894c56b8b1ab2, type: 2}
   ResponseTwo: 
   nextNodeTwo: {fileID: 0}
