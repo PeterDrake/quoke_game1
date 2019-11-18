@@ -21,6 +21,8 @@ public class MyEventTracker : MonoBehaviour
     public InventoryItem Bleach;
     public InventoryItem Water;
     private bool notActivated;
+    
+   
 
     public void Start()
     {
