@@ -38,7 +38,9 @@ public class StatusManager : MonoBehaviour
     private bool warmthChanged;
     
     private bool enabled = true;
+    private bool Degrading = true;
     private const float DEGRADETIME = 1f;
+    
     
     void Start()
     {
@@ -153,5 +155,17 @@ public class StatusManager : MonoBehaviour
 
         yield return new WaitForSeconds(DEGRADETIME);
         StartCoroutine(DegradeStatus());
+    }
+
+    public void Pause()
+    {
+        enabled = false;
+        Degrading = false;
+    }
+    
+    public void UnPause()
+    {
+        enabled = true;
+        if(!Degrading) StartCoroutine(DegradeStatus());
     }
 }

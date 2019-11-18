@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NPCname: Ahmad
   NPCimage: {fileID: 0}
-  NPCtext: But also my name is Annette.
+  NPCtext: But also my name is Ahmad.
   ResponseOne: "I\u2019m Tre."
   nextNodeOne: {fileID: 11400000, guid: 117ef24edfc194342ae3b7c9638b9306, type: 2}
   ResponseTwo: 

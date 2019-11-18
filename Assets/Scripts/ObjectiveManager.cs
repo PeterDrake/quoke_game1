@@ -43,13 +43,14 @@ public class ObjectiveManager : MonoBehaviour
 
     public void Satisfy(String key, bool destroyCallbacks = true)
     {
+        Debug.Log(key);
         if (!events.ContainsKey(key))
         {
             events.Add(key,true);
         }
-        else
+        else if(callbacks.ContainsKey(key) && !events[key])
         {
-            foreach (Callback cb in callbacks[key])
+             foreach (Callback cb in callbacks[key])
             {
                 cb();
             }

@@ -15,7 +15,6 @@ public class PlayerInArea : MonoBehaviour
 
     public UnityEvent OnExit;
     // Start is called before the first frame update
-
     private BoxCollider _triggerCollider; 
     
     private void Start()
@@ -29,13 +28,17 @@ public class PlayerInArea : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
+            Logger.Instance.Log("Player entered area of: "+name);
             OnEnter.Invoke();
+        }
     }
 
     public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            Logger.Instance.Log("Player exited area of: "+name);
             OnExit.Invoke();
         }
 

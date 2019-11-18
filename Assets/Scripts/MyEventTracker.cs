@@ -6,98 +6,82 @@ using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using MoreMountains.InventoryEngine;
 using MoreMountains.TopDownEngine;
+using UnityEngine.Experimental.PlayerLoop;
 using UnityEngine.SceneManagement;
 
 public class MyEventTracker : MonoBehaviour
 {
+    public InventoryHelper _inventoryHelper;
     public Inventory mainInventory;
     private InventorySlot my_slot;
     private int itemIndex;
     
     //temp
     public GameObject CleanWaterButton;
-    public GameObject myDialogueManager;
-    public InventoryItem DirtyWater;
-    public InventoryItem Bleach;
-    public InventoryItem Water;
+    public GameObject DrinkWaterButton;
+    
+    
     private bool notActivated;
     
    
+    public BaseItem[] RequiredItems;
+    private bool[] ItemObtained;
+    public BaseItem[] ToAdd;
+    private bool activated;
 
-    public void Start()
+    public BaseItem Water;
+    private bool HasAllRequirements;
+    private void Start()
     {
-        notActivated = true;
-    }
-
-    //this is expensive, fix this later - Peter H
-    public void FixedUpdate()
-    {
-    
-        if (my_CheckInventory("Bleach")&& my_CheckInventory("DirtyWater") && notActivated)
-        {
-            
-            CleanWaterButton.SetActive(true);
-        }
+        ItemObtained = new bool[RequiredItems.Length];
+        _inventoryHelper.CheckOnAdd.AddListener(checkConditions);
     }
 
     public void CleanWater()
     {
-        myDialogueManager.GetComponent<DialogueManager>().my_LoseItem(DirtyWater);
-        myDialogueManager.GetComponent<DialogueManager>().my_LoseItem(Bleach);
-        myDialogueManager.GetComponent<DialogueManager>().my_AddItem(Water);
-        notActivated = false;
+        foreach (var item in RequiredItems)
+        {
+            _inventoryHelper.RemoveItem(item, 1);
+        }
+        
+        foreach (var item in ToAdd)
+        {
+            _inventoryHelper.AddItem(item, 1);
+        }
+        
+        activated = true;
         CleanWaterButton.SetActive(false);
+        DrinkWaterButton.SetActive(true);
+    }
 
-
-
+    public void DrinkWater()
+    {
+        _inventoryHelper.RemoveItem(Water);
+        StatusManager.Manager.AffectHydration(100);
+        DrinkWaterButton.SetActive(false);
     }
     
-       
-    
 
+    private void checkConditions()
+    {
+        if (activated) return;
+        
+        for (int i = 0; i < RequiredItems.Length; i++)
+        {
+            if (!_inventoryHelper.HasItem(RequiredItems[i], 1)) return;
+            
+        }
+        
+        CleanWaterButton.SetActive(true);
+    }
 
     public bool my_CheckInventory(string my_itemname)
     {
         if (mainInventory.GetQuantity(my_itemname) != 0)
         {
-           // Debug.Log(my_itemname);
-           // how to access this list well?? 
-           // Debug.Log(my_itemname.ToString());
-           // Debug.Log(mainInventory.GetQuantity("Axe"));
-           // Debug.Log(mainInventory.GetQuantity(my_itemname.ToString()));
             return true;
         }
         else return false;
     }
-
-    //Get the inventory slot of an item
-    public int my_InventorySlotIndex(string my_itemname)
-    {
-        for (int i = 0; i < mainInventory.NumberOfFilledSlots; i++)
-        {
-            if (String.Compare(my_itemname,mainInventory.Content[i].name)==0)
-            {
-                itemIndex = i;
-            }
-        }
-        return itemIndex;
-    }
-
-    public InventorySlot my_InventorySlot()
-    {
-        for (int i = 0; i < mainInventory.NumberOfFilledSlots; i++)
-        {
-            
-        }
-        
-        return my_slot;
-    }
-    public void my_NextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
-    }
-
-    
     
 }

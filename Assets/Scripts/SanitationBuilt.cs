@@ -19,6 +19,9 @@ public class SanitationBuilt : MonoBehaviour
     private BaseItem Bag;
     private BaseItem Sawdust;
     private BaseItem Sanitizer;
+    private BaseItem ToiletPaper;
+
+    public GameObject Buckets;
  
     private bool HasSanitizer;
     private bool HasBuckets;
@@ -41,6 +44,7 @@ public class SanitationBuilt : MonoBehaviour
         Bag =  Resources.Load<BaseItem>("Items/Bag");
         Sawdust =  Resources.Load<BaseItem>("Items/Sawdust");
         Sanitizer =  Resources.Load<BaseItem>("Items/Sanitizer");
+        ToiletPaper =  Resources.Load<BaseItem>("Items/ToiletPaper");
         _inventory.CheckOnAdd.AddListener(UpdateConditions);
     }
     
@@ -76,18 +80,18 @@ public class SanitationBuilt : MonoBehaviour
 
     private void StartMinigame(Scene scn, LoadSceneMode lsm)
     {
+        StatusManager.Manager.Pause();
         SceneManager.sceneLoaded -= StartMinigame;
-        //GameManager.Instance.Pause();
-        StatusManager.Manager.enabled = false;
+        
         (canvi = GameObject.Find("Canvi")).SetActive(false);
         (camera = GameObject.Find("Cameras")).SetActive(false);
         GameObject.Find("MinigameMaster").GetComponent<MiniGameMaster>().OnWin += MiniGameFinished;
-
+        Buckets.SetActive(true);
+        Destroy(gameObject);
     }
     private void MiniGameFinished()//this is not getting called
     {
-        //GameManager.Instance.UnPause();
-        StatusManager.Manager.enabled = true;
+        StatusManager.Manager.UnPause();
 
         SceneManager.UnloadSceneAsync(MiniGameSceneName);
         canvi.SetActive(true);
@@ -100,6 +104,8 @@ public class SanitationBuilt : MonoBehaviour
         _inventory.RemoveItem(Bag, 1);
         _inventory.RemoveItem( Sawdust, 1);
         _inventory.RemoveItem( Sanitizer, 1);
+        _inventory.RemoveItem( ToiletPaper, 1);
+
         Destroy(this);
     }
 }
