@@ -5440,7 +5440,7 @@ GameObject:
   - component: {fileID: 129059420}
   - component: {fileID: 129059419}
   m_Layer: 24
-  m_Name: Livingroom Check
+  m_Name: Living Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32345,7 +32345,7 @@ Transform:
   - {fileID: 930661666}
   - {fileID: 1634082461}
   m_Father: {fileID: 1286520026}
-  m_RootOrder: 555
+  m_RootOrder: 507
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &619465901
 PrefabInstance:
@@ -39685,7 +39685,7 @@ MeshCollider:
   m_GameObject: {fileID: 774951719}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -53261,7 +53261,7 @@ Transform:
   m_LocalScale: {x: 1, y: 4.2116, z: 42.46067}
   m_Children: []
   m_Father: {fileID: 1286520026}
-  m_RootOrder: 606
+  m_RootOrder: 594
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1069737180
 BoxCollider:
@@ -70450,6 +70450,7 @@ Transform:
   - {fileID: 34427218}
   - {fileID: 1995503804}
   - {fileID: 2126321190}
+  - {fileID: 1669810514}
   - {fileID: 227297512}
   - {fileID: 583476775}
   - {fileID: 1456757754}
@@ -70526,10 +70527,10 @@ Transform:
   - {fileID: 1823099489}
   - {fileID: 744864468}
   - {fileID: 1500910294}
+  - {fileID: 618884031}
   - {fileID: 29855845}
   - {fileID: 1871549151}
   - {fileID: 302008727}
-  - {fileID: 1669810514}
   - {fileID: 196492293}
   - {fileID: 1182776786}
   - {fileID: 594762825}
@@ -70575,7 +70576,7 @@ Transform:
   - {fileID: 1988422790}
   - {fileID: 1308191150}
   - {fileID: 603018188}
-  - {fileID: 618884031}
+  - {fileID: 1777562640}
   - {fileID: 133387814}
   - {fileID: 619465902}
   - {fileID: 750314619}
@@ -70584,7 +70585,6 @@ Transform:
   - {fileID: 1260317825}
   - {fileID: 1389161754}
   - {fileID: 1259883990}
-  - {fileID: 1777562640}
   - {fileID: 226548209}
   - {fileID: 460960979}
   - {fileID: 262155141}
@@ -70614,6 +70614,7 @@ Transform:
   - {fileID: 1942294654}
   - {fileID: 1799050590}
   - {fileID: 864679624}
+  - {fileID: 1069737179}
   - {fileID: 330001769}
   - {fileID: 1535776715}
   - {fileID: 573973953}
@@ -70626,7 +70627,6 @@ Transform:
   - {fileID: 35812940}
   - {fileID: 614330833}
   - {fileID: 778189043}
-  - {fileID: 1069737179}
   - {fileID: 262003304}
   - {fileID: 71419860}
   - {fileID: 597998299}
@@ -75695,6 +75695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2477b0c25f1e542904b766260747b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 781705378}
 --- !u!65 &1385947572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78179,7 +78180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 256, y: -28.000015}
+  m_AnchoredPosition: {x: 256, y: -28}
   m_SizeDelta: {x: -522, y: -50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1439857590
@@ -85481,7 +85482,7 @@ GameObject:
   - component: {fileID: 1615316786}
   - component: {fileID: 1615316785}
   m_Layer: 24
-  m_Name: Tablecheck
+  m_Name: Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87629,7 +87630,7 @@ Transform:
   - {fileID: 370735119}
   - {fileID: 1552380218}
   m_Father: {fileID: 1286520026}
-  m_RootOrder: 509
+  m_RootOrder: 430
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1671361511
 PrefabInstance:
@@ -92014,7 +92015,7 @@ Transform:
   - {fileID: 2006414358}
   - {fileID: 1348546853}
   m_Father: {fileID: 1286520026}
-  m_RootOrder: 564
+  m_RootOrder: 556
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1777865280
 PrefabInstance:
