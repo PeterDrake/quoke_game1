@@ -140,6 +140,8 @@ public class InteractWithObject : MonoBehaviour
             interactText.ChangeText(InteractionDisplayText);
             
             playerInCollider = true;
+            timer = .6f;
+            blinkOn = false;
         }
     }
 

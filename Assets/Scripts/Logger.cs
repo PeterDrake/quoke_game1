@@ -8,7 +8,7 @@ public class Logger : Singleton<Logger>
 {
     private StreamWriter writer;
 
-    private const bool DoLog = false; // change to true if you want logging
+    private const bool DoLog = true; // change to true if you want logging
     
     
     public void Log(string message)
