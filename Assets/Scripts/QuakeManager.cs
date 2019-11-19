@@ -183,7 +183,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         {
             if(Quaking) return;
             Quaking = true;
-            
+            Logger.Instance.Log("Earthquake triggered!");
             StopAllCoroutines();
             OnQuake.Invoke();
 
