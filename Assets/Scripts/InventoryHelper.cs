@@ -13,6 +13,7 @@ public class InventoryHelper : MonoBehaviour
 
     public void AddItem(BaseItem item, int amt)
     {
+        Logger.Instance.Log("Picked up: "+item.name);
         _inventory.AddItem(item, amt);
         CheckOnAdd.Invoke();
     }
