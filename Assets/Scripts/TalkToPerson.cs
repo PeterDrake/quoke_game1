@@ -17,6 +17,7 @@ public class TalkToPerson : MonoBehaviour
     public GameObject dialogueCanvas;
     public GameObject canvasEnabler;
     public GameObject interactNotifier;
+    public levelEvents LevelEvents;
 
    // public Text InteractText;
     
@@ -78,9 +79,14 @@ public class TalkToPerson : MonoBehaviour
             {
                 if(isColliding) return;
                 isColliding = true;
+                if (ObjectiveManager.Instance.Check("TOILETEVENT"))
+                {
+                    LevelEvents.changeDialogue();
+                        
+                }
                 canvasEnabler.SetActive(true);
                 interactNotifier.GetComponent<InteractText>().ToggleVisibility(false);
-
+                
              
 
                 

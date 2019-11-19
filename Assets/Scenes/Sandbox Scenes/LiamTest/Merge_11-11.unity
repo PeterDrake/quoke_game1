@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17354885, g: 0.21695837, b: 0.29905832, a: 1}
+  m_IndirectSpecularColor: {r: 0.17354916, g: 0.21695893, b: 0.29905915, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -44052,7 +44052,6 @@ MonoBehaviour:
   mainInventory: {fileID: 550718317}
   CleanWaterButton: {fileID: 2032566321}
   DrinkWaterButton: {fileID: 1683351542}
-  myDialogueManager: {fileID: 3160320219846577184}
   RequiredItems:
   - {fileID: 11400000, guid: 085f79894830bfa43b1b882cedc7ffd2, type: 2}
   - {fileID: 11400000, guid: 75c7fc8d6c517234aa3ce9cafa58a06e, type: 2}
@@ -83528,6 +83527,7 @@ MonoBehaviour:
   dialogueCanvas: {fileID: 3160320219846577184}
   canvasEnabler: {fileID: 3160320220098219905}
   interactNotifier: {fileID: 924251843}
+  LevelEvents: {fileID: 856623861}
   NPCL3: 0
 --- !u!136 &1549891713
 CapsuleCollider:
