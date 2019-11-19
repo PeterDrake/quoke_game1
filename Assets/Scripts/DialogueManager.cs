@@ -114,23 +114,24 @@ public class DialogueManager : MonoBehaviour
 
         if (my_hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode1.name))
         {
-            if (ObjectiveManager.Instance.Check("TOILETEVENT"))
+            if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
+            if (!DontDoThisTwice && ObjectiveManager.Instance.Check("TOILETEVENT"))
             {
                 DontDoThisTwice = true;
                 ObjectiveManager.Instance.Satisfy("LEVELFINISHED");
             }
-                if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
-                if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
+            if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
+            if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
 
                 if (responseNodeOne != null)
                 {
-
+                    
                     active = responseNodeOne;
                     dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
                     dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
                     Refresh();
                 }
-                /// testing Annette
+                
                 else if (LevelEvents && notChecked)
                 {
                     notChecked = false;

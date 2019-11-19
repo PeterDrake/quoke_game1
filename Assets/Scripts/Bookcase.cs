@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using MoreMountains.FeedbacksForThirdParty;
+﻿using MoreMountains.FeedbacksForThirdParty;
 using MoreMountains.InventoryEngine;
-using Unity.UNetWeaver;
 using UnityEngine;
 
 public class Bookcase : MonoBehaviour
@@ -45,7 +40,7 @@ public class Bookcase : MonoBehaviour
         fallCollider.gameObject.GetComponent<CollisionCallback>().AddCallback("Player", HitPlayer);
         fallCollider.enabled = false;
 
-        QuakeManager.Instance.OnQuake.AddListener(Fall);
+        //QuakeManager.Instance.OnQuake.AddListener(Fall);
     }
     
     public void UpdateState()
@@ -86,7 +81,7 @@ public class Bookcase : MonoBehaviour
     }
     
 
-    private void Fall()
+    public void Fall()
     {
         if (isFalling) return;
         isFalling = true;

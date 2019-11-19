@@ -20,7 +20,10 @@ public class MyEventTracker : MonoBehaviour
     public GameObject CleanWaterButton;
     public GameObject DrinkWaterButton;
     
-    public GameObject myDialogueManager;
+    
+    private bool notActivated;
+    
+   
     public BaseItem[] RequiredItems;
     private bool[] ItemObtained;
     public BaseItem[] ToAdd;

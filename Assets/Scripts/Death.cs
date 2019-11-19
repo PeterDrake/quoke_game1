@@ -35,11 +35,10 @@ public class Death : MonoBehaviour
     public void PlayerDeath(string textOnDeath)
     {
         if (dead) return;
-        
+        Logger.Instance.Log("Player killed by: "+textOnDeath);
         dead = true;
         deathText.text = textOnDeath;
         deathScreen.SetActive(true);
-       // StartCoroutine(MyPause());
     }
 
     public void RestartLevel()

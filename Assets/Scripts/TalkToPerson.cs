@@ -17,6 +17,7 @@ public class TalkToPerson : MonoBehaviour
     public GameObject dialogueCanvas;
     public GameObject canvasEnabler;
     public GameObject interactNotifier;
+    public levelEvents LevelEvents;
 
    // public Text InteractText;
     
@@ -78,13 +79,15 @@ public class TalkToPerson : MonoBehaviour
             {
                 if(isColliding) return;
                 isColliding = true;
+                if (ObjectiveManager.Instance.Check("TOILETEVENT"))
+                {
+                    LevelEvents.changeDialogue();
+                        
+                }
                 canvasEnabler.SetActive(true);
+                interactNotifier.GetComponent<InteractText>().ToggleVisibility(false);
                 
-                //Pauses the character while they are in dialogue .. come back to this..
-                /*
-                myPlayer.GetComponent<CharacterPause>().PauseCharacter();
-                GameManager.Instance.Pause();
-                */
+             
 
                 
                 //If the player has already talked to the NPC the NPCs new head will be displayed

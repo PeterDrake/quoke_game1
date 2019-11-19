@@ -107,7 +107,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         void Update()
         {
 
-            if (!cheatQuake && !Quaking && InQuakeZone && CountdownFinished || (adminMode && Input.GetKeyDown("p")))
+            if ((!cheatQuake && !Quaking && InQuakeZone && CountdownFinished) || (adminMode && Input.GetKeyDown("p")))
             {
                 TriggerQuake();   
             }
@@ -183,7 +183,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         {
             if(Quaking) return;
             Quaking = true;
-            
+            Logger.Instance.Log("Earthquake triggered!");
             StopAllCoroutines();
             OnQuake.Invoke();
 
