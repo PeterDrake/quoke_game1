@@ -10,6 +10,7 @@ public class VanNextLevel : MonoBehaviour
     private const string EventKey = "LEVELFINISHED";
     private const string SATISFIED = "Press 'e' to rest in Ahmad's van";
     private const string NOT_SATISFIED = "";
+    public GameObject winCanvas;
     
     private InteractWithObject _interact;
     private bool _satisfied = false;
@@ -27,6 +28,6 @@ public class VanNextLevel : MonoBehaviour
     }
     public void Interaction()
     {
-        if (_satisfied) SceneManager.LoadScene("DemoMenu", LoadSceneMode.Single);
+        if (_satisfied) winCanvas.SetActive(true);
     }
 }
