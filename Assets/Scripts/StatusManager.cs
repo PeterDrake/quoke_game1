@@ -24,11 +24,18 @@ public class StatusManager : MonoBehaviour
     
     
     [Header("Loss is applied once every second")]
-    [Min(0)] public float HydrationLoss;
-    [Min(0)] public float ReliefLoss;
-    [Min(0)] public float WarmthLoss;
+    [Min(0)] public float HydrationLossRate;
+    [Min(0)] public float SanitationLossRate;
+    [Min(0)] public float ExposureLossRate;
+    
+    
+    /*[MoreMountains.Tools.ReadOnly] public float HydrationDeathTime = 0;
+    [MoreMountains.Tools.ReadOnly] public float SanitationDeathTime = 0;
+    [MoreMountains.Tools.ReadOnly] public float ExposureDeathTime = 0;*/
 
     
+    //hydration first, then relief then warmth
+    //3, 4, 5 mins
     public bool DegradeHydration = true;
     public bool DegradeRelief = true;
     public bool DegradeWarmth = true; 
@@ -54,6 +61,10 @@ public class StatusManager : MonoBehaviour
         HydrationSlider.maxValue = HydrationMax;
         ReliefSlider.maxValue = ReliefMax;
         WarmthSlider.maxValue = WarmthMax;
+
+        /*HydrationDeathTime = HydrationMax / HydrationLossRate;
+        ExposureDeathTime = WarmthMax / ExposureLossRate;
+        SanitationDeathTime = ReliefMax / SanitationLossRate;*/
         
         StartCoroutine(DegradeStatus());
     }
@@ -135,21 +146,21 @@ public class StatusManager : MonoBehaviour
     private IEnumerator DegradeStatus()
     {
         if (!enabled) yield break;
-        if (DegradeHydration && HydrationLoss > 0)
+        if (DegradeHydration && HydrationLossRate > 0)
         {
-            Hydration -= HydrationLoss;
+            Hydration -= HydrationLossRate;
             hydrationChanged = true;
         }
 
-        if (DegradeRelief && ReliefLoss > 0)
+        if (DegradeRelief && SanitationLossRate > 0)
         {
-            Relief -= ReliefLoss;
+            Relief -= SanitationLossRate;
             reliefChanged = true;
         }
 
-        if (DegradeWarmth && WarmthLoss > 0)
+        if (DegradeWarmth && ExposureLossRate > 0)
         {
-            Warmth -= WarmthLoss;
+            Warmth -= ExposureLossRate;
             warmthChanged = true;
         }
 
