@@ -119,9 +119,7 @@ public class InteractWithObject : MonoBehaviour
             
             if (killAfterUse)
             {
-                interactText.ToggleVisibility(false);
-                _meshRenderer.material = mat_original;
-                Destroy(this);
+                Kill();
             }
         }
         else if (interactionDelayFrames > 0)
@@ -140,6 +138,8 @@ public class InteractWithObject : MonoBehaviour
             interactText.ChangeText(InteractionDisplayText);
             
             playerInCollider = true;
+            timer = .6f;
+            blinkOn = false;
         }
     }
 
@@ -172,5 +172,12 @@ public class InteractWithObject : MonoBehaviour
     {
         itemToReceive = null;
         hasItem = false;
+    }
+
+    public void Kill()
+    {
+        interactText.ToggleVisibility(false);
+        _meshRenderer.material = mat_original;
+        Destroy(this);
     }
 }

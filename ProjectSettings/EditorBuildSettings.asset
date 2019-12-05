@@ -23,7 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGames/ToiletMiniGame.unity
     guid: 8b6f54e8e4bb0ca4587961b76dabf4ac
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sandbox Scenes/LiamTest/Merge_11-11.unity
     guid: 835b2a440c33b4961874d90b6510457d
+  - enabled: 1
+    path: Assets/Scenes/Levels/PlaytestL2.unity
+    guid: 23c4822b922dddd48ab164c76de9c16c
   m_configObjects: {}

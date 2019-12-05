@@ -29424,15 +29424,12 @@ MonoBehaviour:
   HydrationSlider: {fileID: 140111410}
   ReliefSlider: {fileID: 1659462037}
   WarmthSlider: {fileID: 863430959}
-  Hydration: 0.3
-  Relief: 0.2
-  Warmth: 0.1
-  HydrationLossRate: 0.3
-  SanitationLossRate: 0.2
-  ExposureLossRate: 0.1
-  HydrationDeathTime: -1
-  ExposureDeathTime: -1
-  SanitationDeathTime: -1
+  Hydration: 0
+  Relief: 0
+  Warmth: 0
+  HydrationLoss: 0.5
+  ReliefLoss: 1
+  WarmthLoss: 0.3
   DegradeHydration: 1
   DegradeRelief: 1
   DegradeWarmth: 1

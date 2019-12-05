@@ -1,14 +1,17 @@
 ﻿using UnityEngine;
 using System;
 using System.IO;
+using System.Linq.Expressions;
 using System.Net.NetworkInformation;
 using MoreMountains.Tools;
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Logger : Singleton<Logger>
 {
     private StreamWriter writer;
 
-    private const bool DoLog = false; // change to true if you want logging
+    private bool DoLog = true; // change to true if you want logging
     
     
     public void Log(string message)
@@ -16,7 +19,14 @@ public class Logger : Singleton<Logger>
         if (!DoLog) return;
         
         int time = (int)Math.Round(Time.realtimeSinceStartup);
-        writer.WriteLine(time + ": " + message);
+        try
+        {
+            writer.WriteLine(time + ": " + message);
+        }
+        catch (Exception e)
+        {
+            DoLog = false;
+        }
         Debug.Log(time + ": " + message);
     }
 
@@ -27,6 +37,14 @@ public class Logger : Singleton<Logger>
         base.Awake();
         writer = new StreamWriter(GenerateFileName());
         Log("Game started.");
+        SceneManager.sceneLoaded += Flush;
+    }
+
+    private void Flush(Scene s, LoadSceneMode lsm)
+    {
+        if (!DoLog) return;
+        
+        writer.Flush();
     }
 
     protected void OnApplicationQuit()
@@ -36,6 +54,7 @@ public class Logger : Singleton<Logger>
         Log("Game ended.");
         writer.Close();
     }
+    
 
     // Generates a name for the log file
     private string GenerateFileName()
