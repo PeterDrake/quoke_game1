@@ -113125,7 +113125,7 @@ MonoBehaviour:
   dialogueDisplay: {fileID: 3160320219846577213}
   dialogueEnabler: {fileID: 3160320220098219905}
   newHead: {fileID: 11400000, guid: fa7fd2b6ae1cb4bc6b676a27b04b3345, type: 2}
-  my_targetInventory: {fileID: 550718317}
+  _inventoryHelper: {fileID: 550718320}
   eventTracker: {fileID: 856623860}
   Node1InvalidEnabler: {fileID: 3160320219314584084}
   node1InvalidText: {fileID: 3160320219264209671}

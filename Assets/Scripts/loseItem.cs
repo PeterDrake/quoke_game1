@@ -34,7 +34,7 @@ public class loseItem : MonoBehaviour
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(itemToLose.name))
                 {
                     //Debug.Log("success");
-                    DialogueManager.GetComponent<DialogueManager>().my_LoseItem(itemToLose);
+                    //DialogueManager.GetComponent<DialogueManager>().my_LoseItem(itemToLose);
 
                 }
                 else
