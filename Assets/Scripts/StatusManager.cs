@@ -1,10 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StatusManager : MonoBehaviour
+public class StatusManager : MonoBehaviour, IPauseable 
 {
     // Start is called before the first frame update
 
@@ -165,9 +163,12 @@ public class StatusManager : MonoBehaviour
         StartCoroutine(DegradeStatus());
     }
 
+    public bool Paused => enabled;
+
+
     public void Pause()
     {
-        enabled = false;
+        enabled = true;
         Degrading = false;
     }
     

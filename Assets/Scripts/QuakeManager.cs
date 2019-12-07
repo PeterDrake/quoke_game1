@@ -199,6 +199,8 @@ namespace MoreMountains.FeedbacksForThirdParty
         public void TriggerQuake()
         {
             if(Quaking) return;
+            StatusManager.Manager.Pause();
+            
             Quaking = true;
             Logger.Instance.Log((quakes == 0 ? "Earthquake" : "Aftershock")+" triggered!");
             StopAllCoroutines();
@@ -215,6 +217,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             if (!Quaking || quakes > 0) return;
             
             Quaking = false;
+            StatusManager.Manager.Unpause();
             TriggerCountdown(AftershockTime);
         }
 
