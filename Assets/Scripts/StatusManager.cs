@@ -8,34 +8,27 @@ public class StatusManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public static StatusManager Manager; 
-     
-    public float HydrationMax;
-    public float ReliefMax;
-    public float WarmthMax;
+    public static StatusManager Manager;
 
     public Slider HydrationSlider;
     public Slider ReliefSlider;
     public Slider WarmthSlider;
     
-    [SerializeField][ReadOnly] private float Hydration;
-    [SerializeField][ReadOnly] private float Relief;
-    [SerializeField][ReadOnly] private float Warmth;
-    
-    
-    [Header("Loss is applied once every second")]
-    [Min(0)] public float HydrationLossRate;
-    [Min(0)] public float SanitationLossRate;
-    [Min(0)] public float ExposureLossRate;
-    
-    
-    /*[MoreMountains.Tools.ReadOnly] public float HydrationDeathTime = 0;
-    [MoreMountains.Tools.ReadOnly] public float SanitationDeathTime = 0;
-    [MoreMountains.Tools.ReadOnly] public float ExposureDeathTime = 0;*/
+    [MoreMountains.Tools.ReadOnly] public float Hydration;
+    [MoreMountains.Tools.ReadOnly] public float Relief;
+    [MoreMountains.Tools.ReadOnly] public float Warmth;
 
     
-    //hydration first, then relief then warmth
-    //3, 4, 5 mins
+    [Header("Time (in seconds) to deplete the entire resource")]
+    public float HydrationDepletionTime = 180f;
+    public float ReliefDepletionTime = 240f;
+    public float WarmthDepletionTime = 300f;
+
+    [Header("Loss is applied once every second")]
+    [MoreMountains.Tools.ReadOnly][Min(0)] public float HydrationLossRate;
+    [MoreMountains.Tools.ReadOnly][Min(0)] public float ReliefLossRate;
+    [MoreMountains.Tools.ReadOnly][Min(0)] public float WarmthLossRate;
+    
     public bool DegradeHydration = true;
     public bool DegradeRelief = true;
     public bool DegradeWarmth = true; 
@@ -43,6 +36,10 @@ public class StatusManager : MonoBehaviour
     private bool hydrationChanged;
     private bool reliefChanged;
     private bool warmthChanged;
+    
+    private float HydrationMax = 100f;
+    private float ReliefMax = 100f;
+    private float WarmthMax = 100f;
     
     private bool enabled = true;
     private bool Degrading = true;
@@ -62,10 +59,10 @@ public class StatusManager : MonoBehaviour
         ReliefSlider.maxValue = ReliefMax;
         WarmthSlider.maxValue = WarmthMax;
 
-        /*HydrationDeathTime = HydrationMax / HydrationLossRate;
-        ExposureDeathTime = WarmthMax / ExposureLossRate;
-        SanitationDeathTime = ReliefMax / SanitationLossRate;*/
-        
+        HydrationLossRate = HydrationMax / HydrationDepletionTime;
+        ReliefLossRate = ReliefMax / ReliefDepletionTime;
+        WarmthLossRate = WarmthMax / WarmthDepletionTime;
+
         StartCoroutine(DegradeStatus());
     }
 
@@ -152,15 +149,15 @@ public class StatusManager : MonoBehaviour
             hydrationChanged = true;
         }
 
-        if (DegradeRelief && SanitationLossRate > 0)
+        if (DegradeRelief && ReliefLossRate > 0)
         {
-            Relief -= SanitationLossRate;
+            Relief -= ReliefLossRate;
             reliefChanged = true;
         }
 
-        if (DegradeWarmth && ExposureLossRate > 0)
+        if (DegradeWarmth && WarmthLossRate > 0)
         {
-            Warmth -= ExposureLossRate;
+            Warmth -= WarmthLossRate;
             warmthChanged = true;
         }
 

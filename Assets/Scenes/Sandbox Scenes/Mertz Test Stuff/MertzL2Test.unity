@@ -29418,18 +29418,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6e1b0dc00622b4386121cd3701b41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HydrationMax: 100
-  ReliefMax: 100
-  WarmthMax: 100
   HydrationSlider: {fileID: 140111410}
   ReliefSlider: {fileID: 1659462037}
   WarmthSlider: {fileID: 863430959}
   Hydration: 0.3
   Relief: 0.2
   Warmth: 0.1
+  HydrationDepletionTime: 180
+  ReliefDepletionTime: 240
+  WarmthDepletionTime: 300
   HydrationLossRate: 0
-  SanitationLossRate: 0
-  ExposureLossRate: 0
+  ReliefLossRate: 0
+  WarmthLossRate: 0
   DegradeHydration: 1
   DegradeRelief: 1
   DegradeWarmth: 1
