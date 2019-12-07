@@ -6,7 +6,7 @@ using UnityEngine;
 public class ToiletInteraction : MonoBehaviour
 {
     private bool _firstInteraction = true;
-
+    
     private InteractWithObject _interact;
     private void Start()
     {

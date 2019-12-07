@@ -174,7 +174,7 @@ public class StatusManager : MonoBehaviour
         Degrading = false;
     }
     
-    public void UnPause()
+    public void Unpause()
     {
         enabled = true;
         if(!Degrading) StartCoroutine(DegradeStatus());

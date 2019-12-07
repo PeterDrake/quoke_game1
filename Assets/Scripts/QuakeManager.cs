@@ -225,6 +225,10 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public void PlayerInQuakeZone(bool status)
         {
+            if (quakes > 0 && status == false)
+            {
+                TriggerCountdown(entranceGracePeriod);
+            }
             if (status && (_countdownFinished || _timeTillQuake < entranceGracePeriod) && (_inQuakeZone != status))
                 TriggerCountdown(entranceGracePeriod);
             
