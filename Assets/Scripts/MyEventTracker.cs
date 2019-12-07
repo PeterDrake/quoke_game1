@@ -20,10 +20,10 @@ public class MyEventTracker : MonoBehaviour
     public GameObject CleanWaterButton;
     public GameObject DrinkWaterButton;
     
-    
     private bool notActivated;
     
-   
+    private int bleachCount;
+    
     public BaseItem[] RequiredItems;
     private bool[] ItemObtained;
     public BaseItem[] ToAdd;
@@ -35,10 +35,17 @@ public class MyEventTracker : MonoBehaviour
     {
         ItemObtained = new bool[RequiredItems.Length];
         _inventoryHelper.CheckOnAdd.AddListener(checkConditions);
+        bleachCount = 0;
     }
 
     public void CleanWater()
     {
+        _inventoryHelper.RemoveItem(ToAdd[bleachCount], 1);
+        bleachCount++;
+        Debug.Log("bcoubnt" + bleachCount + ToAdd[bleachCount]);
+        _inventoryHelper.AddItem(ToAdd[bleachCount], 1);  //currently doesn't add item...??'
+        
+        /* old code
         foreach (var item in RequiredItems)
         {
             _inventoryHelper.RemoveItem(item, 1);
@@ -47,18 +54,17 @@ public class MyEventTracker : MonoBehaviour
         foreach (var item in ToAdd)
         {
             _inventoryHelper.AddItem(item, 1);
-        }
+        }*/
         
         activated = true;
-        CleanWaterButton.SetActive(false);
-        DrinkWaterButton.SetActive(true);
     }
 
     public void DrinkWater()
     {
-        _inventoryHelper.RemoveItem(Water);
+        _inventoryHelper.RemoveItem(Water); //fix so it removes whatervs there...then responds based on that
         StatusManager.Manager.AffectHydration(100);
         DrinkWaterButton.SetActive(false);
+        CleanWaterButton.SetActive(false);
     }
     
 
@@ -71,7 +77,7 @@ public class MyEventTracker : MonoBehaviour
             if (!_inventoryHelper.HasItem(RequiredItems[i], 1)) return;
             
         }
-        
+        DrinkWaterButton.SetActive(true);
         CleanWaterButton.SetActive(true);
     }
 
