@@ -72,7 +72,7 @@ public class StatusManager : MonoBehaviour
         {
             enabled = false;
             Death.Manager.PlayerDeath("Due to lack of a proper toilet, you were forced to defecate without proper " +
-                                      "sanitation.  You then caught a disease and died");
+                                      "sanitation.  You caught a disease and died.");
         }
         else if (Warmth <= 0)
         {

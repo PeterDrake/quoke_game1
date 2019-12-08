@@ -28,8 +28,7 @@ public class MyEventTracker : MonoBehaviour
     private bool[] ItemObtained;
     public BaseItem[] ToAdd;
     private bool activated;
-
-    public BaseItem Water;
+    
     private bool HasAllRequirements;
     private void Start()
     {
@@ -40,29 +39,31 @@ public class MyEventTracker : MonoBehaviour
 
     public void CleanWater()
     {
-        _inventoryHelper.RemoveItem(ToAdd[bleachCount], 1);
-        bleachCount++;
-        Debug.Log("bcoubnt" + bleachCount + ToAdd[bleachCount]);
-        _inventoryHelper.AddItem(ToAdd[bleachCount], 1);  //currently doesn't add item...??'
-        
-        /* old code
-        foreach (var item in RequiredItems)
-        {
-            _inventoryHelper.RemoveItem(item, 1);
+        if (bleachCount < 5) {
+            _inventoryHelper.RemoveItem(ToAdd[bleachCount], 1);
+            bleachCount++;
+            Debug.Log("bcoubnt" + bleachCount + ToAdd[bleachCount]);
+            _inventoryHelper.AddItem(ToAdd[bleachCount], 1);  //currently doesn't add item...??'
         }
-        
-        foreach (var item in ToAdd)
-        {
-            _inventoryHelper.AddItem(item, 1);
-        }*/
         
         activated = true;
     }
 
     public void DrinkWater()
     {
-        _inventoryHelper.RemoveItem(Water); //fix so it removes whatervs there...then responds based on that
-        StatusManager.Manager.AffectHydration(100);
+        _inventoryHelper.RemoveItem(ToAdd[bleachCount]);
+        if (bleachCount > 1 && bleachCount < 5)
+        {
+            StatusManager.Manager.AffectHydration(100);
+        } else if (bleachCount < 2)
+        {
+            Death.Manager.PlayerDeath(
+                "You drank dirty water and died of dysentary. You need to sanitize your water with more bleach");
+        }
+        else
+        {
+            Death.Manager.PlayerDeath("You died of bleach poisoning.  You should add less bleach to sanitize your water next time.");
+        }
         DrinkWaterButton.SetActive(false);
         CleanWaterButton.SetActive(false);
     }
@@ -72,12 +73,13 @@ public class MyEventTracker : MonoBehaviour
     {
         if (activated) return;
         
+        if (!_inventoryHelper.HasItem(RequiredItems[1], 1)) DrinkWaterButton.SetActive(true); ;
+        
         for (int i = 0; i < RequiredItems.Length; i++)
         {
             if (!_inventoryHelper.HasItem(RequiredItems[i], 1)) return;
             
         }
-        DrinkWaterButton.SetActive(true);
         CleanWaterButton.SetActive(true);
     }
 
