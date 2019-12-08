@@ -48,8 +48,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         public GameObject objective;
         
         public bool tableFlag = true;
-        public bool cheatQuake = false;
-        
+
         public GameObject dustStormPrefab;
 
         private bool haveObjective;
@@ -67,7 +66,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         
         [Tools.ReadOnly] public byte quakes; //times quaked 
         
-
+    
         private bool _inQuakeZone;
         [Tools.ReadOnly] public bool _inSafeZone;
         private bool _countdownFinished;
@@ -75,7 +74,8 @@ namespace MoreMountains.FeedbacksForThirdParty
         private float entranceGracePeriod = 2f;
         private float _timeTillQuake;
 
-        private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long 
+        private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long
+        private bool quakeOverride = false;
         
         
         /*Subscribed to onQuake:
@@ -115,7 +115,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         void Update()
         {
 
-            if ((!cheatQuake && !Quaking && _inQuakeZone && _countdownFinished) || (adminMode && Input.GetKeyDown("p")))
+            if ((_countdownFinished && !Quaking && (quakeOverride || _inQuakeZone)) || (adminMode && Input.GetKeyDown("p")) )
             {
                 TriggerQuake();   
             }
@@ -236,6 +236,16 @@ namespace MoreMountains.FeedbacksForThirdParty
                 TriggerCountdown(entranceGracePeriod);
             
             _inQuakeZone = status;
+        }
+
+        public void ManualTriggerAftershock(float gracePeroid)
+        {
+
+            if (quakes > 0)
+            {
+                quakeOverride = true;
+                TriggerCountdown(gracePeroid);
+            }
         }
     }
 }
