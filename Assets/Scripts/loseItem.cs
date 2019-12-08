@@ -41,12 +41,7 @@ public class loseItem : MonoBehaviour
                 {
                     Debug.Log("you dont have a " + itemToLose);
                 }
-
-               
-
             }
-            
-
         }
     }
 

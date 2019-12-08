@@ -61,7 +61,7 @@ public class StatusManager : MonoBehaviour, IPauseable
         ReliefLossRate = ReliefMax / ReliefDepletionTime;
         WarmthLossRate = WarmthMax / WarmthDepletionTime;
 
-        StartCoroutine(DegradeStatus());
+        StartCoroutine(nameof(DegradeStatus),DegradeStatus());
     }
 
     // Update is called once per frame
@@ -163,18 +163,20 @@ public class StatusManager : MonoBehaviour, IPauseable
         StartCoroutine(DegradeStatus());
     }
 
-    public bool Paused => enabled;
+    public bool Paused => !enabled;
 
 
     public void Pause()
     {
-        enabled = true;
-        Degrading = false;
+        if(enabled) StopCoroutine(nameof(DegradeStatus));
+        enabled = false;
     }
     
     public void Unpause()
     {
+        var c = enabled;
         enabled = true;
-        if(!Degrading) StartCoroutine(DegradeStatus());
+        if(!c) StartCoroutine(nameof(DegradeStatus), DegradeStatus());
+        
     }
 }

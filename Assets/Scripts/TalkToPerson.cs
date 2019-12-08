@@ -26,7 +26,7 @@ public class TalkToPerson : MonoBehaviour
    // public GameObject myGameManager;
     
    //this NPCl3 will probably go...but leave it for now please - Peter H
-   public bool NPCL3 ;
+    public bool NPCL3 ;
 
     private bool isColliding;
     
@@ -37,7 +37,6 @@ public class TalkToPerson : MonoBehaviour
         head_flag = false;
         isColliding = false;
         myPlayer = GameObject.FindWithTag("FakePlayer");
-
     }
 
 
@@ -56,7 +55,6 @@ public class TalkToPerson : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //interactNotifier.SetActive(true);
             interactNotifier.GetComponent<InteractText>().ChangeText("Press 'E' to talk");
             
         }
@@ -66,8 +64,7 @@ public class TalkToPerson : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-           // interactNotifier.SetActive(false);
-           interactNotifier.GetComponent<InteractText>().ToggleVisibility(false);
+            interactNotifier.GetComponent<InteractText>().ToggleVisibility(false);
         }
     }
 
@@ -75,7 +72,7 @@ public class TalkToPerson : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (Input.GetKeyDown("e"))
+            if (Input.GetAxis("Interact") > 0)
             {
                 if(isColliding) return;
                 isColliding = true;
@@ -87,8 +84,6 @@ public class TalkToPerson : MonoBehaviour
                 canvasEnabler.SetActive(true);
                 interactNotifier.GetComponent<InteractText>().ToggleVisibility(false);
                 
-             
-
                 
                 //If the player has already talked to the NPC the NPCs new head will be displayed
                 if (head_flag == false)
@@ -97,7 +92,6 @@ public class TalkToPerson : MonoBehaviour
                     //head_flag = true;
                     StartCoroutine(my_pause());
                 }
-                
                 else
                 {
                     dialogueCanvas.GetComponent<DialogueDisplay>().dialogue = newHead;
@@ -106,7 +100,6 @@ public class TalkToPerson : MonoBehaviour
                 dialogueCanvas.GetComponent<DialogueDisplay>().my_update(); 
                 dialogueCanvas.GetComponent<DialogueManager>().Refresh();
                 StartCoroutine(Reset());
-                
             }
         }
     }
