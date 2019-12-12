@@ -65473,7 +65473,7 @@ PrefabInstance:
         type: 3}
       propertyPath: EventTracker
       value: 
-      objectReference: {fileID: 1677150504}
+      objectReference: {fileID: 96915794}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
       propertyPath: textToDisplay
@@ -76248,7 +76248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2477b0c25f1e542904b766260747b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvas: {fileID: 0}
+  _canvas: {fileID: 96915796}
 --- !u!65 &1385947572
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -83341,10 +83341,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainDialogue: {fileID: 11400000, guid: 870fa446ca9c94bbfbc1418cd01593e4, type: 2}
   newHead: {fileID: 0}
-  dialogueCanvas: {fileID: 0}
-  canvasEnabler: {fileID: 0}
-  interactNotifier: {fileID: 0}
-  LevelEvents: {fileID: 0}
+  dialogueCanvas: {fileID: 1684959168}
+  canvasEnabler: {fileID: 284011537}
+  interactNotifier: {fileID: 431210001}
+  LevelEvents: {fileID: 1677150506}
   NPCL3: 0
 --- !u!136 &1549891713
 CapsuleCollider:
@@ -88606,8 +88606,8 @@ MonoBehaviour:
   dialogueDisplay: {fileID: 1684959171}
   dialogueEnabler: {fileID: 284011537}
   newHead: {fileID: 11400000, guid: fa7fd2b6ae1cb4bc6b676a27b04b3345, type: 2}
-  _inventoryHelper: {fileID: 0}
-  eventTracker: {fileID: 0}
+  _inventoryHelper: {fileID: 550718320}
+  eventTracker: {fileID: 1677150504}
   Node1InvalidEnabler: {fileID: 1631635241}
   node1InvalidText: {fileID: 605475429}
   Node2InvalidEnabler: {fileID: 1253429461}
