@@ -45,13 +45,11 @@ namespace MoreMountains.FeedbacksForThirdParty
         public string textToDisplay3;
         
         public GameObject enableDoors;
-        public GameObject objective;
-        
+
         public bool tableFlag = true;
 
         public GameObject dustStormPrefab;
-
-        private bool haveObjective;
+        
         private bool textDisplayed;
         private UpdateQuests quests;
 
@@ -104,9 +102,6 @@ namespace MoreMountains.FeedbacksForThirdParty
             bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
             colliders = Array.ConvertAll(doors, d => d.GetComponent(typeof(BoxCollider)) as BoxCollider);
             clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
-            
-            
-            if (objective != null) quests = objective.GetComponent<UpdateQuests>();
 
             _informationCanvas = EventTracker.GetComponent<InformationCanvas>();
         }
@@ -118,12 +113,6 @@ namespace MoreMountains.FeedbacksForThirdParty
             if ((_countdownFinished && !Quaking && (quakeOverride || _inQuakeZone)) || (adminMode && Input.GetKeyDown("p")) )
             {
                 TriggerQuake();   
-            }
-
-            if (haveObjective && !textDisplayed && quests.shelterBool)
-            {
-                textDisplayed = true;
-                _informationCanvas.DisplayInfo(textToDisplay3);
             }
         }
 
