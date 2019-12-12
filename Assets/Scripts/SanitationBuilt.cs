@@ -91,7 +91,7 @@ public class SanitationBuilt : MonoBehaviour
     }
     private void MiniGameFinished()//this is not getting called
     {
-        StatusManager.Manager.UnPause();
+        StatusManager.Manager.Unpause();
 
         SceneManager.UnloadSceneAsync(MiniGameSceneName);
         canvi.SetActive(true);

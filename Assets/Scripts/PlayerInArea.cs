@@ -21,9 +21,7 @@ public class PlayerInArea : MonoBehaviour
     {
         _triggerCollider = Array.Find(GetComponents<BoxCollider>(), (element) => element.isTrigger == true);
     }
-
-
-
+    
 
     public void OnTriggerEnter(Collider other)
     {

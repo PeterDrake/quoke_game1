@@ -45,14 +45,11 @@ namespace MoreMountains.FeedbacksForThirdParty
         public string textToDisplay3;
         
         public GameObject enableDoors;
-        public GameObject objective;
-        
-        public bool tableFlag = true;
-        public bool cheatQuake = false;
-        
-        public GameObject dustStormPrefab;
 
-        private bool haveObjective;
+        public bool tableFlag = true;
+
+        public GameObject dustStormPrefab;
+        
         private bool textDisplayed;
         private UpdateQuests quests;
 
@@ -67,7 +64,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         
         [Tools.ReadOnly] public byte quakes; //times quaked 
         
-
+    
         private bool _inQuakeZone;
         [Tools.ReadOnly] public bool _inSafeZone;
         private bool _countdownFinished;
@@ -75,7 +72,8 @@ namespace MoreMountains.FeedbacksForThirdParty
         private float entranceGracePeriod = 2f;
         private float _timeTillQuake;
 
-        private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long 
+        private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long
+        private bool quakeOverride = false;
         
         
         /*Subscribed to onQuake:
@@ -104,9 +102,6 @@ namespace MoreMountains.FeedbacksForThirdParty
             bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
             colliders = Array.ConvertAll(doors, d => d.GetComponent(typeof(BoxCollider)) as BoxCollider);
             clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
-            
-            
-            if (objective != null) quests = objective.GetComponent<UpdateQuests>();
 
             _informationCanvas = EventTracker.GetComponent<InformationCanvas>();
         }
@@ -115,15 +110,9 @@ namespace MoreMountains.FeedbacksForThirdParty
         void Update()
         {
 
-            if ((!cheatQuake && !Quaking && _inQuakeZone && _countdownFinished) || (adminMode && Input.GetKeyDown("p")))
+            if ((_countdownFinished && !Quaking && (quakeOverride || _inQuakeZone)) || (adminMode && Input.GetKeyDown("p")) )
             {
                 TriggerQuake();   
-            }
-
-            if (haveObjective && !textDisplayed && quests.shelterBool)
-            {
-                textDisplayed = true;
-                _informationCanvas.DisplayInfo(textToDisplay3);
             }
         }
 
@@ -199,6 +188,8 @@ namespace MoreMountains.FeedbacksForThirdParty
         public void TriggerQuake()
         {
             if(Quaking) return;
+            StatusManager.Manager.Pause();
+            
             Quaking = true;
             Logger.Instance.Log((quakes == 0 ? "Earthquake" : "Aftershock")+" triggered!");
             StopAllCoroutines();
@@ -215,6 +206,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             if (!Quaking || quakes > 0) return;
             
             Quaking = false;
+            StatusManager.Manager.Unpause();
             TriggerCountdown(AftershockTime);
         }
 
@@ -225,10 +217,24 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public void PlayerInQuakeZone(bool status)
         {
+            if (quakes > 0 && status == false)
+            {
+                TriggerCountdown(entranceGracePeriod);
+            }
             if (status && (_countdownFinished || _timeTillQuake < entranceGracePeriod) && (_inQuakeZone != status))
                 TriggerCountdown(entranceGracePeriod);
             
             _inQuakeZone = status;
+        }
+
+        public void ManualTriggerAftershock(float gracePeroid)
+        {
+
+            if (quakes > 0)
+            {
+                quakeOverride = true;
+                TriggerCountdown(gracePeroid);
+            }
         }
     }
 }

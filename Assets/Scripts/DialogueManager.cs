@@ -25,14 +25,16 @@ public class DialogueManager : MonoBehaviour
     public Dialogue newHead;
 
     
-    private InventoryItem my_itemToAddNode1;
-    private InventoryItem my_hasItemNode1;
-    private InventoryItem my_itemToAddNode2;
-    private InventoryItem my_hasItemNode2;
-    private InventoryItem my_losesNode1;
-    private InventoryItem my_losesNode2;
+    private InventoryItem itemToAddNode1;
+    private InventoryItem itemToAddNode2;
     
-    public Inventory my_targetInventory;
+    private InventoryItem hasItemNode1;
+    private InventoryItem hasItemNode2;
+    
+    private InventoryItem losesNode1;
+    private InventoryItem losesNode2;
+    
+    public InventoryHelper _inventoryHelper;
 
     public GameObject eventTracker;
 
@@ -60,6 +62,7 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.LogWarning("You may have to change this objects reference to use the InventoryHelper: " + name);
         StartCoroutine(Initiate());
         myPlayer = GameObject.FindWithTag("FakePlayer");
     }
@@ -73,26 +76,28 @@ public class DialogueManager : MonoBehaviour
 
     public void Refresh()
     {
-        nodeTwoButton.SetActive(true);    
+        if (!StatusManager.Manager.Paused) StatusManager.Manager.Pause();
         
-        active = dialogueDisplay.GetComponent<DialogueDisplay>().dialogue;
-        // Debug.Log(active);
-        responseNodeOne = dialogueDisplay.GetComponent<DialogueDisplay>().nextNodeOne; 
-        responseNodeTwo = dialogueDisplay.GetComponent<DialogueDisplay>().nextNodeTwo;
+        var disp = dialogueDisplay.GetComponent<DialogueDisplay>();
+        
+        nodeTwoButton.SetActive(true);
+
+        active = disp.dialogue;
+        
+        responseNodeOne = disp.nextNodeOne; 
+        responseNodeTwo = disp.nextNodeTwo;
         if (responseNodeTwo == null)
         { 
             nodeTwoButton.SetActive(false);       
         }
 
-        my_itemToAddNode1 = dialogueDisplay.GetComponent<DialogueDisplay>().itemToReceiveNode1;
-        my_hasItemNode1 = dialogueDisplay.GetComponent<DialogueDisplay>().hasItemNode1;
-        my_itemToAddNode2 = dialogueDisplay.GetComponent<DialogueDisplay>().itemToReceiveNode2;
-        my_hasItemNode2 = dialogueDisplay.GetComponent<DialogueDisplay>().hasItemNode2;
-        my_losesNode1 = dialogueDisplay.GetComponent<DialogueDisplay>().PlayerLosesNode1;
-        my_losesNode2 = dialogueDisplay.GetComponent<DialogueDisplay>().PlayerLosesNode2;
-
-
-
+        itemToAddNode1 = disp.itemToReceiveNode1;
+        hasItemNode1 = disp.hasItemNode1;
+        itemToAddNode2 = disp.itemToReceiveNode2;
+        hasItemNode2 = disp.hasItemNode2;
+        losesNode1 = disp.PlayerLosesNode1;
+        losesNode2 = disp.PlayerLosesNode2;
+        
     }
 
     public IEnumerator CloseInvalidN1()
@@ -112,16 +117,16 @@ public class DialogueManager : MonoBehaviour
     {
         // button click should change the active node to the next node... 
 
-        if (my_hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode1.name))
+        if (hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(hasItemNode1.name))
         {
-            if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
+            if (losesNode1 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode1); }                
             if (!DontDoThisTwice && ObjectiveManager.Instance.Check("TOILETEVENT"))
             {
                 DontDoThisTwice = true;
                 ObjectiveManager.Instance.Satisfy("LEVELFINISHED");
             }
-            if (my_losesNode1 != null){my_LoseItem(my_losesNode1); }                
-            if (my_itemToAddNode1 != null){my_AddItem(my_itemToAddNode1);}
+            if (losesNode1 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode1); }                
+            if (itemToAddNode1 != null){_inventoryHelper.AddItem((BaseItem)itemToAddNode1,1);}
 
                 if (responseNodeOne != null)
                 {
@@ -146,7 +151,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Node1InvalidEnabler.SetActive(true);
-            node1InvalidText.text = "you are missing required " + my_hasItemNode1.name + "!";
+            node1InvalidText.text = "you are missing required " + hasItemNode1.name + "!";
            // Debug.Log("you don't have" +  my_hasItemNode1.name);
             StartCoroutine(CloseInvalidN1());
         }
@@ -155,12 +160,10 @@ public class DialogueManager : MonoBehaviour
     
     public void NextNodeR2()
     {
-
-
-        if (my_hasItemNode2 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(my_hasItemNode2.name)) 
+        if (hasItemNode2 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(hasItemNode2.name)) 
         {
-               if (my_losesNode2 != null){my_LoseItem(my_losesNode2); }
-               if (my_itemToAddNode2 != null){my_AddItem(my_itemToAddNode2); }
+               if (losesNode2 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode2); }
+               if (itemToAddNode2 != null){_inventoryHelper.AddItem((BaseItem)itemToAddNode2,1); }
 
                if (responseNodeTwo != null)
                {
@@ -177,7 +180,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             Node2InvalidEnabler.SetActive(true);
-            node2InvalidText.text = "you are missing required " + my_hasItemNode2.name + "!";
+            node2InvalidText.text = "you are missing required " + hasItemNode2.name + "!";
             //Debug.Log("you don't have" +  my_hasItemNode2.name);
             StartCoroutine(CloseInvalidN2());
         }
@@ -203,11 +206,11 @@ public class DialogueManager : MonoBehaviour
         {
             NPCl3interact.GetComponent<DontTalkWhileMoving>().ConversationOver();
         }
-
+        StatusManager.Manager.Unpause();
         //GameManager.Instance.UnPause();
     }
 
-    public void my_AddItem(InventoryItem my_itemToAdd)
+/*    public void my_AddItem(InventoryItem my_itemToAdd)
     {
       //  my_itemToAdd = dialogueDisplay.GetComponent<DialogueDisplay>().itemToReceive;
         my_targetInventory.AddItem(my_itemToAdd, 1);
@@ -224,10 +227,8 @@ public class DialogueManager : MonoBehaviour
             }
 
             i++;
-           // Debug.Log(i);
-
         }
 
-    }
+    }*/
     
 }

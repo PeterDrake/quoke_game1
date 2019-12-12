@@ -18,11 +18,11 @@ MonoBehaviour:
   Equippable: 1
   Quantity: 1
   ItemName: 
-  ShortDescription: Dirty water to be sanitized and drank
-  Description: 
+  ShortDescription: Dirty Water, Unsafe to Drink
+  Description: Dirty Water, Unsafe to Drink
   CanMoveObject: 1
   CanSwapObject: 1
-  Icon: {fileID: 21300000, guid: 71c3f4cc1b759d44baca97d3aa8bdd79, type: 3}
+  Icon: {fileID: 21300000, guid: 16f0ed0bfa42ff74dbf0fa78ff7d0114, type: 3}
   Prefab: {fileID: 0}
   SpawnShape: 1
   PrefabDropMinDistance: {x: 2, y: 2, z: 0}

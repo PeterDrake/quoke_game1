@@ -1,33 +1,31 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StatusManager : MonoBehaviour
+public class StatusManager : MonoBehaviour, IPauseable 
 {
     // Start is called before the first frame update
 
-    public static StatusManager Manager; 
-     
-    public float HydrationMax;
-    public float ReliefMax;
-    public float WarmthMax;
+    public static StatusManager Manager;
 
     public Slider HydrationSlider;
     public Slider ReliefSlider;
     public Slider WarmthSlider;
     
-    [SerializeField][ReadOnly] private float Hydration;
-    [SerializeField][ReadOnly] private float Relief;
-    [SerializeField][ReadOnly] private float Warmth;
-    
-    
-    [Header("Loss is applied once every second")]
-    [Min(0)] public float HydrationLoss;
-    [Min(0)] public float ReliefLoss;
-    [Min(0)] public float WarmthLoss;
+    [MoreMountains.Tools.ReadOnly] public float Hydration;
+    [MoreMountains.Tools.ReadOnly] public float Relief;
+    [MoreMountains.Tools.ReadOnly] public float Warmth;
 
+    
+    [Header("Time (in seconds) to deplete the entire resource")]
+    public float HydrationDepletionTime = 180f;
+    public float ReliefDepletionTime = 240f;
+    public float WarmthDepletionTime = 300f;
+
+    [Header("Loss is applied once every second")]
+    [MoreMountains.Tools.ReadOnly][Min(0)] public float HydrationLossRate;
+    [MoreMountains.Tools.ReadOnly][Min(0)] public float ReliefLossRate;
+    [MoreMountains.Tools.ReadOnly][Min(0)] public float WarmthLossRate;
     
     public bool DegradeHydration = true;
     public bool DegradeRelief = true;
@@ -36,6 +34,10 @@ public class StatusManager : MonoBehaviour
     private bool hydrationChanged;
     private bool reliefChanged;
     private bool warmthChanged;
+    
+    private float HydrationMax = 100f;
+    private float ReliefMax = 100f;
+    private float WarmthMax = 100f;
     
     private bool enabled = true;
     private bool Degrading = true;
@@ -54,8 +56,12 @@ public class StatusManager : MonoBehaviour
         HydrationSlider.maxValue = HydrationMax;
         ReliefSlider.maxValue = ReliefMax;
         WarmthSlider.maxValue = WarmthMax;
-        
-        StartCoroutine(DegradeStatus());
+
+        HydrationLossRate = HydrationMax / HydrationDepletionTime;
+        ReliefLossRate = ReliefMax / ReliefDepletionTime;
+        WarmthLossRate = WarmthMax / WarmthDepletionTime;
+
+        StartCoroutine(nameof(DegradeStatus),DegradeStatus());
     }
 
     // Update is called once per frame
@@ -71,7 +77,8 @@ public class StatusManager : MonoBehaviour
         else if (Relief <= 0)
         {
             enabled = false;
-            Death.Manager.PlayerDeath("Constipation Death :(");
+            Death.Manager.PlayerDeath("Due to lack of a proper toilet, you were forced to defecate without proper " +
+                                      "sanitation.  You caught a disease and died.");
         }
         else if (Warmth <= 0)
         {
@@ -135,21 +142,21 @@ public class StatusManager : MonoBehaviour
     private IEnumerator DegradeStatus()
     {
         if (!enabled) yield break;
-        if (DegradeHydration && HydrationLoss > 0)
+        if (DegradeHydration && HydrationLossRate > 0)
         {
-            Hydration -= HydrationLoss;
+            Hydration -= HydrationLossRate;
             hydrationChanged = true;
         }
 
-        if (DegradeRelief && ReliefLoss > 0)
+        if (DegradeRelief && ReliefLossRate > 0)
         {
-            Relief -= ReliefLoss;
+            Relief -= ReliefLossRate;
             reliefChanged = true;
         }
 
-        if (DegradeWarmth && WarmthLoss > 0)
+        if (DegradeWarmth && WarmthLossRate > 0)
         {
-            Warmth -= WarmthLoss;
+            Warmth -= WarmthLossRate;
             warmthChanged = true;
         }
 
@@ -157,15 +164,20 @@ public class StatusManager : MonoBehaviour
         StartCoroutine(DegradeStatus());
     }
 
+    public bool Paused => !enabled;
+
+
     public void Pause()
     {
+        if(enabled) StopCoroutine(nameof(DegradeStatus));
         enabled = false;
-        Degrading = false;
     }
     
-    public void UnPause()
+    public void Unpause()
     {
+        var c = enabled;
         enabled = true;
-        if(!Degrading) StartCoroutine(DegradeStatus());
+        if(!c) StartCoroutine(nameof(DegradeStatus), DegradeStatus());
+        
     }
 }

@@ -31,8 +31,8 @@ public class TapHeater : MonoBehaviour
                 if (eventTracker.GetComponent<MyEventTracker>().my_CheckInventory("hose"))
                 {
                     Debug.Log("success");
-                    DialogueManager.GetComponent<DialogueManager>().my_AddItem(water);
-                    DialogueManager.GetComponent<DialogueManager>().my_LoseItem(hose);
+                    //DialogueManager.GetComponent<DialogueManager>().my_AddItem(water);
+                    //DialogueManager.GetComponent<DialogueManager>().my_LoseItem(hose);
 
                 }
                 else
