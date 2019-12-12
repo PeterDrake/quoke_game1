@@ -23,26 +23,27 @@ namespace MoreMountains.FeedbacksForThirdParty
         public bool adminMode = true;
         public bool showCountdown = true;
         [Space]
+        [Space]
         
+        [Tooltip("How long after starting before the earthquake goes off?")]
         public float TimeBeforeQuake = 15f;
+        [Tooltip("How long after the first quake before aftershock?")]
         public float AftershockTime = 10f;
         
-        private float entranceGracePeriod = 2f;
-        private float timeTillQuake;
+
         
+        [Header("Camera Shake Options")]
         public GameObject my_camera;
         public float amplitude;
         public float frequency;
         public float duration;
         
-
         public GameObject EventTracker;
-        public String textToDisplay1;
-
+        
+        public string textToDisplay1;
         public string textToDisplay2;
-
         public string textToDisplay3;
-        public GameObject fallingLights;
+        
         public GameObject enableDoors;
         public GameObject objective;
         
@@ -64,10 +65,18 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         [HideInInspector] public bool Quaking;
         
-        [Unity.Collections.ReadOnly] public byte quakes; //times quaked 
+        [Tools.ReadOnly] public byte quakes; //times quaked 
+        
 
-        private bool InQuakeZone;
-        private bool CountdownFinished;
+        private bool _inQuakeZone;
+        [Tools.ReadOnly] public bool _inSafeZone;
+        private bool _countdownFinished;
+        
+        private float entranceGracePeriod = 2f;
+        private float _timeTillQuake;
+
+        private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long 
+        
         
         /*Subscribed to onQuake:
             QuakeFurniture
@@ -75,8 +84,7 @@ namespace MoreMountains.FeedbacksForThirdParty
          */
         public UnityEvent OnQuake;
 
-        private InformationCanvas _informationCanvas; 
-        // Start is called before the first frame update
+        private InformationCanvas _informationCanvas;
 
         private void Awake()
         {
@@ -107,7 +115,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         void Update()
         {
 
-            if ((!cheatQuake && !Quaking && InQuakeZone && CountdownFinished) || (adminMode && Input.GetKeyDown("p")))
+            if ((!cheatQuake && !Quaking && _inQuakeZone && _countdownFinished) || (adminMode && Input.GetKeyDown("p")))
             {
                 TriggerQuake();   
             }
@@ -121,21 +129,21 @@ namespace MoreMountains.FeedbacksForThirdParty
 
         public void TriggerCountdown(float time)
         {
-            CountdownFinished = false;
+            _countdownFinished = false;
             StopCoroutine(nameof(QuakeCountdown));
             StartCoroutine(nameof(QuakeCountdown), time);
         }
 
         private IEnumerator QuakeCountdown(float CountdownTime)
         {
-            timeTillQuake = CountdownTime;
-            while (timeTillQuake > 0)
+            _timeTillQuake = CountdownTime;
+            while (_timeTillQuake > 0)
             {
                 yield return new WaitForSeconds(1f);
-                timeTillQuake--;
-                if (showCountdown) Debug.Log("Time Till Quake: " + timeTillQuake);
+                _timeTillQuake--;
+                if (showCountdown) Debug.Log("Time Till Quake: " + _timeTillQuake);
             }
-            CountdownFinished = true;
+            _countdownFinished = true;
         }
 
         public IEnumerator FlapDoors(float duration)
@@ -162,12 +170,21 @@ namespace MoreMountains.FeedbacksForThirdParty
             }
 
             var cam = my_camera.GetComponent<MMCinemachineCameraShaker>();
-            while (Quaking)
+            int shakes = 0;
+            while (true)
             {
                 cam.ShakeCamera(duration, amplitude, frequency, false);
                 StartCoroutine(FlapDoors(duration));
                 yield return new WaitForSeconds(duration);
+                if (_inSafeZone && shakes >= _minimumShakes)
+                {
+                    break;
+                }
+                Debug.Log(shakes);
+                shakes++;
             }
+            
+            StopQuake();
             foreach (Clobberer c in clobberers)
             {
                 c.enabled = false;
@@ -183,7 +200,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         {
             if(Quaking) return;
             Quaking = true;
-            Logger.Instance.Log("Earthquake triggered!");
+            Logger.Instance.Log((quakes == 0 ? "Earthquake" : "Aftershock")+" triggered!");
             StopAllCoroutines();
             OnQuake.Invoke();
 
@@ -196,17 +213,22 @@ namespace MoreMountains.FeedbacksForThirdParty
         public void StopQuake()
         {
             if (!Quaking || quakes > 0) return;
-            Debug.Log("Stop Quake Called"+Quaking);
+            
             Quaking = false;
             TriggerCountdown(AftershockTime);
         }
 
+        public void InSafeZone(bool status)
+        {
+            _inSafeZone = status;
+        }
+
         public void PlayerInQuakeZone(bool status)
         {
-            if (status && (CountdownFinished || timeTillQuake < entranceGracePeriod) && (InQuakeZone != status))
+            if (status && (_countdownFinished || _timeTillQuake < entranceGracePeriod) && (_inQuakeZone != status))
                 TriggerCountdown(entranceGracePeriod);
             
-            InQuakeZone = status;
+            _inQuakeZone = status;
         }
     }
 }
