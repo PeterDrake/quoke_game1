@@ -43,7 +43,7 @@ public class ObjectiveManager : MonoBehaviour
 
     public void Satisfy(String key, bool destroyCallbacks = true)
     {
-        Debug.Log(key);
+        Logger.Instance.Log("Objective Satisfied: "+key);
         if (!events.ContainsKey(key))
         {
             events.Add(key,true);

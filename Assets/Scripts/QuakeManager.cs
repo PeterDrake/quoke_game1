@@ -61,7 +61,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
 
         [HideInInspector] public bool Quaking;
-        
+
         [Tools.ReadOnly] public byte quakes; //times quaked 
         
     
@@ -71,6 +71,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         
         private float entranceGracePeriod = 2f;
         private float _timeTillQuake;
+
 
         private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long
         private bool quakeOverride = false;
@@ -189,7 +190,8 @@ namespace MoreMountains.FeedbacksForThirdParty
         {
             if(Quaking) return;
             StatusManager.Manager.Pause();
-            
+            Logger.Instance.Log("Quake Triggered");
+
             Quaking = true;
             Logger.Instance.Log((quakes == 0 ? "Earthquake" : "Aftershock")+" triggered!");
             StopAllCoroutines();
@@ -204,7 +206,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         public void StopQuake()
         {
             if (!Quaking || quakes > 0) return;
-            
+            Logger.Instance.Log("Quake Stopped");
             Quaking = false;
             StatusManager.Manager.Unpause();
             TriggerCountdown(AftershockTime);

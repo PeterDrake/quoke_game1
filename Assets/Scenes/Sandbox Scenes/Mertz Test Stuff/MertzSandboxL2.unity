@@ -7382,6 +7382,7 @@ Transform:
   - {fileID: 1929999051}
   - {fileID: 1051373315}
   - {fileID: 550718318}
+  - {fileID: 1200434303}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -21906,6 +21907,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   InventoryType: 0
   TargetTransform: {fileID: 0}
   Persistent: 0
@@ -22748,7 +22750,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   killAfterUse: 0
-  DestoryObjectAfterUse: 1
+  DestoryObjectAfterUse: 0
 --- !u!114 &568766878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56850,7 +56852,7 @@ PrefabInstance:
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
       propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -56956,11 +56958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 658570878}
+      objectReference: {fileID: 2105686912}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
       propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Fall
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -57070,6 +57072,49 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 8340e8586e8556c4b82f331a034bae19, type: 3}
+--- !u!1 &1200434302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200434303}
+  - component: {fileID: 1200434304}
+  m_Layer: 0
+  m_Name: Logger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1200434303
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200434302}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 178891659}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200434304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200434302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9a39890962454b41885f49030030048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1201854088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57347,11 +57392,11 @@ Transform:
   m_LocalPosition: {x: 32.38, y: -51.73, z: 64.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1462918070}
   - {fileID: 1868034938}
   - {fileID: 1224288534}
   - {fileID: 875614970}
   - {fileID: 181115401}
+  - {fileID: 1462918070}
   - {fileID: 1187625189}
   - {fileID: 737156670}
   - {fileID: 1564987369}
@@ -66003,7 +66048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55701ba4fbad4e548a5ea3c663931598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FallingObjects: {fileID: 0}
+  FallingObjects: {fileID: 1208654822}
 --- !u!1001 &1363709372
 PrefabInstance:
   m_ObjectHideFlags: 0
