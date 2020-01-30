@@ -29,7 +29,6 @@ public class Win : MonoBehaviour
         sanitation = objective.GetComponent<UpdateQuests>().sanitationBool;
         shelter = objective.GetComponent<UpdateQuests>().shelterBool;
         water = objective.GetComponent<UpdateQuests>().waterBool;
-        aftershock = aftershockTrigger.GetComponent<AftershockTrigger_old>().happened;
 
         if (sanitation && shelter && water && aftershock)
         {

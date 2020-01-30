@@ -71,7 +71,7 @@ public class InteractWithObject : MonoBehaviour
         
         // materials for material blinking
         mat_original = gameObject.GetComponent<MeshRenderer>().material;
-        mat_blink = Resources.Load("Transparent Object 1", typeof(Material)) as Material;
+        mat_blink = Resources.Load("Materials/Transparent Object 1", typeof(Material)) as Material;
         _meshRenderer = GetComponent<MeshRenderer>();
     }
     
