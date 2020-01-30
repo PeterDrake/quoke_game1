@@ -34,8 +34,13 @@ public class InventoryHelper : MonoBehaviour
 
     public void RemoveItem(BaseItem item)
     {
+
         int i = Array.FindIndex(_inventory.Content, row => row.ItemID == item.ItemID);
-        if (i >= 0) _inventory.RemoveItem(i, 1);
+        if (i >= 0) 
+        {
+            _inventory.RemoveItem(i, 1);
+            Logger.Instance.Log("Item removed from inventory"+item.name); 
+        }
     }
 
     public void RemoveItem(BaseItem item, int amt)

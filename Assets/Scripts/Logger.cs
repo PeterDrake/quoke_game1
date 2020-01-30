@@ -10,10 +10,8 @@ using UnityEngine.SceneManagement;
 public class Logger : Singleton<Logger>
 {
     private StreamWriter writer;
-
+    
     private bool DoLog = true; // change to true if you want logging
-    
-    
     public void Log(string message)
     {
         if (!DoLog) return;
