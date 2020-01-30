@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using MoreMountains.FeedbacksForThirdParty;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,7 +37,7 @@ public class FallingFurnitureDeath : MonoBehaviour
     {
         if (isEnabled && other.gameObject.CompareTag("Player"))
         {
-            Death.Manager.PlayerDeath("Crushed by falling object");
+            Death.Manager.PlayerDeath("Crushed by falling object "+ (QuakeManager.Instance.quakes == 0? "in earthquake":"in aftershock"));
         }
     }
 }

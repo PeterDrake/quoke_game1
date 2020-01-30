@@ -61,7 +61,7 @@ namespace MoreMountains.FeedbacksForThirdParty
 
 
         [HideInInspector] public bool Quaking;
-        
+
         [Tools.ReadOnly] public byte quakes; //times quaked 
         
     
@@ -71,6 +71,7 @@ namespace MoreMountains.FeedbacksForThirdParty
         
         private float entranceGracePeriod = 2f;
         private float _timeTillQuake;
+
 
         private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long
         private bool quakeOverride = false;
