@@ -24,7 +24,6 @@ public class DialogueManager : MonoBehaviour
 
     public Dialogue newHead;
 
-    
     private InventoryItem itemToAddNode1;
     private InventoryItem itemToAddNode2;
     
@@ -100,20 +99,20 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    public IEnumerator CloseInvalidN1()
+    private IEnumerator CloseInvalidN1()
     {
         yield return new WaitForSeconds(3f);
         Node1InvalidEnabler.SetActive(false);
     }
 
-    public IEnumerator CloseInvalidN2()
+    private IEnumerator CloseInvalidN2()
     {
         yield return new WaitForSeconds(3f);
         Node2InvalidEnabler.SetActive(false);
 
     }
     
-    public void NextNodeR1()
+    private void NextNodeR1()
     {
         // button click should change the active node to the next node... 
 
@@ -128,7 +127,7 @@ public class DialogueManager : MonoBehaviour
             if (losesNode1 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode1); }                
             if (itemToAddNode1 != null){_inventoryHelper.AddItem((BaseItem)itemToAddNode1,1);}
 
-                if (responseNodeOne != null)
+                if (responseNodeOne != null) 
                 {
                     
                     active = responseNodeOne;
@@ -136,13 +135,11 @@ public class DialogueManager : MonoBehaviour
                     dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
                     Refresh();
                 }
-                
                 else if (LevelEvents && notChecked)
                 {
                     notChecked = false;
                     levelEvents.changeDialogue();
                 }
-               
                 else 
                 {
                     Deactivate();
@@ -152,13 +149,12 @@ public class DialogueManager : MonoBehaviour
         {
             Node1InvalidEnabler.SetActive(true);
             node1InvalidText.text = "you are missing required " + hasItemNode1.name + "!";
-           // Debug.Log("you don't have" +  my_hasItemNode1.name);
             StartCoroutine(CloseInvalidN1());
         }
        
     }
     
-    public void NextNodeR2()
+    private void NextNodeR2()
     {
         if (hasItemNode2 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(hasItemNode2.name)) 
         {
@@ -198,7 +194,6 @@ public class DialogueManager : MonoBehaviour
 
     public void Deactivate()
     {
-        
         dialogueEnabler.SetActive(false);
         StatusManager.Manager.Unpause();
     }
