@@ -47,17 +47,43 @@ public class DialogueManagerTest : MonoBehaviour
     
     private string OptionOneSelected()
     {
+        string resp = CheckRequirements(activeDialogue.optionOne);
+        if (resp != "") return resp;
+        
         activeDialogue = activeDialogue.optionOne;
+        
+        DoOutcomes(activeDialogue);
         displayer.Load(activeDialogue, activeNPC);
         return "";
     }
     
     private string OptionTwoSelected()
     {
-        activeDialogue = activeDialogue.optionTwo;
-        displayer.Load(activeDialogue, activeNPC);
+        string resp = CheckRequirements(activeDialogue.optionTwo);
+        if (resp != "") return resp;
         
+        activeDialogue = activeDialogue.optionTwo;
+        
+        DoOutcomes(activeDialogue);
+        displayer.Load(activeDialogue, activeNPC);
         return "";
+    }
+
+    private string CheckRequirements(DialogueNode d)
+    {
+        foreach (var req in d.Requirements)
+        {
+            if (!req.TestSatisfaction()) return req.GetFailureMessage();
+        }
+        return "";
+    }
+
+    private void DoOutcomes(DialogueNode d)
+    {
+        foreach (var outcome in d.Outcomes)
+        {
+            outcome.DoOutcome(d, activeNPC);
+        }
     }
 
     private string Exit()
@@ -65,7 +91,4 @@ public class DialogueManagerTest : MonoBehaviour
         EndDialogue();
         return "";
     }
-    
-    
-    
 }
