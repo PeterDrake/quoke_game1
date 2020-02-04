@@ -10,18 +10,11 @@ public class DialogueNode : ScriptableObject
 
     [SerializeField] protected DialogueNode optionOne;
     [SerializeField] protected DialogueNode optionTwo;
-    
-    public DialogueRequirement[] Requirements;
-    public DialogueOutcome[] Outcomes;
 
     public virtual DialogueNode GetNodeOne()
-    {
-        return optionOne;
-    }
+    { return optionOne; }
     public virtual DialogueNode GetNodeTwo()
-    {
-        return optionTwo;
-    }
+    { return optionTwo; }
 
     public virtual string GetTextOne()
     {
