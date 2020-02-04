@@ -5,13 +5,30 @@ public class DialogueNode : ScriptableObject
 {
     public string speech;
     
-    public string optionOneText;
-    public string optionTwoText;
+    [SerializeField] protected string optionOneText;
+    [SerializeField] protected string optionTwoText;
 
-    public DialogueNode optionOne;
-    public DialogueNode optionTwo;
+    [SerializeField] protected DialogueNode optionOne;
+    [SerializeField] protected DialogueNode optionTwo;
     
     public DialogueRequirement[] Requirements;
     public DialogueOutcome[] Outcomes;
 
+    public virtual DialogueNode GetNodeOne()
+    {
+        return optionOne;
+    }
+    public virtual DialogueNode GetNodeTwo()
+    {
+        return optionTwo;
+    }
+
+    public virtual string GetTextOne()
+    {
+        return optionOneText;
+    }
+    public virtual string GetTextTwo()
+    {
+        return optionTwoText;
+    }
 }

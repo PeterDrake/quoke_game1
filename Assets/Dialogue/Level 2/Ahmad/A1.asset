@@ -9,19 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
+  m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
   m_Name: A1
   m_EditorClassIdentifier: 
-  NPCname: Ahmad
-  NPCimage: {fileID: 0}
-  NPCtext: "Hi, I\u2019m Ahmad. I\u2019m a NET. "
-  ResponseOne: Ahmad, Annette, which is it?
-  nextNodeOne: {fileID: 11400000, guid: 2e41d0a51084f4b5a9c894c56b8b1ab2, type: 2}
-  ResponseTwo: 
-  nextNodeTwo: {fileID: 0}
-  PlayerReceivesNode1: {fileID: 0}
-  PlayerReceivesNode2: {fileID: 0}
-  DoesPlayerHaveNode1: {fileID: 0}
-  DoesPlayerHaveNode2: {fileID: 0}
-  PlayerLosesNode1: {fileID: 0}
-  PlayerLosesNode2: {fileID: 0}
+  speech: Hi, I'm Ahmad. I'm a NET
+  optionOneText: Nice to meet you Ahmad
+  optionTwoText: Nice to meet you Annette
+  optionOne: {fileID: 11400000, guid: 12ebaa0e09d799648be57e27d9a188d3, type: 2}
+  optionTwo: {fileID: 11400000, guid: 3c20bdd835fa44544945f3158dd6c458, type: 2}
+  Requirements: []
+  Outcomes: []

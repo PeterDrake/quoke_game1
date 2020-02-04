@@ -9,19 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
+  m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
   m_Name: A6
   m_EditorClassIdentifier: 
-  NPCname: Ahmad
-  NPCimage: {fileID: 0}
-  NPCtext: You should probably get to work on that.
-  ResponseOne: Will do!
-  nextNodeOne: {fileID: 0}
-  ResponseTwo: 
-  nextNodeTwo: {fileID: 0}
-  PlayerReceivesNode1: {fileID: 0}
-  PlayerReceivesNode2: {fileID: 0}
-  DoesPlayerHaveNode1: {fileID: 0}
-  DoesPlayerHaveNode2: {fileID: 0}
-  PlayerLosesNode1: {fileID: 0}
-  PlayerLosesNode2: {fileID: 0}
+  speech: Sanitation System, here take this pamphlet
+  optionOneText: Thanks!
+  optionTwoText: I don't think I have all this stuff
+  optionOne: {fileID: 0}
+  optionTwo: {fileID: 0}
+  Requirements: []
+  Outcomes: []

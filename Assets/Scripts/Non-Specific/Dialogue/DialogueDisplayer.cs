@@ -47,24 +47,24 @@ public class DialogueDisplayer : MonoBehaviour
         if (n.image != null) npcImage.sprite = n.image;
         npcSpeech.text = d.speech;
 
-        if (d.optionOneText == null)
+        if (d.GetNodeOne() == null)
         {
             responseOneEnabler.SetActive(false);
         }
         else
         {
             responseOneEnabler.SetActive(true);
-            optionOne.text = d.optionOneText;
+            optionOne.text = d.GetTextOne();
         }
         
-        if (d.optionTwoText == null)
+        if (d.GetTextTwo() == null)
         {
             responseTwoEnabler.SetActive(false);
         }
         else
         {
             responseOneEnabler.SetActive(true);
-            optionTwo.text = d.optionTwoText;
+            optionTwo.text = d.GetTextTwo();
         }
 
         /* Extra:
@@ -82,7 +82,7 @@ public class DialogueDisplayer : MonoBehaviour
     public Tuple<bool, bool> ActiveOptions()
     {
         if (!displaying) return new Tuple<bool, bool>(false, false);
-        return new Tuple<bool, bool>(activeDialogue.optionOneText != null, activeDialogue.optionTwoText != null);
+        return new Tuple<bool, bool>(activeDialogue.GetTextOne() != null, activeDialogue.GetTextTwo() != null);
     }
 
     private void Start()

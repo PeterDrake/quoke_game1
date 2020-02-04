@@ -9,19 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
+  m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
   m_Name: A4
   m_EditorClassIdentifier: 
-  NPCname: Ahmad
-  NPCimage: {fileID: 0}
-  NPCtext: "Nice to meet you. I\u2019m glad you made it this far."
-  ResponseOne: Thanks, me too.
-  nextNodeOne: {fileID: 0}
-  ResponseTwo: 
-  nextNodeTwo: {fileID: 0}
-  PlayerReceivesNode1: {fileID: 0}
-  PlayerReceivesNode2: {fileID: 0}
-  DoesPlayerHaveNode1: {fileID: 0}
-  DoesPlayerHaveNode2: {fileID: 0}
-  PlayerLosesNode1: {fileID: 0}
-  PlayerLosesNode2: {fileID: 0}
+  speech: Nice to meet you! I'm glad to see you've made it this far unscathed!
+  optionOneText: Glad to see you've made it as well friend
+  optionTwoText: You better not try to take my food or something...
+  optionOne: {fileID: 11400000, guid: 1133613086b541a488005d86f7beb750, type: 2}
+  optionTwo: {fileID: 11400000, guid: f2c92a4312374e64dbfa4255d17e7741, type: 2}
+  Requirements: []
+  Outcomes: []

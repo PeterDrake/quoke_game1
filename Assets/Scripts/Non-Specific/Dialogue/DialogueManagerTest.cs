@@ -47,10 +47,10 @@ public class DialogueManagerTest : MonoBehaviour
     
     private string OptionOneSelected()
     {
-        string resp = CheckRequirements(activeDialogue.optionOne);
+        string resp = CheckRequirements(activeDialogue.GetNodeOne());
         if (resp != "") return resp;
         
-        activeDialogue = activeDialogue.optionOne;
+        activeDialogue = activeDialogue.GetNodeOne();
         
         DoOutcomes(activeDialogue);
         displayer.Load(activeDialogue, activeNPC);
@@ -59,10 +59,10 @@ public class DialogueManagerTest : MonoBehaviour
     
     private string OptionTwoSelected()
     {
-        string resp = CheckRequirements(activeDialogue.optionTwo);
+        string resp = CheckRequirements(activeDialogue.GetNodeTwo());
         if (resp != "") return resp;
         
-        activeDialogue = activeDialogue.optionTwo;
+        activeDialogue = activeDialogue.GetNodeTwo();
         
         DoOutcomes(activeDialogue);
         displayer.Load(activeDialogue, activeNPC);
