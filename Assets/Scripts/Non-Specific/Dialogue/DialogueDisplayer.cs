@@ -147,6 +147,7 @@ public class DialogueDisplayer : MonoBehaviour
             throw new Exception("Required Components for Dialogue Displayer were not found!");
     }
 
+    // Called when the first dialogue option is pressed
     private void optionOnePressed()
     {
         string resp = option1();
@@ -158,6 +159,7 @@ public class DialogueDisplayer : MonoBehaviour
         }
     }
     
+    // Called when the second dialogue option is pressed
     private void optionTwoPressed()
     {
         string resp = option2();

@@ -8,4 +8,6 @@ public class Item : ScriptableObject
     public Sprite DisplayImage;
     
     public string ID;
+
+    public ItemAction action;
 }
