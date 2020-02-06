@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9081b025a17517146bf6f9d8ffb8e392, type: 3}
+  m_Name: New DialogueNode
+  m_EditorClassIdentifier: 
+  speech: You gotta do that, you dont want to die
+  optionOneText: Ok, Ill get it done
+  optionTwoText: Got any more info on this sani-station thingy?
+  optionOne: {fileID: 0}
+  optionTwo: {fileID: 0}
+  Requirements: []
+  Outcomes: []
+  IfRequirementsOne: []
+  IfRequirementsTwo: []
+  optionOneTextAlt: 
+  optionTwoTextAlt: 
+  optionOneAlt: {fileID: 0}
+  optionTwoAlt: {fileID: 0}
