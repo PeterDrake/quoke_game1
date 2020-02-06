@@ -1,4 +1,6 @@
-﻿
+﻿using UnityEngine;
+
+[CreateAssetMenu(fileName = "New Drinkable Item", menuName = "Dialogue/Drinkable")]
 public class Drinkable : Item
 {
     public int hydrationChange = 0;
