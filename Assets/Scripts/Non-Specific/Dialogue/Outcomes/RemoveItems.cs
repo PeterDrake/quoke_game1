@@ -13,7 +13,7 @@ public class RemoveItem : DialogueOutcome
     public int[] Amounts;
     
     // Need a static reference to Inventory available before this can be implemented
-    public override void DoOutcome(DialogueNode d, NPC n)
+    public override void DoOutcome(ref DialogueNode d, ref NPC n)
     {
         throw new System.NotImplementedException();
     }

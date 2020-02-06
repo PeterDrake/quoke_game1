@@ -52,7 +52,7 @@ public class DialogueManagerTest : MonoBehaviour
         
         activeDialogue = activeDialogue.GetNodeOne();
         
-        DoOutcomes(activeDialogue);
+        DoOutcomes(ref activeDialogue);
         displayer.Load(activeDialogue, activeNPC);
         return "";
     }
@@ -64,7 +64,7 @@ public class DialogueManagerTest : MonoBehaviour
         
         activeDialogue = activeDialogue.GetNodeTwo();
         
-        DoOutcomes(activeDialogue);
+        DoOutcomes(ref activeDialogue);
         displayer.Load(activeDialogue, activeNPC);
         return "";
     }
@@ -78,11 +78,11 @@ public class DialogueManagerTest : MonoBehaviour
         return "";
     }
 
-    private void DoOutcomes(DialogueNode d)
+    private void DoOutcomes(ref DialogueNode d)
     {
         foreach (var outcome in d.Outcomes)
         {
-            outcome.DoOutcome(d, activeNPC);
+            outcome.DoOutcome(ref d, ref activeNPC);
         }
     }
 

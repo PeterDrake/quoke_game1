@@ -3,10 +3,14 @@ using MoreMountains.InventoryEngine;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+/// <summary>
+/// Class is used for adding behavior to inventory manipulations (such as logging or checking conditions)
+/// All inventory manipulations that need to be logged should go through this 
+/// </summary>
 public class InventoryHelper : MonoBehaviour
 {
     public UnityEvent CheckOnAdd;
-    // Script to help with adding, checking, removing items
     public Inventory _inventory;
 
     public void AddItem(BaseItem item, int amt)

@@ -11,5 +11,5 @@ using UnityEngine;
 public abstract class DialogueOutcome : ScriptableObject
 {
     public bool Trigger = true;
-    public abstract void DoOutcome(DialogueNode d, NPC n);
+    public abstract void DoOutcome(ref DialogueNode d, ref NPC n);
 }
