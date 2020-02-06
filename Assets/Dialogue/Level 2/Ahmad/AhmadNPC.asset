@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f40ddc9b230139e4482577e37f37b881, type: 3}
-  m_Name: Ahmad
+  m_Name: AhmadNPC
   m_EditorClassIdentifier: 
   name: Ahmad
   image: {fileID: 21300002, guid: 079f5a8d00f74c84181be0a872b4c39d, type: 3}

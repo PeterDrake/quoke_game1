@@ -71,18 +71,24 @@ public class DialogueManagerTest : MonoBehaviour
 
     private string CheckRequirements(DialogueNode d)
     {
-        foreach (var req in d.Requirements)
+        if (d.Requirements != null)
         {
-            if (!req.TestSatisfaction()) return req.GetFailureMessage();
+            foreach (var req in d.Requirements)
+            {
+                if (!req.TestSatisfaction()) return req.GetFailureMessage();
+            }
         }
         return "";
     }
 
     private void DoOutcomes(ref DialogueNode d)
     {
-        foreach (var outcome in d.Outcomes)
+        if (d.Outcomes != null)
         {
-            outcome.DoOutcome(ref d, ref activeNPC);
+            foreach (var outcome in d.Outcomes)
+            {
+                outcome.DoOutcome(ref d, ref activeNPC);
+            }
         }
     }
 

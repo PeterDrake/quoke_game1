@@ -317,8 +317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dbee2a42d8882e48836e4aae376f6cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tester: {fileID: 11400000, guid: a1339822ee7021e488827f99741a0a12, type: 2}
-  testNPC: {fileID: 11400000, guid: ada5f9566b53e294ea9e9e572f163ae6, type: 2}
+  tester: {fileID: 11400000, guid: 4c0e8b1ee7746dd4dbc285fc62395b27, type: 2}
+  testNPC: {fileID: 11400000, guid: baef5c9b0f199ec45bad7c78110787dc, type: 2}
 --- !u!114 &1100441573
 MonoBehaviour:
   m_ObjectHideFlags: 0
