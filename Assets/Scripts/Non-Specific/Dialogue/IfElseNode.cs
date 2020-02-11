@@ -13,38 +13,22 @@ public class IfElseNode : DialogueNode
 
     [SerializeField] private DialogueNode optionOneAlt;
     [SerializeField] private DialogueNode optionTwoAlt;
-    
+
     public override DialogueNode GetNodeOne()
     {
-        foreach (DialogueRequirement requirement in IfRequirementsOne)
-        {
-            if (!requirement.TestSatisfaction()) return optionOneAlt;
-        }
-        return optionOne;
+        return (CheckRequirements(IfRequirementsOne) == "") ? optionOne : optionOneAlt;
     }
     public override DialogueNode GetNodeTwo()
     {
-        foreach (DialogueRequirement requirement in IfRequirementsTwo)
-        {
-            if (!requirement.TestSatisfaction()) return optionTwoAlt;
-        }
-        return optionTwo;
+        return (CheckRequirements(IfRequirementsTwo) == "") ? optionTwo : optionTwoAlt;
     }
 
     public override string GetTextOne()
     {
-        foreach (DialogueRequirement requirement in IfRequirementsTwo)
-        {
-            if (!requirement.TestSatisfaction()) return optionOneTextAlt;
-        }
-        return optionOneText;
+        return (CheckRequirements(IfRequirementsOne) == "") ? optionOneText : optionOneTextAlt;
     }
     public override string GetTextTwo()
     {
-        foreach (DialogueRequirement requirement in IfRequirementsTwo)
-        {
-            if (!requirement.TestSatisfaction()) return optionTwoTextAlt;
-        }
-        return optionTwoText;
+        return (CheckRequirements(IfRequirementsTwo) == "") ? optionTwoText : optionTwoTextAlt;
     }
 }

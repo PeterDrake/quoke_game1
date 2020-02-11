@@ -47,49 +47,26 @@ public class DialogueManagerTest : MonoBehaviour
     
     private string OptionOneSelected()
     {
-        string resp = CheckRequirements(activeDialogue.GetNodeOne());
+        string resp = activeDialogue.CheckRequirements();
         if (resp != "") return resp;
         
         activeDialogue = activeDialogue.GetNodeOne();
         
-        DoOutcomes(ref activeDialogue);
+        activeDialogue.DoOutcomes(ref activeNPC);
         displayer.Load(activeDialogue, activeNPC);
         return "";
     }
     
     private string OptionTwoSelected()
     {
-        string resp = CheckRequirements(activeDialogue.GetNodeTwo());
+        string resp = activeDialogue.CheckRequirements();
         if (resp != "") return resp;
         
         activeDialogue = activeDialogue.GetNodeTwo();
         
-        DoOutcomes(ref activeDialogue);
+        activeDialogue.DoOutcomes(ref activeNPC);
         displayer.Load(activeDialogue, activeNPC);
         return "";
-    }
-
-    private string CheckRequirements(DialogueNode d)
-    {
-        if (d.Requirements != null)
-        {
-            foreach (var req in d.Requirements)
-            {
-                if (!req.TestSatisfaction()) return req.GetFailureMessage();
-            }
-        }
-        return "";
-    }
-
-    private void DoOutcomes(ref DialogueNode d)
-    {
-        if (d.Outcomes != null)
-        {
-            foreach (var outcome in d.Outcomes)
-            {
-                outcome.DoOutcome(ref d, ref activeNPC);
-            }
-        }
     }
 
     private string Exit()

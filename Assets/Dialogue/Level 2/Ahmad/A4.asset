@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
   m_Name: A4
   m_EditorClassIdentifier: 
-  speech: Nice to meet you! I'm glad to see you've made it this far unscathed!
-  optionOneText: Glad to see you've made it as well friend
+  speech: Yeah! I'm glad to see you've made it this far unscathed!
+  optionOneText: Glad to see you've made it too
   optionTwoText: You better not try to take my food or something...
-  optionOne: {fileID: 11400000, guid: 1133613086b541a488005d86f7beb750, type: 2}
-  optionTwo: {fileID: 11400000, guid: f2c92a4312374e64dbfa4255d17e7741, type: 2}
+  optionOne: {fileID: 11400000, guid: ee6644894426f9b42aea06a73cd397af, type: 2}
+  optionTwo: {fileID: 11400000, guid: ee6644894426f9b42aea06a73cd397af, type: 2}
   Requirements: []
   Outcomes: []

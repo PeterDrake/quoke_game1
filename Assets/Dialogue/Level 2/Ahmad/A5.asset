@@ -20,9 +20,9 @@ MonoBehaviour:
   Requirements: []
   Outcomes: []
   IfRequirementsOne:
-  - {fileID: 11400000, guid: 4da0c6ffd687f514c9ece3ad80d125ac, type: 2}
+  - {fileID: 0}
   IfRequirementsTwo: []
   optionOneTextAlt: My sani-station whaaaa?
   optionTwoTextAlt: 
-  optionOneAlt: {fileID: 0}
+  optionOneAlt: {fileID: 11400000, guid: f2c92a4312374e64dbfa4255d17e7741, type: 2}
   optionTwoAlt: {fileID: 0}
