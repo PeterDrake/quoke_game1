@@ -19,7 +19,7 @@ public class InteractWithObject : MonoBehaviour
     //-----------------------------
     
     //-----Item Manipulation------
-    public BaseItem[] itemToReceive = new BaseItem[1];
+    public Item[] itemToReceive = new Item[1];
     private InventoryHelper inventory;
 
     private bool hasItem;
@@ -31,7 +31,7 @@ public class InteractWithObject : MonoBehaviour
     //---------------------------
     
     //------Event Methods--------
-    [Header("Called when Player presses Interact Button (likely 'e')")]
+    [Header("Called when Player presses Interact Button (likely 'E')")]
     public UnityEvent CallOnInteract;
     [Header("Called when Player enters the trigger collider on this object")]
     public UnityEvent CallOnEnterCollider;

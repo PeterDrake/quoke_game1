@@ -112,14 +112,14 @@ public class DialogueManager : MonoBehaviour
 
         if (hasItemNode1 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(hasItemNode1.name))
         {
-            if (losesNode1 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode1); }                
+            //if (losesNode1 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode1); }                
             if (!DontDoThisTwice && ObjectiveManager.Instance.Check("TOILETEVENT"))
             {
                 DontDoThisTwice = true;
                 ObjectiveManager.Instance.Satisfy("LEVELFINISHED");
             }
-            if (losesNode1 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode1); }                
-            if (itemToAddNode1 != null){_inventoryHelper.AddItem((BaseItem)itemToAddNode1,1);}
+            //if (losesNode1 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode1); }                
+            //if (itemToAddNode1 != null){_inventoryHelper.AddItem((BaseItem)itemToAddNode1,1);}
 
                 if (responseNodeOne != null) 
                 {
@@ -151,8 +151,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (hasItemNode2 == null || eventTracker.GetComponent<MyEventTracker>().my_CheckInventory(hasItemNode2.name)) 
         {
-               if (losesNode2 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode2); }
-               if (itemToAddNode2 != null){_inventoryHelper.AddItem((BaseItem)itemToAddNode2,1); }
+               //if (losesNode2 != null){_inventoryHelper.RemoveItem((BaseItem)losesNode2); }
+               //if (itemToAddNode2 != null){_inventoryHelper.AddItem((BaseItem)itemToAddNode2,1); }
 
                if (responseNodeTwo != null)
                {

@@ -12,7 +12,7 @@ public class InventoryHelper : MonoBehaviour
 {
     public static InventoryHelper Instance;
     public UnityEvent CheckOnAdd;
-    [SerializeField] private Inventory _inventory;
+    [SerializeField] private InventoryTest _inventory;
 
     private void Awake()
     {
@@ -21,20 +21,19 @@ public class InventoryHelper : MonoBehaviour
         else Destroy(this);
     }
 
-    public void AddItem(BaseItem item, int amt)
+    public void AddItem(Item item, int amt)
     {
         Logger.Instance.Log("Picked up: "+item.name);
-        _inventory.AddItem(item, amt);
+        _inventory.AddItem(item, (byte)amt);
         CheckOnAdd.Invoke();
     }
 
-    public bool HasItem(BaseItem item, int amt)
+    public bool HasItem(Item item, int amt)
     {
-        bool value = (_inventory.InventoryContains(item.name).Count >= amt);
-        return value;
+        return _inventory.GetAmount(item) >= amt;
     }
 
-    public bool HasItem(BaseItem[] items, int[] amts)
+    public bool HasItem(Item[] items, int[] amts)
     {
         for (int i = 0; i < items.Length; i++)
             if (!HasItem(items[i], amts[i]))
@@ -42,27 +41,17 @@ public class InventoryHelper : MonoBehaviour
         return true;
     }
 
-    public void RemoveItem(BaseItem item)
+    public void RemoveItem(Item item)
     {
-        if (item == null) return;
-       
-        int i = Array.FindIndex(_inventory.Content, row => row.ItemID == item.ItemID);
-        if (i >= 0) 
-        {
-            _inventory.RemoveItem(i, 1);
-            Logger.Instance.Log("Item removed from inventory"+item.name); 
-        }
+        _inventory.RemoveItem(item, 1);
     }
 
-    public void RemoveItem(BaseItem item, int amt)
+    public void RemoveItem(Item item, int amt)
     {
-        for (int i = 0; i < amt; i++)
-        {
-            RemoveItem(item);
-        }
+        _inventory.RemoveItem(item, (byte)amt);
     }
     
-    public void RemoveItem(BaseItem[] items, int[] amts)
+    public void RemoveItem(Item[] items, int[] amts)
     {
         for (int i = 0; i < items.Length; i++)
             RemoveItem(items[i], amts[i]);

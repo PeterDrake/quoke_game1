@@ -40,10 +40,10 @@ public class MyEventTracker : MonoBehaviour
     public void CleanWater()
     {
         if (bleachCount < 5) {
-            _inventoryHelper.RemoveItem(ToAdd[bleachCount], 1);
+            //_inventoryHelper.RemoveItem(ToAdd[bleachCount], 1);
             bleachCount++;
             Debug.Log("bcoubnt" + bleachCount + ToAdd[bleachCount]);
-            _inventoryHelper.AddItem(ToAdd[bleachCount], 1);  //currently doesn't add item...??'
+            //_inventoryHelper.AddItem(ToAdd[bleachCount], 1);  //currently doesn't add item...??'
         }
         
         activated = true;
@@ -51,7 +51,7 @@ public class MyEventTracker : MonoBehaviour
 
     public void DrinkWater()
     {
-        _inventoryHelper.RemoveItem(ToAdd[bleachCount]);
+        //_inventoryHelper.RemoveItem(ToAdd[bleachCount]);
         if (bleachCount > 1 && bleachCount < 5)
         {
             StatusManager.Manager.AffectHydration(100);
@@ -72,12 +72,10 @@ public class MyEventTracker : MonoBehaviour
     private void checkConditions()
     {
         if (activated) return;
-        
-        if (!_inventoryHelper.HasItem(RequiredItems[1], 1)) DrinkWaterButton.SetActive(true); ;
-        
+
         for (int i = 0; i < RequiredItems.Length; i++)
         {
-            if (!_inventoryHelper.HasItem(RequiredItems[i], 1)) return;
+            //if (!_inventoryHelper.HasItem(RequiredItems[i], 1)) return;
             
         }
         CleanWaterButton.SetActive(true);

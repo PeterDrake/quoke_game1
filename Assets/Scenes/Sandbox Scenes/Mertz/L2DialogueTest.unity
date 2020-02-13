@@ -23307,7 +23307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 11400000, guid: de4ee66e0735d429bb85e1a8fe2926bf, type: 2}
+  - {fileID: 11400000, guid: 3e084c5ec607bf547b421e07a7f68bfa, type: 2}
   InteractionDisplayText: Press 'E' to Pickup Bucket
   interactText: {fileID: 431210003}
   CallOnInteract:
@@ -27600,6 +27600,7 @@ GameObject:
   - component: {fileID: 550718318}
   - component: {fileID: 550718317}
   - component: {fileID: 550718320}
+  - component: {fileID: 550718319}
   m_Layer: 0
   m_Name: MainInventory
   m_TagString: MainInventory
@@ -27648,6 +27649,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &550718319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550718316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67aac86b482d24140a0018e8a995bb63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capacity: 9
+  items: []
+  amounts: 
 --- !u!114 &550718320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27665,7 +27681,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  _inventory: {fileID: 550718317}
+  _inventory: {fileID: 550718319}
 --- !u!1001 &561232537
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32632,9 +32648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8eefecb7c40e624c9121c2b13d22400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CheckItem: {fileID: 11400000, guid: ee4993de99e856e439452ecb90f1db03, type: 2}
+  CheckItem: {fileID: 11400000, guid: 81bd351dba0ca2b48b8e3073dd208e50, type: 2}
   KillCount: 4
-  FallThrust: 900000
   TriggerTime: 5
 --- !u!114 &658570879
 MonoBehaviour:
@@ -69033,7 +69048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 11400000, guid: de4ee66e0735d429bb85e1a8fe2926bf, type: 2}
+  - {fileID: 11400000, guid: 3e084c5ec607bf547b421e07a7f68bfa, type: 2}
   InteractionDisplayText: Press 'E' to Pickup Bucket
   interactText: {fileID: 431210003}
   CallOnInteract:
@@ -77419,12 +77434,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 11400000, guid: 9774c343522143f41992b1c98161b7b7, type: 2}
-  - {fileID: 11400000, guid: de4ee66e0735d429bb85e1a8fe2926bf, type: 2}
-  - {fileID: 11400000, guid: de4ee66e0735d429bb85e1a8fe2926bf, type: 2}
-  - {fileID: 11400000, guid: 3973b5986e0ecde4aaa24288688e920d, type: 2}
-  - {fileID: 11400000, guid: b12eb94a8d47c494290c29d4feb1270c, type: 2}
-  - {fileID: 11400000, guid: 7a90c45c8c6e25e42b8c297343ec4517, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   InteractionDisplayText: 
   interactText: {fileID: 0}
   CallOnInteract:
@@ -86453,8 +86468,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 11400000, guid: 3973b5986e0ecde4aaa24288688e920d, type: 2}
-  - {fileID: 11400000, guid: 7a90c45c8c6e25e42b8c297343ec4517, type: 2}
+  - {fileID: 11400000, guid: e5779e1308bdf194182baeb153cc5742, type: 2}
+  - {fileID: 11400000, guid: abcde71e1638baf43a3b1f5facf6a761, type: 2}
   InteractionDisplayText: Press 'e' to get items from the bathroom
   interactText: {fileID: 431210003}
   CallOnInteract:
@@ -86594,8 +86609,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 11400000, guid: b12eb94a8d47c494290c29d4feb1270c, type: 2}
-  - {fileID: 11400000, guid: 085f79894830bfa43b1b882cedc7ffd2, type: 2}
+  - {fileID: 11400000, guid: df99f10b0990aec4b872513256b602f9, type: 2}
+  - {fileID: 11400000, guid: cfbc3c05e77e8404e97663aa077730ed, type: 2}
   InteractionDisplayText: Press 'e' to Get items from under the sink
   interactText: {fileID: 431210003}
   CallOnInteract:
@@ -96933,8 +96948,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 11400000, guid: ee4993de99e856e439452ecb90f1db03, type: 2}
-  - {fileID: 11400000, guid: 75c7fc8d6c517234aa3ce9cafa58a06e, type: 2}
+  - {fileID: 11400000, guid: 81bd351dba0ca2b48b8e3073dd208e50, type: 2}
+  - {fileID: 11400000, guid: 4f16d04366f4ef64195a222f78c6dad0, type: 2}
   InteractionDisplayText: Press 'e' to get items from the wardrobe
   interactText: {fileID: 431210003}
   CallOnInteract:
@@ -105778,7 +105793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 11400000, guid: 9774c343522143f41992b1c98161b7b7, type: 2}
+  - {fileID: 11400000, guid: d71c5a460e67be04da844fa6aa17ffb3, type: 2}
   InteractionDisplayText: Press 'E' to Pickup Sawdust
   interactText: {fileID: 431210003}
   CallOnInteract:

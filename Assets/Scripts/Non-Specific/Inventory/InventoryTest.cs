@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class InventoryTest : MonoBehaviour
 {
-    private byte capacity;
+    [SerializeField] private byte capacity = 9;
     private byte heldAmount;
-    private Item[] items;
-    private byte[] amounts;
+    [SerializeField] private Item[] items;
+    [SerializeField] private byte[] amounts;
 
     private void Awake()
     {
+        heldAmount = 0;
+        items = new Item[capacity];
         amounts = new byte[capacity];
         for (int i = 0; i < capacity; i+=1)
         {
             amounts[i] = 0;
         }
-        
-        items = new Item[capacity];
     }
 
     public bool AddItem(Item i, byte amt)
@@ -46,7 +46,9 @@ public class InventoryTest : MonoBehaviour
     public int HasItem(Item i, int amt)
     {
         for (int j = 0; j < capacity; j+=1)
-            if (i.ID == items[j].ID && this.amounts[j] >= amt) return j;
+            if (amounts[j] != 0)
+                if (i.ID == items[j].ID)
+                    if(amounts[j] >= amt) return j;
         
         return -1;
     }
