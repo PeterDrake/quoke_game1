@@ -12,7 +12,7 @@ public class SanitationSwapText : MonoBehaviour
 
     public void Interaction()
     {
-        _interact.SetInteractText("Press E to Build Sanitation System");
+        _interact.SetInteractText("Press 'E' to Build Sanitation System");
     }
         
         

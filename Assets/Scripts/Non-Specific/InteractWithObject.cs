@@ -31,7 +31,7 @@ public class InteractWithObject : MonoBehaviour
     //---------------------------
     
     //------Event Methods--------
-    [Header("Called when Player presses Interact Button (likely 'e')")]
+    [Header("Called when Player presses Interact Button (likely 'E')")]
     public UnityEvent CallOnInteract;
     [Header("Called when Player enters the trigger collider on this object")]
     public UnityEvent CallOnEnterCollider;
