@@ -16,6 +16,5 @@ public class StartupFollowCam : MonoBehaviour
         yield return new WaitForEndOfFrame();
         GameObject myPlayer = GameObject.FindWithTag("Player");
         cmCam.Follow = myPlayer.transform;
-
     }
 }

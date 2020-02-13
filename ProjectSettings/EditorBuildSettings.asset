@@ -30,6 +30,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/L2.unity
     guid: 23c4822b922dddd48ab164c76de9c16c
   - enabled: 1
-    path: Assets/Scenes/Sandbox Scenes/Mertz/MertzL2Test.unity
+    path: Assets/Scenes/Levels/L2.unity
     guid: 5b3407308ddf46b45b642f0faee1f3dd
   m_configObjects: {}

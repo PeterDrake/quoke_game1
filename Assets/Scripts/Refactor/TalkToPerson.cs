@@ -18,27 +18,10 @@ public class TalkToPerson : MonoBehaviour
     public GameObject canvasEnabler;
     public GameObject interactNotifier;
     public levelEvents LevelEvents;
-
-   // public Text InteractText;
+    
     
     private bool head_flag;
-    private GameObject myPlayer;
-   // public GameObject myGameManager;
-    
-   //this NPCl3 will probably go...but leave it for now please - Peter H
-    public bool NPCL3 ;
-
     private bool isColliding;
-    
-    // Start is called before the first frame update
-    //finds player
-    void Start()
-    {
-        head_flag = false;
-        isColliding = false;
-        myPlayer = GameObject.FindWithTag("FakePlayer");
-    }
-
 
     IEnumerator my_pause()
     {
@@ -56,7 +39,6 @@ public class TalkToPerson : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             interactNotifier.GetComponent<InteractText>().ChangeText("Press 'E' to talk");
-            
         }
     }
 
