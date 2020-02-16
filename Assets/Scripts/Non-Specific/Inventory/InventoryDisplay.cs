@@ -11,7 +11,7 @@ public class InventoryDisplay : MonoBehaviour
     // itemPanel(gameObject to display item sprites), viewPanel (to show selected item's display image/description), exit button
     // use button?
 
-    private byte requiredComponentsAmount = 9;
+    private byte requiredComponentsAmount = 10;
     private GameObject toggler;
 
     private Image displayImage;
@@ -24,7 +24,7 @@ public class InventoryDisplay : MonoBehaviour
     private Text useText;
     private Button useButton;
 
-    private byte selectedItem;
+    private int selectedItem;
 
     private byte capacity;
     private Item[] inventory;
@@ -38,12 +38,13 @@ public class InventoryDisplay : MonoBehaviour
     public void Load(Item[] items, byte[] amounts)
     {
         if (items.Length == 0) return;
-
-        selectedItem = 0;
+        
         activate(true);
         useToggle.SetActive(false);
         inventory = items;
         this.amounts = amounts;
+
+        if (amounts[selectedItem] == 0) selectedItem = -1;
         
         int i = 0;
         bool first = false;
@@ -60,18 +61,20 @@ public class InventoryDisplay : MonoBehaviour
             {
                 item.enabled = true;
                 item.sprite = items[i].Icon;
-                if (!first)
+                if (!first && selectedItem == -1)
                 {
+                    selectedItem = i;
                     first = true;
-                    setActiveItem(i);
                 }                
             }
             i += 1;
         }
+        setActiveItem(selectedItem);
     }
 
     private void Start()
     {
+        selectedItem = 0;
         capacity = InventoryHelper.Instance.GetCapacity();
         itemSlots = new Image[capacity];
         initialize();
@@ -134,16 +137,18 @@ public class InventoryDisplay : MonoBehaviour
     private void setActiveItem(int i)
     {
         if (inventory[i] == null) return;
+
+        selectedItem = i;
         
         displayImage.sprite = inventory[i].DisplayImage;
         displayName.text = inventory[i].DisplayName;
         description.text = inventory[i].Description;
+        displayAmount.text = amounts[i].ToString();
 
         if (inventory[i].action != null)
         {
             useToggle.SetActive(true);
             useText.text = inventory[i].action.ActionWord;
-            displayAmount.text = amounts[i].ToString();
         }
     }
     
@@ -159,6 +164,6 @@ public class InventoryDisplay : MonoBehaviour
 
     private void useSelectedItem()
     {
-        inventory[selectedItem].action.Use(ref inventory[selectedItem]);
+        InventoryHelper.Instance.UseItem(selectedItem);
     }
 }

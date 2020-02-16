@@ -1,18 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class addItemsOnStart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Item[] itemsToAdd;
+    public byte[] amounts;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        int i = 0;
+        foreach (Item item in itemsToAdd)
+        {
+            InventoryHelper.Instance.AddItem(item, amounts[i]);
+            i++;
+        }
     }
+    
 }

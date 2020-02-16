@@ -68,4 +68,11 @@ public class InventoryHelper : MonoBehaviour
     {
         _inventoryDisplay.Load(_inventory.GetItems(), _inventory.GetAmounts());
     }
+
+    public void UseItem(int i)
+    {
+        Item[] items = _inventory.GetItems();
+        items[i].action.Use(ref items[i]);
+        _inventoryDisplay.Load(_inventory.GetItems(), _inventory.GetAmounts());
+    }
 }
