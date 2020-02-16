@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class DialogueDisplayer : MonoBehaviour
 {
     public delegate string DialogueEvent();
-    
-    
     private const byte requiredComponentsAmount = 8;
     // option1, option2, invalid1, invalid2, npcImage, npcSpeech, npcName, exit 
     
@@ -42,7 +40,7 @@ public class DialogueDisplayer : MonoBehaviour
     
     public void Load(DialogueNode d, NPC n)
     {
-        toggler.SetActive(true);
+        activate(true);
         npcName.text = n.name;
         if (n.image != null) npcImage.sprite = n.image;
         npcSpeech.text = d.speech;

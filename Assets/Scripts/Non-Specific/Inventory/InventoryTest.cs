@@ -87,4 +87,15 @@ public class InventoryTest : MonoBehaviour
         return capacity;
     }
 
+    public Item[] GetItems()
+    {
+        return items;
+    }
+
+    public byte[] GetAmounts()
+    {
+        return amounts;
+    }
+    
+
 }

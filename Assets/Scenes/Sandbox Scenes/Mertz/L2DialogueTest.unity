@@ -77419,7 +77419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1507674769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77434,12 +77434,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: abcde71e1638baf43a3b1f5facf6a761, type: 2}
+  - {fileID: 11400000, guid: d71c5a460e67be04da844fa6aa17ffb3, type: 2}
+  - {fileID: 11400000, guid: 3e084c5ec607bf547b421e07a7f68bfa, type: 2}
+  - {fileID: 11400000, guid: 3e084c5ec607bf547b421e07a7f68bfa, type: 2}
+  - {fileID: 11400000, guid: e5779e1308bdf194182baeb153cc5742, type: 2}
+  - {fileID: 11400000, guid: df99f10b0990aec4b872513256b602f9, type: 2}
   InteractionDisplayText: 
   interactText: {fileID: 0}
   CallOnInteract:

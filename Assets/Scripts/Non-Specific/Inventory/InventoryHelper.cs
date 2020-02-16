@@ -14,6 +14,8 @@ public class InventoryHelper : MonoBehaviour
     public UnityEvent CheckOnAdd;
     [SerializeField] private InventoryTest _inventory;
 
+    [SerializeField] private InventoryDisplay _inventoryDisplay;
+
     private void Awake()
     {
         // Singleton pattern
@@ -55,5 +57,15 @@ public class InventoryHelper : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
             RemoveItem(items[i], amts[i]);
+    }
+
+    public byte GetCapacity()
+    {
+        return _inventory.GetCapacity();
+    }
+
+    public void OpenInventory()
+    {
+        _inventoryDisplay.Load(_inventory.GetItems(), _inventory.GetAmounts());
     }
 }
