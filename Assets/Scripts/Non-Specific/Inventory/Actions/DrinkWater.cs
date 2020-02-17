@@ -11,8 +11,8 @@ public class DrinkWater : ItemAction
 
         Drinkable d = (Drinkable) i;
         Logger.Instance.Log("Player drank: "+i.name);
-        // if (d.killPlayer) Death.Manager.PlayerDeath(d.DeathMessage);
-        //StatusManager.Manager.AffectHydration(d.hydrationChange);
+        if (d.killPlayer) Death.Manager.PlayerDeath(d.DeathMessage);
+        StatusManager.Manager.AffectHydration(d.hydrationChange);
         
         InventoryHelper.Instance.RemoveItem(i,1);
         return true;

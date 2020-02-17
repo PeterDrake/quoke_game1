@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class InventoryDisplay : MonoBehaviour
 {
+    
+    [Header("A prefab object which will be instantiated for each slot in the inventory")]
     [SerializeField] private GameObject SlotPrefab;
-    // itemPanel(gameObject to display item sprites), viewPanel (to show selected item's display image/description), exit button
-    // use button?
+
+        
+    // The inventory display script finds components based on name. If you want to create
+    // a new inventory display, see the Basic Inventory Display for the proper names and locations in
+    // the hierarchy for the UI elements (with respect to the InventoryToggler)
 
     private byte requiredComponentsAmount = 10;
     private GameObject toggler;
@@ -37,14 +40,14 @@ public class InventoryDisplay : MonoBehaviour
 
     public void Load(Item[] items, byte[] amounts)
     {
-        if (items.Length == 0) return;
+        if (amounts.Max() == 0) return;
         
         activate(true);
         useToggle.SetActive(false);
         inventory = items;
         this.amounts = amounts;
 
-        if (amounts[selectedItem] == 0) selectedItem = -1;
+        if (selectedItem != -1 && amounts[selectedItem] == 0) selectedItem = -1;
         
         int i = 0;
         bool first = false;
@@ -149,6 +152,10 @@ public class InventoryDisplay : MonoBehaviour
         {
             useToggle.SetActive(true);
             useText.text = inventory[i].action.ActionWord;
+        }
+        else
+        {
+            useToggle.SetActive(false);
         }
     }
     

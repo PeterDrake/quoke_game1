@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fe544f770ae3e64f8d171e0461b7b76, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d3f27d0d43141628cf7ec127d010d94, type: 3}
   m_Name: DirtyWater
   m_EditorClassIdentifier: 
   DisplayName: Water
@@ -17,4 +17,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 16f0ed0bfa42ff74dbf0fa78ff7d0114, type: 3}
   DisplayImage: {fileID: 21300000, guid: 16f0ed0bfa42ff74dbf0fa78ff7d0114, type: 3}
   ID: DWTR
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: f8ed056a5c69c124ebe07b3bbf1c644f, type: 2}
+  hydrationChange: 0
+  killPlayer: 1
+  DeathMessage: Drinking contaminated water killed you
