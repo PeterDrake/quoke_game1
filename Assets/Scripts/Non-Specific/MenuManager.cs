@@ -41,6 +41,7 @@ public class MenuManager : UIElement
     }
     private void Start()
     {
+        locked = true;
         InputManager.Instance.RegisterKey("escape",delegate {UIManager.Instance.ToggleActive(this); });
         initialize();
         toggler.SetActive(false);

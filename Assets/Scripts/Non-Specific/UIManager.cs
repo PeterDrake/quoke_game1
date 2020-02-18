@@ -24,6 +24,12 @@ public class UIManager : MonoBehaviour
     
     public void SetAsActive(UIElement newActive)
     {
+        if (activeWindow == null)
+        {
+            Initialize(newActive);
+            return;
+        }
+        
         if (activeWindow.IsLocked()) return;
 
         if (newActive != activeWindow)
