@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
             return;
         }
         
-        if (activeWindow.IsLocked()) return;
+        if (!newActive.Force() && activeWindow.IsLocked()) return;
 
         if (newActive != activeWindow)
         {

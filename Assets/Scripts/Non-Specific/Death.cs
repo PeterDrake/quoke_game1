@@ -19,6 +19,7 @@ public class Death : UIElement
    
    public void Start()
    {
+       forceOpen = true;
        locked = true;
        pause = GameObject.FindWithTag("Player").GetComponent<CharacterPause>();
        if (Manager == null) Manager = this;
