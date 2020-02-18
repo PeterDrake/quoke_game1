@@ -12,7 +12,7 @@ public class InventoryHelper : MonoBehaviour
 {
     public static InventoryHelper Instance;
     public UnityEvent CheckOnAdd;
-    [SerializeField] private Inventory _inventory;
+    [SerializeField] private OurInventory _inventory;
 
     private void Awake()
     {

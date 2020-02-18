@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class OurInventory : MonoBehaviour
 {
     [SerializeField] private byte capacity = 9;
     private byte heldAmount;
