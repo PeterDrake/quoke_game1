@@ -39681,7 +39681,7 @@ GameObject:
   - component: {fileID: 841260160}
   - component: {fileID: 841260159}
   m_Layer: 0
-  m_Name: Text
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78007,8 +78007,8 @@ GameObject:
   - component: {fileID: 1549891715}
   - component: {fileID: 1549891714}
   - component: {fileID: 1549891713}
-  - component: {fileID: 1549891712}
   - component: {fileID: 1549891716}
+  - component: {fileID: 1549891712}
   m_Layer: 0
   m_Name: Ahmad
   m_TagString: Untagged
@@ -78025,15 +78025,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1549891711}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d14b4fe33e9f4dcca4aba17c8601586, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c36eea2c1ace4b5183069731daa7ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainDialogue: {fileID: 11400000, guid: 870fa446ca9c94bbfbc1418cd01593e4, type: 2}
-  newHead: {fileID: 0}
-  dialogueCanvas: {fileID: 0}
-  canvasEnabler: {fileID: 0}
-  interactNotifier: {fileID: 431210001}
-  LevelEvents: {fileID: 1677150506}
+  BlinkWhenPlayerNear: 0
+  itemToReceive: []
+  InteractionDisplayText: Press 'E' to talk to Ahmad
+  interactText: {fileID: 0}
+  CallOnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1549891716}
+        m_MethodName: Interact
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  CallOnEnterCollider:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  killAfterUse: 0
+  DestoryObjectAfterUse: 0
 --- !u!136 &1549891713
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -78083,8 +78104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9484bf3216f39364ea0be01cb0974e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc: {fileID: 0}
-  dialogue: {fileID: 0}
+  npc: {fileID: 11400000, guid: baef5c9b0f199ec45bad7c78110787dc, type: 2}
+  dialogue: {fileID: 11400000, guid: 4c0e8b1ee7746dd4dbc285fc62395b27, type: 2}
 --- !u!1001 &1551154279
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80736,7 +80757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc447610c557439595f647c23b3f41b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathScreen: {fileID: 1797879184}
+  toggle: {fileID: 1797879184}
   deathText: {fileID: 841260159}
 --- !u!1001 &1619323489
 PrefabInstance:
@@ -102342,7 +102363,7 @@ PrefabInstance:
     - target: {fileID: 6879270332483748300, guid: 894d57dfa8bd7e54e849bf2fd3bf6f0b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6879270332483748289, guid: 894d57dfa8bd7e54e849bf2fd3bf6f0b,
         type: 3}

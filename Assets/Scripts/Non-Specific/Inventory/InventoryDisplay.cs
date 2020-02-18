@@ -181,6 +181,6 @@ public class InventoryDisplay : UIElement
     private void useSelectedItem()
     {
         items[selectedItem].action.Use(ref items[selectedItem]);
-        Open();
+        UIManager.Instance.SetAsActive(this);
     }
 }

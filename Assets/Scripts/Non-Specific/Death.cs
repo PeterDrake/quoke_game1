@@ -8,9 +8,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using MoreMountains.TopDownEngine;
 
-public class Death : MonoBehaviour
+public class Death : UIElement
 { 
-    public GameObject deathScreen;
+    public GameObject toggle;
     public Text deathText;
     private CharacterPause pause; 
 
@@ -19,6 +19,7 @@ public class Death : MonoBehaviour
    
    public void Start()
    {
+       locked = true;
        pause = GameObject.FindWithTag("Player").GetComponent<CharacterPause>();
        if (Manager == null) Manager = this;
        else Destroy(this);
@@ -34,12 +35,11 @@ public class Death : MonoBehaviour
     
     public void PlayerDeath(string textOnDeath)
     {
-        Logger.Instance.Log("Player Death:"+textOnDeath);
         if (dead) return;
         Logger.Instance.Log("Player killed by: "+textOnDeath);
         dead = true;
         deathText.text = textOnDeath;
-        deathScreen.SetActive(true);
+        UIManager.Instance.SetAsActive(this);
     }
 
     public void RestartLevel()
@@ -50,5 +50,15 @@ public class Death : MonoBehaviour
        // GameManager.Instance.UnPause();
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+    }
+
+    public override void Open()
+    {
+        toggle.SetActive(true);
+    }
+
+    public override void Close()
+    {
+        toggle.SetActive(false);
     }
 }
