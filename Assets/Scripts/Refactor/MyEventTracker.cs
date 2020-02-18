@@ -78,7 +78,7 @@ public class MyEventTracker : MonoBehaviour
             //if (!_inventoryHelper.HasItem(RequiredItems[i], 1)) return;
             
         }
-        CleanWaterButton.SetActive(true);
+//        CleanWaterButton.SetActive(true);
     }
 
     public bool my_CheckInventory(string my_itemname)

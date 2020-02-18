@@ -61,7 +61,6 @@ public class TalkToPerson : MonoBehaviour
                 if (ObjectiveManager.Instance.Check("TOILETEVENT"))
                 {
                     LevelEvents.changeDialogue();
-                        
                 }
                 canvasEnabler.SetActive(true);
                 interactNotifier.GetComponent<InteractText>().ToggleVisibility(false);

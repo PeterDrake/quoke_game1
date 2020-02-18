@@ -16,8 +16,7 @@ public class ChangeInfo : MonoBehaviour
             if (Input.GetKeyDown("e"))
             {
                 InfoEnabler.SetActive(true);
-                EventTracker.GetComponent<InformationCanvas>().DisplayInfo(textToDisplay);
-                
+                EventTracker.GetComponent<InformationCanvas>().ChangeText(textToDisplay);
             }
         }
         

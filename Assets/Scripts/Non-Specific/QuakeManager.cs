@@ -103,7 +103,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             colliders = Array.ConvertAll(doors, d => d.GetComponent(typeof(BoxCollider)) as BoxCollider);
             clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
 
-            _informationCanvas = EventTracker.GetComponent<InformationCanvas>();
+            _informationCanvas = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetBanner();
         }
 
         // Update is called once per frame
@@ -178,7 +178,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             {
                 c.enabled = false;
             }
-            _informationCanvas.DisplayInfo(textToDisplay2);
+            _informationCanvas.ChangeText(textToDisplay2);
             
             enableDoors.SetActive(false);
             
@@ -196,7 +196,7 @@ namespace MoreMountains.FeedbacksForThirdParty
             StopAllCoroutines();
             OnQuake.Invoke();
 
-            _informationCanvas.DisplayInfo(textToDisplay1);
+            _informationCanvas.ChangeText(textToDisplay1);
             
             StartCoroutine(ShakeIt());
             //other methods that used to be called here are called from OnQuake instead

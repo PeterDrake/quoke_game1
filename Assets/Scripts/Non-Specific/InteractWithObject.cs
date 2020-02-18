@@ -27,7 +27,7 @@ public class InteractWithObject : MonoBehaviour
     
     //-----Interaction Text-----
     public string InteractionDisplayText;
-    public InteractText interactText;
+    public InformationCanvas interactText;
     //---------------------------
     
     //------Event Methods--------
@@ -63,11 +63,11 @@ public class InteractWithObject : MonoBehaviour
 
     public void Start()
     {
-        if (interactText == null) interactText = GameObject.Find("Canvi").transform.Find("InteractNotifier").GetComponent<InteractText>();
+        if (interactText == null)
+            interactText = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetInteract();
         
         // get reference for inventory manipulation
         if (hasItem) inventory = GameObject.FindWithTag("MainInventory").GetComponent<InventoryHelper>();
-        
         
         // materials for material blinking
         mat_original = gameObject.GetComponent<MeshRenderer>().material;

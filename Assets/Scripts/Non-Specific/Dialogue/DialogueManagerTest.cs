@@ -15,7 +15,6 @@ public class DialogueManagerTest : MonoBehaviour
     /// <summary> Starts the given dialogue with the given NPC </summary>
     public void StartDialogue(DialogueNode d, NPC n)
     {
-        Debug.Log("Starting");
         activeDialogue = d;
         activeNPC = n;
         displayer.Load(d,n);
@@ -25,7 +24,6 @@ public class DialogueManagerTest : MonoBehaviour
     /// <returns> A new head if one was reached</returns>
     public DialogueNode EndDialogue()
     {
-        displayer.End();
         return activeDialogue;
     }
     

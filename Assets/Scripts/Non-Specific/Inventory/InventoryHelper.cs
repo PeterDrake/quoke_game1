@@ -64,15 +64,13 @@ public class InventoryHelper : MonoBehaviour
         return _inventory.GetCapacity();
     }
 
-    public void OpenInventory()
+    public Item[] GetItems()
     {
-        _inventoryDisplay.Load(_inventory.GetItems(), _inventory.GetAmounts());
+        return _inventory.GetItems();
     }
 
-    public void UseItem(int i)
+    public byte[] GetAmounts()
     {
-        Item[] items = _inventory.GetItems();
-        items[i].action.Use(ref items[i]);
-        _inventoryDisplay.Load(_inventory.GetItems(), _inventory.GetAmounts());
+        return _inventory.GetAmounts();
     }
 }

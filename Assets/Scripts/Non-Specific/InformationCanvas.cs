@@ -1,36 +1,30 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using MoreMountains.TopDownEngine;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InformationCanvas : MonoBehaviour
 {
-
-    
     // changes the what the information canvas displays 'Exit the house', 'Turn off the gas' , etc.
 
+    public bool ActiveOnStart = true;
     public Text info;
-    public GameObject textCanvas;
-
-    private GameObject toggle;
+    [Header("If null, will search for a child called \"toggle\" on start")]
+    [SerializeField] private GameObject toggle;
 
     private void Start()
     {
-        toggle = transform.Find("InfoCanvasToggle").gameObject;
+        if (toggle == null)
+            toggle = transform.Find("toggle").gameObject;
+        toggle.SetActive(ActiveOnStart);
     }
 
-
-    public void ToggleDisplay(bool status)
+    public void ChangeText(string newInteract)
     {
-        toggle.SetActive(status);    
-    }
-    
-    public void DisplayInfo(string textToDisplay)
-    {
-        ToggleDisplay(true);
-        info.text = textToDisplay;
+        info.text = newInteract;
+        ToggleVisibility(true);
     }
 
+    public void ToggleVisibility(bool visible)
+    {
+        toggle.SetActive(visible && info.text.Length > 0);
+    }
 }

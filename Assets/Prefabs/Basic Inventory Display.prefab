@@ -237,8 +237,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi imperdiet
-    ut diam eleifend commodo. Vivamus non urna ac velit '
+  m_Text: There is nothing in your inventory!
 --- !u!1 &8418291971541980581
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +303,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300010, guid: acc0224da40bd614eaa39fa27daa0b19, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -392,7 +391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TEST NAME
+  m_Text: Empty
 --- !u!1 &8418291972039324115
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,9 +621,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SlotPrefab: {fileID: 5227180525982889300, guid: 1f2f00744543f184caebd8fff47671d1,
     type: 3}
-  Notes: The inventory display script finds components based on name. If you want
-    to createa new inventory display, see the Basic Inventory Display for the proper
-    names and locations inthe hierarchy for the UI elements (with respect to the InventoryToggler)
 --- !u!1 &8418291972219847669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1122,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '99999
+  m_Text: '0
 
 '
 --- !u!1 &8418291972611524209

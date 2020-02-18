@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
+using MoreMountains.InventoryEngine;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InventoryDisplay : MonoBehaviour
+public class InventoryDisplay : UIElement
 {
     
     [Header("A prefab object which will be instantiated for each slot in the inventory")]
@@ -30,21 +31,19 @@ public class InventoryDisplay : MonoBehaviour
     private int selectedItem;
 
     private byte capacity;
-    private Item[] inventory;
+    private Item[] items;
     private byte[] amounts;
 
-    public void End()
+    public override void Open()
     {
-        toggler.SetActive(false);
+        Load(InventoryHelper.Instance.GetItems(), InventoryHelper.Instance.GetAmounts());
     }
 
-    public void Load(Item[] items, byte[] amounts)
+    private void Load(Item[] items, byte[] amounts)
     {
-        if (amounts.Max() == 0) return;
-        
         activate(true);
         useToggle.SetActive(false);
-        inventory = items;
+        this.items = items;
         this.amounts = amounts;
 
         if (selectedItem != -1 && amounts[selectedItem] == 0) selectedItem = -1;
@@ -72,16 +71,26 @@ public class InventoryDisplay : MonoBehaviour
             }
             i += 1;
         }
-        setActiveItem(selectedItem);
+        if (amounts.Max() != 0) // if there is something in the inventory
+            setActiveItem(selectedItem);
     }
 
     private void Start()
     {
+        pauseOnOpen = true;
         selectedItem = 0;
         capacity = InventoryHelper.Instance.GetCapacity();
         itemSlots = new Image[capacity];
+        amounts = new byte[]{0};
+        items = new Item[capacity];
+
         initialize();
         activate(false);
+        InputManager.Instance.RegisterKey("i", delegate
+            {
+                UIManager.Instance.ToggleActive(this);
+            }
+            );
     }
 
     private void initialize() //Get all references that are needed to populate the dialogue UI
@@ -123,7 +132,7 @@ public class InventoryDisplay : MonoBehaviour
                     break;
                 case "exitButton":
                     componentsFound += 1;
-                    child.GetComponent<Button>().onClick.AddListener(Exit);
+                    child.GetComponent<Button>().onClick.AddListener(UIManager.Instance.ActivatePrevious);
                     break;
                 case "useToggler":
                     componentsFound += 3;
@@ -139,19 +148,19 @@ public class InventoryDisplay : MonoBehaviour
     }
     private void setActiveItem(int i)
     {
-        if (inventory[i] == null) return;
+        if (items[i] == null) return;
 
         selectedItem = i;
         
-        displayImage.sprite = inventory[i].DisplayImage;
-        displayName.text = inventory[i].DisplayName;
-        description.text = inventory[i].Description;
+        displayImage.sprite = items[i].DisplayImage;
+        displayName.text = items[i].DisplayName;
+        description.text = items[i].Description;
         displayAmount.text = amounts[i].ToString();
 
-        if (inventory[i].action != null)
+        if (items[i].action != null)
         {
             useToggle.SetActive(true);
-            useText.text = inventory[i].action.ActionWord;
+            useText.text = items[i].action.ActionWord;
         }
         else
         {
@@ -159,7 +168,7 @@ public class InventoryDisplay : MonoBehaviour
         }
     }
     
-    public void Exit()
+    public override void Close()
     {
         activate(false);   
     }
@@ -171,6 +180,7 @@ public class InventoryDisplay : MonoBehaviour
 
     private void useSelectedItem()
     {
-        InventoryHelper.Instance.UseItem(selectedItem);
+        items[selectedItem].action.Use(ref items[selectedItem]);
+        Open();
     }
 }
