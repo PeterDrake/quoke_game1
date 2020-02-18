@@ -21,14 +21,10 @@ public class InputManager : MonoBehaviour
    {
       if (Instance == null) Instance = this;
       else Destroy(this);
-   }
-
-   private void Start()
-   {
+      
       keys = new ArrayList();
       registeredKeys = new Dictionary<string, CallBack>();
    }
-
    public void RegisterKey(string key, CallBack cb)
    {
       keys.Add(key);

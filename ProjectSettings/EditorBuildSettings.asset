@@ -26,9 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Sandbox Scenes/Liam/Merge_11-11.unity
     guid: 835b2a440c33b4961874d90b6510457d
-  - enabled: 1
-    path: Assets/Scenes/Levels/L2.unity
-    guid: 23c4822b922dddd48ab164c76de9c16c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Levels/L2.unity
     guid: 5b3407308ddf46b45b642f0faee1f3dd
