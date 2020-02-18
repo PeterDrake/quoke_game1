@@ -78,6 +78,8 @@ public class InventoryDisplay : UIElement
     private void Start()
     {
         pauseOnOpen = true;
+        locked = true;
+        
         selectedItem = 0;
         capacity = InventoryHelper.Instance.GetCapacity();
         itemSlots = new Image[capacity];

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bleach
   m_EditorClassIdentifier: 
   DisplayName: Bleach
-  Description: A jug of bleach
+  Description: A jug of bleach. I can add 4 drops at a time to the water
   Icon: {fileID: 21300000, guid: e94883aed0bbde54787db679ad0a8912, type: 3}
   DisplayImage: {fileID: 21300000, guid: e94883aed0bbde54787db679ad0a8912, type: 3}
   ID: BLCH
-  action: {fileID: 0}
+  action: {fileID: 11400000, guid: cc211659670dcea458f01583ca04be8f, type: 2}
