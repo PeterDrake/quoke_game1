@@ -5,23 +5,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using MoreMountains.InventoryEngine;
 
-public class DialogueDisplay : MonoBehaviour
+public class old_DialogueDisplay : MonoBehaviour
 {
     /// <summary>
     ///This script translates the info from the dialogue scriptable object and actually displays it on the screen
     /// </summary>
     
-    public Dialogue dialogue;
+    public old_Dialogue oldDialogue;
 
     public Image artworkImage; 
     public Text nameText;
     public Text NPCText;
 
     public Text ResponseOne;
-    public Dialogue nextNodeOne;
+    public old_Dialogue nextNodeOne;
     
     public Text ResponseTwo;
-    public Dialogue nextNodeTwo;
+    public old_Dialogue nextNodeTwo;
 
     public InventoryItem itemToReceive;
     public InventoryItem hasItem;
@@ -43,23 +43,23 @@ public class DialogueDisplay : MonoBehaviour
 
     public void my_update()
     {
-        artworkImage.sprite = dialogue.NPCimage;
-        nameText.text = dialogue.NPCname;
-        NPCText.text = dialogue.NPCtext;
+        artworkImage.sprite = oldDialogue.NPCimage;
+        nameText.text = oldDialogue.NPCname;
+        NPCText.text = oldDialogue.NPCtext;
 
-        ResponseOne.text = dialogue.ResponseOne;
-        nextNodeOne = dialogue.nextNodeOne;
+        ResponseOne.text = oldDialogue.ResponseOne;
+        nextNodeOne = oldDialogue.nextNodeOne;
 
-        ResponseTwo.text = dialogue.ResponseTwo;
-        nextNodeTwo = dialogue.nextNodeTwo;
+        ResponseTwo.text = oldDialogue.ResponseTwo;
+        nextNodeTwo = oldDialogue.nextNodeTwo;
 
-        itemToReceiveNode1 = dialogue.PlayerReceivesNode1;
-        hasItemNode1 = dialogue.DoesPlayerHaveNode1;
-        itemToReceiveNode2 = dialogue.PlayerReceivesNode2;
-        hasItemNode2 = dialogue.DoesPlayerHaveNode2;
+        itemToReceiveNode1 = oldDialogue.PlayerReceivesNode1;
+        hasItemNode1 = oldDialogue.DoesPlayerHaveNode1;
+        itemToReceiveNode2 = oldDialogue.PlayerReceivesNode2;
+        hasItemNode2 = oldDialogue.DoesPlayerHaveNode2;
 
-        PlayerLosesNode1 = dialogue.PlayerLosesNode1;
-        PlayerLosesNode2 = dialogue.PlayerLosesNode2;
+        PlayerLosesNode1 = oldDialogue.PlayerLosesNode1;
+        PlayerLosesNode2 = oldDialogue.PlayerLosesNode2;
 
 
 

@@ -5,7 +5,7 @@ using MoreMountains.InventoryEngine;
 using MoreMountains.TopDownEngine;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour
+public class old_DialogueManager : MonoBehaviour
 
 {
     /// <summary>
@@ -14,15 +14,15 @@ public class DialogueManager : MonoBehaviour
     
     public Canvas dialogueDisplay;
 
-    private Dialogue active;
+    private old_Dialogue active;
 
-    private Dialogue responseNodeOne;
+    private old_Dialogue responseNodeOne;
 
-    private Dialogue responseNodeTwo;
+    private old_Dialogue responseNodeTwo;
 
     public GameObject dialogueEnabler;
 
-    public Dialogue newHead;
+    public old_Dialogue newHead;
 
     private InventoryItem itemToAddNode1;
     private InventoryItem itemToAddNode2;
@@ -72,11 +72,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (!StatusManager.Manager.Paused) StatusManager.Manager.Pause();
         
-        var disp = dialogueDisplay.GetComponent<DialogueDisplay>();
+        var disp = dialogueDisplay.GetComponent<old_DialogueDisplay>();
         
         nodeTwoButton.SetActive(true);
 
-        active = disp.dialogue;
+        active = disp.oldDialogue;
         
         responseNodeOne = disp.nextNodeOne; 
         responseNodeTwo = disp.nextNodeTwo;
@@ -125,8 +125,8 @@ public class DialogueManager : MonoBehaviour
                 {
                     
                     active = responseNodeOne;
-                    dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
-                    dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
+                    dialogueDisplay.GetComponent<old_DialogueDisplay>().oldDialogue = active;
+                    dialogueDisplay.GetComponent<old_DialogueDisplay>().my_update();
                     Refresh();
                 }
                 else if (LevelEvents && notChecked)
@@ -157,8 +157,8 @@ public class DialogueManager : MonoBehaviour
                if (responseNodeTwo != null)
                {
                    active = responseNodeTwo;
-                   dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
-                   dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
+                   dialogueDisplay.GetComponent<old_DialogueDisplay>().oldDialogue = active;
+                   dialogueDisplay.GetComponent<old_DialogueDisplay>().my_update();
                    Refresh();
                }
                else

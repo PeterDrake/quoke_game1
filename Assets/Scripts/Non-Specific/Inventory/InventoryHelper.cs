@@ -12,9 +12,7 @@ public class InventoryHelper : MonoBehaviour
 {
     public static InventoryHelper Instance;
     public UnityEvent CheckOnAdd;
-    [SerializeField] private InventoryTest _inventory;
-
-    [SerializeField] private InventoryDisplay _inventoryDisplay;
+    [SerializeField] private Inventory _inventory;
 
     private void Awake()
     {
@@ -25,7 +23,8 @@ public class InventoryHelper : MonoBehaviour
 
     public void AddItem(Item item, int amt)
     {
-        Logger.Instance.Log("Picked up: "+item.name);
+        Debug.Log(item);
+        //Logger.Instance.Log("Picked up: "+item.name);
         _inventory.AddItem(item, (byte)amt);
         CheckOnAdd.Invoke();
     }

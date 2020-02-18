@@ -10,6 +10,12 @@ public class StartDialogue : MonoBehaviour
 
     public void Interact()
     { 
-        DialogueManagerTest.Instance.StartDialogue(dialogue,npc);
+        DialogueManager.Instance.StartDialogue(dialogue,npc,SetNewHead);
+    }
+
+    private void SetNewHead(DialogueNode newHead)
+    {
+        Debug.Log("called");
+        dialogue = newHead;
     }
 }

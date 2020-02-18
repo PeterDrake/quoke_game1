@@ -3,16 +3,27 @@
 [CreateAssetMenu(fileName = "New DialogueNode", menuName = "Dialogue/Node")]
 public class DialogueNode : ScriptableObject
 {
+    [TextArea]
     public string speech;
     
+    [TextArea]
     [SerializeField] protected string optionOneText;
-    [SerializeField] protected string optionTwoText;
-
     [SerializeField] protected DialogueNode optionOne;
+    [Space]
+    
+    [TextArea]
+    [SerializeField] protected string optionTwoText;
     [SerializeField] protected DialogueNode optionTwo;
+    [Space]
+    
     
     [SerializeField] private DialogueRequirement[] Requirements;
     [SerializeField] private DialogueOutcome[] Outcomes;
+
+
+    
+    [Space][Space][Header("If set, will become the new head once traversed")] 
+    [SerializeField] private DialogueNode NewHead;
 
     public virtual DialogueNode GetNodeOne() { return optionOne; }
     public virtual DialogueNode GetNodeTwo() { return optionTwo; }
@@ -45,5 +56,9 @@ public class DialogueNode : ScriptableObject
         {
             oc.DoOutcome(ref n);
         }
+    }
+    public DialogueNode GetNewHead()
+    {
+        return NewHead;
     }
 }

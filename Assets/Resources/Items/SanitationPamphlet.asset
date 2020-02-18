@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: SanitationPamphlet
   m_EditorClassIdentifier: 
   DisplayName: Pamphlet
-  Description: A pamphlet on sanitation
+  Description: 'A pamphlet on sanitation. It says: In order to make a two bucket system,
+    you need two buckets, trash bags, sawdust, toilet paper, hand sanitizer, and a
+    desire to relieve yourself'
   Icon: {fileID: 21300000, guid: 2be67baacc2a7e3479a3300ba021af16, type: 3}
   DisplayImage: {fileID: 21300000, guid: 2be67baacc2a7e3479a3300ba021af16, type: 3}
   ID: PAM

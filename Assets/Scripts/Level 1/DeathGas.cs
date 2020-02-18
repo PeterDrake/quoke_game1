@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class DeathGas : MonoBehaviour
 {
-    public Inventory main;
+    public MoreMountains.InventoryEngine.Inventory main;
     public GameObject gas;
     public Material mat;
     public GameObject EventTracker;

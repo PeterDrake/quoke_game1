@@ -11,6 +11,5 @@ public class SatisfyObjective : DialogueOutcome
     public override void DoOutcome(ref NPC n)
     {
         ObjectiveManager.Instance.Satisfy(ObjectiveName);
-        Trigger = false;
     }
 }

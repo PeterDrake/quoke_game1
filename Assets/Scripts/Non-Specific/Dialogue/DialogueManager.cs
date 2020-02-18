@@ -3,20 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueManagerTest : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
+    public delegate void NewHeadCallBack(DialogueNode newHead);
     public DialogueDisplayer displayer;
-    public static DialogueManagerTest Instance;
+    public static DialogueManager Instance;
 
     private bool active;
     private DialogueNode activeDialogue;
     private NPC activeNPC;
 
+    private NewHeadCallBack activeCallback;
+
     /// <summary> Starts the given dialogue with the given NPC </summary>
-    public void StartDialogue(DialogueNode d, NPC n)
+    public void StartDialogue(DialogueNode d, NPC n, NewHeadCallBack cb)
     {
         activeDialogue = d;
+        activeCallback = cb;
         activeNPC = n;
+        
+        traverse(d);
         displayer.Load(d,n);
     }
     
@@ -45,27 +51,30 @@ public class DialogueManagerTest : MonoBehaviour
     
     private string OptionOneSelected()
     {
+        return traverse(activeDialogue.GetNodeOne());
+    }
+    
+    private string OptionTwoSelected()
+    {
+        return traverse(activeDialogue.GetNodeTwo());
+    }
+
+    private string traverse(DialogueNode newActive)
+    {
         string resp = activeDialogue.CheckRequirements();
         if (resp != "") return resp;
         
-        activeDialogue = activeDialogue.GetNodeOne();
+        if (newActive.GetNewHead() != null)
+        {
+            activeCallback.Invoke(newActive.GetNewHead());
+        }
         
+        activeDialogue = newActive;
         activeDialogue.DoOutcomes(ref activeNPC);
         displayer.Load(activeDialogue, activeNPC);
         return "";
     }
     
-    private string OptionTwoSelected()
-    {
-        string resp = activeDialogue.CheckRequirements();
-        if (resp != "") return resp;
-        
-        activeDialogue = activeDialogue.GetNodeTwo();
-        
-        activeDialogue.DoOutcomes(ref activeNPC);
-        displayer.Load(activeDialogue, activeNPC);
-        return "";
-    }
 
     private string Exit()
     {

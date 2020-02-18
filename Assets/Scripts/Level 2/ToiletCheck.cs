@@ -10,7 +10,7 @@ public class ToiletCheck : MonoBehaviour
 {
     
     private InteractWithObject _interact;
-    private Inventory _inventory;
+    private MoreMountains.InventoryEngine.Inventory _inventory;
     private bool PlayerHasItems = false;
 
     public BaseItem Bucket;
@@ -26,7 +26,7 @@ public class ToiletCheck : MonoBehaviour
     void Start()
     {
         _interact = GetComponent<InteractWithObject>();
-        _inventory = GameObject.FindWithTag("MainInventory").GetComponent<Inventory>();
+        _inventory = GameObject.FindWithTag("MainInventory").GetComponent<MoreMountains.InventoryEngine.Inventory>();
         
         Bucket =  Resources.Load<BaseItem>("Items/Bucket");
         Bag =  Resources.Load<BaseItem>("Items/Bag");

@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speech: Have you set up your sanitation system yet?
   optionOneText: Yeah, want to take it for a spin?
-  optionTwoText: Not yet.
   optionOne: {fileID: 11400000, guid: f2c92a4312374e64dbfa4255d17e7741, type: 2}
+  optionTwoText: Not yet.
   optionTwo: {fileID: 11400000, guid: 37826191c65fa70428c8f0d4180394ef, type: 2}
   Requirements: []
   Outcomes: []
   IfRequirementsOne:
-  - {fileID: 0}
-  IfRequirementsTwo: []
+  - {fileID: 11400000, guid: ca56d5c637697024684243562fb6aced, type: 2}
   optionOneTextAlt: My sani-station whaaaa?
+  optionOneAlt: {fileID: 11400000, guid: b30c2c3cca90abb4d94a5b52a6f11dfe, type: 2}
+  IfRequirementsTwo: []
   optionTwoTextAlt: 
-  optionOneAlt: {fileID: 11400000, guid: f2c92a4312374e64dbfa4255d17e7741, type: 2}
   optionTwoAlt: {fileID: 0}

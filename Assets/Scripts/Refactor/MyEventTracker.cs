@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 public class MyEventTracker : MonoBehaviour
 {
     public InventoryHelper _inventoryHelper;
-    public Inventory mainInventory;
+    public MoreMountains.InventoryEngine.Inventory mainInventory;
     private InventorySlot my_slot;
     private int itemIndex;
     

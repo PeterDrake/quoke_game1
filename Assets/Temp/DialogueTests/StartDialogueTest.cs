@@ -10,13 +10,23 @@ public class StartDialogueTest : MonoBehaviour
     public NPC testNPC;
     private int k = 0;
 
+    private void Start()
+    {
+        ObjectiveManager.Instance.Satisfy("TOILETEVENT");
+    }
+
     private void Update()
     {
         if (k > 0)
         {
-            DialogueManagerTest.Instance.StartDialogue(tester, testNPC);
+            DialogueManager.Instance.StartDialogue(tester, testNPC, Callback);
             Destroy(this);
         }
         k++;
+    }
+
+    public void Callback(DialogueNode n)
+    {
+        return;
     }
 }

@@ -7,11 +7,11 @@ public class levelEvents : MonoBehaviour
 
 {
     private bool toiletComplete;
-    private Dialogue active;
-    public Dialogue conditionMet; //if condition is met
-    public Dialogue conditionNotMet; //if condition is not met
+    private old_Dialogue active;
+    public old_Dialogue conditionMet; //if condition is met
+    public old_Dialogue conditionNotMet; //if condition is not met
 
-    public DialogueManager myManager;
+    public old_DialogueManager myManager;
 
     public GameObject NPC;
     
@@ -34,9 +34,9 @@ public class levelEvents : MonoBehaviour
           
         }
 
-        NPC.transform.GetComponent<TalkToPerson>().mainDialogue = active;
-        myManager.dialogueDisplay.GetComponent<DialogueDisplay>().dialogue = active;
-        myManager.dialogueDisplay.GetComponent<DialogueDisplay>().my_update();
+        NPC.transform.GetComponent<TalkToPerson>().mainOldDialogue = active;
+        myManager.dialogueDisplay.GetComponent<old_DialogueDisplay>().oldDialogue = active;
+        myManager.dialogueDisplay.GetComponent<old_DialogueDisplay>().my_update();
         myManager.Refresh();
     }
 }

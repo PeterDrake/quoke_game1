@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Add Items Outcome", menuName = "Dialogue/Outcomes/GiveItem")]
 public class GiveItems : DialogueOutcome
 {
-    public InventoryItem[] RequiredItems;
+    public Item[] Items;
     
     [Header("Amount of each item that will be added")]
     public int[] Amounts;
@@ -14,6 +14,12 @@ public class GiveItems : DialogueOutcome
     // Need a static reference to Inventory available before this can be implemented
     public override void DoOutcome(ref NPC n)
     {
-        throw new System.NotImplementedException();
+        int i = 0;
+        foreach (Item item in Items)
+        {
+            InventoryHelper.Instance.AddItem(item, Amounts[i]);
+            i++;
+        }
+        
     }
 }

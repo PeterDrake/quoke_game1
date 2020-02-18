@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
-  m_Name: hey
+  m_Name: A11
   m_EditorClassIdentifier: 
-  speech: Not much
-  optionOneText: cool
-  optionTwoText: woops
-  optionOne: {fileID: 11400000, guid: a1339822ee7021e488827f99741a0a12, type: 2}
-  optionTwo: {fileID: 11400000, guid: a1339822ee7021e488827f99741a0a12, type: 2}
-  requirement: {fileID: 0}
-  outcome: {fileID: 0}
+  speech: I've got some room in my van, why don't you sleep there tonight?
+  optionOneText: Thank you!
+  optionOne: {fileID: 11400000, guid: cea9a8459d5f6ae4e9498b243f4ddcca, type: 2}
+  optionTwoText: A little creepy, but thanks neighbor!
+  optionTwo: {fileID: 11400000, guid: cea9a8459d5f6ae4e9498b243f4ddcca, type: 2}
+  Requirements: []
+  Outcomes: []

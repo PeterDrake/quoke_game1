@@ -12,8 +12,8 @@ public class TalkToPerson : MonoBehaviour
     /// handles how to start/which conversation you will have with an NPC. Pauses game during a conversation. 
     /// </summary>
 
-    public Dialogue mainDialogue;
-    public Dialogue newHead;
+    public old_Dialogue mainOldDialogue;
+    public old_Dialogue newHead;
     public GameObject dialogueCanvas;
     public GameObject canvasEnabler;
     public GameObject interactNotifier;
@@ -69,17 +69,17 @@ public class TalkToPerson : MonoBehaviour
                 //If the player has already talked to the NPC the NPCs new head will be displayed
                 if (head_flag == false)
                 {
-                    dialogueCanvas.GetComponent<DialogueDisplay>().dialogue = mainDialogue;
+                    dialogueCanvas.GetComponent<old_DialogueDisplay>().oldDialogue = mainOldDialogue;
                     //head_flag = true;
                     StartCoroutine(my_pause());
                 }
                 else
                 {
-                    dialogueCanvas.GetComponent<DialogueDisplay>().dialogue = newHead;
+                    dialogueCanvas.GetComponent<old_DialogueDisplay>().oldDialogue = newHead;
                 }
                 
-                dialogueCanvas.GetComponent<DialogueDisplay>().my_update(); 
-                dialogueCanvas.GetComponent<DialogueManager>().Refresh();
+                dialogueCanvas.GetComponent<old_DialogueDisplay>().my_update(); 
+                dialogueCanvas.GetComponent<old_DialogueManager>().Refresh();
                 StartCoroutine(Reset());
             }
         }

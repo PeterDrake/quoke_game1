@@ -5,13 +5,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New DialogueNode", menuName = "Dialogue/IfElseNode")]
 public class IfElseNode : DialogueNode
 {
+    [Header("If the related requirements are not satisfied, the alt will be used")]
+    [Space]
     public DialogueRequirement[] IfRequirementsOne;
-    public DialogueRequirement[] IfRequirementsTwo;
-    
+    [TextArea]
     [SerializeField] private string optionOneTextAlt;
-    [SerializeField] private string optionTwoTextAlt;
-
     [SerializeField] private DialogueNode optionOneAlt;
+    [Space]
+    
+    public DialogueRequirement[] IfRequirementsTwo;
+    [TextArea]
+    [SerializeField] private string optionTwoTextAlt;
     [SerializeField] private DialogueNode optionTwoAlt;
 
     public override DialogueNode GetNodeOne()
@@ -31,4 +35,6 @@ public class IfElseNode : DialogueNode
     {
         return (CheckRequirements(IfRequirementsTwo) == "") ? optionTwoText : optionTwoTextAlt;
     }
+    
+    
 }

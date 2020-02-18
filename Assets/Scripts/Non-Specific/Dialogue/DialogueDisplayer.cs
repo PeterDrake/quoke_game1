@@ -24,8 +24,8 @@ public class DialogueDisplayer : UIElement
     
     private Text optionOne;
     private Text optionTwo;
-    private GameObject responseOneEnabler;
-    private GameObject responseTwoEnabler;
+    [SerializeField] private GameObject responseOneEnabler;
+    [SerializeField] private GameObject responseTwoEnabler;
     
     private Text invalidOne;
     private Text invalidTwo;
@@ -60,13 +60,14 @@ public class DialogueDisplayer : UIElement
             optionOne.text = d.GetTextOne();
         }
         
-        if (d.GetTextTwo() == null)
+        if (d.GetNodeTwo() == null)
         {
             responseTwoEnabler.SetActive(false);
+            optionTwo.text = d.GetTextTwo();
         }
         else
         {
-            responseOneEnabler.SetActive(true);
+            responseTwoEnabler.SetActive(true);
             optionTwo.text = d.GetTextTwo();
         }
         
