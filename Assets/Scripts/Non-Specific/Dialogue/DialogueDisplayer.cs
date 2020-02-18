@@ -40,11 +40,12 @@ public class DialogueDisplayer : UIElement
 
     public override void Open()
     {
-        activate(false);
+        activate(true);
     }
     
     public void Load(DialogueNode d, NPC n)
     {
+        Debug.Log("Loading "+d.name+", "+n.name);
         npcName.text = n.name;
         if (n.image != null) npcImage.sprite = n.image;
         npcSpeech.text = d.speech;
@@ -142,8 +143,6 @@ public class DialogueDisplayer : UIElement
                 case "exit":
                     child.GetComponent<Button>().onClick.AddListener(exitPressed);
                     componentsFound += 1;
-                    break;
-                default:
                     break;
             }
         }

@@ -27,6 +27,7 @@ public class InteractWithObject : MonoBehaviour
     
     //-----Interaction Text-----
     public string InteractionDisplayText;
+    [Header("if null, will attempt to find")]
     public InformationCanvas interactText;
     //---------------------------
     
@@ -70,9 +71,12 @@ public class InteractWithObject : MonoBehaviour
         if (hasItem) inventory = GameObject.FindWithTag("MainInventory").GetComponent<InventoryHelper>();
         
         // materials for material blinking
-        mat_original = gameObject.GetComponent<MeshRenderer>().material;
-        mat_blink = Resources.Load("Materials/Transparent Object 1", typeof(Material)) as Material;
-        _meshRenderer = GetComponent<MeshRenderer>();
+        if (BlinkWhenPlayerNear)
+        {
+            mat_original = gameObject.GetComponent<MeshRenderer>().material;
+            mat_blink = Resources.Load("Materials/Transparent Object 1", typeof(Material)) as Material;
+            _meshRenderer = GetComponent<MeshRenderer>();
+        }
     }
     
     public void FixedUpdate()
@@ -158,7 +162,7 @@ public class InteractWithObject : MonoBehaviour
         {
             interactText.ToggleVisibility(false);
             playerInCollider = false;
-            _meshRenderer.material = mat_original;
+            if(BlinkWhenPlayerNear) _meshRenderer.material = mat_original;
         }
     }
 

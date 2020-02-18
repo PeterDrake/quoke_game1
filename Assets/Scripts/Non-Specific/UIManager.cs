@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
     
     public void SetAsActive(UIElement newActive)
     {
+        if (activeWindow.IsLocked()) return;
         previousWindow = activeWindow;
         previousWindow.Close();
         activeWindow = newActive;
