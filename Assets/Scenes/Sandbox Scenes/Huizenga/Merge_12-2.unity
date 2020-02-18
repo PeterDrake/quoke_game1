@@ -30082,7 +30082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 0
   itemToReceive: []
-  InteractionDisplayText: Press 'e' to Build Sanitation System
+  InteractionDisplayText: Press 'E' to Build Sanitation System
   interactText: {fileID: 0}
   CallOnInteract:
     m_PersistentCalls:
@@ -43208,7 +43208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 0
   itemToReceive: []
-  InteractionDisplayText: Press 'e' to use buckets
+  InteractionDisplayText: Press 'E' to use buckets
   interactText: {fileID: 924251845}
   CallOnInteract:
     m_PersistentCalls:
@@ -90971,7 +90971,7 @@ MonoBehaviour:
   itemToReceive:
   - {fileID: 11400000, guid: 3973b5986e0ecde4aaa24288688e920d, type: 2}
   - {fileID: 11400000, guid: 7a90c45c8c6e25e42b8c297343ec4517, type: 2}
-  InteractionDisplayText: Press 'e' to get items from the bathroom
+  InteractionDisplayText: Press 'E' to get items from the bathroom
   interactText: {fileID: 0}
   CallOnInteract:
     m_PersistentCalls:
@@ -91112,7 +91112,7 @@ MonoBehaviour:
   itemToReceive:
   - {fileID: 11400000, guid: b12eb94a8d47c494290c29d4feb1270c, type: 2}
   - {fileID: 11400000, guid: 085f79894830bfa43b1b882cedc7ffd2, type: 2}
-  InteractionDisplayText: Press 'e' to Get items from under the sink
+  InteractionDisplayText: Press 'E' to Get items from under the sink
   interactText: {fileID: 0}
   CallOnInteract:
     m_PersistentCalls:
@@ -101068,7 +101068,7 @@ MonoBehaviour:
   itemToReceive:
   - {fileID: 11400000, guid: ee4993de99e856e439452ecb90f1db03, type: 2}
   - {fileID: 11400000, guid: 75c7fc8d6c517234aa3ce9cafa58a06e, type: 2}
-  InteractionDisplayText: Press 'e' to get items from the wardrobe
+  InteractionDisplayText: Press 'E' to get items from the wardrobe
   interactText: {fileID: 0}
   CallOnInteract:
     m_PersistentCalls:
