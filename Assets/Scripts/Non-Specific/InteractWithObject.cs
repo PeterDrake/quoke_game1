@@ -36,9 +36,12 @@ public class InteractWithObject : MonoBehaviour
     public UnityEvent CallOnEnterCollider;
     //----------------------------
     
-    [Header("'Kill After Use' destroys the script', 'Destroy Object After Use', destroys the whole game object")]
+    [Header("Destroys script after use")]
     public bool killAfterUse = true;
+    
+    [Header("Destroys this gameObject after use")]
     public bool DestoryObjectAfterUse = false;
+    
     private byte interactionDelayFrames = 0;
     private byte interactionDelayFramesMax = 20;
 
@@ -66,7 +69,8 @@ public class InteractWithObject : MonoBehaviour
             interactText = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetInteract();
         
         // get reference for inventory manipulation
-        if (hasItem) inventory = GameObject.FindWithTag("MainInventory").GetComponent<InventoryHelper>();
+        if (hasItem) 
+            inventory = InventoryHelper.Instance;
         
         // materials for material blinking
         if (BlinkWhenPlayerNear)

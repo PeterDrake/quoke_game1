@@ -23,8 +23,7 @@ public class InventoryHelper : MonoBehaviour
 
     public void AddItem(Item item, int amt)
     {
-        Debug.Log(item);
-        //Logger.Instance.Log("Picked up: "+item.name);
+        Logger.Instance.Log("Picked up: "+item.name);
         _inventory.AddItem(item, (byte)amt);
         CheckOnAdd.Invoke();
     }
