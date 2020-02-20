@@ -36,7 +36,6 @@ public class InventoryDisplay : UIElement
 
     public override void Open()
     {
-        Debug.Log("OPEN");
         Load(InventoryHelper.Instance.GetItems(), InventoryHelper.Instance.GetAmounts());
     }
 
