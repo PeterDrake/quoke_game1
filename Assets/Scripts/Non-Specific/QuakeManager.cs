@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Linq.Expressions;
-using MoreMountains.Tools;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-    
+
 /// <summary>
 /// Handles the earthquake, falling object calls, effects, information, etc.
 /// </summary>
@@ -16,40 +12,36 @@ public class QuakeManager : MonoBehaviour
     public static QuakeManager Instance;
     
     [Header("Admin Tools")]
-    public bool adminMode = true;
-    public bool showCountdown = true;
+    [SerializeField] private bool adminMode = true;
+    [SerializeField] private bool showCountdown = true;
     [Space]
     [Space]
     
     [Tooltip("How long after starting before the earthquake goes off?")]
-    public float TimeBeforeQuake = 15f;
+    [SerializeField] private float TimeBeforeQuake = 15f;
     [Tooltip("How long after the first quake before aftershock?")]
-    public float AftershockTime = 10f;
+    [SerializeField] private float AftershockTime = 10f;
     
 
     
     [Header("Camera Shake Options")]
-    public GameObject my_camera;
-    public float amplitude;
-    public float frequency;
-    public float duration;
+    [SerializeField] private GameObject camera;
+    [SerializeField] private float amplitude;
+    [SerializeField] private float frequency;
+    [SerializeField] private float duration;
 
-    public string textToDisplay1;
-    public string textToDisplay2;
-    public string textToDisplay3;
-    
-    public GameObject enableDoors;
+    [SerializeField] private string textToDisplay1;
+    [SerializeField] private string textToDisplay2;
 
-    public bool tableFlag = true;
+    [SerializeField] private GameObject enableDoors;
 
-    public GameObject dustStormPrefab;
+    [SerializeField] private GameObject dustStormPrefab;
     
     private bool textDisplayed;
 
     // TODO Move these into a separate object
     private GameObject[] doors;
     private Rigidbody[] bodies;
-    private BoxCollider[] colliders;
     private Clobberer[] clobberers;
 
 
@@ -85,17 +77,14 @@ public class QuakeManager : MonoBehaviour
             Instance = this;
         else
             Destroy(this);
-        
-        tableFlag = true;
     }
 
     void Start()
     {
-        StartCoroutine(nameof(QuakeCountdown),TimeBeforeQuake);
+        StartCoroutine(nameof(QuakeCountdown), TimeBeforeQuake);
 
         doors = GameObject.FindGameObjectsWithTag("Door");
         bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
-        colliders = Array.ConvertAll(doors, d => d.GetComponent(typeof(BoxCollider)) as BoxCollider);
         clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
 
         _informationCanvas = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetBanner();
@@ -155,7 +144,7 @@ public class QuakeManager : MonoBehaviour
             c.enabled = true;
         }
 
-        var cam = my_camera.GetComponent<MoreMountains.FeedbacksForThirdParty.MMCinemachineCameraShaker>();
+        var cam = camera.GetComponent<MoreMountains.FeedbacksForThirdParty.MMCinemachineCameraShaker>();
         int shakes = 0;
         while (true)
         {
