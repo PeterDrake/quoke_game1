@@ -1,19 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Objective Requirement", menuName = "Dialogue/Requirements/Objective")]
-public class RequireEvent : DialogueRequirement
+public class RequireObjective : DialogueRequirement
 {
     public string requiredEvent;
     
-    [Header("Can be empty")]
-    public new string failureMessage;
+    [Header("Shouldnt be empty")]
+    [SerializeField] private string failureMessage;
     
     public override bool TestSatisfaction()
     {
         return ObjectiveManager.Instance.Check(requiredEvent);
     }
 
-    public override string GetFailureMessage() { return failureMessage; }
+    public override string GetFailureMessage() 
+    {
+        if (failureMessage == "")
+            return base.GetFailureMessage();
+        
+        return failureMessage; 
+    }
 }

@@ -3,20 +3,18 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogueDisplayer : MonoBehaviour
+public class DialogueDisplayer : UIElement
 {
     public delegate string DialogueEvent();
-    
-    
     private const byte requiredComponentsAmount = 8;
     // option1, option2, invalid1, invalid2, npcImage, npcSpeech, npcName, exit 
     
+    private DialogueNode activeDialogue;
     
     private DialogueEvent option1;
     private DialogueEvent option2;
     private DialogueEvent exit;
     private bool displaying;
-    private DialogueNode activeDialogue;
     private GameObject toggler;
     
     // Object references for population of information
@@ -26,8 +24,8 @@ public class DialogueDisplayer : MonoBehaviour
     
     private Text optionOne;
     private Text optionTwo;
-    private GameObject responseOneEnabler;
-    private GameObject responseTwoEnabler;
+    [SerializeField] private GameObject responseOneEnabler;
+    [SerializeField] private GameObject responseTwoEnabler;
     
     private Text invalidOne;
     private Text invalidTwo;
@@ -35,14 +33,19 @@ public class DialogueDisplayer : MonoBehaviour
     private GameObject invalidTwoEnabler;
 
 
-    public void End()
+    public override void Close()
     {
-        toggler.SetActive(false);
+        activate(false);
+    }
+
+    public override void Open()
+    {
+        activate(true);
     }
     
     public void Load(DialogueNode d, NPC n)
     {
-        toggler.SetActive(true);
+        Debug.Log("Loading "+d.name+", "+n.name);
         npcName.text = n.name;
         if (n.image != null) npcImage.sprite = n.image;
         npcSpeech.text = d.speech;
@@ -57,16 +60,18 @@ public class DialogueDisplayer : MonoBehaviour
             optionOne.text = d.GetTextOne();
         }
         
-        if (d.GetTextTwo() == null)
+        if (d.GetNodeTwo() == null)
         {
             responseTwoEnabler.SetActive(false);
+            optionTwo.text = d.GetTextTwo();
         }
         else
         {
-            responseOneEnabler.SetActive(true);
+            responseTwoEnabler.SetActive(true);
             optionTwo.text = d.GetTextTwo();
         }
-
+        
+        UIManager.Instance.SetAsActive(this);
         /* Extra:
             check each options requirements, and enable invalids accordingly
         */
@@ -87,6 +92,7 @@ public class DialogueDisplayer : MonoBehaviour
 
     private void Start()
     {
+        locked = true;
         initialize();
         activate(false);   
     }
@@ -139,8 +145,6 @@ public class DialogueDisplayer : MonoBehaviour
                     child.GetComponent<Button>().onClick.AddListener(exitPressed);
                     componentsFound += 1;
                     break;
-                default:
-                    break;
             }
         }
         if (componentsFound != requiredComponentsAmount) 
@@ -173,6 +177,7 @@ public class DialogueDisplayer : MonoBehaviour
 
     private void exitPressed()
     {
+        UIManager.Instance.ActivatePrevious();
         exit();
     }
 

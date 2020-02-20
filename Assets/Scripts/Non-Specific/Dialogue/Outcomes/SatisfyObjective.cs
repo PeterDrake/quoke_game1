@@ -8,9 +8,8 @@ public class SatisfyObjective : DialogueOutcome
     public string ObjectiveName;
     
     
-    public override void DoOutcome(ref DialogueNode d, ref NPC n)
+    public override void DoOutcome(ref NPC n)
     {
         ObjectiveManager.Instance.Satisfy(ObjectiveName);
-        Trigger = false;
     }
 }

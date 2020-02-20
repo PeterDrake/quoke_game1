@@ -7,6 +7,9 @@ using MoreMountains.Tools;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Handles writing of log strings to log files
+/// </summary>
 public class Logger : Singleton<Logger>
 {
     private StreamWriter writer;

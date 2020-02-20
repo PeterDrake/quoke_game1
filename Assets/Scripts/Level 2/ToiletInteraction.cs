@@ -23,9 +23,5 @@ public class ToiletInteraction : MonoBehaviour
             _interact.DeleteItems();
             _interact = null;
         }
-        
-        
-        
-        
     }
 }

@@ -2,6 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the three resources, Hydration, Relief, and Warmth, their associated sliders,
+/// and killing the player when one runs out
+/// </summary>
 public class StatusManager : MonoBehaviour, IPauseable 
 {
     // Start is called before the first frame update
@@ -72,18 +76,18 @@ public class StatusManager : MonoBehaviour, IPauseable
         if (Hydration <= 0)
         {
             enabled = false;
-            Death.Manager.PlayerDeath("Dehydration Death :(");
+            DeathManager.Instance.PlayerDeath("Dehydration Death :(");
         }
         else if (Relief <= 0)
         {
             enabled = false;
-            Death.Manager.PlayerDeath("Due to lack of a proper toilet, you were forced to defecate without proper " +
+            DeathManager.Instance.PlayerDeath("Due to lack of a proper toilet, you were forced to defecate without proper " +
                                       "sanitation.  You caught a disease and died.");
         }
         else if (Warmth <= 0)
         {
             enabled = false;
-            Death.Manager.PlayerDeath("Hypothermia Death :(");
+            DeathManager.Instance.PlayerDeath("Hypothermia Death :(");
         }
 
         if (hydrationChanged)

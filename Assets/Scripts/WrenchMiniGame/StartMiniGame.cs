@@ -19,12 +19,6 @@ public class StartMiniGame : MonoBehaviour
 	private GameObject wrench;
 
 	private bool started = false;
-	
-	
-    private void Update()
-    {
-        
-    }
 
 	private void Success()
 	{

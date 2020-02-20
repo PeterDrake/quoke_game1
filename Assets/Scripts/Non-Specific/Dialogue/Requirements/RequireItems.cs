@@ -1,11 +1,10 @@
-﻿using System.Runtime.Remoting.Messaging;
-using MoreMountains.InventoryEngine;
+﻿using MoreMountains.InventoryEngine;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item Requirement", menuName = "Dialogue/Requirements/Items")]
 public class RequireItems : DialogueRequirement
 {
-    public InventoryItem[] RequiredItems;
+    public Item[] RequiredItems;
     
     [Header("Amount of each item that is required")]
     public int[] Amounts;
@@ -13,11 +12,11 @@ public class RequireItems : DialogueRequirement
     // Need a static reference to Inventory available before this can be implemented
     public override bool TestSatisfaction()
     {
-        throw new System.NotImplementedException();
+        return InventoryHelper.Instance.HasItem(RequiredItems, Amounts);
     }
 
     public override string GetFailureMessage()
     {
-        throw new System.NotImplementedException();
+        return "You don't have all the required items!";
     }
 }

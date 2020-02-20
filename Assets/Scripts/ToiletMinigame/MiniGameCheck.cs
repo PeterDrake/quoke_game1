@@ -52,7 +52,6 @@ public class MiniGameCheck : MonoBehaviour
     {
         if (other.CompareTag(correctTag))
         {
-            //Debug.Log(correctTag +" is correct");
             MasterCheck = GameObject.Find("MinigameMaster").GetComponent<MiniGameMaster>();
             if (correctTag == "Bucket")
             {

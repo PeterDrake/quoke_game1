@@ -9,13 +9,10 @@
 /// </summary>
 public abstract class DialogueRequirement : ScriptableObject
 {
-    public bool Satisfied;
-
-    protected string failureMessage;
     public abstract bool TestSatisfaction();
 
     public virtual string GetFailureMessage()
     {
-        return failureMessage;
+        return "Requirement Not Satisfied";
     }
 }

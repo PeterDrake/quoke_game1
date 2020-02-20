@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speech: 'You gotta go do that, don''t want to die '
   optionOneText: Ok, Ill get it done
+  optionOne: {fileID: 11400000, guid: 2ef321040985c124f99112c8842ec078, type: 2}
   optionTwoText: Got any more info on the sani-station?
-  optionOne: {fileID: 0}
-  optionTwo: {fileID: 0}
+  optionTwo: {fileID: 11400000, guid: b30c2c3cca90abb4d94a5b52a6f11dfe, type: 2}
   Requirements: []
   Outcomes: []

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using MoreMountains.InventoryEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Implements the basic functionality for "Player walks up to object, presses 'e' and something happens"
+/// </summary>
 public class InteractWithObject : MonoBehaviour
 {
     //-----Material Blinking-------
@@ -19,7 +17,7 @@ public class InteractWithObject : MonoBehaviour
     //-----------------------------
     
     //-----Item Manipulation------
-    public BaseItem[] itemToReceive = new BaseItem[1];
+    public Item[] itemToReceive = new Item[1];
     private InventoryHelper inventory;
 
     private bool hasItem;
@@ -27,7 +25,8 @@ public class InteractWithObject : MonoBehaviour
     
     //-----Interaction Text-----
     public string InteractionDisplayText;
-    public InteractText interactText;
+    [Header("if null, will attempt to find")]
+    public InformationCanvas interactText;
     //---------------------------
     
     //------Event Methods--------
@@ -37,9 +36,12 @@ public class InteractWithObject : MonoBehaviour
     public UnityEvent CallOnEnterCollider;
     //----------------------------
     
-    [Header("'Kill After Use' destroys the script', 'Destroy Object After Use', destroys the whole game object")]
+    [Header("Destroys script after use")]
     public bool killAfterUse = true;
+    
+    [Header("Destroys this gameObject after use")]
     public bool DestoryObjectAfterUse = false;
+    
     private byte interactionDelayFrames = 0;
     private byte interactionDelayFramesMax = 20;
 
@@ -63,16 +65,20 @@ public class InteractWithObject : MonoBehaviour
 
     public void Start()
     {
-        if (interactText == null) interactText = GameObject.Find("Canvi").transform.Find("InteractNotifier").GetComponent<InteractText>();
+        if (interactText == null)
+            interactText = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetInteract();
         
         // get reference for inventory manipulation
-        if (hasItem) inventory = GameObject.FindWithTag("MainInventory").GetComponent<InventoryHelper>();
-        
+        if (hasItem) 
+            inventory = InventoryHelper.Instance;
         
         // materials for material blinking
-        mat_original = gameObject.GetComponent<MeshRenderer>().material;
-        mat_blink = Resources.Load("Materials/Transparent Object 1", typeof(Material)) as Material;
-        _meshRenderer = GetComponent<MeshRenderer>();
+        if (BlinkWhenPlayerNear)
+        {
+            mat_original = gameObject.GetComponent<MeshRenderer>().material;
+            mat_blink = Resources.Load("Materials/Transparent Object 1", typeof(Material)) as Material;
+            _meshRenderer = GetComponent<MeshRenderer>();
+        }
     }
     
     public void FixedUpdate()
@@ -158,7 +164,7 @@ public class InteractWithObject : MonoBehaviour
         {
             interactText.ToggleVisibility(false);
             playerInCollider = false;
-            _meshRenderer.material = mat_original;
+            if(BlinkWhenPlayerNear) _meshRenderer.material = mat_original;
         }
     }
 

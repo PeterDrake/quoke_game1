@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class L2Aftershock : MonoBehaviour
 {
-    public FallingObjects FallingObjects;
+    public ObjectDropper objectDropper;
     public void Start()
     {
         QuakeManager.Instance.OnQuake.AddListener(OnQuake);
@@ -16,8 +16,8 @@ public class L2Aftershock : MonoBehaviour
         if (QuakeManager.Instance.quakes > 0)
         {
             Logger.Instance.Log("Aftershock Started");
-            Death.Manager.PlayerDeath("The house collapsed in an aftershock!");
-            FallingObjects.Drop();
+            DeathManager.Instance.PlayerDeath("The house collapsed in an aftershock!");
+            objectDropper.Drop();
         }
     }
 }

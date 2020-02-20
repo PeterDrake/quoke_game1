@@ -5,14 +5,14 @@ using UnityEngine;
 public class Bookcase : MonoBehaviour
 {
     [Header("Will check for this item to repair bookshelf")]
-    public BaseItem CheckItem;
+    public Item CheckItem;
     
     private const string NO_TOOLS = "This bookcase could fall over in an earthquake. I should secure it to the wall.";
     private  const string HAS_TOOLS = "Press 'E' to Secure the Bookshelf";
     
     [Header("The bookcase will fall on the player the (kill_count)th time the player enters the collider")]
     public int KillCount = 4;
-    public float FallThrust;
+    private float fallThrust = 900000;
     
     
     private int count = 0;
@@ -88,7 +88,7 @@ public class Bookcase : MonoBehaviour
         
         fallCollider.enabled = true;
         rb.isKinematic = false;
-        rb.AddRelativeTorque(new Vector3(1,0,0) * FallThrust,ForceMode.VelocityChange);
+        rb.AddRelativeTorque(new Vector3(1,0,0) * fallThrust,ForceMode.VelocityChange);
     }
 
 
@@ -110,7 +110,7 @@ public class Bookcase : MonoBehaviour
         else
         {
             Debug.Log("Player Hit");
-            Death.Manager.PlayerDeath("Your bookcase crushed you :(");            
+            DeathManager.Instance.PlayerDeath("Your bookcase crushed you :(");            
         }
         
     }
