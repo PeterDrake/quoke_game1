@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using MoreMountains.TopDownEngine;
+﻿using MoreMountains.TopDownEngine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using MoreMountains.TopDownEngine;
 
-public class Death : UIElement
+/// <summary>
+/// Manager class for killing the player and displaying death screen 
+/// </summary>
+public class DeathManager : UIElement
 { 
     public GameObject toggle;
     public Text deathText;
     private CharacterPause pause; 
 
-    public static Death Manager;
+    public static DeathManager Instance;
     private bool dead;
    
    public void Start()
@@ -22,19 +20,11 @@ public class Death : UIElement
        forceOpen = true;
        locked = true;
        pause = GameObject.FindWithTag("Player").GetComponent<CharacterPause>();
-       if (Manager == null) Manager = this;
+       if (Instance == null) Instance = this;
        else Destroy(this);
    }
 
-
-   private IEnumerator MyPause()
-    {
-        yield return new WaitForSeconds(.1f);
-        pause.PauseCharacter();
-        GameManager.Instance.Pause();
-    }
-    
-    public void PlayerDeath(string textOnDeath)
+   public void PlayerDeath(string textOnDeath)
     {
         if (dead) return;
         Logger.Instance.Log("Player killed by: "+textOnDeath);

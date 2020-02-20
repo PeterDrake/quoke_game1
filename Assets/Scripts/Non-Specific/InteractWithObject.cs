@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using MoreMountains.InventoryEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Implements the basic functionality for "Player walks up to object, presses 'e' and something happens"
+/// </summary>
 public class InteractWithObject : MonoBehaviour
 {
     //-----Material Blinking-------

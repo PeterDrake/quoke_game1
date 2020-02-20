@@ -36,6 +36,7 @@ public class InventoryDisplay : UIElement
 
     public override void Open()
     {
+        Debug.Log("OPEN");
         Load(InventoryHelper.Instance.GetItems(), InventoryHelper.Instance.GetAmounts());
     }
 
@@ -50,8 +51,7 @@ public class InventoryDisplay : UIElement
         
         int i = 0;
         bool first = false;
-        // add in behavior if there is no items in the back pack (maybe just a message that disallows opening inv)
-        
+
         foreach (Image item in itemSlots)
         {
             if (i >= items.Length) break;

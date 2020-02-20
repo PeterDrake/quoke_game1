@@ -33,19 +33,20 @@ public class UIManager : MonoBehaviour
         if (!initialized)
         {
             Initialize(newActive);
-            initialized = true;
+            return;
+        }
+
+        if (newActive == activeWindow)
+        {
+            activeWindow.Open();
             return;
         }
         
         if (!newActive.Force() && activeWindow.IsLocked()) return;
-
-        if (newActive != activeWindow)
-        {
-            previousWindow = activeWindow;
-            previousWindow.Close();
-            activeWindow = newActive;
-        }
-
+        
+        previousWindow = activeWindow;
+        previousWindow.Close();
+        activeWindow = newActive;
         activeWindow.Open();
     }
     
@@ -53,6 +54,7 @@ public class UIManager : MonoBehaviour
     {
         activeWindow = active;
         active.Open();
+        initialized = true;
     }
 
     /// <summary>

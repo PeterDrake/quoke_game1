@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// holds an array of items and an associated array of amounts
+/// </summary>
 public class OurInventory : MonoBehaviour
 {
     [SerializeField] private byte capacity = 9;

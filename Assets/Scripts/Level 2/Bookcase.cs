@@ -110,7 +110,7 @@ public class Bookcase : MonoBehaviour
         else
         {
             Debug.Log("Player Hit");
-            Death.Manager.PlayerDeath("Your bookcase crushed you :(");            
+            DeathManager.Instance.PlayerDeath("Your bookcase crushed you :(");            
         }
         
     }

@@ -5,6 +5,10 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Allows keeping track of in game events, such as TOILETEVENT, and LEVELFINISHED
+/// Also allows registration of callback functions to be invoked when an event is satisfied
+/// </summary>
 public class ObjectiveManager : MonoBehaviour
 {
     public static ObjectiveManager Instance;

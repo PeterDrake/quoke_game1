@@ -4,7 +4,7 @@ using Cinemachine;
 using UnityEngine;
 
 /// <summary>
-/// Finds the camera and sets its follow target to the player
+/// Finds the player and sets a camera's follow target to the player
 /// </summary>
 public class StartupFollowCam : MonoBehaviour
 {

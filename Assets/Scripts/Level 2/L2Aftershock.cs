@@ -16,7 +16,7 @@ public class L2Aftershock : MonoBehaviour
         if (QuakeManager.Instance.quakes > 0)
         {
             Logger.Instance.Log("Aftershock Started");
-            Death.Manager.PlayerDeath("The house collapsed in an aftershock!");
+            DeathManager.Instance.PlayerDeath("The house collapsed in an aftershock!");
             objectDropper.Drop();
         }
     }

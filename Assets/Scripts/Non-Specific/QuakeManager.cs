@@ -19,25 +19,26 @@ public class QuakeManager : MonoBehaviour
     
     [Tooltip("How long after starting before the earthquake goes off?")]
     [SerializeField] private float TimeBeforeQuake = 15f;
+    
     [Tooltip("How long after the first quake before aftershock?")]
     [SerializeField] private float AftershockTime = 10f;
     
-
-    
+    //----Camera Shake Options---
     [Header("Camera Shake Options")]
     [SerializeField] private GameObject camera;
     [SerializeField] private float amplitude;
     [SerializeField] private float frequency;
     [SerializeField] private float duration;
+    //--------------------
+    
+    
+    [SerializeField] private string textOnQuake;
+    [SerializeField] private string textAfterQuake;
 
-    [SerializeField] private string textToDisplay1;
-    [SerializeField] private string textToDisplay2;
-
+    // Game object which will be disabled after quake
     [SerializeField] private GameObject enableDoors;
 
     [SerializeField] private GameObject dustStormPrefab;
-    
-    private bool textDisplayed;
 
     // TODO Move these into a separate object
     private GameObject[] doors;
@@ -50,15 +51,14 @@ public class QuakeManager : MonoBehaviour
     [MoreMountains.Tools.ReadOnly] public byte quakes; //times quaked 
     
 
-    private bool _inQuakeZone;
-    [MoreMountains.Tools.ReadOnly] public bool _inSafeZone;
-    private bool _countdownFinished;
+    private bool _inQuakeZone; // is player in a zone where the quake can happen?
+    [MoreMountains.Tools.ReadOnly] public bool _inSafeZone; // is the player safe (under the table)?
     
+    private bool _countdownFinished;
     private float entranceGracePeriod = 2f;
     private float _timeTillQuake;
-
-
-    private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long
+    
+    [SerializeField] private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long
     private bool quakeOverride = false;
     
     
@@ -164,7 +164,7 @@ public class QuakeManager : MonoBehaviour
         {
             c.enabled = false;
         }
-        _informationCanvas.ChangeText(textToDisplay2);
+        _informationCanvas.ChangeText(textAfterQuake);
         
         enableDoors.SetActive(false); // allow player to exit house
         
@@ -182,7 +182,7 @@ public class QuakeManager : MonoBehaviour
         
         OnQuake.Invoke(); // every function subscribed to OnQuake is called here
 
-        _informationCanvas.ChangeText(textToDisplay1);
+        _informationCanvas.ChangeText(textOnQuake);
         
         StartCoroutine(ShakeIt());
     }

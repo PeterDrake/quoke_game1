@@ -4,13 +4,12 @@ using System.Collections.Generic;
 using MoreMountains.FeedbacksForThirdParty;
 using UnityEngine;
 
+/// <summary>
+/// Drops and staggers the falling furniture, the longer the quake goes, the faster stuff falls, at the very end
+/// we drop an object directly on the players head if they still haven't gotten under the table or died
+/// </summary>
 public class ObjectDropper: MonoBehaviour
 {
-    /// <summary>
-    /// Drops and staggers the falling furniture, the longer the quake goes, the faster stuff falls, at the very end
-    /// we drop an object directly on the players head if they still haven't gotten under the table or died
-    /// </summary>
-    
     public GameObject[] falling_objects;
     
     private GameObject player;
