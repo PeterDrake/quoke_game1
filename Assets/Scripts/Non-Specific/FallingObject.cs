@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using MoreMountains.FeedbacksForThirdParty;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class FallingFurnitureDeath : MonoBehaviour
+/// <summary>
+/// When a piece of furniture falls on the player from the quake it kills them.
+/// after it hits the ground ~1.5f it will disable the ability to kill
+/// </summary>
+public class FallingObject : MonoBehaviour
 {
-    /// <summary>
-    /// When a piece of furniture falls on the player from the quake it kills them.
-    /// after it hits the ground ~1.5f it will disable the ability to kill
-    /// </summary>
-
     private bool isEnabled = true;
-
     private Rigidbody rb;
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }

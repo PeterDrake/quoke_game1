@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using MoreMountains.FeedbacksForThirdParty;
 using UnityEngine;
 
-public class FallingObjects: MonoBehaviour
+public class ObjectDropper: MonoBehaviour
 {
     /// <summary>
     /// Drops and staggers the falling furniture, the longer the quake goes, the faster stuff falls, at the very end
