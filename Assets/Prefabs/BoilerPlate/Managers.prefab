@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &7164418454629203270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854152231809163106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55701ba4fbad4e548a5ea3c663931598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FallingObjects: {fileID: 0}
 --- !u!1 &7164418453884972616
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,80 +101,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggle: {fileID: 0}
   deathText: {fileID: 0}
---- !u!1 &7164418454167950762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7164418454167950763}
-  - component: {fileID: 7164418454167950761}
-  - component: {fileID: 7164418454167950760}
-  m_Layer: 0
-  m_Name: Event Tracker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7164418454167950763
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7164418454167950762}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7164418455925552905}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7164418454167950761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7164418454167950762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6901b5183df274534acd55d0eff15d28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inventoryHelper: {fileID: 7164418455222556658}
-  mainInventory: {fileID: 0}
-  CleanWaterButton: {fileID: 0}
-  DrinkWaterButton: {fileID: 0}
-  RequiredItems:
-  - {fileID: 11400000, guid: 085f79894830bfa43b1b882cedc7ffd2, type: 2}
-  - {fileID: 11400000, guid: 75c7fc8d6c517234aa3ce9cafa58a06e, type: 2}
-  ToAdd:
-  - {fileID: 11400000, guid: 75c7fc8d6c517234aa3ce9cafa58a06e, type: 2}
-  - {fileID: 11400000, guid: 8334f15839d998746a30db53dab9a019, type: 2}
-  - {fileID: 11400000, guid: ef16a5caec327a34c93a0ff7093edb76, type: 2}
-  - {fileID: 11400000, guid: 3501633b1ca90404b9c00719b95d458d, type: 2}
-  - {fileID: 11400000, guid: bdac4b15348b29d40a95c44629050cd0, type: 2}
-  - {fileID: 11400000, guid: f965b11ac835f6f4cb171923d83a097f, type: 2}
---- !u!114 &7164418454167950760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7164418454167950762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b091542850bdf49f5b3d1295a9675ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conditionMet: {fileID: 11400000, guid: 2e26263593fb54b96ac6c9b77e9bf63b, type: 2}
-  conditionNotMet: {fileID: 11400000, guid: 4889171cf4e24468487feb350bc786a8, type: 2}
-  myManager: {fileID: 0}
-  NPC: {fileID: 0}
 --- !u!1 &7164418454168216387
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +130,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7164418455925552905}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7164418454168216384
 MonoBehaviour:
@@ -206,19 +145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayer: {fileID: 0}
---- !u!114 &7164418454629203270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854152231809163106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55701ba4fbad4e548a5ea3c663931598, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FallingObjects: {fileID: 0}
 --- !u!1 &7164418454785611468
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7164418455925552905}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7164418454785611474
 MonoBehaviour:
@@ -350,7 +276,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7164418455925552905}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7164418455222556658
 MonoBehaviour:
@@ -415,7 +341,6 @@ Transform:
   - {fileID: 7164418454142443281}
   - {fileID: 7164418455206645259}
   - {fileID: 7164418453884972617}
-  - {fileID: 7164418454167950763}
   - {fileID: 7164418454168216385}
   - {fileID: 7164418454785611469}
   - {fileID: 1854152231809163105}
@@ -483,7 +408,7 @@ PrefabInstance:
     - target: {fileID: 8851373175332053538, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053538, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -684,7 +609,7 @@ PrefabInstance:
         type: 3}
       propertyPath: objective
       value: 
-      objectReference: {fileID: 7164418454167950762}
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8851373175332053533, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
     - {fileID: 8851373175332053534, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
