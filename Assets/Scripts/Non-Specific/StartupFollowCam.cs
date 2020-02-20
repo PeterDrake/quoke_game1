@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
 
+/// <summary>
+/// Finds the camera and sets its follow target to the player
+/// </summary>
 public class StartupFollowCam : MonoBehaviour
 {
     public CinemachineVirtualCamera cmCam;

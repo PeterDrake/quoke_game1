@@ -50,7 +50,7 @@ public class ObjectiveManager : MonoBehaviour
         }
         else if(callbacks.ContainsKey(key) && !events[key])
         {
-             foreach (Callback cb in callbacks[key])
+            foreach (Callback cb in callbacks[key])
             {
                 cb();
             }

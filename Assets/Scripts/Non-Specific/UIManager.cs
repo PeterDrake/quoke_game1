@@ -3,30 +3,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Ensures that only one window will be active on the UI at any given moment
+/// </summary>
 public class UIManager : MonoBehaviour
 {
+    // public static reference so other scripts can easily reference this
     public static UIManager Instance;
 
-    public void Awake()
+    private bool initialized;
+    
+    public void Awake() 
     {
+        // Singleton Pattern -> only one can exist at any given time
         if (Instance == null) Instance = this;
         else Destroy(this);
     }
 
-    private UIElement activeWindow;
-    private UIElement previousWindow;
-
-    public void Initialize(UIElement active)
-    {
-        activeWindow = active;
-        active.Open();
-    }
+    private UIElement activeWindow; // Currently displayed window
+    private UIElement previousWindow; // window displayed before active
     
+    
+    /// <summary>
+    /// opens newActive and closes the current active window
+    /// </summary>
+    /// <param name="newActive"></param>
     public void SetAsActive(UIElement newActive)
     {
-        if (activeWindow == null)
+        if (!initialized)
         {
             Initialize(newActive);
+            initialized = true;
             return;
         }
         
@@ -41,7 +48,17 @@ public class UIManager : MonoBehaviour
 
         activeWindow.Open();
     }
+    
+    public void Initialize(UIElement active)
+    {
+        activeWindow = active;
+        active.Open();
+    }
 
+    /// <summary>
+    /// if newActive is currently active it will be closed, otherwise it will be opened
+    /// </summary>
+    /// <param name="newActive"></param>
     public void ToggleActive(UIElement newActive)
     {
         if (newActive == activeWindow)
@@ -53,7 +70,10 @@ public class UIManager : MonoBehaviour
             SetAsActive(newActive);
         }
     }
-
+    
+    /// <summary>
+    /// Close the current window and go back to the last one
+    /// </summary>
     public void ActivatePrevious()
     {
         activeWindow.Close();

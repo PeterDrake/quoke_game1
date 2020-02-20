@@ -2,6 +2,10 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Manages the three resources, Hydration, Relief, and Warmth, their associated sliders,
+/// and killing the player when one runs out
+/// </summary>
 public class StatusManager : MonoBehaviour, IPauseable 
 {
     // Start is called before the first frame update
