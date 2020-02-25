@@ -2,7 +2,7 @@
 using MoreMountains.InventoryEngine;
 using UnityEngine;
 
-public class Bookcase : MonoBehaviour
+public class Bookcase : Pauseable
 {
     [Header("Will check for this item to repair bookshelf")]
     public Item CheckItem;
@@ -13,8 +13,7 @@ public class Bookcase : MonoBehaviour
     [Header("The bookcase will fall on the player the (kill_count)th time the player enters the collider")]
     public int KillCount = 4;
     private float fallThrust = 900000;
-    
-    
+
     private int count = 0;
     
     private InteractWithObject _interact;
@@ -26,11 +25,16 @@ public class Bookcase : MonoBehaviour
     private bool isFalling = false;
     private BoxCollider fallCollider;
 
+
+    private Vector3 vel;
+    private Vector3 ang;
+
     [Header("Time it takes to trigger the earthquake after the bookcase is secured")]
     public float TriggerTime = 5f;
     
-    private void Start()
+    private new void Start()
     {
+        base.Start();
         _interact = GetComponent<InteractWithObject>();
         _inventory = GameObject.FindWithTag("MainInventory").GetComponent<InventoryHelper>();
         if (CheckItem == null) Debug.LogError("No item to check has been specified");
@@ -42,7 +46,21 @@ public class Bookcase : MonoBehaviour
 
         //QuakeManager.Instance.OnQuake.AddListener(Fall);
     }
-    
+
+    public override void Pause()
+    {
+        vel = rb.velocity;
+        ang = rb.angularVelocity;
+        rb.isKinematic = true;
+    }
+
+    public override void UnPause()
+    {
+        rb.isKinematic = false;
+        rb.velocity = vel;
+        rb.angularVelocity = ang;
+    }
+
     public void UpdateState()
     {
         if (isFalling) return;

@@ -86,7 +86,7 @@ public class SanitationBuilt : MonoBehaviour
 
     private void StartMinigame(Scene scn, LoadSceneMode lsm)
     {
-        StatusManager.Manager.Pause();
+        StatusManager.Instance.Pause();
         SceneManager.sceneLoaded -= StartMinigame;
 
 
@@ -97,7 +97,7 @@ public class SanitationBuilt : MonoBehaviour
     }
     private void MiniGameFinished()//this is not getting called
     {
-        StatusManager.Manager.Unpause();
+        StatusManager.Instance.UnPause();
 
         SceneManager.UnloadSceneAsync(MiniGameSceneName);
         canvi.SetActive(true);

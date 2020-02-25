@@ -45,6 +45,8 @@ public class UIManager : MonoBehaviour
         previousWindow.Close();
         activeWindow = newActive;
         activeWindow.Open();
+
+        PauseManager.Instance.Pause(activeWindow.PauseOnOpen());
     }
     
     public void Initialize(UIElement active)

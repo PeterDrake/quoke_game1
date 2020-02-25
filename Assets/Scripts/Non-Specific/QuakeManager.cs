@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 /// <summary>
 /// Handles the earthquake, falling object calls, effects, information, etc.
 /// </summary>
-public class QuakeManager : MonoBehaviour
+public class QuakeManager : Pauseable
 {
     public static QuakeManager Instance;
     
@@ -25,7 +25,7 @@ public class QuakeManager : MonoBehaviour
     
     //----Camera Shake Options---
     [Header("Camera Shake Options")]
-    [SerializeField] private GameObject camera;
+    [SerializeField] private MoreMountains.FeedbacksForThirdParty.MMCinemachineCameraShaker camera;
     [SerializeField] private float amplitude;
     [SerializeField] private float frequency;
     [SerializeField] private float duration;
@@ -59,7 +59,8 @@ public class QuakeManager : MonoBehaviour
     private float _timeTillQuake;
     
     [SerializeField] private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long
-    private bool quakeOverride = false;
+    private bool quakeOverride;
+    private bool paused;
     
     
     /*Subscribed to onQuake:
@@ -79,8 +80,9 @@ public class QuakeManager : MonoBehaviour
             Destroy(this);
     }
 
-    void Start()
+    private new void Start()
     {
+        base.Start();
         StartCoroutine(nameof(QuakeCountdown), TimeBeforeQuake);
 
         doors = GameObject.FindGameObjectsWithTag("Door");
@@ -89,7 +91,18 @@ public class QuakeManager : MonoBehaviour
 
         _informationCanvas = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetBanner();
     }
-    
+
+    public override void Pause()
+    {
+        paused = true;
+        camera.ShakeCamera(0,true);
+    }
+
+    public override void UnPause()
+    {
+        paused = false;
+    }
+
     void Update()
     {
         if ((_countdownFinished && !Quaking && (quakeOverride || _inQuakeZone)) || (adminMode && Input.GetKeyDown("p")) )
@@ -113,8 +126,11 @@ public class QuakeManager : MonoBehaviour
         while (_timeTillQuake > 0)
         {
             yield return new WaitForSeconds(1f);
-            _timeTillQuake--;
-            if (showCountdown) Debug.Log("Time Till Quake: " + _timeTillQuake);
+            if (!paused)
+            {
+                _timeTillQuake--;
+                if (showCountdown) Debug.Log("Time Till Quake: " + _timeTillQuake);
+            }
         }
         _countdownFinished = true;
     }
@@ -124,13 +140,17 @@ public class QuakeManager : MonoBehaviour
     {
         while (duration > 0)
         {
-            Vector3 kick = Random.onUnitSphere * 1;
-            foreach (Rigidbody b in bodies)
+            if (!paused)
             {
-                b.AddRelativeForce(kick, ForceMode.Impulse);
+                Vector3 kick = Random.onUnitSphere * 1;
+                foreach (Rigidbody b in bodies)
+                {
+                    b.AddRelativeForce(kick, ForceMode.Impulse);
+                }
+
+                yield return new WaitForSeconds(0.25f);
+                duration -= 0.25f;
             }
-            yield return new WaitForSeconds(0.25f);
-            duration -= 0.25f;
         }
     }
     
@@ -143,20 +163,23 @@ public class QuakeManager : MonoBehaviour
         {
             c.enabled = true;
         }
-
-        var cam = camera.GetComponent<MoreMountains.FeedbacksForThirdParty.MMCinemachineCameraShaker>();
+        
         int shakes = 0;
         while (true)
         {
-            cam.ShakeCamera(duration, amplitude, frequency, false);
-            StartCoroutine(FlapDoors(duration));
-            yield return new WaitForSeconds(duration);
-            // if the player is in the safezone, and the earthquake has gone long enough, stop it 
-            if (_inSafeZone && shakes >= _minimumShakes)
+            if (!paused)
             {
-                break;
+                camera.ShakeCamera(duration, amplitude, frequency, false);
+                StartCoroutine(FlapDoors(duration));
+                yield return new WaitForSeconds(duration);
+                // if the player is in the safezone, and the earthquake has gone long enough, stop it 
+                if (_inSafeZone && shakes >= _minimumShakes)
+                {
+                    break;
+                }
+
+                shakes++;
             }
-            shakes++;
         }
         
         StopQuake();
@@ -174,7 +197,7 @@ public class QuakeManager : MonoBehaviour
     public void TriggerQuake()
     {
         if(Quaking) return;
-        //StatusManager.Manager.Pause();
+        StatusManager.Instance.Pause();
         
         Quaking = true;
         Logger.Instance.Log((quakes == 0 ? "Earthquake" : "Aftershock")+" triggered!");
@@ -193,7 +216,7 @@ public class QuakeManager : MonoBehaviour
         Logger.Instance.Log("Quake Stopped");
         
         Quaking = false;
-        //StatusManager.Manager.Unpause();
+        StatusManager.Instance.UnPause();
         TriggerCountdown(AftershockTime);
     }
 

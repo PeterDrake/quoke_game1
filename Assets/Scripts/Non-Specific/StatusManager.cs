@@ -6,11 +6,11 @@ using UnityEngine.UI;
 /// Manages the three resources, Hydration, Relief, and Warmth, their associated sliders,
 /// and killing the player when one runs out
 /// </summary>
-public class StatusManager : MonoBehaviour, IPauseable 
+public class StatusManager : Pauseable 
 {
     // Start is called before the first frame update
 
-    public static StatusManager Manager;
+    public static StatusManager Instance;
 
     public Slider HydrationSlider;
     public Slider ReliefSlider;
@@ -46,13 +46,17 @@ public class StatusManager : MonoBehaviour, IPauseable
     private bool enabled = true;
     private bool Degrading = true;
     private const float DEGRADETIME = 1f;
-    
-    
-    void Start()
+
+    private void Awake()
     {
-        if (StatusManager.Manager == null) StatusManager.Manager = this;
+        if (Instance == null) Instance = this;
         else Destroy(this);
-        
+    }
+    
+    private new void Start()
+    {
+        base.Start();
+
         Hydration = HydrationMax;
         Relief = ReliefMax;
         Warmth = WarmthMax;
@@ -171,17 +175,17 @@ public class StatusManager : MonoBehaviour, IPauseable
     public bool Paused => !enabled;
 
 
-    public void Pause()
+    public override void Pause()
     {
         if(enabled) StopCoroutine(nameof(DegradeStatus));
         enabled = false;
     }
     
-    public void Unpause()
+
+    public override void UnPause()
     {
         var c = enabled;
         enabled = true;
         if(!c) StartCoroutine(nameof(DegradeStatus), DegradeStatus());
-        
     }
 }
