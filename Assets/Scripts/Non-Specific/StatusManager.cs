@@ -6,7 +6,7 @@ using UnityEngine.UI;
 /// Manages the three resources, Hydration, Relief, and Warmth, their associated sliders,
 /// and killing the player when one runs out
 /// </summary>
-public class StatusManager : Pauseable 
+public class StatusManager : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -53,10 +53,8 @@ public class StatusManager : Pauseable
         else Destroy(this);
     }
     
-    private new void Start()
+    private void Start()
     {
-        base.Start();
-
         Hydration = HydrationMax;
         Relief = ReliefMax;
         Warmth = WarmthMax;
@@ -86,7 +84,7 @@ public class StatusManager : Pauseable
         {
             enabled = false;
             DeathManager.Instance.PlayerDeath("Due to lack of a proper toilet, you were forced to defecate without proper " +
-                                      "sanitation.  You caught a disease and died.");
+                                      "sanitation. You caught a disease and died.");
         }
         else if (Warmth <= 0)
         {
@@ -175,14 +173,14 @@ public class StatusManager : Pauseable
     public bool Paused => !enabled;
 
 
-    public override void Pause()
+    public void Pause()
     {
         if(enabled) StopCoroutine(nameof(DegradeStatus));
         enabled = false;
     }
     
 
-    public override void UnPause()
+    public void UnPause()
     {
         var c = enabled;
         enabled = true;

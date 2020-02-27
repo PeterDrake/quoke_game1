@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 /// <summary>
 /// Handles the earthquake, falling object calls, effects, information, etc.
 /// </summary>
-public class QuakeManager : Pauseable
+public class QuakeManager : MonoBehaviour
 {
     public static QuakeManager Instance;
     
@@ -60,9 +60,8 @@ public class QuakeManager : Pauseable
     
     [SerializeField] private float _minimumShakes = 1; //each shake is 'duration' (5) seconds long
     private bool quakeOverride;
-    private bool paused;
-    
-    
+
+
     /*Subscribed to onQuake:
         QuakeFurniture
         Bookcase
@@ -80,9 +79,8 @@ public class QuakeManager : Pauseable
             Destroy(this);
     }
 
-    private new void Start()
+    private void Start()
     {
-        base.Start();
         StartCoroutine(nameof(QuakeCountdown), TimeBeforeQuake);
 
         doors = GameObject.FindGameObjectsWithTag("Door");
@@ -90,17 +88,6 @@ public class QuakeManager : Pauseable
         clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
 
         _informationCanvas = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetBanner();
-    }
-
-    public override void Pause()
-    {
-        paused = true;
-        camera.ShakeCamera(0,true);
-    }
-
-    public override void UnPause()
-    {
-        paused = false;
     }
 
     void Update()
@@ -126,11 +113,8 @@ public class QuakeManager : Pauseable
         while (_timeTillQuake > 0)
         {
             yield return new WaitForSeconds(1f);
-            if (!paused)
-            {
-                _timeTillQuake--;
-                if (showCountdown) Debug.Log("Time Till Quake: " + _timeTillQuake);
-            }
+            _timeTillQuake--;
+            if (showCountdown) Debug.Log("Time Till Quake: " + _timeTillQuake);
         }
         _countdownFinished = true;
     }
@@ -140,17 +124,15 @@ public class QuakeManager : Pauseable
     {
         while (duration > 0)
         {
-            if (!paused)
+            Vector3 kick = Random.onUnitSphere * 1;
+            foreach (Rigidbody b in bodies)
             {
-                Vector3 kick = Random.onUnitSphere * 1;
-                foreach (Rigidbody b in bodies)
-                {
-                    b.AddRelativeForce(kick, ForceMode.Impulse);
-                }
-
-                yield return new WaitForSeconds(0.25f);
-                duration -= 0.25f;
+                b.AddRelativeForce(kick, ForceMode.Impulse);
             }
+
+            yield return new WaitForSeconds(0.25f);
+            duration -= 0.25f;
+        
         }
     }
     
@@ -167,19 +149,16 @@ public class QuakeManager : Pauseable
         int shakes = 0;
         while (true)
         {
-            if (!paused)
+            camera.ShakeCamera(duration, amplitude, frequency, false);
+            StartCoroutine(FlapDoors(duration));
+            yield return new WaitForSeconds(duration);
+            // if the player is in the safezone, and the earthquake has gone long enough, stop it 
+            if (_inSafeZone && shakes >= _minimumShakes)
             {
-                camera.ShakeCamera(duration, amplitude, frequency, false);
-                StartCoroutine(FlapDoors(duration));
-                yield return new WaitForSeconds(duration);
-                // if the player is in the safezone, and the earthquake has gone long enough, stop it 
-                if (_inSafeZone && shakes >= _minimumShakes)
-                {
-                    break;
-                }
-
-                shakes++;
+                break;
             }
+
+            shakes++;
         }
         
         StopQuake();

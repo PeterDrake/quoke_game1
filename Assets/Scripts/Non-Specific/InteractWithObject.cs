@@ -80,8 +80,8 @@ public class InteractWithObject : MonoBehaviour
             _meshRenderer = GetComponent<MeshRenderer>();
         }
     }
-    
-    public void FixedUpdate()
+
+    public void FixedUpdate() // Fixed update responds to timescale
     {
         if (BlinkWhenPlayerNear && playerInCollider)
         {
@@ -101,10 +101,8 @@ public class InteractWithObject : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void Update()
-    {
+        
+        
         if (interactionDelayFrames <= 0 && playerInCollider && Input.GetAxis("Interact") > 0)
         {
             interactionDelayFrames = interactionDelayFramesMax;

@@ -83,5 +83,7 @@ public class UIManager : MonoBehaviour
         UIElement temp = activeWindow;
         activeWindow = previousWindow;
         previousWindow = temp;
+        
+        PauseManager.Instance.Pause(activeWindow.PauseOnOpen());
     }
 }

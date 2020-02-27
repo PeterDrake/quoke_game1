@@ -10,7 +10,7 @@ public class StartDialogue : MonoBehaviour
     [SerializeField] private DialogueNode dialogue;
     
     public void Interact()
-    { 
+    {
         DialogueManager.Instance.StartDialogue(dialogue,npc,SetNewHead);
     }
 

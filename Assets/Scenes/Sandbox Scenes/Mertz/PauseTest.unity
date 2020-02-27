@@ -98988,6 +98988,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &2113268409 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6055585316386438050, guid: ddfce7f34bacc0f4a99c7d0a1655c86e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6055585314959610849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2113268413
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113268409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: a3dacaec0287d7444b4bd276816e1666, type: 2}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 1
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &2118000913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100246,6 +100268,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d4d097eae04b458bd1b555eb774848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _control: {fileID: 0}
+  rb: {fileID: 0}
+  vel: {x: 0, y: 0, z: 0}
+  ang: {x: 0, y: 0, z: 0}
 --- !u!1001 &4246244573254069724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100610,61 +100636,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
-    - target: {fileID: 7164418455206645256, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: HydrationSlider
-      value: 
-      objectReference: {fileID: 1001112713}
-    - target: {fileID: 7164418455206645256, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: ReliefSlider
-      value: 
-      objectReference: {fileID: 1832935085}
-    - target: {fileID: 7164418455206645256, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: WarmthSlider
-      value: 
-      objectReference: {fileID: 1451894980}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: my_camera
-      value: 
-      objectReference: {fileID: 1340568882}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: EventTracker
-      value: 
-      objectReference: {fileID: 96915794}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: enableDoors
-      value: 
-      objectReference: {fileID: 870503669}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 517559814}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 658570878}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 1340568889}
-    - target: {fileID: 7164418454142443286, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: toggle
-      value: 
-      objectReference: {fileID: 1797879184}
-    - target: {fileID: 7164418454142443286, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: deathText
-      value: 
-      objectReference: {fileID: 841260159}
     - target: {fileID: 7164418455925552905, guid: 674b3e11e3b58af47b6107d2e1193031,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -100720,6 +100691,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7164418455206645256, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: HydrationSlider
+      value: 
+      objectReference: {fileID: 1001112713}
+    - target: {fileID: 7164418455206645256, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: ReliefSlider
+      value: 
+      objectReference: {fileID: 1832935085}
+    - target: {fileID: 7164418455206645256, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: WarmthSlider
+      value: 
+      objectReference: {fileID: 1451894980}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: my_camera
+      value: 
+      objectReference: {fileID: 1340568882}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: EventTracker
+      value: 
+      objectReference: {fileID: 96915794}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: enableDoors
+      value: 
+      objectReference: {fileID: 870503669}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 517559814}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 658570878}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 1340568889}
+    - target: {fileID: 7164418454142443286, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: toggle
+      value: 
+      objectReference: {fileID: 1797879184}
+    - target: {fileID: 7164418454142443286, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: deathText
+      value: 
+      objectReference: {fileID: 841260159}
     - target: {fileID: 7164418454167950760, guid: 674b3e11e3b58af47b6107d2e1193031,
         type: 3}
       propertyPath: NPC
