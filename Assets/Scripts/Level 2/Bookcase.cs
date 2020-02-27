@@ -1,6 +1,4 @@
-﻿using MoreMountains.FeedbacksForThirdParty;
-using MoreMountains.InventoryEngine;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bookcase : MonoBehaviour
 {
@@ -13,8 +11,7 @@ public class Bookcase : MonoBehaviour
     [Header("The bookcase will fall on the player the (kill_count)th time the player enters the collider")]
     public int KillCount = 4;
     private float fallThrust = 900000;
-    
-    
+
     private int count = 0;
     
     private InteractWithObject _interact;
@@ -25,6 +22,10 @@ public class Bookcase : MonoBehaviour
     private Rigidbody rb;
     private bool isFalling = false;
     private BoxCollider fallCollider;
+
+
+    private Vector3 vel;
+    private Vector3 ang;
 
     [Header("Time it takes to trigger the earthquake after the bookcase is secured")]
     public float TriggerTime = 5f;
@@ -42,7 +43,7 @@ public class Bookcase : MonoBehaviour
 
         //QuakeManager.Instance.OnQuake.AddListener(Fall);
     }
-    
+
     public void UpdateState()
     {
         if (isFalling) return;
@@ -112,11 +113,5 @@ public class Bookcase : MonoBehaviour
             Debug.Log("Player Hit");
             DeathManager.Instance.PlayerDeath("Your bookcase crushed you :(");            
         }
-        
     }
-
-
-
-
-
 }

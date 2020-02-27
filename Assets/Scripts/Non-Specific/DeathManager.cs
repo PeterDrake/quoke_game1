@@ -10,16 +10,15 @@ public class DeathManager : UIElement
 { 
     public GameObject toggle;
     public Text deathText;
-    private CharacterPause pause; 
 
     public static DeathManager Instance;
     private bool dead;
    
    public void Start()
    {
+       pauseOnOpen = true;
        forceOpen = true;
        locked = true;
-       pause = GameObject.FindWithTag("Player").GetComponent<CharacterPause>();
        if (Instance == null) Instance = this;
        else Destroy(this);
    }
@@ -35,10 +34,6 @@ public class DeathManager : UIElement
 
     public void RestartLevel()
     {
-        /* Removing Pause buggy stuff for now, will revisit*/
-      //  pause.UnPauseCharacter();
-        //myGameManager.GetComponent<GameManager>().UnPause();
-       // GameManager.Instance.UnPause();
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }

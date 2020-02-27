@@ -15,7 +15,7 @@ public class SinkInteraction : MonoBehaviour
 
     public void Interaction()
     {
-        if (!_firstInteraction) StatusManager.Manager.AffectHydration(50);
+        if (!_firstInteraction) StatusManager.Instance.AffectHydration(50);
         else
         {
             _firstInteraction = false;

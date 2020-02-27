@@ -33,6 +33,11 @@ public class DialogueDisplayer : UIElement
     private GameObject invalidTwoEnabler;
 
 
+    private void Awake()
+    {
+        pauseOnOpen = true;
+    }
+
     public override void Close()
     {
         activate(false);
