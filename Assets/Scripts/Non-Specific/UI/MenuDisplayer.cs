@@ -5,7 +5,7 @@ using Button = UnityEngine.UI.Button;
 /// <summary>
 /// Manages the Menu, containing buttons such as Exit to Menu, Exit Game, Settings, and Inventory
 /// </summary>
-public class MenuManager : UIElement
+public class MenuDisplayer : UIElement
 {
     [SerializeField] private int mainMenuSceneIndex;
     

@@ -87,7 +87,7 @@ public class QuakeManager : MonoBehaviour
         bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
         clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
 
-        _informationCanvas = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetBanner();
+        _informationCanvas = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GuiDisplayer>().GetBanner();
     }
 
     void Update()
