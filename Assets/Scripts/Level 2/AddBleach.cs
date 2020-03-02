@@ -24,11 +24,6 @@ public class AddBleach : ItemAction
         else if (Systems.Inventory.HasItem(item = Resources.Load<Item>("items/BleachWater12"), 1))
         {
             Systems.Inventory.RemoveItem(item,1);
-            Systems.Inventory.AddItem(Resources.Load<Item>("items/BleachWater16"), 1);
-        }
-        else if (Systems.Inventory.HasItem(item = Resources.Load<Item>("items/BleachWater16"), 1))
-        {
-            Systems.Inventory.RemoveItem(item,1);
             Systems.Inventory.AddItem(Resources.Load<Item>("items/BleachWater"), 1);
         }
         return false;
