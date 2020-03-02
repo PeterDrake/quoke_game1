@@ -22,6 +22,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7164418455925552905}
+  - component: {fileID: 314270679}
+  - component: {fileID: 314270680}
+  - component: {fileID: 314270682}
+  - component: {fileID: 314270683}
+  - component: {fileID: 314270684}
+  - component: {fileID: 314270685}
+  - component: {fileID: 314270686}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -44,6 +51,121 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &314270679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164418455925552904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e257f6a83f0fbd4ab9949c3e4533175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  capacity: 9
+  items: []
+  amounts: 
+--- !u!114 &314270680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164418455925552904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba97828ce194d542bf8ac294d1950ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &314270682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164418455925552904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6e1b0dc00622b4386121cd3701b41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HydrationSlider: {fileID: 0}
+  ReliefSlider: {fileID: 0}
+  WarmthSlider: {fileID: 0}
+  deathDisplay: {fileID: 0}
+  Hydration: 0
+  Relief: 0
+  Warmth: 0
+  HydrationDepletionTime: 180
+  ReliefDepletionTime: 240
+  WarmthDepletionTime: 300
+  HydrationLossRate: 0
+  ReliefLossRate: 0
+  WarmthLossRate: 0
+  DegradeHydration: 1
+  DegradeRelief: 1
+  DegradeWarmth: 1
+--- !u!114 &314270683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164418455925552904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81788c4ad03c8d84199500dc7791378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &314270684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164418455925552904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc70fe367257914191010bb002d14c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CheckOnAdd:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  _inventory: {fileID: 314270679}
+--- !u!114 &314270685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164418455925552904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbc9ade51acd33e499b6bbe67eb36456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayer: {fileID: 0}
+--- !u!114 &314270686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164418455925552904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a245609eb4d69349906733b1c1670ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 314270685}
+  inventoryManager: {fileID: 314270684}
+  objectivesManager: {fileID: 314270683}
+  statusManager: {fileID: 314270682}
+  inputManager: {fileID: 314270680}
 --- !u!1001 &7164418454629203267
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55,16 +177,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Quake
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053537, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053537, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053538, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -143,48 +255,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
-      propertyPath: my_camera
-      value: 
+      propertyPath: adminMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
-      propertyPath: my_bookshelf
-      value: 
+      propertyPath: showCountdown
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
-      propertyPath: duration
-      value: 5
+      propertyPath: TimeBeforeQuake
+      value: 30000000
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
-      propertyPath: light1
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: gas
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: mat
-      value: 
-      objectReference: {fileID: 2100000, guid: 658217561c50b9c4890e7be3616c4d2a, type: 2}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: InfoEnabler
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: EventTracker
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: textToDisplay
-      value: Crawl under the table with 'C' and hold on tight
+      propertyPath: AftershockTime
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -198,28 +285,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
-      propertyPath: textToDisplay1
-      value: Crawl under stable furniture by holding down 'C' and hold on tight!
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: textToDisplay2
-      value: Your house might not be safe, head outside
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: fallingLights
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: enableDoors
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: tablecheck
-      value: 
+      propertyPath: duration
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -228,8 +295,8 @@ PrefabInstance:
       objectReference: {fileID: 100000, guid: 1f7aa4d40edff6e48b549003cad031e1, type: 3}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
-      propertyPath: TimeBeforeQuake
-      value: 30000000
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Drop
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -238,53 +305,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Drop
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
       propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
-      propertyPath: cheatQuake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: AftershockTime
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: showCountdown
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
@@ -293,23 +320,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
+        type: 3}
       propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
         type: 3}
-      propertyPath: adminMode
-      value: 0
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8851373175332053539, guid: 4800150a4897c4767a9d23875efc2743,
-        type: 3}
-      propertyPath: objective
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8851373175332053533, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
-    - {fileID: 8851373175332053534, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
-    - {fileID: 8851373175332053532, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4800150a4897c4767a9d23875efc2743, type: 3}
 --- !u!1 &1854152231809163106 stripped
 GameObject:
