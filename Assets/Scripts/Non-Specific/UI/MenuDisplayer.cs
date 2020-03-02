@@ -22,7 +22,7 @@ public class MenuDisplayer : UIElement
             switch (child.name)
             {
                 case "close":
-                    child.GetComponent<Button>().onClick.AddListener(delegate { UIManager.Instance.ToggleActive(this); });
+                    child.GetComponent<Button>().onClick.AddListener(delegate {UIManager.Instance.ToggleActive(this); });
                     break;
                 case "exit":
                     child.GetComponent<Button>().onClick.AddListener(Application.Quit);
@@ -40,7 +40,7 @@ public class MenuDisplayer : UIElement
     {
         locked = true;
         pauseOnOpen = true;
-        InputManager.Instance.RegisterKey("escape",delegate {UIManager.Instance.ToggleActive(this); });
+        Systems.Input.RegisterKey("escape",delegate {UIManager.Instance.ToggleActive(this); });
         initialize();
         toggler.SetActive(false);
     }

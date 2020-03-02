@@ -70,7 +70,7 @@ public class InteractWithObject : MonoBehaviour
         
         // get reference for inventory manipulation
         if (hasItem) 
-            inventory = InventoryHelper.Instance;
+            inventory = Systems.Inventory;
         
         // materials for material blinking
         if (BlinkWhenPlayerNear)

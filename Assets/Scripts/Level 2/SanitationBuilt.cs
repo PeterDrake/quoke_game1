@@ -42,7 +42,7 @@ public class SanitationBuilt : MonoBehaviour
     void Start()
     {
         _interact = GetComponent<InteractWithObject>();
-        _inventory = GameObject.FindWithTag("MainInventory").GetComponent<InventoryHelper>();
+        _inventory = Systems.Inventory;
          
         Bucket =  Resources.Load<Item>("Items/Bucket");
         Bag =  Resources.Load<Item>("Items/Bag");
@@ -86,7 +86,7 @@ public class SanitationBuilt : MonoBehaviour
 
     private void StartMinigame(Scene scn, LoadSceneMode lsm)
     {
-        StatusManager.Instance.Pause();
+        Systems.Status.Pause();
         SceneManager.sceneLoaded -= StartMinigame;
 
 
@@ -97,12 +97,12 @@ public class SanitationBuilt : MonoBehaviour
     }
     private void MiniGameFinished()//this is not getting called
     {
-        StatusManager.Instance.UnPause();
+        Systems.Status.UnPause();
 
         SceneManager.UnloadSceneAsync(MiniGameSceneName);
         canvi.SetActive(true);
         
-        ObjectiveManager.Instance.Satisfy("TOILETEVENT");
+        Systems.Objectives.Satisfy("TOILETEVENT");
         camera.SetActive(true);
         canvi.SetActive(true);
 

@@ -176,7 +176,7 @@ public class QuakeManager : MonoBehaviour
     public void TriggerQuake()
     {
         if(Quaking) return;
-        StatusManager.Instance.Pause();
+        Systems.Status.Pause();
         
         Quaking = true;
         Logger.Instance.Log((quakes == 0 ? "Earthquake" : "Aftershock")+" triggered!");
@@ -195,7 +195,7 @@ public class QuakeManager : MonoBehaviour
         Logger.Instance.Log("Quake Stopped");
         
         Quaking = false;
-        StatusManager.Instance.UnPause();
+        Systems.Status.Pause();
         TriggerCountdown(AftershockTime);
     }
 

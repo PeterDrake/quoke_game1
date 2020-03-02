@@ -16,7 +16,7 @@ public class VanNextLevel : MonoBehaviour
     private void Start()
     {
         _interact = GetComponent<InteractWithObject>();
-        ObjectiveManager.Instance.Register(EventKey,() => _satisfied = true);
+        Systems.Objectives.Register(EventKey,() => _satisfied = true);
     }
     
     public void OnEnter()
@@ -27,6 +27,6 @@ public class VanNextLevel : MonoBehaviour
     public void Interact()
     {
         if (_satisfied)
-            UIManager.Instance.SetAsActive(winCanvas);
+           UIManager.Instance.SetAsActive(winCanvas);
     }
 }

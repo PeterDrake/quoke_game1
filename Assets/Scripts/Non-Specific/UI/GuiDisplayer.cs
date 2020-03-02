@@ -12,7 +12,7 @@ public class GuiDisplayer : UIElement
     private void Start()
     {
         toggler = transform.Find("GUIToggler").gameObject;
-        UIManager.Instance.Initialize(this);
+       UIManager.Instance.Initialize(this);
     }
 
     public override void Open()

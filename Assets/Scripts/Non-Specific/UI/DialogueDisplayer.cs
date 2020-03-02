@@ -76,7 +76,7 @@ public class DialogueDisplayer : UIElement
             optionTwo.text = d.GetTextTwo();
         }
         
-        UIManager.Instance.SetAsActive(this);
+       UIManager.Instance.SetAsActive(this);
         /* Extra:
             check each options requirements, and enable invalids accordingly
         */
@@ -182,7 +182,7 @@ public class DialogueDisplayer : UIElement
 
     private void exitPressed()
     {
-        UIManager.Instance.ActivatePrevious();
+       UIManager.Instance.ActivatePrevious();
         exit();
     }
 

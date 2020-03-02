@@ -10,7 +10,7 @@ public class addItemsOnStart : MonoBehaviour
         int i = 0;
         foreach (Item item in itemsToAdd)
         {
-            InventoryHelper.Instance.AddItem(item, amounts[i]);
+            Systems.Inventory.AddItem(item, amounts[i]);
             i++;
         }
     }
