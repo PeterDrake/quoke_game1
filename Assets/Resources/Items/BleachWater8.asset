@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Water
   Description: A gallon of water with 8 drops of bleach in it
-  Icon: {fileID: 21300000, guid: 16f0ed0bfa42ff74dbf0fa78ff7d0114, type: 3}
-  DisplayImage: {fileID: 21300000, guid: 16f0ed0bfa42ff74dbf0fa78ff7d0114, type: 3}
+  Icon: {fileID: 21300000, guid: 39fd57d1b73908346bb3056a166b4ad5, type: 3}
+  DisplayImage: {fileID: 21300000, guid: 39fd57d1b73908346bb3056a166b4ad5, type: 3}
   ID: BLCHWTR8
   action: {fileID: 11400000, guid: f8ed056a5c69c124ebe07b3bbf1c644f, type: 2}
-  hydrationChange: 0
-  killPlayer: 1
+  hydrationChange: 100
+  killPlayer: 0
   DeathMessage: You die after some time
