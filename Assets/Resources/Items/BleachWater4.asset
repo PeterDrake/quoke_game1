@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DisplayName: Water
   Description: A gallon of water with 4 drops of bleach in it
-  Icon: {fileID: 21300000, guid: 16f0ed0bfa42ff74dbf0fa78ff7d0114, type: 3}
-  DisplayImage: {fileID: 21300000, guid: 16f0ed0bfa42ff74dbf0fa78ff7d0114, type: 3}
+  Icon: {fileID: 21300000, guid: bd12df243aa3f43b7b3e3a30c219e5ee, type: 3}
+  DisplayImage: {fileID: 21300000, guid: bd12df243aa3f43b7b3e3a30c219e5ee, type: 3}
   ID: BLCHWTR4
   action: {fileID: 11400000, guid: f8ed056a5c69c124ebe07b3bbf1c644f, type: 2}
   hydrationChange: 0
