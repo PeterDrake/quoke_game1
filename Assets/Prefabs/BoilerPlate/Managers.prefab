@@ -22,13 +22,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7164418455925552905}
-  - component: {fileID: 314270679}
-  - component: {fileID: 314270680}
-  - component: {fileID: 314270682}
-  - component: {fileID: 314270683}
-  - component: {fileID: 314270684}
-  - component: {fileID: 314270685}
-  - component: {fileID: 314270686}
+  - component: {fileID: 8109995094488212767}
+  - component: {fileID: 8109995094488212752}
+  - component: {fileID: 8109995094488212754}
+  - component: {fileID: 8109995094488212755}
+  - component: {fileID: 8109995094488212756}
+  - component: {fileID: 8109995094488212757}
+  - component: {fileID: 8109995094488212758}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -51,7 +51,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &314270679
+--- !u!114 &8109995094488212767
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
   capacity: 9
   items: []
   amounts: 
---- !u!114 &314270680
+--- !u!114 &8109995094488212752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba97828ce194d542bf8ac294d1950ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &314270682
+--- !u!114 &8109995094488212754
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +106,7 @@ MonoBehaviour:
   DegradeHydration: 1
   DegradeRelief: 1
   DegradeWarmth: 1
---- !u!114 &314270683
+--- !u!114 &8109995094488212755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81788c4ad03c8d84199500dc7791378a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &314270684
+--- !u!114 &8109995094488212756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,8 +135,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  _inventory: {fileID: 314270679}
---- !u!114 &314270685
+  _inventory: {fileID: 8109995094488212767}
+--- !u!114 &8109995094488212757
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayer: {fileID: 0}
---- !u!114 &314270686
+--- !u!114 &8109995094488212758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,11 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a245609eb4d69349906733b1c1670ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueManager: {fileID: 314270685}
-  inventoryManager: {fileID: 314270684}
-  objectivesManager: {fileID: 314270683}
-  statusManager: {fileID: 314270682}
-  inputManager: {fileID: 314270680}
+  dialogueManager: {fileID: 8109995094488212757}
+  inventoryManager: {fileID: 8109995094488212756}
+  objectivesManager: {fileID: 8109995094488212755}
+  statusManager: {fileID: 8109995094488212754}
+  inputManager: {fileID: 8109995094488212752}
 --- !u!1001 &7164418454629203267
 PrefabInstance:
   m_ObjectHideFlags: 0
