@@ -8,5 +8,4 @@ public class DemoMenu : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
-    
 }

@@ -66,11 +66,11 @@ public class InteractWithObject : MonoBehaviour
     public void Start()
     {
         if (interactText == null)
-            interactText = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetInteract();
+            interactText = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GuiDisplayer>().GetInteract();
         
         // get reference for inventory manipulation
         if (hasItem) 
-            inventory = InventoryHelper.Instance;
+            inventory = Systems.Inventory;
         
         // materials for material blinking
         if (BlinkWhenPlayerNear)

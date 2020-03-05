@@ -10,7 +10,7 @@ public class RequireObjective : DialogueRequirement
     
     public override bool TestSatisfaction()
     {
-        return ObjectiveManager.Instance.Check(requiredEvent);
+        return Systems.Objectives.Check(requiredEvent);
     }
 
     public override string GetFailureMessage() 

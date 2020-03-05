@@ -15,7 +15,7 @@ public class ToiletInteraction : MonoBehaviour
 
     public void Interaction()
     {
-        if (!_firstInteraction) StatusManager.Instance.AffectRelief(50);
+        if (!_firstInteraction) Systems.Status.AffectRelief(50);
         else
         {
             _firstInteraction = false;

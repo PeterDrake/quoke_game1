@@ -36,7 +36,7 @@ public class InventoryDisplay : UIElement
 
     public override void Open()
     {
-        Load(InventoryHelper.Instance.GetItems(), InventoryHelper.Instance.GetAmounts());
+        Load(Systems.Inventory.GetItems(), Systems.Inventory.GetAmounts());
     }
 
     private void Load(Item[] items, byte[] amounts)
@@ -80,16 +80,16 @@ public class InventoryDisplay : UIElement
         locked = true;
         
         selectedItem = 0;
-        capacity = InventoryHelper.Instance.GetCapacity();
+        capacity = Systems.Inventory.GetCapacity();
         itemSlots = new Image[capacity];
         amounts = new byte[]{0};
         items = new Item[capacity];
 
         initialize();
         activate(false);
-        InputManager.Instance.RegisterKey("i", delegate
+        Systems.Input.RegisterKey("i", delegate
             {
-                UIManager.Instance.ToggleActive(this);
+               UIManager.Instance.ToggleActive(this);
             }
             );
     }
@@ -182,6 +182,6 @@ public class InventoryDisplay : UIElement
     private void useSelectedItem()
     {
         items[selectedItem].action.Use(ref items[selectedItem]);
-        UIManager.Instance.SetAsActive(this);
+       UIManager.Instance.SetAsActive(this);
     }
 }

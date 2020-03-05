@@ -5,7 +5,7 @@ using Button = UnityEngine.UI.Button;
 /// <summary>
 /// Manages the Menu, containing buttons such as Exit to Menu, Exit Game, Settings, and Inventory
 /// </summary>
-public class MenuManager : UIElement
+public class MenuDisplayer : UIElement
 {
     [SerializeField] private int mainMenuSceneIndex;
     
@@ -22,7 +22,7 @@ public class MenuManager : UIElement
             switch (child.name)
             {
                 case "close":
-                    child.GetComponent<Button>().onClick.AddListener(delegate { UIManager.Instance.ToggleActive(this); });
+                    child.GetComponent<Button>().onClick.AddListener(delegate {UIManager.Instance.ToggleActive(this); });
                     break;
                 case "exit":
                     child.GetComponent<Button>().onClick.AddListener(Application.Quit);
@@ -40,7 +40,7 @@ public class MenuManager : UIElement
     {
         locked = true;
         pauseOnOpen = true;
-        InputManager.Instance.RegisterKey("escape",delegate {UIManager.Instance.ToggleActive(this); });
+        Systems.Input.RegisterKey("escape",delegate {UIManager.Instance.ToggleActive(this); });
         initialize();
         toggler.SetActive(false);
     }

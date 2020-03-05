@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 ///  When the player enters a collider with this script they will be killed
@@ -12,7 +11,7 @@ public class Clobberer : MonoBehaviour
     {
         if (enabled && other.gameObject.CompareTag("Player"))
         {
-            DeathManager.Instance.PlayerDeath("You were hit by a door!");
+            Systems.Status.PlayerDeath("You were hit by a door!");
         }
     }
 }
