@@ -11,7 +11,6 @@ using UnityEngine.Events;
 /// </summary>
 public class ObjectiveManager : MonoBehaviour
 {
-    public static ObjectiveManager Instance;
     public delegate void Callback();
 
     [SerializeField] private Dictionary<String, bool> events;
@@ -20,12 +19,6 @@ public class ObjectiveManager : MonoBehaviour
 
     private void Awake()
     {
-        // singleton structure
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this);
-            
         callbacks = new Dictionary<string, LinkedList<Callback>>();
         events = new Dictionary<string, bool>();
     }

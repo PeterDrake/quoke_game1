@@ -11,17 +11,13 @@ using UnityEngine.UIElements;
 public class InputManager : MonoBehaviour
 {
    public delegate void CallBack();
-
-   public static InputManager Instance;
+   
 
    private Dictionary<string, CallBack> registeredKeys;
    [SerializeField] private ArrayList keys;
 
    private void Awake()
    {
-      if (Instance == null) Instance = this;
-      else Destroy(this);
-      
       keys = new ArrayList();
       registeredKeys = new Dictionary<string, CallBack>();
    }

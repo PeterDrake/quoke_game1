@@ -7,7 +7,6 @@ public class DialogueManager : MonoBehaviour
 {
     public delegate void NewHeadCallBack(DialogueNode newHead);
     public DialogueDisplayer displayer;
-    public static DialogueManager Instance;
 
     private bool active;
     private DialogueNode activeDialogue;
@@ -31,16 +30,6 @@ public class DialogueManager : MonoBehaviour
     public DialogueNode EndDialogue()
     {
         return activeDialogue;
-    }
-    
-    
-    private void Awake()
-    {
-        // Singleton pattern
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(this);
     }
 
     private void Start()

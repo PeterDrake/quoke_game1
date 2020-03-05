@@ -87,7 +87,7 @@ public class QuakeManager : MonoBehaviour
         bodies = Array.ConvertAll(doors, d => d.GetComponent(typeof(Rigidbody)) as Rigidbody);
         clobberers = Array.ConvertAll(doors, d => d.GetComponent(typeof(Clobberer)) as Clobberer);
 
-        _informationCanvas = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetBanner();
+        _informationCanvas = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GuiDisplayer>().GetBanner();
     }
 
     void Update()
@@ -176,7 +176,7 @@ public class QuakeManager : MonoBehaviour
     public void TriggerQuake()
     {
         if(Quaking) return;
-        StatusManager.Instance.Pause();
+        Systems.Status.Pause();
         
         Quaking = true;
         Logger.Instance.Log((quakes == 0 ? "Earthquake" : "Aftershock")+" triggered!");
@@ -195,7 +195,7 @@ public class QuakeManager : MonoBehaviour
         Logger.Instance.Log("Quake Stopped");
         
         Quaking = false;
-        StatusManager.Instance.UnPause();
+        Systems.Status.Pause();
         TriggerCountdown(AftershockTime);
     }
 

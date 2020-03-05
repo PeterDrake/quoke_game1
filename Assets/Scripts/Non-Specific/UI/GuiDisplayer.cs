@@ -3,7 +3,7 @@
 /// <summary>
 /// A manager to keep track of GUI elements (status bars, text banner, interact text & misc buttons (inventory))
 /// </summary>
-public class GUIManager : UIElement
+public class GuiDisplayer : UIElement
 {
     private GameObject toggler;
     [SerializeField] private InformationCanvas Banner;
@@ -12,7 +12,7 @@ public class GUIManager : UIElement
     private void Start()
     {
         toggler = transform.Find("GUIToggler").gameObject;
-        UIManager.Instance.Initialize(this);
+       UIManager.Instance.Initialize(this);
     }
 
     public override void Open()

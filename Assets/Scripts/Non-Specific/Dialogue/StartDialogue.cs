@@ -11,7 +11,7 @@ public class StartDialogue : MonoBehaviour
     
     public void Interact()
     {
-        DialogueManager.Instance.StartDialogue(dialogue,npc,SetNewHead);
+        Systems.Dialogue.StartDialogue(dialogue,npc,SetNewHead);
     }
 
     // this will be called if the dialogue manager encounters a DialogueNode with the SetAsNewHead flag set to true

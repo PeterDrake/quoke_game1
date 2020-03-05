@@ -33,7 +33,7 @@ public class Bookcase : MonoBehaviour
     private void Start()
     {
         _interact = GetComponent<InteractWithObject>();
-        _inventory = GameObject.FindWithTag("MainInventory").GetComponent<InventoryHelper>();
+        _inventory = Systems.Inventory;
         if (CheckItem == null) Debug.LogError("No item to check has been specified");
         rb = GetComponent<Rigidbody>();
         
@@ -74,7 +74,7 @@ public class Bookcase : MonoBehaviour
     {
         if (!isFalling && PlayerHasItem)
         {
-            ObjectiveManager.Instance.Satisfy("BOOKCASE");
+            Systems.Objectives.Satisfy("BOOKCASE");
             _inventory.RemoveItem(CheckItem, 1);
             QuakeManager.Instance.TriggerCountdown(TriggerTime);
             Disable();
@@ -111,7 +111,7 @@ public class Bookcase : MonoBehaviour
         else
         {
             Debug.Log("Player Hit");
-            DeathManager.Instance.PlayerDeath("Your bookcase crushed you :(");            
+            Systems.Status.PlayerDeath("Your bookcase crushed you :(");            
         }
     }
 }

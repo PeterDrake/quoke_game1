@@ -12,7 +12,7 @@ public class RequireItems : DialogueRequirement
     // Need a static reference to Inventory available before this can be implemented
     public override bool TestSatisfaction()
     {
-        return InventoryHelper.Instance.HasItem(RequiredItems, Amounts);
+        return Systems.Inventory.HasItem(RequiredItems, Amounts);
     }
 
     public override string GetFailureMessage()

@@ -12,14 +12,14 @@ public class StartDialogueTest : MonoBehaviour
 
     private void Start()
     {
-        ObjectiveManager.Instance.Satisfy("TOILETEVENT");
+        Systems.Objectives.Satisfy("TOILETEVENT");
     }
 
     private void Update()
     {
         if (k > 0)
         {
-            DialogueManager.Instance.StartDialogue(tester, testNPC, Callback);
+            Systems.Dialogue.StartDialogue(tester, testNPC, Callback);
             Destroy(this);
         }
         k++;

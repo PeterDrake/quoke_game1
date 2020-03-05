@@ -8,16 +8,8 @@ using UnityEngine.Events;
 /// </summary>
 public class InventoryHelper : MonoBehaviour
 {
-    public static InventoryHelper Instance;
     public UnityEvent CheckOnAdd;
     [SerializeField] private OurInventory _inventory;
-
-    private void Awake()
-    {
-        // Singleton pattern
-        if (Instance == null) Instance = this;
-        else Destroy(this);
-    }
 
     public void AddItem(Item item, int amt)
     {

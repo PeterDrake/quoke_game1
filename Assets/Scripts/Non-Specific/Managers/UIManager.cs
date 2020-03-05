@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Diagnostics;
+using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 /// <summary>
 /// Ensures that only one window will be active on the UI at any given moment
@@ -7,20 +10,18 @@ public class UIManager : MonoBehaviour
 {
     // public static reference so other scripts can easily reference this
     public static UIManager Instance;
-
-    private bool initialized;
     
-    public void Awake() 
+    private bool initialized;
+
+    private UIElement activeWindow; // Currently displayed window
+    private UIElement previousWindow; // window displayed before active
+
+    private void Awake()
     {
-        // Singleton Pattern -> only one can exist at any given time
         if (Instance == null) Instance = this;
         else Destroy(this);
     }
 
-    private UIElement activeWindow; // Currently displayed window
-    private UIElement previousWindow; // window displayed before active
-    
-    
     /// <summary>
     /// opens newActive and closes the current active window
     /// </summary>
@@ -29,6 +30,7 @@ public class UIManager : MonoBehaviour
     {
         if (!initialized)
         {
+            Debug.Log("not init");
             Initialize(newActive);
             return;
         }
@@ -46,7 +48,7 @@ public class UIManager : MonoBehaviour
         activeWindow = newActive;
         activeWindow.Open();
 
-        PauseManager.Instance.Pause(activeWindow.PauseOnOpen());
+        Systems.Instance.Pause(activeWindow.PauseOnOpen());
     }
     
     public void Initialize(UIElement active)
@@ -54,6 +56,7 @@ public class UIManager : MonoBehaviour
         activeWindow = active;
         active.Open();
         initialized = true;
+        Systems.Instance.Pause(activeWindow.PauseOnOpen());
     }
 
     /// <summary>
@@ -84,6 +87,6 @@ public class UIManager : MonoBehaviour
         activeWindow = previousWindow;
         previousWindow = temp;
         
-        PauseManager.Instance.Pause(activeWindow.PauseOnOpen());
+        Systems.Instance.Pause(activeWindow.PauseOnOpen());
     }
 }

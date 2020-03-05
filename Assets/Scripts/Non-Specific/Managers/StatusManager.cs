@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Tools = MoreMountains.Tools;
 
 /// <summary>
 /// Manages the three resources, Hydration, Relief, and Warmth, their associated sliders,
@@ -8,32 +9,28 @@ using UnityEngine.UI;
 /// </summary>
 public class StatusManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    public static StatusManager Instance;
-
-    public Slider HydrationSlider;
-    public Slider ReliefSlider;
-    public Slider WarmthSlider;
+    [SerializeField] private Slider HydrationSlider;
+    [SerializeField] private Slider ReliefSlider;
+    [SerializeField] private Slider WarmthSlider;
+    [SerializeField] private DeathDisplay deathDisplay;
     
-    [MoreMountains.Tools.ReadOnly] public float Hydration;
-    [MoreMountains.Tools.ReadOnly] public float Relief;
-    [MoreMountains.Tools.ReadOnly] public float Warmth;
+    [Tools.ReadOnly] public float Hydration;
+    [Tools.ReadOnly] public float Relief;
+    [Tools.ReadOnly] public float Warmth;
 
-    
     [Header("Time (in seconds) to deplete the entire resource")]
-    public float HydrationDepletionTime = 180f;
-    public float ReliefDepletionTime = 240f;
-    public float WarmthDepletionTime = 300f;
+    [SerializeField] private float HydrationDepletionTime = 180f;
+    [SerializeField] private float ReliefDepletionTime = 240f;
+    [SerializeField] private float WarmthDepletionTime = 300f;
 
     [Header("Loss is applied once every second")]
-    [MoreMountains.Tools.ReadOnly][Min(0)] public float HydrationLossRate;
-    [MoreMountains.Tools.ReadOnly][Min(0)] public float ReliefLossRate;
-    [MoreMountains.Tools.ReadOnly][Min(0)] public float WarmthLossRate;
+    [Tools.ReadOnly][Min(0)] public float HydrationLossRate;
+    [Tools.ReadOnly][Min(0)] public float ReliefLossRate;
+    [Tools.ReadOnly][Min(0)] public float WarmthLossRate;
     
-    public bool DegradeHydration = true;
-    public bool DegradeRelief = true;
-    public bool DegradeWarmth = true; 
+    [SerializeField] private bool DegradeHydration = true;
+    [SerializeField] private bool DegradeRelief = true;
+    [SerializeField] private bool DegradeWarmth = true; 
     
     private bool hydrationChanged;
     private bool reliefChanged;
@@ -47,12 +44,6 @@ public class StatusManager : MonoBehaviour
     private bool Degrading = true;
     private const float DEGRADETIME = 1f;
 
-    private void Awake()
-    {
-        if (Instance == null) Instance = this;
-        else Destroy(this);
-    }
-    
     private void Start()
     {
         Hydration = HydrationMax;
@@ -77,19 +68,16 @@ public class StatusManager : MonoBehaviour
 
         if (Hydration <= 0)
         {
-            enabled = false;
-            DeathManager.Instance.PlayerDeath("Dehydration Death :(");
+            PlayerDeath("Dehydration Death :(");
         }
         else if (Relief <= 0)
         {
-            enabled = false;
-            DeathManager.Instance.PlayerDeath("Due to lack of a proper toilet, you were forced to defecate without proper " +
+            PlayerDeath("Due to lack of a proper toilet, you were forced to defecate without proper " +
                                       "sanitation. You caught a disease and died.");
         }
         else if (Warmth <= 0)
         {
-            enabled = false;
-            DeathManager.Instance.PlayerDeath("Hypothermia Death :(");
+            PlayerDeath("Hypothermia Death :(");
         }
 
         if (hydrationChanged)
@@ -144,6 +132,31 @@ public class StatusManager : MonoBehaviour
     {
         return Warmth;
     }
+    
+    public void PlayerDeath(string textOnDeath)
+    {
+        if (!enabled) return;
+        enabled = false;
+        Logger.Instance.Log("Player killed by: "+textOnDeath);
+        deathDisplay.Activate(textOnDeath);
+    }
+    
+    public bool Paused => !enabled;
+
+
+    public void Pause()
+    {
+        if(enabled) StopCoroutine(nameof(DegradeStatus));
+        enabled = false;
+    }
+    
+
+    public void UnPause()
+    {
+        var c = enabled;
+        enabled = true;
+        if(!c) StartCoroutine(nameof(DegradeStatus), DegradeStatus());
+    }
 
     private IEnumerator DegradeStatus()
     {
@@ -168,22 +181,5 @@ public class StatusManager : MonoBehaviour
 
         yield return new WaitForSeconds(DEGRADETIME);
         StartCoroutine(DegradeStatus());
-    }
-
-    public bool Paused => !enabled;
-
-
-    public void Pause()
-    {
-        if(enabled) StopCoroutine(nameof(DegradeStatus));
-        enabled = false;
-    }
-    
-
-    public void UnPause()
-    {
-        var c = enabled;
-        enabled = true;
-        if(!c) StartCoroutine(nameof(DegradeStatus), DegradeStatus());
     }
 }
