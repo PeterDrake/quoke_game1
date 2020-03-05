@@ -75,7 +75,7 @@ public class Bookcase : MonoBehaviour
         if (!isFalling && PlayerHasItem)
         {
             Systems.Objectives.Satisfy("BOOKCASE");
-            _inventory.RemoveItem(CheckItem, 1);
+            Systems.Inventory.RemoveItem(CheckItem, 1);
             QuakeManager.Instance.TriggerCountdown(TriggerTime);
             Disable();
         }
