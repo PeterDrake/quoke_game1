@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
   m_Name: A3
   m_EditorClassIdentifier: 
-  speech: "Ohh, no my name is Ahmad, I am a N.E.T! N.E.T stands for Neighborhood Emergency
-    Teams. We\u2019re citizens with some training in disaster preparedness"
-  optionOneText: I bet that training's coming in handy right about now!
-  optionTwoText: Welp, don't blame me if I keep calling you Annette...
+  speech: 'My name is Ahmad. '
+  optionOneText: 'I''m Tre. '
   optionOne: {fileID: 11400000, guid: 056e7ab4a7a1b60439fdc9cea8acc6c1, type: 2}
+  optionTwoText: 
   optionTwo: {fileID: 11400000, guid: 056e7ab4a7a1b60439fdc9cea8acc6c1, type: 2}
   Requirements: []
   Outcomes: []
+  NewHead: {fileID: 0}
