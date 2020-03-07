@@ -41,6 +41,7 @@ public class StatusManager : MonoBehaviour
     private float WarmthMax = 100f;
     
     private bool enabled = true;
+    private bool alive;
     private bool Degrading = true;
     private const float DEGRADETIME = 1f;
 
@@ -59,6 +60,8 @@ public class StatusManager : MonoBehaviour
         WarmthLossRate = WarmthMax / WarmthDepletionTime;
 
         StartCoroutine(nameof(DegradeStatus),DegradeStatus());
+
+        alive = true;
     }
 
     // Update is called once per frame
@@ -135,8 +138,8 @@ public class StatusManager : MonoBehaviour
     
     public void PlayerDeath(string textOnDeath)
     {
-        if (!enabled) return;
-        enabled = false;
+        if (!alive) return;
+        alive = false;
         Logger.Instance.Log("Player killed by: "+textOnDeath);
         deathDisplay.Activate(textOnDeath);
     }
