@@ -31061,6 +31061,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CheckItem: {fileID: 11400000, guid: 81bd351dba0ca2b48b8e3073dd208e50, type: 2}
+  hasBleach: {fileID: 11400000, guid: abcde71e1638baf43a3b1f5facf6a761, type: 2}
+  hasTrashBag: {fileID: 11400000, guid: df99f10b0990aec4b872513256b602f9, type: 2}
+  hasToiletPaper: {fileID: 11400000, guid: cfbc3c05e77e8404e97663aa077730ed, type: 2}
+  hasHandSanitizer: {fileID: 11400000, guid: e5779e1308bdf194182baeb153cc5742, type: 2}
   KillCount: 4
   TriggerTime: 5
 --- !u!114 &658570879
@@ -100143,6 +100147,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 156471932}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: enableDoors
+      value: 
+      objectReference: {fileID: 870503669}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: showCountdown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 517559814}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: textOnQuake
+      value: Earthquake! Find a stable object to hide under
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: textAfterQuake
+      value: Explore outside
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: _minimumShakes
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 658570878}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Fall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: TimeBeforeQuake
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 7164418455925552905, guid: 674b3e11e3b58af47b6107d2e1193031,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -100197,61 +100256,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 156471932}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: enableDoors
-      value: 
-      objectReference: {fileID: 870503669}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: showCountdown
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 517559814}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Drop
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: textOnQuake
-      value: Earthquake! Find a stable object to hide under
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: textAfterQuake
-      value: Explore outside
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: _minimumShakes
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 658570878}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: OnQuake.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Fall
-      objectReference: {fileID: 0}
-    - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: TimeBeforeQuake
-      value: 1e+12
       objectReference: {fileID: 0}
     - target: {fileID: 7164418454629203270, guid: 674b3e11e3b58af47b6107d2e1193031,
         type: 3}
@@ -100621,5 +100625,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6455381913875728031, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 689ae9d7f9a244a5eb4c70b5704b45fe,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54201a432732e3644b92dd53d5d1fef5, type: 3}
