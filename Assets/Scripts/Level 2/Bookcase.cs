@@ -70,7 +70,12 @@ public class Bookcase : MonoBehaviour
 
         if (count < KillCount)
         {
-            if (PlayerHasItem || _inventory.HasItem(CheckItem, 1))
+            if (secure)
+            {
+                _interact.BlinkWhenPlayerNear = false;
+                _interact.SetInteractText("");
+            }
+            else if (PlayerHasItem || _inventory.HasItem(CheckItem, 1))
             {
                 _interact.BlinkWhenPlayerNear = true;
                 _interact.SetInteractText(HAS_TOOLS);
@@ -96,11 +101,12 @@ public class Bookcase : MonoBehaviour
 
     public void Interaction()
     {
-        if (!isFalling && PlayerHasItem)
+        if (!secure && !isFalling && PlayerHasItem)
         {
+            _interact.StopBlink();
+            _interact.SetInteractText("");
             Systems.Objectives.Satisfy("BOOKCASE");
             Systems.Inventory.RemoveItem(CheckItem, 1);
-            QuakeManager.Instance.TriggerCountdown(TriggerTime);
             Disable(); 
         }
     }
@@ -108,7 +114,7 @@ public class Bookcase : MonoBehaviour
 
     public void Fall()
     {
-        if (isFalling) return;
+        if (secure || isFalling) return;
         isFalling = true;
         
         fallCollider.enabled = true;
@@ -119,7 +125,7 @@ public class Bookcase : MonoBehaviour
 
     private void Disable()
     {
-        _interact.SetInteractText("");
+        
         Destroy(rb);
         Destroy(fallCollider.gameObject.GetComponent<CollisionCallback>());
         secure = true;
