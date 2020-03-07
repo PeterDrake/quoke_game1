@@ -16,7 +16,7 @@ MonoBehaviour:
   optionOneText: Thanks, me too
   optionOne: {fileID: 11400000, guid: ee6644894426f9b42aea06a73cd397af, type: 2}
   optionTwoText: 
-  optionTwo: {fileID: 11400000, guid: ee6644894426f9b42aea06a73cd397af, type: 2}
+  optionTwo: {fileID: 0}
   Requirements: []
   Outcomes: []
   NewHead: {fileID: 0}
