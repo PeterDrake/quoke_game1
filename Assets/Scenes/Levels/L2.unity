@@ -3163,7 +3163,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
   itemToReceive:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e5779e1308bdf194182baeb153cc5742, type: 2}
+  - {fileID: 11400000, guid: abcde71e1638baf43a3b1f5facf6a761, type: 2}
   InteractionDisplayText: Press 'E' to get items from the bathroom
   interactText: {fileID: 0}
   CallOnInteract:
@@ -79960,9 +79961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlinkWhenPlayerNear: 1
-  itemToReceive:
-  - {fileID: 11400000, guid: e5779e1308bdf194182baeb153cc5742, type: 2}
-  - {fileID: 11400000, guid: abcde71e1638baf43a3b1f5facf6a761, type: 2}
+  itemToReceive: []
   InteractionDisplayText: 'Press ''E'' to use the toilet. '
   interactText: {fileID: 0}
   CallOnInteract:
