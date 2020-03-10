@@ -68,6 +68,10 @@ public class Bookcase : MonoBehaviour
     {
         if (isFalling) return;
 
+        if (secure && HasEverything())
+        {
+            QuakeManager.Instance.TriggerQuake();
+        }
         if (count < KillCount)
         {
             if (secure)
@@ -91,7 +95,7 @@ public class Bookcase : MonoBehaviour
             Debug.Log(count);
             
         }
-        else if ((!secure || (secure && HasEverything())))
+        else if (!secure)
         {
             QuakeManager.Instance.TriggerQuake();
         }
