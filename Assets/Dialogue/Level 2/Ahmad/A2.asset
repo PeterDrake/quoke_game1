@@ -17,7 +17,7 @@ MonoBehaviour:
   optionOneText: Gotcha.
   optionOne: {fileID: 11400000, guid: 3c20bdd835fa44544945f3158dd6c458, type: 2}
   optionTwoText: 
-  optionTwo: {fileID: 0}
+  optionTwo: {fileID: 11400000, guid: 3c20bdd835fa44544945f3158dd6c458, type: 2}
   Requirements: []
   Outcomes: []
   NewHead: {fileID: 0}

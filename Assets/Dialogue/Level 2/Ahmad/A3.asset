@@ -16,7 +16,7 @@ MonoBehaviour:
   optionOneText: 'I''m Tre. '
   optionOne: {fileID: 11400000, guid: 056e7ab4a7a1b60439fdc9cea8acc6c1, type: 2}
   optionTwoText: 
-  optionTwo: {fileID: 0}
+  optionTwo: {fileID: 11400000, guid: 056e7ab4a7a1b60439fdc9cea8acc6c1, type: 2}
   Requirements: []
   Outcomes: []
   NewHead: {fileID: 0}

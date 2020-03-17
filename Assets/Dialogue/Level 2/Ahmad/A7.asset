@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
   m_Name: A7
   m_EditorClassIdentifier: 
-  speech: You should probably get to work on that
-  optionOneText: Ok, Ill get it done [Outside]
+  speech: 'You gotta go do that, don''t want to die '
+  optionOneText: Ok, Ill get it done
   optionOne: {fileID: 11400000, guid: 2ef321040985c124f99112c8842ec078, type: 2}
-  optionTwoText: 
-  optionTwo: {fileID: 0}
+  optionTwoText: Got any more info on the sani-station?
+  optionTwo: {fileID: 11400000, guid: b30c2c3cca90abb4d94a5b52a6f11dfe, type: 2}
   Requirements: []
   Outcomes: []
-  NewHead: {fileID: 0}
