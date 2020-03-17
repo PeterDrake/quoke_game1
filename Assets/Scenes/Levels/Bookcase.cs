@@ -91,7 +91,7 @@ public class Bookcase : MonoBehaviour
             Debug.Log(count);
             
         }
-        else if ((!secure || (secure && HasEverything())))
+        else if (((!secure && count==KillCount) || (secure && HasEverything())))
         {
             QuakeManager.Instance.TriggerQuake();
         }
