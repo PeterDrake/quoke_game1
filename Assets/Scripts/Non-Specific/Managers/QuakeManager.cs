@@ -32,8 +32,8 @@ public class QuakeManager : MonoBehaviour
     //--------------------
     
     
-    [SerializeField] private string textOnQuake;
-    [SerializeField] private string textAfterQuake;
+    [TextArea][SerializeField] private string textOnQuake;
+    [TextArea][SerializeField] private string textAfterQuake;
 
     // Game object which will be disabled after quake
     [SerializeField] private GameObject enableDoors;

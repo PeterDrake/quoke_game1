@@ -178,6 +178,13 @@ public class InteractWithObject : MonoBehaviour
         hasItem = false;
     }
 
+    public void StopBlink()
+    {
+        _meshRenderer.material = mat_original;
+        blinkOn = false;
+        BlinkWhenPlayerNear = false;
+    }
+
     public void Kill()
     {
         interactText.ToggleVisibility(false);

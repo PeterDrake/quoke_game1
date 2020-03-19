@@ -4,6 +4,11 @@ public class Bookcase : MonoBehaviour
 {
     [Header("Will check for this item to repair bookshelf")]
     public Item CheckItem;
+
+    public Item hasBleach;
+    public Item hasTrashBag;
+    public Item hasToiletPaper;
+    public Item hasHandSanitizer;
     
     private const string NO_TOOLS = "This bookcase could fall over in an earthquake. I should secure it to the wall.";
     private  const string HAS_TOOLS = "Press 'E' to Secure the Bookshelf";
@@ -18,7 +23,7 @@ public class Bookcase : MonoBehaviour
     private InventoryHelper _inventory;
 
     private bool PlayerHasItem = false;
-    
+
     private Rigidbody rb;
     private bool isFalling = false;
     private BoxCollider fallCollider;
@@ -26,6 +31,8 @@ public class Bookcase : MonoBehaviour
 
     private Vector3 vel;
     private Vector3 ang;
+
+    private bool secure = false;
 
     [Header("Time it takes to trigger the earthquake after the bookcase is secured")]
     public float TriggerTime = 5f;
@@ -44,13 +51,35 @@ public class Bookcase : MonoBehaviour
         //QuakeManager.Instance.OnQuake.AddListener(Fall);
     }
 
+    public bool HasEverything()
+    {
+        if(
+            (_inventory.HasItem(hasBleach, 1))
+             && (_inventory.HasItem(hasHandSanitizer, 1))
+                 && (_inventory.HasItem(hasToiletPaper, 1))
+                         && (_inventory.HasItem(hasTrashBag, 1))) 
+        {
+            return true;
+        }
+        return false;
+    }
+    
     public void UpdateState()
     {
         if (isFalling) return;
-        
+
+        if (secure && HasEverything())
+        {
+            QuakeManager.Instance.TriggerQuake();
+        }
         if (count < KillCount)
         {
-            if (PlayerHasItem || _inventory.HasItem(CheckItem,1))
+            if (secure)
+            {
+                _interact.BlinkWhenPlayerNear = false;
+                _interact.SetInteractText("");
+            }
+            else if (PlayerHasItem || _inventory.HasItem(CheckItem, 1))
             {
                 _interact.BlinkWhenPlayerNear = true;
                 _interact.SetInteractText(HAS_TOOLS);
@@ -64,27 +93,32 @@ public class Bookcase : MonoBehaviour
 
             count++;
             Debug.Log(count);
+            
         }
-        else
+        else if (!secure)
+        {
             QuakeManager.Instance.TriggerQuake();
+        }
+
 
     }
 
     public void Interaction()
     {
-        if (!isFalling && PlayerHasItem)
+        if (!secure && !isFalling && PlayerHasItem)
         {
+            _interact.StopBlink();
+            _interact.SetInteractText("");
             Systems.Objectives.Satisfy("BOOKCASE");
-            _inventory.RemoveItem(CheckItem, 1);
-            QuakeManager.Instance.TriggerCountdown(TriggerTime);
-            Disable();
+            Systems.Inventory.RemoveItem(CheckItem, 1);
+            Disable(); 
         }
     }
     
 
     public void Fall()
     {
-        if (isFalling) return;
+        if (secure || isFalling) return;
         isFalling = true;
         
         fallCollider.enabled = true;
@@ -95,12 +129,10 @@ public class Bookcase : MonoBehaviour
 
     private void Disable()
     {
+        
         Destroy(rb);
         Destroy(fallCollider.gameObject.GetComponent<CollisionCallback>());
-        Destroy(GetComponent<InteractWithObject>());
-        Destroy(GetComponent<BoxCollider>());
-        _interact.Kill();
-        Destroy(this);
+        secure = true;
     }
 
 
@@ -108,10 +140,10 @@ public class Bookcase : MonoBehaviour
     {
         if (!isFalling) return;
         if (rb.velocity.magnitude <= 0) Disable();
-        else
+        else if (isFalling)
         {
             Debug.Log("Player Hit");
-            Systems.Status.PlayerDeath("Your bookcase crushed you :(");            
+            Systems.Status.PlayerDeath("There was an earthquake and your bookcase crushed you :(");            
         }
     }
 }

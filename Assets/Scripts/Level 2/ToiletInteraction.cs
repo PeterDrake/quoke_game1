@@ -15,13 +15,11 @@ public class ToiletInteraction : MonoBehaviour
 
     public void Interaction()
     {
-        if (!_firstInteraction) Systems.Status.AffectRelief(50);
-        else
-        {
-            _firstInteraction = false;
-            _interact.SetInteractText("Press 'E' to Use Toilet");
-            _interact.DeleteItems();
-            _interact = null;
+        Systems.Status.AffectRelief(50);
+        _firstInteraction = false;
+        _interact.SetInteractText("Press 'E' to Use Toilet");
+        _interact.DeleteItems();
+        _interact = null;
         }
     }
-}
+
