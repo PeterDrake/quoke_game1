@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9081b025a17517146bf6f9d8ffb8e392, type: 3}
   m_Name: NewHead
   m_EditorClassIdentifier: 
-  speech: What's up Tre! You set up that sanitation station yet?
-  optionOneText: Still working on it!
+  speech: Have you set up that sanitation station yet?
+  optionOneText: 'No, I haven''t put that together yet. '
   optionOne: {fileID: 11400000, guid: 2ef321040985c124f99112c8842ec078, type: 2}
-  optionTwoText: Yeah I'm all finished!
+  optionTwoText: 'Yes, I finished a two-bucket system. '
   optionTwo: {fileID: 11400000, guid: f2c92a4312374e64dbfa4255d17e7741, type: 2}
   Requirements: []
   Outcomes: []
+  NewHead: {fileID: 0}
   IfRequirementsOne:
   - {fileID: 11400000, guid: 0b03776babcbacf42a38be727d03c61e, type: 2}
   optionOneTextAlt: Can you give me any more information?
