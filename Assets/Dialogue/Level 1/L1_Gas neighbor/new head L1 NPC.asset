@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03018a280d3ed492f8c7724e4864b868, type: 3}
+  m_Name: new head L1 NPC
+  m_EditorClassIdentifier: 
+  NPCname: Neighbor
+  NPCimage: {fileID: 21300000, guid: 95baf73dbe1e0ac428adf63b493e14d3, type: 3}
+  NPCtext: How's the gas problem?
+  ResponseOne: Working on it.
+  nextNodeOne: {fileID: 0}
+  ResponseTwo: (no response)
+  nextNodeTwo: {fileID: 0}
+  PlayerReceivesNode1: {fileID: 0}
+  PlayerReceivesNode2: {fileID: 0}
+  DoesPlayerHaveNode1: {fileID: 0}
+  DoesPlayerHaveNode2: {fileID: 0}
+  PlayerLosesNode1: {fileID: 0}
+  PlayerLosesNode2: {fileID: 0}
