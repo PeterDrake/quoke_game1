@@ -26,6 +26,8 @@ public class MiniGameMaster : MonoBehaviour
     
     public UnityAction OnWin;
 
+    public Text buttonText;
+
     public void Start()
     {
         //OnWin= new UnityAction();
@@ -35,12 +37,24 @@ public class MiniGameMaster : MonoBehaviour
     {
         if (Bucket && PlasticBag && Poop && ToiletPaper && Sawdust && Pee)
         {
+            StartCoroutine(BlinkText());
             OnWin.Invoke();
             Win.SetActive(true);
         }
         else
         {
             StartCoroutine(TryAgain());
+        }
+    }
+
+    public IEnumerator BlinkText()
+    {
+        while (true)
+        {
+            buttonText.text = " ";
+            yield return new WaitForSeconds(.5f);
+            buttonText.text = "Sanitize hands";
+            yield return new WaitForSeconds(.5f);
         }
     }
 
