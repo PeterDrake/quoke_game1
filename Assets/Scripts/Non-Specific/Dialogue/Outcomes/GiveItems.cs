@@ -17,7 +17,7 @@ public class GiveItems : DialogueOutcome
         int i = 0;
         foreach (Item item in Items)
         {
-            InventoryHelper.Instance.AddItem(item, Amounts[i]);
+            Systems.Inventory.AddItem(item, Amounts[i]);
             i++;
         }
         

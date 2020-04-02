@@ -66,11 +66,11 @@ public class InteractWithObject : MonoBehaviour
     public void Start()
     {
         if (interactText == null)
-            interactText = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GUIManager>().GetInteract();
+            interactText = GameObject.Find("Canvi").transform.Find("GUI").GetComponent<GuiDisplayer>().GetInteract();
         
         // get reference for inventory manipulation
         if (hasItem) 
-            inventory = InventoryHelper.Instance;
+            inventory = Systems.Inventory;
         
         // materials for material blinking
         if (BlinkWhenPlayerNear)
@@ -80,8 +80,8 @@ public class InteractWithObject : MonoBehaviour
             _meshRenderer = GetComponent<MeshRenderer>();
         }
     }
-    
-    public void FixedUpdate()
+
+    public void FixedUpdate() // Fixed update responds to timescale
     {
         if (BlinkWhenPlayerNear && playerInCollider)
         {
@@ -101,10 +101,8 @@ public class InteractWithObject : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void Update()
-    {
+        
+        
         if (interactionDelayFrames <= 0 && playerInCollider && Input.GetAxis("Interact") > 0)
         {
             interactionDelayFrames = interactionDelayFramesMax;
@@ -178,6 +176,13 @@ public class InteractWithObject : MonoBehaviour
     {
         itemToReceive = null;
         hasItem = false;
+    }
+
+    public void StopBlink()
+    {
+        _meshRenderer.material = mat_original;
+        blinkOn = false;
+        BlinkWhenPlayerNear = false;
     }
 
     public void Kill()

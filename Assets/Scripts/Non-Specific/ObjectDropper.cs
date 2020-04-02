@@ -23,17 +23,14 @@ public class ObjectDropper: MonoBehaviour
 
     private float fallRate;
     
-    
     private bool dropping;
     private Vector3 playerTransform;
     private int i = 0;
     
-
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         fallRate = TotalDropTime / (falling_objects.Length + 1);
-
     }
 
     public void Drop()

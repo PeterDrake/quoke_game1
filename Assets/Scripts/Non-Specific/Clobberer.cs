@@ -6,11 +6,12 @@
 public class Clobberer : MonoBehaviour
 {
     public bool enabled;
+
     private void OnCollisionEnter(Collision other)
     {
         if (enabled && other.gameObject.CompareTag("Player"))
         {
-            DeathManager.Instance.PlayerDeath("You were hit by a door!");
+            Systems.Status.PlayerDeath("You were hit by a door!");
         }
     }
 }

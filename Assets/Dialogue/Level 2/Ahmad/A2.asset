@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
   m_Name: A2
   m_EditorClassIdentifier: 
-  speech: Are you Annette too?
-  optionOneText: What are you talking about?
-  optionTwoText: No... I'm Tre
+  speech: 'What? Oh. N-E-T stands for Neighborhood Emergency Teams. We''re citizens
+    with some training in disaster preparedness. '
+  optionOneText: Gotcha.
   optionOne: {fileID: 11400000, guid: 3c20bdd835fa44544945f3158dd6c458, type: 2}
-  optionTwo: {fileID: 11400000, guid: 3c20bdd835fa44544945f3158dd6c458, type: 2}
+  optionTwoText: 
+  optionTwo: {fileID: 0}
   Requirements: []
   Outcomes: []
+  NewHead: {fileID: 0}

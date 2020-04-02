@@ -36,9 +36,17 @@ public class Logger : Singleton<Logger>
         if (!DoLog) return;
         
         base.Awake();
-        writer = new StreamWriter(GenerateFileName());
-        Log("Game started.");
-        SceneManager.sceneLoaded += Flush;
+        try
+        {
+            writer = new StreamWriter(GenerateFileName());
+            Log("Game started.");
+            SceneManager.sceneLoaded += Flush;
+        }
+        catch (DirectoryNotFoundException e)
+        {
+            Debug.LogError("Unable to find log file, logging has been disabled!");
+            DoLog = false;
+        }
     }
 
     private void Flush(Scene s, LoadSceneMode lsm)

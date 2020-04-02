@@ -8,7 +8,7 @@ public class VanNextLevel : MonoBehaviour
     private const string EventKey = "LEVELFINISHED";
     private const string SATISFIED = "Press 'E' to rest in Ahmad's van";
     private const string NOT_SATISFIED = "";
-    public GameObject winCanvas;
+    public UIElement winCanvas;
     
     private InteractWithObject _interact;
     private bool _satisfied;
@@ -16,7 +16,7 @@ public class VanNextLevel : MonoBehaviour
     private void Start()
     {
         _interact = GetComponent<InteractWithObject>();
-        ObjectiveManager.Instance.Register(EventKey,() => _satisfied = true);
+        Systems.Objectives.Register(EventKey,() => _satisfied = true);
     }
     
     public void OnEnter()
@@ -26,6 +26,7 @@ public class VanNextLevel : MonoBehaviour
     }
     public void Interact()
     {
-        if (_satisfied) winCanvas.SetActive(true);
+        if (_satisfied)
+           UIManager.Instance.SetAsActive(winCanvas);
     }
 }

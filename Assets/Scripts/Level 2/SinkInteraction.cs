@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SinkInteraction : MonoBehaviour
 {
@@ -15,7 +12,7 @@ public class SinkInteraction : MonoBehaviour
 
     public void Interaction()
     {
-        if (!_firstInteraction) StatusManager.Manager.AffectHydration(50);
+        if (!_firstInteraction) Systems.Status.AffectHydration(50);
         else
         {
             _firstInteraction = false;
@@ -23,9 +20,5 @@ public class SinkInteraction : MonoBehaviour
             _interact.DeleteItems();
             _interact = null;
         }
-        
-        
-        
-        
     }
 }
