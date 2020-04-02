@@ -9,14 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
-  m_Name: A7
+  m_Script: {fileID: 11500000, guid: b82b83c023a677e49a42bc17e2f3225e, type: 3}
+  m_Name: ChoseDeath
   m_EditorClassIdentifier: 
-  speech: You should probably get to work on that.
-  optionOneText: 
-  optionOne: {fileID: 0}
-  optionTwoText: 
-  optionTwo: {fileID: 0}
-  Requirements: []
-  Outcomes: []
-  NewHead: {fileID: 0}
+  ObjectiveName: DEATHSCREEN

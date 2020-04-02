@@ -47,6 +47,7 @@ public class StatusManager : MonoBehaviour
 
     private void Start()
     {
+
         Hydration = HydrationMax;
         Relief = ReliefMax;
         Warmth = WarmthMax;

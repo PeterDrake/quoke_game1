@@ -14,7 +14,6 @@ public class DrinkWater : ItemAction
         if (d.killPlayer) Systems.Status.PlayerDeath(d.DeathMessage);
         Systems.Status.AffectHydration(d.hydrationChange);
         
-        Systems.Inventory.RemoveItem(i,1);
         return true;
     }
 }
