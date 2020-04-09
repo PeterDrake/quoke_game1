@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17354888, g: 0.2169586, b: 0.29905817, a: 1}
+  m_IndirectSpecularColor: {r: 0.17354938, g: 0.21695918, b: 0.2990597, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3119,7 +3119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ddf08b15f43baeb4a966d7fc69cd0c52, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddf08b15f43baeb4a966d7fc69cd0c52, type: 3}
@@ -6997,6 +6997,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9ce32161bfb0e7f4fa36a2d8df7ed8a3, type: 3}
+--- !u!114 &178986811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
+    type: 3}
+  m_PrefabInstance: {fileID: 3877028172620906556}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6e1b0dc00622b4386121cd3701b41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &183454037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18662,6 +18674,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 8340e8586e8556c4b82f331a034bae19, type: 3}
+--- !u!114 &342638215 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 809867039, guid: 54201a432732e3644b92dd53d5d1fef5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7191719293309743849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb1957a7430f934ba9550cb1598e6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &349835122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38454,11 +38478,11 @@ MonoBehaviour:
   BlinkWhenPlayerNear: 0
   itemToReceive: []
   InteractionDisplayText: Press 'E' to use buckets
-  interactText: {fileID: 0}
+  interactText: {fileID: 901699537}
   CallOnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 178986811}
         m_MethodName: AffectRelief
         m_Mode: 4
         m_Arguments:
@@ -39967,6 +39991,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 0232c9d17e384e94fbf3762b9cbd32ab, type: 3}
+--- !u!114 &901699537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6455381915092675921, guid: 54201a432732e3644b92dd53d5d1fef5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7191719293309743849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4546923acd72d4519bd65e8982d6a092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &904347837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63603,9 +63639,9 @@ MonoBehaviour:
   CallOnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: AffectWarmth
-        m_Mode: 4
+      - m_Target: {fileID: 1309936673}
+        m_MethodName: Interaction
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -63650,6 +63686,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 128899998abb5be4c9ca0a27db36f4a8, type: 3}
+--- !u!114 &1309936673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309936669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f483616924a64c0da0db1ae3e34b511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1311092084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67262,7 +67310,7 @@ MonoBehaviour:
   BlinkWhenPlayerNear: 1
   itemToReceive: []
   InteractionDisplayText: 
-  interactText: {fileID: 0}
+  interactText: {fileID: 901699537}
   CallOnInteract:
     m_PersistentCalls:
       m_Calls:
@@ -67309,7 +67357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcf147fe21762f4ea9a8fef002e003c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winCanvas: {fileID: 0}
+  winCanvas: {fileID: 342638215}
 --- !u!64 &1401807212
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -69738,6 +69786,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 139732, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 170376, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 102464, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 115936, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -69750,19 +69810,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 139732, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 121724, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 133834, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 170376, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -69803,10 +69855,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 117798, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 102464, guid: bcae65457b2b7184a97db61675c85a98, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -79967,14 +80015,14 @@ MonoBehaviour:
   CallOnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1743057427}
-        m_MethodName: Interaction
-        m_Mode: 1
+      - m_Target: {fileID: 178986811}
+        m_MethodName: AffectRelief
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 50
+          m_FloatArgument: 100
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
