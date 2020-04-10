@@ -100167,6 +100167,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
+    - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: HydrationSlider
+      value: 
+      objectReference: {fileID: 606873862}
+    - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: ReliefSlider
+      value: 
+      objectReference: {fileID: 454808228}
+    - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: WarmthSlider
+      value: 
+      objectReference: {fileID: 334299383}
+    - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
+        type: 3}
+      propertyPath: deathDisplay
+      value: 
+      objectReference: {fileID: 511732270434488585}
     - target: {fileID: 1854152231809163104, guid: 674b3e11e3b58af47b6107d2e1193031,
         type: 3}
       propertyPath: camera
@@ -100282,26 +100302,6 @@ PrefabInstance:
       propertyPath: objectDropper
       value: 
       objectReference: {fileID: 1868727977}
-    - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: HydrationSlider
-      value: 
-      objectReference: {fileID: 606873862}
-    - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: ReliefSlider
-      value: 
-      objectReference: {fileID: 454808228}
-    - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: WarmthSlider
-      value: 
-      objectReference: {fileID: 334299383}
-    - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
-        type: 3}
-      propertyPath: deathDisplay
-      value: 
-      objectReference: {fileID: 511732270434488585}
     - target: {fileID: 8109995094488212757, guid: 674b3e11e3b58af47b6107d2e1193031,
         type: 3}
       propertyPath: displayer
@@ -100474,6 +100474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvi
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455381915595446219, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_Value
+      value: 59
       objectReference: {fileID: 0}
     - target: {fileID: 6455381915654371031, guid: 54201a432732e3644b92dd53d5d1fef5,
         type: 3}
@@ -100701,6 +100706,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254490126313522600, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_Name
+      value: redtinit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455381913799971942, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455381913799971942, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8627451
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54201a432732e3644b92dd53d5d1fef5, type: 3}

@@ -45,6 +45,10 @@ public class StatusManager : MonoBehaviour
     private bool Degrading = true;
     private const float DEGRADETIME = 1f;
 
+    private Color HydrationBar;
+    private Color ReliefBar;
+    private Color WarmthBar;
+
     private void Start()
     {
 
@@ -61,6 +65,10 @@ public class StatusManager : MonoBehaviour
         WarmthLossRate = WarmthMax / WarmthDepletionTime;
 
         StartCoroutine(nameof(DegradeStatus),DegradeStatus());
+
+        HydrationBar = HydrationSlider.image.color;
+        ReliefBar = ReliefSlider.image.color;
+        WarmthBar = WarmthSlider.image.color;
 
         alive = true;
     }
@@ -88,18 +96,36 @@ public class StatusManager : MonoBehaviour
         {
             hydrationChanged = false;
             HydrationSlider.value = Hydration;
+            HydrationSlider.image.color = HydrationBar;
+            
         }
 
         if (reliefChanged)
         {
             reliefChanged = false;
             ReliefSlider.value = Relief;
+            ReliefSlider.image.color = ReliefBar;
+
         }
         
         if (warmthChanged)
         {
             warmthChanged = false;
             WarmthSlider.value = Warmth;
+            WarmthSlider.image.color = WarmthBar;
+         
+        }
+        if (Hydration <= 50)
+        {
+            HydrationSlider.image.color = Color.Lerp(HydrationBar, Color.white, Mathf.PingPong(Time.time, 1f));
+        }
+        if (Relief <=50)
+        {
+            ReliefSlider.image.color = Color.Lerp(ReliefBar, Color.white, Mathf.PingPong(Time.time, 1f));
+        }
+        if (Warmth <= 50)
+        {
+            WarmthSlider.image.color = Color.Lerp(WarmthBar, Color.white, Mathf.PingPong(Time.time, 1f));
         }
     }
 
