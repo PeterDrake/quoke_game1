@@ -13,7 +13,11 @@ public class StatusManager : MonoBehaviour
     [SerializeField] private Slider ReliefSlider;
     [SerializeField] private Slider WarmthSlider;
     [SerializeField] private DeathDisplay deathDisplay;
-    
+    [SerializeField] private Image WaterRefill;
+    [SerializeField] private Image ReliefRefill;
+    [SerializeField] private Image WarmthRefill;
+    [SerializeField] private Color refillColor;
+
     [Tools.ReadOnly] public float Hydration;
     [Tools.ReadOnly] public float Relief;
     [Tools.ReadOnly] public float Warmth;
@@ -92,41 +96,37 @@ public class StatusManager : MonoBehaviour
             PlayerDeath("Hypothermia Death :(");
         }
 
+        if (Hydration <= 90)
+        {
+            HydrationSlider.image.color = Color.Lerp(HydrationBar, Color.blue, Mathf.PingPong(Time.time, .5f));
+        }
+        if (Relief <= 90)
+        {
+            ReliefSlider.image.color = Color.Lerp(ReliefBar, new Color(.2f,1f, .1f, 1), Mathf.PingPong(Time.time, .5f));
+        }
+        if (Warmth <= 90)
+        {
+            WarmthSlider.image.color = Color.Lerp(WarmthBar, Color.red, Mathf.PingPong(Time.time, .5f));
+        }
+
+
         if (hydrationChanged)
         {
             hydrationChanged = false;
             HydrationSlider.value = Hydration;
-            HydrationSlider.image.color = HydrationBar;
-            
         }
-
         if (reliefChanged)
         {
             reliefChanged = false;
             ReliefSlider.value = Relief;
-            ReliefSlider.image.color = ReliefBar;
-
         }
-        
         if (warmthChanged)
         {
             warmthChanged = false;
             WarmthSlider.value = Warmth;
-            WarmthSlider.image.color = WarmthBar;
-         
         }
-        if (Hydration <= 50)
-        {
-            HydrationSlider.image.color = Color.Lerp(HydrationBar, Color.white, Mathf.PingPong(Time.time, 1f));
-        }
-        if (Relief <=50)
-        {
-            ReliefSlider.image.color = Color.Lerp(ReliefBar, Color.white, Mathf.PingPong(Time.time, 1f));
-        }
-        if (Warmth <= 50)
-        {
-            WarmthSlider.image.color = Color.Lerp(WarmthBar, Color.white, Mathf.PingPong(Time.time, 1f));
-        }
+
+        RefillMeter();
     }
 
     public void AffectHydration(float deltaH)
@@ -211,5 +211,28 @@ public class StatusManager : MonoBehaviour
 
         yield return new WaitForSeconds(DEGRADETIME);
         StartCoroutine(DegradeStatus());
+    }
+
+    public void RefillMeter()
+    {
+        if (Hydration == 100)
+        {
+            WaterRefill.color = refillColor;
+        }
+        else if (Relief == 100)
+        {
+            ReliefRefill.color = refillColor;
+        }
+        else if (Warmth == 100)
+        {
+            WarmthRefill.color = refillColor;
+        }
+        else
+        {
+            WaterRefill.color = Color.Lerp(WaterRefill.color, Color.clear, Time.deltaTime);
+            ReliefRefill.color = Color.Lerp(ReliefRefill.color, Color.clear, Time.deltaTime);
+            WarmthRefill.color = Color.Lerp(WarmthRefill.color, Color.clear, Time.deltaTime);
+        }
+
     }
 }
