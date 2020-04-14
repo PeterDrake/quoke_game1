@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
-  m_Name: A7
+  m_Script: {fileID: 11500000, guid: db31c4a6f274bd349acba418682f36ce, type: 3}
+  m_Name: HasWater
   m_EditorClassIdentifier: 
-  speech: You should probably get to work on that
-  optionOneText: 
-  optionOne: {fileID: 0}
-  optionTwoText: 
-  optionTwo: {fileID: 0}
-  Requirements: []
-  Outcomes: []
-  NewHead: {fileID: 0}
+  RequiredItems:
+  - {fileID: 11400000, guid: 74509f734533b496cbca49ee30a6c3a4, type: 2}
+  Amounts: 

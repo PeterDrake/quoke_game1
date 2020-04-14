@@ -15,7 +15,7 @@ MonoBehaviour:
   speech: Your toilet. Bad sanitation is a recipe for disease. This pamphlet lists
     some things you'll need to set up a two-bucket system.
   optionOneText: 'I don''t have all that stuff. '
-  optionOne: {fileID: 11400000, guid: 2ef321040985c124f99112c8842ec078, type: 2}
+  optionOne: {fileID: 11400000, guid: 4096832621b41499bb0d134098fa42a9, type: 2}
   optionTwoText: 
   optionTwo: {fileID: 0}
   Requirements: []

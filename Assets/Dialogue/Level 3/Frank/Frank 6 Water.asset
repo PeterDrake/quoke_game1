@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
-  m_Name: A10 B
+  m_Name: Frank 6 Water
   m_EditorClassIdentifier: 
-  speech: Very bad idea. If everybody did that we would have a serious disease outbreak.
-  optionOneText: 'Tre: Okay, I''ll go look for this stuff.'
-  optionOne: {fileID: 11400000, guid: 71f37ce851b9e4ae2a9fc62f812e27bc, type: 2}
+  speech: 'Yeah, but the plumbing''s not working. I think a lot of pipes broke in
+    the quake. '
+  optionOneText: That doesn't matter. We can make it out of the water heater. Do you
+    have a bucket or something?
+  optionOne: {fileID: 11400000, guid: 1bcee1fd965b742afb5ec2c866ed158a, type: 2}
   optionTwoText: 
   optionTwo: {fileID: 0}
   Requirements: []

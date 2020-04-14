@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
   m_Name: A12
   m_EditorClassIdentifier: 
-  speech: "[Sleep in Ahmad's van.]\t"
-  optionOneText: '[Sleep outside in the cold.] '
+  speech: "\t"
+  optionOneText: '[Sleep in Ahmad''s van.]'
   optionOne: {fileID: 0}
-  optionTwoText: 
+  optionTwoText: '[Sleep outside in the cold.]'
   optionTwo: {fileID: 0}
   Requirements: []
   Outcomes:

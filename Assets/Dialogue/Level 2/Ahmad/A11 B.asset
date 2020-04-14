@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
   m_Name: A11 B
   m_EditorClassIdentifier: 
-  speech: 'Great! I''m going to wait here in case anyone else needs help. '
+  speech: "Great! I\u2019m going to wait here in case anyone else needs help."
   optionOneText: 
   optionOne: {fileID: 0}
   optionTwoText: 

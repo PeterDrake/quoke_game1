@@ -9,14 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
-  m_Name: A7
+  m_Script: {fileID: 11500000, guid: 854e889fae71f914a8bd345c0b3e8721, type: 3}
+  m_Name: GiveShovel
   m_EditorClassIdentifier: 
-  speech: You should probably get to work on that
-  optionOneText: 
-  optionOne: {fileID: 0}
-  optionTwoText: 
-  optionTwo: {fileID: 0}
-  Requirements: []
-  Outcomes: []
-  NewHead: {fileID: 0}
+  Items:
+  - {fileID: 11400000, guid: 44c331833cd8840b2982ae51d6a4ec81, type: 2}
+  Amounts: 

@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a692057595962314d904972bdfcf7e54, type: 3}
-  m_Name: A10 B
+  m_Name: Frank 7 Toilet
   m_EditorClassIdentifier: 
-  speech: Very bad idea. If everybody did that we would have a serious disease outbreak.
-  optionOneText: 'Tre: Okay, I''ll go look for this stuff.'
-  optionOne: {fileID: 11400000, guid: 71f37ce851b9e4ae2a9fc62f812e27bc, type: 2}
+  speech: 'No, you''ll have to find one. I do have some plywood we can use to make
+    a floor around the pit. I''ve also got a tarp we can put up to keep the rain out
+    if we can find a rope. '
+  optionOneText: 'Okay. Show me where your house is, and I''ll try to find that stuff. '
+  optionOne: {fileID: 0}
   optionTwoText: 
   optionTwo: {fileID: 0}
   Requirements: []
