@@ -33519,18 +33519,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 05cde2851680db446853dc0fd62f1788, type: 3}
---- !u!114 &719189788 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5501120937019165076, guid: 54201a432732e3644b92dd53d5d1fef5,
-    type: 3}
-  m_PrefabInstance: {fileID: 7191719293309743849}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &721620489
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42441,18 +42429,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 512c91ef5e722df4d9374c3e40ea744b, type: 3}
---- !u!114 &991238167 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2784902126986076660, guid: 54201a432732e3644b92dd53d5d1fef5,
-    type: 3}
-  m_PrefabInstance: {fileID: 7191719293309743849}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &992525549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47960,6 +47936,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: a0880a44f817125428b5384703f3c34e, type: 3}
+--- !u!114 &1093479265 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5963652744751222809, guid: 54201a432732e3644b92dd53d5d1fef5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7191719293309743849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1095224765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50120,6 +50108,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1136476503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3243785822634932384, guid: 54201a432732e3644b92dd53d5d1fef5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7191719293309743849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1137377657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100252,12 +100252,12 @@ PrefabInstance:
         type: 3}
       propertyPath: WaterRefill
       value: 
-      objectReference: {fileID: 719189788}
+      objectReference: {fileID: 1093479265}
     - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
         type: 3}
       propertyPath: ReliefRefill
       value: 
-      objectReference: {fileID: 991238167}
+      objectReference: {fileID: 1136476503}
     - target: {fileID: 8109995094488212754, guid: 674b3e11e3b58af47b6107d2e1193031,
         type: 3}
       propertyPath: WarmthRefill
@@ -100584,7 +100584,7 @@ PrefabInstance:
     - target: {fileID: 2832024609821590232, guid: 54201a432732e3644b92dd53d5d1fef5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00000047684
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2832024609821590232, guid: 54201a432732e3644b92dd53d5d1fef5,
         type: 3}
@@ -100594,7 +100594,7 @@ PrefabInstance:
     - target: {fileID: 2832024609821590232, guid: 54201a432732e3644b92dd53d5d1fef5,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0000081062
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2832024609821590232, guid: 54201a432732e3644b92dd53d5d1fef5,
         type: 3}
@@ -100896,7 +100896,17 @@ PrefabInstance:
     - target: {fileID: 8986889292153506481, guid: 54201a432732e3644b92dd53d5d1fef5,
         type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243785822634932384, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5963652744751222809, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54201a432732e3644b92dd53d5d1fef5, type: 3}
