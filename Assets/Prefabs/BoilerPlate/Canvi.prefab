@@ -1803,6 +1803,36 @@ PrefabInstance:
       propertyPath: m_Text
       value: Explore the  house, move using the WASD keys or arrow keys
       objectReference: {fileID: 0}
+    - target: {fileID: 2690835748186529445, guid: 64d8e81fcaab5bb4aa47965d4e1d48a7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690835748186529445, guid: 64d8e81fcaab5bb4aa47965d4e1d48a7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690835749393400765, guid: 64d8e81fcaab5bb4aa47965d4e1d48a7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690835749393400765, guid: 64d8e81fcaab5bb4aa47965d4e1d48a7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690835748862871645, guid: 64d8e81fcaab5bb4aa47965d4e1d48a7,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690835748862871645, guid: 64d8e81fcaab5bb4aa47965d4e1d48a7,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64d8e81fcaab5bb4aa47965d4e1d48a7, type: 3}
 --- !u!224 &6455381914281399893 stripped
