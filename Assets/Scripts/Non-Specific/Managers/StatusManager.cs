@@ -13,7 +13,12 @@ public class StatusManager : MonoBehaviour
     [SerializeField] private Slider ReliefSlider;
     [SerializeField] private Slider WarmthSlider;
     [SerializeField] private DeathDisplay deathDisplay;
-    
+    [SerializeField] private Image WaterFlash;
+    [SerializeField] private Image ReliefFlash;
+    [SerializeField] private Image WarmthFlash;
+    [SerializeField] private Color refillColor;
+    [SerializeField] private Color dangerColor;
+
     [Tools.ReadOnly] public float Hydration;
     [Tools.ReadOnly] public float Relief;
     [Tools.ReadOnly] public float Warmth;
@@ -45,6 +50,10 @@ public class StatusManager : MonoBehaviour
     private bool Degrading = true;
     private const float DEGRADETIME = 1f;
 
+    private Color HydrationBar;
+    private Color ReliefBar;
+    private Color WarmthBar;
+
     private void Start()
     {
 
@@ -61,6 +70,10 @@ public class StatusManager : MonoBehaviour
         WarmthLossRate = WarmthMax / WarmthDepletionTime;
 
         StartCoroutine(nameof(DegradeStatus),DegradeStatus());
+
+        HydrationBar = HydrationSlider.image.color;
+        ReliefBar = ReliefSlider.image.color;
+        WarmthBar = WarmthSlider.image.color;
 
         alive = true;
     }
@@ -89,18 +102,19 @@ public class StatusManager : MonoBehaviour
             hydrationChanged = false;
             HydrationSlider.value = Hydration;
         }
-
         if (reliefChanged)
         {
             reliefChanged = false;
             ReliefSlider.value = Relief;
         }
-        
         if (warmthChanged)
         {
             warmthChanged = false;
             WarmthSlider.value = Warmth;
         }
+
+        RefillFlash();
+        LowLevelFlash();
     }
 
     public void AffectHydration(float deltaH)
@@ -186,4 +200,49 @@ public class StatusManager : MonoBehaviour
         yield return new WaitForSeconds(DEGRADETIME);
         StartCoroutine(DegradeStatus());
     }
+
+    public void RefillFlash()
+    {
+        if (Hydration == 100)
+        {
+            WaterFlash.color = refillColor;
+        }
+        else if (Relief == 100)
+        {
+            ReliefFlash.color = refillColor;
+        }
+        else if (Warmth == 100)
+        {
+            WarmthFlash.color = refillColor;
+        }
+        else
+        {
+            WaterFlash.color = Color.Lerp(WaterFlash.color, Color.clear, Time.deltaTime);
+            ReliefFlash.color = Color.Lerp(ReliefFlash.color, Color.clear, Time.deltaTime);
+            WarmthFlash.color = Color.Lerp(WarmthFlash.color, Color.clear, Time.deltaTime);
+        }
+    }
+    public void LowLevelFlash()
+    {
+        if (Hydration <= 90)
+        {
+            HydrationSlider.image.color = Color.Lerp(HydrationBar, Color.blue, Mathf.PingPong(Time.time, .5f));
+            WaterFlash.color = dangerColor;
+            WaterFlash.color = Color.Lerp(dangerColor, Color.clear, Time.deltaTime);
+        }
+        if (Relief <= 90)
+        {
+            ReliefSlider.image.color = Color.Lerp(ReliefBar, new Color(.2f, 1f, .1f, 1), Mathf.PingPong(Time.time, .5f));
+            ReliefFlash.color = dangerColor;
+            ReliefFlash.color = Color.Lerp(dangerColor, Color.clear, Time.deltaTime);
+        }
+        if (Warmth <= 90)
+        {
+            WarmthSlider.image.color = Color.Lerp(WarmthBar, Color.red, Mathf.PingPong(Time.time, .5f));
+            WarmthFlash.color = dangerColor;
+            WarmthFlash.color = Color.Lerp(dangerColor, Color.clear, Time.deltaTime);
+        }
+
+    }
+
 }
