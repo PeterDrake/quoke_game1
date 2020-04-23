@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: AhmadNPC
   m_EditorClassIdentifier: 
   name: Ahmad
-  image: {fileID: 21300002, guid: 079f5a8d00f74c84181be0a872b4c39d, type: 3}
+  image: {fileID: 21300000, guid: 337347c8cffb43547bb9b516f0f289af, type: 3}
