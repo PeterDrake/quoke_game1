@@ -8391,7 +8391,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 657822480}
-        m_MethodName: CheckCorrect
+        m_MethodName: Leave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
