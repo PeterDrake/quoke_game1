@@ -26,6 +26,8 @@ public class MiniGameMaster : MonoBehaviour
     
     public UnityAction OnWin;
 
+    public UnityAction OnExit;
+
     public void Start()
     {
         //OnWin= new UnityAction();
@@ -42,6 +44,11 @@ public class MiniGameMaster : MonoBehaviour
         {
             StartCoroutine(TryAgain());
         }
+    }
+
+    public void Leave()
+    {
+        OnExit.Invoke();
     }
 
     public IEnumerator TryAgain()
