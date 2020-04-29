@@ -17260,6 +17260,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 462145cf8ea340041b656797d48c9d35, type: 3}
+--- !u!114 &312187150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6225663469846101385, guid: 54201a432732e3644b92dd53d5d1fef5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7191719293309743849}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &312525349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64825,6 +64837,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9ce32161bfb0e7f4fa36a2d8df7ed8a3, type: 3}
+--- !u!1 &1335807069 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1150226529531331217, guid: 54201a432732e3644b92dd53d5d1fef5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7191719293309743849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1336126652
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94759,6 +94777,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 0232c9d17e384e94fbf3762b9cbd32ab, type: 3}
+--- !u!1 &2009745061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6979581754512211013, guid: 54201a432732e3644b92dd53d5d1fef5,
+    type: 3}
+  m_PrefabInstance: {fileID: 7191719293309743849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2009745066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009745061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05b27ed90d525f4e9de50ce1e7cbff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pamphlet: {fileID: 1335807069}
+  buttonText: {fileID: 312187150}
 --- !u!1001 &2012158705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100663,6 +100701,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1150226529531331217, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_Name
+      value: sanitationpamphlet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225663469846101385, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_Text
+      value: Open Pamphlet
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677249790432770929, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677249790432770929, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677249790432770929, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677249790432770929, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2009745066}
+    - target: {fileID: 3677249790432770929, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: toggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677249790432770929, guid: 54201a432732e3644b92dd53d5d1fef5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6455381915654371030, guid: 54201a432732e3644b92dd53d5d1fef5,
         type: 3}
       propertyPath: m_Name
