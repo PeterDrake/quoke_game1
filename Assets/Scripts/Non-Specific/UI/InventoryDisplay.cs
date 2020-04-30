@@ -15,7 +15,7 @@ public class InventoryDisplay : UIElement
     // a new inventory display, see the Basic Inventory Display for the proper names and locations in
     // the hierarchy for the UI elements (with respect to the InventoryToggler)
 
-    private byte requiredComponentsAmount = 10;
+    private byte requiredComponentsAmount = 13;
     private GameObject toggler;
 
     private Image displayImage;
@@ -26,7 +26,8 @@ public class InventoryDisplay : UIElement
 
     private GameObject useToggle;
     private Text useText;
-    private Button useButton;
+    private GameObject openToggle;
+    private Text openText;
 
     private int selectedItem;
 
@@ -43,6 +44,7 @@ public class InventoryDisplay : UIElement
     {
         activate(true);
         useToggle.SetActive(false);
+        openToggle.SetActive(false);
         this.items = items;
         this.amounts = amounts;
 
@@ -142,6 +144,13 @@ public class InventoryDisplay : UIElement
                     button.GetComponent<Button>().onClick.AddListener(useSelectedItem);
                     useText = button.Find("text").GetComponent<Text>();
                     break;
+                case "openToggler":
+                    componentsFound += 3;
+                    openToggle = child.gameObject;
+                    Transform button2 = child.Find("open");
+                    button2.GetComponent<Button>().onClick.AddListener(useSelectedItem);
+                    openText = button2.Find("text").GetComponent<Text>();
+                    break;
             }
         }
         if (componentsFound != requiredComponentsAmount) 
@@ -158,14 +167,24 @@ public class InventoryDisplay : UIElement
         description.text = items[i].Description;
         displayAmount.text = amounts[i].ToString();
 
-        if (items[i].action != null)
+        if(items[i].ID == "PAM")
         {
+            useToggle.SetActive(false);
+            openToggle.SetActive(true);
+            openText.text = "Open Pamphlet";
+            
+        }
+
+        else if (items[i].action != null)
+        {
+            openToggle.SetActive(false);
             useToggle.SetActive(true);
             useText.text = items[i].action.ActionWord;
         }
         else
         {
             useToggle.SetActive(false);
+            openToggle.SetActive(false);
         }
     }
     
