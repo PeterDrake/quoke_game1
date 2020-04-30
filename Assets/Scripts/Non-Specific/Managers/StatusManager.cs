@@ -217,9 +217,9 @@ public class StatusManager : MonoBehaviour
         }
         else
         {
-            WaterFlash.color = Color.Lerp(WaterFlash.color, Color.clear, Time.deltaTime);
-            ReliefFlash.color = Color.Lerp(ReliefFlash.color, Color.clear, Time.deltaTime);
-            WarmthFlash.color = Color.Lerp(WarmthFlash.color, Color.clear, Time.deltaTime);
+            WaterFlash.color = Color.Lerp(WaterFlash.color, Color.clear, Time.time);
+            ReliefFlash.color = Color.Lerp(ReliefFlash.color, Color.clear, Time.time);
+            WarmthFlash.color = Color.Lerp(WarmthFlash.color, Color.clear, Time.time);
         }
     }
     public void LowLevelFlash()
@@ -228,19 +228,19 @@ public class StatusManager : MonoBehaviour
         {
             HydrationSlider.image.color = Color.Lerp(HydrationBar, Color.blue, Mathf.PingPong(Time.time, .5f));
             WaterFlash.color = dangerColor;
-            WaterFlash.color = Color.Lerp(dangerColor, Color.clear, Time.deltaTime);
+            WaterFlash.color = Color.Lerp(dangerColor, Color.clear, Time.time);
         }
         if (Relief <= 25)
         {
             ReliefSlider.image.color = Color.Lerp(ReliefBar, new Color(.2f, 1f, .1f, 1), Mathf.PingPong(Time.time, .5f));
             ReliefFlash.color = dangerColor;
-            ReliefFlash.color = Color.Lerp(dangerColor, Color.clear, Time.deltaTime);
+            ReliefFlash.color = Color.Lerp(dangerColor, Color.clear, Time.time);
         }
         if (Warmth <= 25)
         {
             WarmthSlider.image.color = Color.Lerp(WarmthBar, Color.red, Mathf.PingPong(Time.time, .5f));
             WarmthFlash.color = dangerColor;
-            WarmthFlash.color = Color.Lerp(dangerColor, Color.clear, Time.deltaTime);
+            WarmthFlash.color = Color.Lerp(dangerColor, Color.clear, Time.time);
         }
 
     }
